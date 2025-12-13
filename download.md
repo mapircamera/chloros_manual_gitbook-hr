@@ -132,7 +132,7 @@ Trebate pomoć s instalacijom ili konfiguracijom?
 
 ## Dnevnik promjena
 
-<detalji>
+<details>
 
 <summary>Verzija 1.0.3</summary>
 

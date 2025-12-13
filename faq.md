@@ -6,7 +6,7 @@ metaLinks:
 ---
 # Često postavljana pitanja
 
-<detalji>
+<details>
 
 <summary>Mogu li Chlorosom obrađivati ​​slike s kamera koje nisu MAPIR?</summary>
 
@@ -14,7 +14,7 @@ Ne, Chloros podržava samo obradu slike s MAPIR kamera. Za više informacija pog
 
 </details>
 
-<detalji>
+<details>
 
 <summary>Mogu li kalibrirati svoje slike za refleksiju bez kalibracijske mete?</summary>
 
@@ -22,15 +22,15 @@ Ne. Bez ciljane slike kalibracije snimljene otprilike u isto vrijeme kao i necil
 
 </details>
 
-<detalji>
+<details>
 
-<sažetak>Mogu li urediti svoje slike prije obrade u Chlorosu?</sažetak>
+<summary>Mogu li urediti svoje slike prije obrade u Chlorosu?</summary>
 
 Ne. Chloros pretpostavlja da ulazni podaci nisu promijenjeni. Nemojte mijenjati nazive datoteka.
 
 </details>
 
-<detalji>
+<details>
 
 <summary>Mogu li postaviti svoje MAPIR Survey3 kamere na automatsku ekspoziciju i obrađivati ​​slike u Chlorosu?</summary>
 
@@ -38,7 +38,7 @@ Ne. Skupovi slikovnih podataka Survey3 moraju imati fiksnu/zaključanu ekspozici
 
 </details>
 
-<detalji>
+<details>
 
 <summary>Može li Chloros obraditi ili analizirati ortomozaične slike?</summary>
 
@@ -46,15 +46,15 @@ Ne. Podržane su samo pojedinačne slike MAPIR kamere, a ne slike spojene zajedn
 
 </details>
 
-<detalji>
+<details>
 
-<sažetak>Kako mogu ubrzati korak otkrivanja cilja Chloros?</sažetak>
+<summary>Kako mogu ubrzati korak otkrivanja cilja Chloros?</summary>
 
 U tablici preglednika datoteka, ako unaprijed odaberete ciljane slike u desnom stupcu, Chloros će tražiti samo kalibracijske ciljeve u tim slikama, uvelike ubrzavajući obradu.
 
 </details>
 
-<detalji>
+<details>
 
 <summary>Ako prenosim svoje slike u <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud,</a> trebam li ih prije učitavanja obraditi u Chlorosu?</summary>
 
@@ -62,9 +62,9 @@ Ako ih planirate prenijeti na našu mrežnu platformu za obradu [MAPIR Cloud](ht
 
 </details>
 
-<detalji>
+<details>
 
-<sažetak>Hoće li MAPIR ikada podržavati značajku X? Stvarno bih želio da MAPIR ponudi X.</summary>
+<summary>Hoće li MAPIR ikada podržavati značajku X? Stvarno bih želio da MAPIR ponudi X.</summary>
 
 Uvijek smo zainteresirani za komentare o našim proizvodima. Ako naiđete na probleme s našim proizvodima ili imate bilo kakve prijedloge o tome kako ih možemo poboljšati, kontaktirajte nas (https://www.mapir.camera/community/contact) da podijelimo svoje mišljenje. Većina našeg istraživanja i razvoja vođena je najvažnijim potrebama naših kupaca.
 
