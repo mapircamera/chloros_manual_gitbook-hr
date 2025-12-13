@@ -1,17 +1,17 @@
-# GUI : Projects
+# GUI: Projekti
 
-Chloros allows you to create projects which can be reopened in the future.
+Chloros vam omogućuje stvaranje projekata koji se mogu ponovno otvoriti u budućnosti.
 
-## New Project
+## Novi projekt
 
 <figure><img src=".gitbook/assets/project_new.JPG" alt=""><figcaption></figcaption></figure>
 
-Select "New Project" from the main menu and enter a unique name for your project.
+Odaberite "Novi projekt" iz glavnog izbornika i unesite jedinstveni naziv za svoj projekt.
 
-## Open Project
+## Otvoreni projekt
 
 <figure><img src=".gitbook/assets/project_open.JPG" alt=""><figcaption></figcaption></figure>
 
-Select "Open Project" to see a list of existing projects in the Project Folder. If no projects exist the secondary side menu will not open. You can see some GUI created projects (t1, t2, t3) listed in the above photo. The DATE\_TIME projects were created by the CLI using the default project naming scheme. Clicking any project name will open it.
+Odaberite "Otvori projekt" da vidite popis postojećih projekata u mapi projekata. Ako nema projekta, neće se otvoriti sekundarni bočni izbornik. Na gornjoj fotografiji možete vidjeti neke projekte stvorene pomoću GUI-ja (t1, t2, t3). Projekte DATE\_TIME kreirao je CLI koristeći zadanu shemu imenovanja projekta. Klikom na bilo koji naziv projekta otvorit će se.
 
-Clicking the "Open Project Folder" button opens your computer's file explorer at the project path. You can adjust the project path in the [Project Settings](project-settings/project-settings.md).
+Klikom na gumb "Otvori mapu projekta" otvorit će se preglednik datoteka vašeg računala na putanju projekta. Možete prilagoditi putanju projekta u [Postavke projekta](postavke-projekta/postavke-projekta.md).

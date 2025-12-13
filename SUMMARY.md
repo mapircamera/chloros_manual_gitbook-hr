@@ -1,34 +1,34 @@
-# Table of contents
+# Indeks
 
-* [Getting Started](README.md)
-* [GUI : Navigation](navigation.md)
-* [GUI : Projects](projects.md)
-* [CLI : Command Line](CLI.md)
-* [API : Python SDK](api-python-sdk.md)
-* [Supported Cameras](supported-cameras.md)
-* [Output Image Formats](output-image-formats.md)
-* [Chloros+ Login](chloros+-login.md)
-* [Calibration Targets](calibration-targets.md)
-* [Supported Languages](supported-languages.md)
-* [Download](download.md)
-* [FAQ](faq.md)
+* [Uvod](README.md)
+* [GUI: Navigacija](navigation.md)
+* [GUI: Projekti](projects.md)
+* [CLI: naredbeni redak](CLI.md)
+* [API: Python SDK](api-python-sdk.md)
+* [Podržane kamere](supported-cameras.md)
+* [Formati izlazne slike](formati-izlazne slike.md)
+* [Kloros+ Prijava](kloros+-login.md)
+* [Kalibracijski ciljevi](calibration-targets.md)
+* [Podržani jezici](supported-languages.md)
+* [Preuzmi](download.md)
+* [Često postavljana pitanja](faq.md)
 
-## Processing Images (GUI)
+## Obrada slike (GUI)
 
-* [Adjusting Project Settings](processing-images-gui/adjusting-project-settings.md)
-* [Adding Files to a Project](processing-images-gui/adding-files-to-a-project.md)
-* [Choosing Target Images](processing-images-gui/choosing-target-images.md)
-* [Starting the Processing](processing-images-gui/starting-the-processing.md)
-* [Monitoring the Processing](processing-images-gui/monitoring-the-processing.md)
-* [Finishing the Processing](processing-images-gui/finishing-the-processing.md)
+* [Prilagodba postavki projekta](processing-images-gui/adjusting-project-settings.md)
+* [Dodavanje datoteka u projekt](processing-images-gui/adding-files-to-a-project.md)
+* [Odabir ciljanih slika](processing-images-gui/choosing-target-images.md)
+* [Pokretanje obrade](processing-images-gui/starting-the-processing.md)
+* [Praćenje obrade](processing-images-gui/monitoring-the-processing.md)
+* [Završna obrada](processing-images-gui/finishing-the-processing.md)
 
-## PROJECT SETTINGS
+## POSTAVKA PROJEKTA
 
-* [Project Settings](project-settings/project-settings.md)
-* [Multispectral Index Formulas](project-settings/multispectral-index-formulas.md)
+* [Postavke projekta](project-settings/project-settings.md)
+* [Formule multispektralnog indeksa](project-settings/multispectral-index-formulas.md)
 
-## IMAGE VIEWER (GUI)
+## PREGLEDNIK SLIKA (GUI)
 
-* [Opening an Image Full Screen](image-viewer-gui/opening-an-image-full-screen.md)
-* [Image Layers](image-viewer-gui/image-layers.md)
-* [Index/LUT Sandbox](image-viewer-gui/index-lut-sandbox.md)
+* [Otvori sliku na cijelom zaslonu](image-viewer-gui/opening-an-image-full-screen.md)
+* [Slojevi slike](image-viewer-gui/image-layers.md)
+* [Index sandbox/LUT](image-viewer-gui/index-lut-sandbox.md)

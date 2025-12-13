@@ -1,247 +1,247 @@
-# Opening an Image Full Screen
+# Otvorite sliku na cijelom zaslonu
 
-The Chloros Image Viewer provides a dedicated full-screen interface for viewing, analyzing, and manipulating your multispectral images. Whether viewing original images or processed outputs, the Image Viewer offers powerful tools for inspection and analysis.
+Chloros Image Viewer pruža namjensko sučelje preko cijelog zaslona za pregled, analizu i manipuliranje vašim multispektralnim slikama. Bilo da se radi o izvornim slikama ili obrađenim rezultatima, preglednik slika nudi moćne alate za pregled i analizu.
 
-## Accessing the Image Viewer
+## Pristup pregledniku slika
 
-### From the File Browser
+### Iz preglednika datoteka
 
-The most common way to open an image in the Image Viewer:
+Najčešći način otvaranja slike u pregledniku slika:
 
-1. Ensure you're in the **File Browser** tab <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Click any **image thumbnail** in the image grid
-3. The image opens in the **main preview area** (center of screen)
-4. The image is now loaded and ready for full-screen viewing
+1. Provjerite jeste li na kartici **File Explorer**. <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
+2. Kliknite bilo koju **minijaturu slike** u rešetki slike
+3. Slika se otvara u **glavnom području pregleda** (središte zaslona)
+4. Slika je sada učitana i spremna za prikaz preko cijelog zaslona
 
-### Opening the Image Viewer Tab
+### Otvori karticu preglednika slika
 
-Once an image is loaded in the preview area:
+Nakon što se slika učita u područje pregleda:
 
-1. Click the **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> icon in the left sidebar
-2. The Image Viewer tab opens, displaying the selected image full-screen
-3. Advanced viewing and analysis tools become available in the left sidebar
-
-***
-
-## Image Viewer Interface Overview
-
-### Main Display Area
-
-The largest portion of the screen shows your image:
-
-* **Full resolution**: Images displayed at native resolution
-* **Zoomable**: Use controls or mouse wheel to zoom
-* **Pannable**: Click and drag to move around when zoomed
-* **Aspect ratio maintained**: Images scale proportionally
+1. Kliknite ikonu **Preglednik slika** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> na lijevoj bočnoj traci.
+2. Otvorit će se kartica Image Viewer, prikazujući odabranu sliku na cijelom zaslonu.
+3. Napredni alati za vizualizaciju i analizu bit će dostupni na lijevoj bočnoj traci.
 
 ***
 
-## Viewing Options
+## Pregled sučelja preglednika slika
 
-### Basic Image Navigation
+### Glavno područje prikaza
 
-#### Browse Through Images
+Veći dio ekrana prikazuje sliku:
 
-Navigate through your image set using keyboard shortcuts or buttons:
-
-* **Next image**: Click → button or press **→** (Right Arrow) key
-* **Previous image**: Click ← button or press **←** (Left Arrow) key
-* **Jump to specific image**: Return to File Browser and click desired thumbnail
-
-#### Zoom Controls
-
-Adjust magnification to inspect image details:
-
-**Zoom In:**
-
-* Click **+** (Plus) button
-* Press **+** or **=** key
-* Scroll mouse wheel **up**
-
-**Zoom Out:**
-
-* Click **−** (Minus) button
-* Press **−** (Minus) key
-* Scroll mouse wheel **down**
-
-**Fit to Screen:**
-
-* Click **↔** (Fit) button
-* Press **0** (Zero) key
-* Double-click on image
-
-#### Pan When Zoomed
-
-When zoomed in beyond screen size:
-
-1. Move mouse cursor over image
-2. Click and **hold left mouse button**
-3. **Drag** to move image around
-4. Release to stop panning
-
-**Alternative**: Use arrow keys to pan in small increments
+* **Puna razlučivost**: Slike se prikazuju u izvornoj razlučivosti.
+* **Zumiranje**: Koristite kontrole ili kotačić miša za zumiranje
+* **Mogućnost pomicanja** – kliknite i povucite za pomicanje kada je zumirano
+* **Održavani omjer slike**: Slike se proporcionalno mijenjaju
 
 ***
 
-## Pixel Value Inspection
+## Opcije prikaza
 
-### Viewing Pixel Values at Cursor
+### Osnovna navigacija slikama
 
-As you move your mouse cursor over the image, pixel values display in real-time:
+#### Pregledajte slike
 
-**Value display location:**
+Krećite se skupom slika pomoću tipkovničkih prečaca ili gumba:
 
-* **Floating number and red line in right side index LUT gradient legend**
-* **When zoomed in further, floating value near cursor and highlighted pixel**
-* Shows values for pixel **under cursor or highlighted**
-* Updates as you move mouse
+* **Slika ispod**: Kliknite gumb → ili pritisnite tipku **→** (desna strelica)
+* **Slika iznad**: Kliknite gumb ← ili pritisnite tipku **←** (strelica lijevo)
+* **Idite na određenu sliku** - Vratite se u preglednik datoteka i kliknite željenu sličicu
 
-***
+#### Kontrole zumiranja
 
-## Image Types You Can View
+Podesite povećanje za pregled detalja slike:
 
-### Original Images (Pre-Processing)
+**Uvećaj:**
 
-**RAW + JPG images from camera:**
+* Pritisnite gumb **+** (plus).
+* Pritisnite tipku **+** ili **=**.
+* Pomičite se kotačićem miša **gore**.
 
-* Display RAW data as previewed
-* Show original, uncorrected values
-* Useful for checking image quality before processing
+**Ukloniti:**
 
-### Calibrated Reflectance Images
+* Pritisnite gumb **−** (minus).
+* Pritisnite tipku **−** (minus).
+* Pomičite se kotačićem miša **dolje**.
 
-**After processing:**
+**Prilagodi ekranu:**
 
-* Vignette corrected
-* Reflectance calibrated
-* Multi-band TIFF (Red, Green, NIR, etc.)
-* Scientific data ready for analysis
+* Pritisnite gumb **↔** (Prilagodi).
+* Pritisnite tipku **0** (nula).
+* Dupli klik na sliku.
 
-### Index Images
+#### Pomicanje kada je zumirano
 
-**NDVI, NDRE, GNDVI, etc. (\_NDVI.tif files):**
+Kada se proširi izvan veličine zaslona:
 
-* Single-band grayscale images
-* Pixel values represent index calculation results
-* Range typically -1 to +1 for normalized indices
-* Can apply color LUTs for visualization
+1. Pomaknite kursor miša preko slike.
+2. Kliknite i **držite lijevu tipku miša**.
+3. **Povucite** za pomicanje slike.
+4. Otpustite za zaustavljanje pomicanja.
 
-***
-
-## Index and LUT Application
-
-Apply multispectral indices and color Look-Up Tables:
-
-1. Locate **Index/LUT Sandbox** in **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sidebar
-2. Select vegetation index (NDVI, NDRE, etc.)
-3. Select multispectral formula, or create your own custom one (Chloros+ only)
-4. Apply color LUT gradient for visualization
-5. Adjust value ranges and thresholds
-
-See [Index/LUT Sandbox](index-lut-sandbox.md) for detailed instructions.
+**Alternativa**: Koristite tipke sa strelicama za pomicanje u malim koracima.
 
 ***
 
-## Keyboard Shortcuts
+## Provjera vrijednosti piksela
 
-### Navigation
+### Prikaz vrijednosti piksela na pokazivaču
 
-* **→** (Right Arrow): Next image
-* **←** (Left Arrow): Previous image
-* **Home**: First image in list
-* **End**: Last image in list
+Dok pomičete kursor miša preko slike, vrijednosti piksela se prikazuju u stvarnom vremenu:
 
-### Zoom
+**Mjesto prikaza vrijednosti:**
 
-* **+** or **=**: Zoom in
-* **−**: Zoom out
-* **0** (Zero): Fit to screen
-* **Mouse Wheel**: Zoom in/out
-
-### View Controls
-
-* **P**: Toggle pixel percent mode
-* **L**: Toggle layers panel
-* **Esc**: Close full-screen or return to File Browser
-
-### Other
-
-* **Ctrl+S**: Save current image
-* **F**: Full-screen mode (if available)
+* **Plutajući broj i crvena linija u legendi gradijenta LUT s desne strane**
+* **Kada se dodatno poveća, pokretna vrijednost blizu pokazivača i istaknutog piksela**
+* Prikazuje vrijednosti piksela **ispod kursora ili označeno**
+* Ažuriranja kada pomaknete miš
 
 ***
 
-### Verifying Index Calculations
+## Vrste slika koje se mogu vidjeti
 
-Check that indices calculated correctly:
+### Izvorne slike (pretprocesiranje)
 
-1. Open NDVI or other index image
-2. Check vegetation areas:
-   * **NDVI**: Should show 0.4-0.9 for healthy plants
-   * **NDRE**: Higher values for vigorous growth
-   * **GNDVI**: Similar to NDVI but chlorophyll-sensitive
-3. Check non-vegetation:
-   * **Soil**: Near 0 or slightly negative
-   * **Water**: Negative values (-0.5 to 0)
+**RAW + JPG slike s fotoaparata:**
 
-***
+* Prikazuje RAW podatke u pretpregledu
+* Prikazuje izvorne vrijednosti bez ispravka
+* Korisno za provjeru kvalitete slike prije obrade
 
-## Troubleshooting Viewing Issues
+### Kalibrirane slike refleksije
 
-### Image Won't Open
+**Nakon obrade:**
 
-**Possible causes:**
+* Vinjeta ispravljena.
+* Kalibrirana refleksija.
+* Višepojasni TIFF (crveni, zeleni, NIR, itd.).
+* Znanstveni podaci spremni za analizu.
 
-* File corrupted during processing
-* Unsupported file format
-* Insufficient memory for large image
+### Indeksne slike
 
-**Solutions:**
+**NDVI, NDRE, GNDVI, itd. (\_NDVI.tif datoteke):**
 
-1. Try opening in external viewer to verify file integrity
-2. Check file format matches expected type
-3. Close other applications to free memory
-4. Try smaller/different image
-
-### Black or White Image Display
-
-**Possible causes:**
-
-* Value range outside display capability
-* 32-bit float image with unusual values
-* Index calculation error
-
-**Solutions:**
-
-1. Check pixel values - if all very low or very high, adjust display range
-2. Try opening in QGIS or similar with auto-range adjustment
-3. Check Debug Log from processing for errors
-
-### Pixel Values Seem Wrong
-
-**Possible causes:**
-
-* Viewing wrong image (original vs processed)
-* Calibration didn't apply correctly
-* Light sensor data wasn't included in input
-* Percent mode toggled incorrectly
-
-**Solutions:**
-
-1. Verify you're viewing processed output (check filename suffix)
-2. Check percent mode button state
-3. Compare with known-good images from same dataset
+*Jednotračne slike u sivim tonovima
+*Vrijednosti piksela predstavljaju rezultate izračuna indeksa
+*Tipični raspon od -1 do +1 za normalizirane indekse
+* LUT-ovi u boji mogu se primijeniti za prikaz
 
 ***
 
-## Next Steps
+## Primjena indeksa i LUT-ova
 
-Now that you can view images full-screen:
+Primijenite multispektralne indekse i tablice pretraživanja boja:
 
-* [**Image Layers**](image-layers.md) - Learn about multi-band visualization
-* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Apply custom indices and color mapping
-* [**Multispectral Index Formulas**](../project-settings/multispectral-index-formulas.md) - Understand available indices
+1. Pronađite **Index/LUT Sandbox** na bočnoj traci <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">
+2. Odaberite vegetacijski indeks (NDVI, NDRE, itd.)
+3. Odaberite multispektralnu formulu ili izradite prilagođenu (samo Chloros+)
+4. Primijenite gradijent tablice pretraživanja boja (LUT) za prikaz
+5. Podesite raspone vrijednosti i pragove
 
-For processing workflow, see:
+Pogledajte [Index/LUT Sandbox](index-lut-sandbox.md) za detaljne upute.
 
-* [**Processing Images (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Complete processing guide
+***
+
+## Tipkovnički prečaci
+
+### Navigacija
+
+* **→** (desna strelica): sljedeća slika
+* **←** (strelica lijevo): prethodna slika
+* **Početna**: prva slika na popisu
+* **Kraj**: Zadnja slika na popisu
+
+###Zum
+
+* ***** ili **=**: Povećaj
+* **−**: Smanji
+* **0** (nula): Prilagodi zaslonu
+* **Kotačić miša**: Povećaj/smanji
+
+### Kontrole zaslona
+
+* **P**: Uključi/isključi način rada postotka piksela
+* **L**: Promjena ploče slojeva
+* **Esc**: Zatvaranje cijelog zaslona ili povratak na preglednik datoteka
+
+### Ostali
+
+* **Ctrl+S**: Spremi trenutnu sliku
+* **F**: Način rada preko cijelog zaslona (ako je dostupan)
+
+***
+
+### Provjera izračuna indeksa
+
+Provjerite jesu li indeksi ispravno izračunati:
+
+1. Otvorite NDVI ili drugu indeksnu sliku.
+2. Provjerite područja s vegetacijom:
+   * **NDVI**: Treba prikazati između 0,4 i 0,9 za zdrave biljke.
+   * **NDRE**: više vrijednosti za snažan rast
+   * **GNDVI**: sličan NDVI, ali osjetljiv na klorofil
+3. Provjerite odsutnost vegetacije:
+   * **Prizemlje**: Blizu 0 ili blago negativno.
+   * **Voda**: Negativne vrijednosti (od -0,5 do 0).
+
+***
+
+## Rješavanje problema s prikazom
+
+### Slika se ne otvara
+
+**Mogući uzroci:**
+
+* Datoteka je oštećena tijekom obrade.
+* Format datoteke nije podržan.
+* Nedovoljno memorije za velike slike.
+
+**Rješenja:**
+
+1. Pokušajte je otvoriti u vanjskom pregledniku da provjerite integritet datoteke.
+2. Provjerite odgovara li format datoteke očekivanoj vrsti.
+3. Zatvorite ostale aplikacije kako biste oslobodili memoriju.
+4. Pokušajte s manjom ili drugačijom slikom.
+
+### Crno-bijela slika
+
+**Mogući uzroci:**
+
+* Raspon vrijednosti izvan kapaciteta prikaza.
+* 32-bitna plutajuća slika s neobičnim vrijednostima.
+* Greška u izračunu indeksa.
+
+**Rješenja:**
+
+1. Provjerite vrijednosti piksela: ako su sve preniske ili previsoke, prilagodite raspon prikaza.
+2. Pokušajte ga otvoriti u QGIS-u ili sličnom s automatskim podešavanjem raspona.
+3. Provjerite ima li pogrešaka u dnevniku otklanjanja pogrešaka obrade.
+
+### Vrijednosti piksela pojavljuju se netočno
+
+**Mogući uzroci:**
+
+* Prikaz netočne slike (izvorna naspram obrađene).
+* Kalibracija nije pravilno primijenjena.
+*Podaci svjetlosnog senzora nisu uključeni u unos.
+* Način postotka nije ispravno aktiviran.
+
+**Rješenja:**
+
+1. Provjerite vidite li obrađeni izlaz (provjerite nastavak naziva datoteke).
+2. Provjerite status gumba postotnog načina rada.
+3. Usporedite s poznatim točnim slikama iz istog skupa podataka.
+
+***
+
+## Sljedeći koraci
+
+Sada kada možete vidjeti slike na cijelom ekranu:
+
+* [**Slojevi slike**](image-layers.md): Saznajte više o višepojasnom prikazu.
+* [**Index Sandbox/LUT**](index-lut-sandbox.md): Primijenite prilagođene indekse i mapiranje boja.
+* [**Formule multispektralnog indeksa**](../project-settings/multispectral-index-formulas.md): Razumijevanje dostupnih indeksa.
+
+Za radni tijek obrade pogledajte:
+
+* [**Obrada slike (GUI)**](../processing-images-gui/adding-files-to-a-project.md): Kompletan vodič za obradu.

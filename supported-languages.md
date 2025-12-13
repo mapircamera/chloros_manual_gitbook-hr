@@ -1,62 +1,62 @@
-# Supported Languages
+# Podržani jezici
 
-Chloros provides full interface support in **38 languages worldwide**, making it accessible to users across the globe. You can switch languages instantly across all interfaces: Desktop, Browser, CLI, and Python SDK.
+Chloros nudi punu podršku za sučelje na **38 jezika diljem svijeta**, što ga čini dostupnim korisnicima diljem svijeta. Možete odmah promijeniti jezik na svim sučeljima: radna površina, preglednik, CLI i Python SDK.
 
-Chloros supports the following languages:
+Chloros podržava sljedeće jezike:
 
-| # | Language | Native Name | CLI Code |
+| # | Jezik | Domaće ime | CLI kod |
 |---|----------|-------------|----------|
-| 1 | 🇺🇸 English | English | `en` |
-| 2 | 🇪🇸 Spanish | Español | `es` |
-| 3 | 🇵🇹 Portuguese | Português | `pt` |
-| 4 | 🇫🇷 French | Français | `fr` |
-| 5 | 🇩🇪 German | Deutsch | `de` |
-| 6 | 🇮🇹 Italian | Italiano | `it` |
-| 7 | 🇯🇵 Japanese | 日本語 | `ja` |
-| 8 | 🇰🇷 Korean | 한국어 | `ko` |
-| 9 | 🇨🇳 Chinese (Simplified) | 简体中文 | `zh` |
-| 10 | 🇹🇼 Chinese (Traditional) | 繁體中文 | `zh-TW` |
-| 11 | 🇷🇺 Russian | Русский | `ru` |
-| 12 | 🇳🇱 Dutch | Nederlands | `nl` |
-| 13 | 🇸🇦 Arabic | العربية | `ar` |
-| 14 | 🇵🇱 Polish | Polski | `pl` |
-| 15 | 🇹🇷 Turkish | Türkçe | `tr` |
-| 16 | 🇮🇳 Hindi | हिंदी | `hi` |
-| 17 | 🇮🇩 Indonesian | Bahasa Indonesia | `id` |
-| 18 | 🇻🇳 Vietnamese | Tiếng Việt | `vi` |
-| 19 | 🇹🇭 Thai | ไทย | `th` |
-| 20 | 🇸🇪 Swedish | Svenska | `sv` |
-| 21 | 🇩🇰 Danish | Dansk | `da` |
-| 22 | 🇳🇴 Norwegian | Norsk | `no` |
-| 23 | 🇫🇮 Finnish | Suomi | `fi` |
-| 24 | 🇬🇷 Greek | Ελληνικά | `el` |
-| 25 | 🇨🇿 Czech | Čeština | `cs` |
-| 26 | 🇭🇺 Hungarian | Magyar | `hu` |
-| 27 | 🇷🇴 Romanian | Română | `ro` |
-| 28 | 🇺🇦 Ukrainian | Українська | `uk` |
-| 29 | 🇧🇷 Brazilian Portuguese | Português Brasileiro | `pt-BR` |
-| 30 | 🇭🇰 Cantonese | 粵語 | `zh-HK` |
-| 31 | 🇲🇾 Malay | Bahasa Melayu | `ms` |
-| 32 | 🇸🇰 Slovak | Slovenčina | `sk` |
-| 33 | 🇧🇬 Bulgarian | Български | `bg` |
-| 34 | 🇭🇷 Croatian | Hrvatski | `hr` |
-| 35 | 🇱🇹 Lithuanian | Lietuvių | `lt` |
-| 36 | 🇱🇻 Latvian | Latviešu | `lv` |
-| 37 | 🇪🇪 Estonian | Eesti | `et` |
-| 38 | 🇸🇮 Slovenian | Slovenščina | `sl` |
+| 1 | 🇺🇸 engleski | engleski | `en` |
+| 2 | 🇪🇸 španjolski | španjolski | `es` |
+| 3 | 🇵🇹 portugalski | portugalski | `pt` |
+| 4 | 🇫🇷 francuski | francuski | `fr` |
+| 5 | 🇩🇪 njemački | njemački | `de` |
+| 6 | 🇮🇹 talijanski | talijanski | `it` |
+| 7 | 🇯🇵 japanski | 日本語 | `ja` |
+| 8 | 🇰🇷 Korejski | 한국어 | `ko` |
+| 9 | 🇨🇳 Kineski (pojednostavljeni) | 简体中文 | `zh` |
+| 10 | 🇹🇼 Kineski (tradicionalni) | 繁體中文 | `zh-TW` |
+| 11 | 🇷🇺 ruski | ruski | `ru` |
+| 12 | 🇳🇱 nizozemski | Nizozemska | `nl` |
+| 13 | 🇸🇦 arapski | العربية | `ar` |
+| 14 | 🇵🇱 poljski | poljski | `pl` |
+| 15 | 🇹🇷 turski | Turkce | `tr` |
+| 16 | 🇮🇳 hindski | हिंदी | `hi` |
+| 17 | 🇮🇩 indonezijski | Bahasa Indonezija | `id` |
+| 18 | 🇻🇳 Vijetnamski | Tiếng Việt | `vi` |
+| 19 | 🇹🇭 tajlandski | ไทย | `th` |
+| 20 | 🇸🇪 švedski | Svenska | `sv` |
+| 21 | 🇩🇰 Danski | Dansk | `da` |
+| 22 | 🇳🇴 Norveški | Norsk | `no` |
+| 23 | 🇫🇮 finski | Suomi | `fi` |
+| 24 | 🇬🇷 grčki | Ελληνικά | `el` |
+| 25 | 🇨🇿 češki | Ceština | `cs` |
+| 26 | 🇭🇺 Mađarski | mađarski | `hu` |
+| 27 | 🇷🇴 Rumunjski | Română | `ro` |
+| 28 | 🇺🇦 ukrajinski | Ukrajinska | `uk` |
+| 29 | 🇧🇷 Brazilski portugalski | brazilski portugalski | `pt-BR` |
+| 30 | 🇭🇰 kantonski | 粵語 | `zh-HK` |
+| 31 | 🇲🇾 malajski | Bahasa Melayu | `ms` |
+| 32 | 🇸🇰 slovački | Slovenčina | `sk` |
+| 33 | 🇧🇬 bugarski | Bʺlgarski | `bg` |
+| 34 | 🇭🇷 Hrvatski | Hrvatski | `hr` |
+| 35 | 🇱🇹 litvanski | Lietuvių | `lt` |
+| 36 | 🇱🇻 Latvijski | Latviešu | `lv` |
+| 37 | 🇪🇪 estonski | Eesti | `et` |
+| 38 | 🇸🇮 slovenski | Slovenščina | `sl` |
 
-## How to Change Language
+## Kako promijeniti jezik
 
-### In Chloros Desktop/Browser
+### Na radnoj površini/pregledniku Chloros
 
-1. Open the application settings
-2. Navigate to the language selection menu
-3. Choose your preferred language from the list
-4. The interface will update instantly
+1. Otvorite postavke aplikacije.
+2. Idite na izbornik za odabir jezika.
+3. Odaberite željeni jezik s popisa.
+4. Sučelje će se odmah ažurirati.
 
-### In Chloros CLI
+### U Chloros CLI
 
-Use the `language` command to view or change the CLI interface language:
+Koristite naredbu `language` za prikaz ili promjenu jezika CLI sučelja:
 
 ```bash
 # View current language
@@ -75,19 +75,19 @@ chloros-cli language pt-BR
 chloros-cli language --list
 ```
 
-For more details, see the [CLI documentation](CLI.md).
+Za više detalja pogledajte [CLI dokumentaciju](CLI.md).
 
-### In Chloros Python SDK
+### U Chloros Python SDK
 
-Set the language parameter when initializing the SDK to get messages and outputs in your preferred language.
+Postavite parametar jezika prilikom pokretanja SDK-a za primanje poruka i rezultata na željenom jeziku.
 
-## Coverage
+## Pokrivenost
 
-All 38 languages are fully supported across:
+Svih 38 jezika u potpunosti je podržano u:
 
-* **Chloros Desktop** - Complete GUI translation
-* **Chloros Browser** - Web interface in all languages
-* **Chloros CLI** - Command-line interface and output messages
-* **Chloros Python SDK** - API messages and documentation
+* **Chloros Desktop**: Potpuni prijevod GUI-ja
+* **Chloros Browser**: web sučelje na svim jezicima
+* **Chloros CLI**: sučelje naredbenog retka i izlazne poruke
+* **Chloros Python SDK**: API poruke i dokumentacija
 
-Language support ensures that users worldwide can work efficiently in their native language without barriers.
+Višejezična podrška osigurava da korisnici diljem svijeta mogu učinkovito raditi na svom materinjem jeziku bez prepreka.

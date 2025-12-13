@@ -1,234 +1,234 @@
-# Adjusting Project Settings
+# Podešavanje postavki projekta
 
-Before processing your images, it's important to configure your project settings to match your workflow requirements. The Project Settings <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> panel provides comprehensive control over calibration, processing options, multispectral indices, and export formats.
+Prije obrade slika, važno je konfigurirati postavke projekta tako da odgovaraju vašim zahtjevima tijeka rada. Ploča Postavke projekta <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> nudi potpunu kontrolu nad kalibracijom, opcijama obrade, multispektralnim indeksima i izvoznim formatima.
 
-## Accessing Project Settings
+## Pristup postavkama projekta
 
-1. Open your project in Chloros
-2. Click the **Project Settings** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> icon in the left sidebar
-3. The Project Settings panel displays all configuration options
+1. Otvorite svoj projekt u Chlorosu
+2. Kliknite ikonu **Postavke projekta** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> na lijevoj bočnoj traci
+3. Ploča Postavke projekta prikazuje sve opcije konfiguracije
 
-{% hint style="info" %}
-**Settings are saved automatically** with your project. When you reopen a project, all settings are restored.
+{% hint style=&quot;info&quot; %}
+**Postavke se automatski spremaju** s projektom. Kada ponovno otvorite projekt, vraćaju se sve postavke.
 {% endhint %}
 
 ***
 
-## Quick Setup for Common Workflows
+## Brzo postavljanje za uobičajene tijekove rada
 
-### Default Settings (Recommended for Most Users)
+### Zadane postavke (preporučeno većini korisnika)
 
-For typical MAPIR Survey3 camera workflows, the default settings work well:
+Za tipične tijekove rada kamere MAPIR Survey3, zadane postavke dobro funkcioniraju:
 
-* ✅ **Vignette correction**: Enabled
-* ✅ **Reflectance calibration**: Enabled (requires images of MAPIR targets)
-* ✅ **Debayer method**: High Quality (Faster)
-* ✅ **Export format**: TIFF (16-bit)
+* ✅ **Ispravak vinjete**: Omogućeno
+* ✅ **Kalibracija refleksije**: Omogućeno (zahtijeva MAPIR ciljno snimanje)
+* ✅ **Debayer metoda**: Visoka kvaliteta (brže)
+* ✅ **Format izvoza**: TIFF (16 bita)
 
-Simply import your images and start processing with these defaults.
-
-***
-
-## Project Settings Overview
-
-The Project Settings panel is organized into several categories. Below is a summary of each section. For complete documentation, see [Project Settings](../project-settings/project-settings.md).
-
-### Target Detection
-
-Controls how Chloros identifies calibration targets in your images.
-
-**Key settings:**
-
-* **Minimum calibration sample area**: Size threshold for target detection (default: 25 pixels)
-* **Minimum target clustering**: Similarity threshold for grouping target regions (default: 60)
-
-**When to adjust:**
-
-* Increase sample area if getting false detections
-* Decrease if targets aren't being detected
-* Adjust clustering if targets are being split into multiple detections
-
-### Processing
-
-Main image processing and calibration options.
-
-**Key settings:**
-
-* **Vignette correction**: Compensates for lens darkening at edges ✅ Recommended
-* **Reflectance calibration**: Normalizes values using calibration targets ✅ Recommended
-* **Debayer method**: Algorithm for converting RAW to 3-channels multi-spectral
-* **Minimum recalibration interval**: Time between using calibration targets (0 = use all)
-
-**Advanced settings:**
-
-* **Light sensor timezone offset**: For PPK time synchronization (default: 0)
-* **Apply PPK corrections**: Uses GPS/exposure pin data from .daq files
-* **Exposure Pin 1/2**: Assigns cameras to exposure pins for dual-camera setups
-
-### Index (Multispectral Indices)
-
-Configure which vegetation indices to calculate and export.
-
-**How to add indices:**
-
-1. Click **"Add index"** button
-2. Select an index from the dropdown menu (NDVI, NDRE, GNDVI, etc.)
-3. Configure visualization settings (LUT colors, value ranges)
-4. Add multiple indices as needed
-
-**Popular indices:**
-
-* **NDVI**: General vegetation health (most common)
-* **NDRE**: Early stress detection with RedEdge
-* **GNDVI**: Chlorophyll concentration sensitive
-* **OSAVI**: Works well with visible soil
-* **EVI**: High leaf area index (LAI) regions
-
-**Custom formulas (Chloros+ only):**
-
-* Create custom multispectral index formulas
-* Use band math with all image channels
-* Save custom formulas for reuse
-
-For all available indices and formulas, see [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md).
-
-### Export
-
-Controls output file format and quality.
-
-**Available formats:**
-
-* **TIFF (16-bit)**: Recommended for GIS and scientific analysis (0-65,535 range)
-* **TIFF (32-bit, Percent)**: Floating-point reflectance values (0.0-1.0 range)
-* **PNG (8-bit)**: Lossless compression for visualization (0-255 range)
-* **JPG (8-bit)**: Smallest files, lossy compression (0-255 range)
+Jednostavno uvezite svoje slike i počnite ih obrađivati ​​s ovim zadanim vrijednostima.
 
 ***
 
-## Saving and Loading Settings
+##Pregled konfiguracije projekta
 
-### Save Project Template
+Ploča Postavke projekta organizirana je u nekoliko kategorija. U nastavku je sažetak svakog odjeljka. Za potpunu dokumentaciju pogledajte [Postavke projekta](../project-settings/project-settings.md).
 
-Create reusable templates for consistent workflows:
+### Otkrivanje cilja
 
-1. Configure all desired settings in the Project Settings panel
-2. Scroll to **"Save Project Template"** section at the bottom
-3. Enter a descriptive template name (e.g., "Survey3N\_RGN\_Agriculture")
-4. Click the save icon
+Kontrolira način na koji Chloros identificira ciljeve kalibracije na vašim slikama.
 
-**Benefits:**
+**Ključne postavke:**
 
-* Apply identical settings across multiple projects
-* Share configurations with team members
-* Maintain consistency for repeated surveys
+* **Minimalno područje uzorka kalibracije**: Prag veličine za otkrivanje cilja (zadano: 25 piksela).
+* **Minimalno ciljano grupiranje**: Prag sličnosti za ciljane regije klasteriranja (zadano: 60).
 
-### Load Template on New Project
+**Kada prilagoditi:**
 
-When creating a new project:
+* Povećajte područje uzorka ako dobijete lažne detekcije.
+* Smanjite ga ako ciljevi nisu otkriveni.
+* Prilagodite grupiranje ako su ciljevi podijeljeni u više detekcija.
 
-1. Select **"New Project"** from main menu
-2. Choose **"Load from template"** option
-3. Select your saved template
-4. All settings are automatically applied
+### Obrada
 
-### Working Directory
+Glavne mogućnosti obrade slike i kalibracije.
 
-The **"Save Project Folder"** setting specifies where new projects are created by default:
+**Ključne postavke:**
 
-* **Default location**: `C:\Users\[Username]\Chloros Projects`
-* **Change location**: Click edit icon and select new folder
-* **When to change**:
-  * Network drive for team collaboration
-  * Different drive with more storage space
-  * Organized folder structure by year/client
+* **Korekcija vinjete** – kompenzira zatamnjenje leće na rubovima ✅ Preporučeno
+* **Kalibracija refleksije** – normalizira vrijednosti pomoću ciljeva kalibracije ✅ Preporučeno
+* **Debayerova metoda**: algoritam za pretvaranje RAW-a u 3-kanalni multispektralni
+* **Minimalni interval rekalibracije**: Vrijeme između korištenja ciljeva kalibracije (0 = koristiti sve)
+
+**Napredne postavke:**
+
+* **Pomak vremenske zone senzora svjetla**: Za PPK sinkronizaciju vremena (zadano: 0)
+* **Primijeni PPK popravke**: koristi pin/GPS podatke o ekspoziciji iz .daq datoteka
+* **Igla za ekspoziciju 1/2**: Dodijelite kamere iglama za ekspoziciju za postavke dvostruke kamere
+
+### Indeks (multispektralni indeksi)
+
+Konfigurirajte koje indekse vegetacije izračunati i izvesti.
+
+**Kako dodati indekse:**
+
+1. Pritisnite gumb **«Dodaj indeks»**
+2. Odaberite indeks s padajućeg izbornika (NDVI, NDRE, GNDVI, itd.).
+3. Konfigurirajte postavke prikaza (LUT boje, rasponi vrijednosti).
+4. Dodajte više indeksa prema potrebi.
+
+**Popularni indeksi:**
+
+* **NDVI**: Opće zdravlje vegetacije (najčešće).
+* **NDRE**: Rano otkrivanje stresa uz RedEdge.
+* **GNDVI**: Osjetljivo na koncentraciju klorofila.
+* **OSAVI**: Dobro radi s vidljivim tlom
+* **EVI**: Regije s visokim indeksom lisne površine (LAI)
+
+**Prilagođene formule (samo Chloros+):**
+
+* Stvorite prilagođene formule multispektralnog indeksa
+* Koristite matematiku opsega sa svim kanalima slike
+* Spremite prilagođene formule za ponovnu upotrebu
+
+Da biste vidjeli sve dostupne indekse i formule, pogledajte [Formule multispektralnog indeksa](../project-settings/multispectral-index-formulas.md).
+
+### Izvoz
+
+Kontrolira format i kvalitetu izlazne datoteke.
+
+**Dostupni formati:**
+
+* **TIFF (16-bitni)**: Preporučeno za GIS i znanstvene analize (raspon od 0 do 65,535).
+* **TIFF (32-bit, postotak)**: Vrijednosti refleksije s pomičnim zarezom (raspon od 0,0 do 1,0).
+* **PNG (8-bitni)**: Kompresija bez gubitaka za prikaz (raspon od 0 do 255).
+* **JPG (8-bitni)**: manje datoteke, kompresija s gubitkom (raspon od 0 do 255).
 
 ***
 
-## PPK (Post-Processed Kinematic) Setup
+## Spremite i učitajte postavke
 
-If using MAPIR DAQ recorders with GPS for precise geolocation:
+### Spremite predložak projekta
 
-### Prerequisites
+Stvorite predloške za višekratnu upotrebu za dosljedne tijekove rada:
 
-* MAPIR DAQ with GPS (GNSS) module
-* .daq log file with exposure pin entries
-* Camera connected to DAQ exposure pins during capture session
+1. Konfigurirajte sve željene postavke na ploči Postavke projekta.
+2. Pomaknite se do odjeljka **“Spremi predložak projekta”** na dnu.
+3. Unesite opisni naziv za predložak (na primjer, “Survey3N\_RGN\_Agriculture”).
+4. Pritisnite ikonu Spremi.
 
-### Configuration Steps
+**Prednosti:**
 
-1. Place the .daq log file in your project folder
-2. In Project Settings, enable **"Apply PPK corrections"** checkbox
-3. Set **"Light sensor timezone offset"** if needed (default: 0 for UTC)
-4. Assign cameras to exposure pins:
-   * **Single camera**: Automatically assigned to Pin 1
-   * **Dual cameras**: Manually assign each camera to correct pin
+* Primijenite iste postavke na više projekata.
+* Podijelite postavke s članovima tima.
+* Održavajte dosljednost u ponovljenim anketama.
 
-**Exposure Pin Assignment:**
+### Učitaj predložak u novi projekt
 
-* **Exposure Pin 1**: Select camera model from dropdown
-* **Exposure Pin 2**: Select second camera or "Do Not Use"
-* Same camera cannot be assigned to both pins
+Prilikom izrade novog projekta:
 
-{% hint style="warning" %}
-**Important**: Exposure pins must be correctly assigned to their respective cameras. Incorrect assignment will result in wrong geolocation data.
+1. Odaberite **«Novi projekt»** iz glavnog izbornika.
+2. Odaberite opciju **«Učitaj iz predloška»**.
+3. Odaberite spremljeni predložak.
+4. Sve postavke će se primijeniti automatski.
+
+### Radni direktorij
+
+Postavka **"Spremi mapu projekta"** određuje gdje se prema zadanim postavkama stvaraju novi projekti:
+
+* **Zadana lokacija**: `C:\Users\[Username]\Chloros Projects`.
+* **Promijeni lokaciju**: Kliknite ikonu za uređivanje i odaberite novu mapu.
+* **Kada to promijeniti**:
+  * Mrežni pogon za timsku suradnju.
+  * Drugačija jedinica s više prostora za pohranu.
+  * Struktura mape organizirana po godini/klijentu.
+
+***
+
+## PPK (Post Processed Kinematics) postavke
+
+Ako koristite DAQ MAPIR loggere s GPS-om za preciznu geolokaciju:
+
+### Preduvjeti
+
+* DAQ MAPIR s GPS modulom (GNSS)
+* .daq log datoteka s unosima pribadače za izlaganje
+* Kamera spojena na DAQ igle za ekspoziciju tijekom sesije snimanja
+
+### Konfiguracijski koraci
+
+1. Postavite .daq datoteku dnevnika u mapu vašeg projekta
+2. U postavkama projekta označite okvir **«Primijeni PPK popravke»**
+3. Postavite **«Vremenski pomak svjetlosnog senzora»** ako je potrebno (zadano: 0 za UTC)
+4. Dodijelite kamere iglama ekspozicije:
+   * **Jedna kamera**: Automatski se dodjeljuje pinu 1.
+   * **Dvije kamere**: Ručno dodijelite svaku kameru ispravnom pinu.
+
+**Dodjela izložbene igle:**
+
+* **Oznaka ekspozicije 1**: Odaberite model kamere iz padajućeg izbornika.
+* **Oznaka ekspozicije 2**: Odaberite drugu kameru ili "Ne koristi".
+* Ista kamera ne može se dodijeliti objema iglama.
+
+{% hint style=&quot;upozorenje&quot; %}
+**Važno**: igle za ekspoziciju moraju biti ispravno dodijeljene odgovarajućim kamerama. Netočno mapiranje rezultirat će pogrešnim geolokacijskim podacima.
 {% endhint %}
 
 ***
 
-## Advanced Scenarios
+## Napredni scenariji
 
-### Multi-Camera Projects
+### Projekti s više kamera
 
-When processing images from multiple MAPIR cameras in one project:
+Prilikom obrade slika s više MAPIR kamera u projektu:
 
-1. Chloros automatically detects each camera model
-2. Each camera gets appropriate processing profile
-3. PPK: Manually assign each camera to correct exposure pin
-4. All cameras use same export format and indices
+1. Chloros automatski detektira svaki model kamere
+2. Svaka kamera dobiva pravi profil obrade
+3. PPK: Ručno dodijelite svakoj kameri odgovarajuću iglu ekspozicije.
+4. Sve kamere koriste isti izvozni format i indekse.
 
-**Example**: Survey3W RGN + Survey3N OCN dual-camera rig
+**Primjer**: oprema s dvostrukom kamerom Survey3W RGN + Survey3N OCN
 
-### Time-Lapse or Multi-Date Surveys
+### Studije s vremenskim odmakom ili na nekoliko datuma
 
-For repeated surveys of the same area over time:
+Za ponovljene studije istog područja tijekom vremena:
 
-1. Create a template with your standard settings
-2. Use consistent calibration target setup each session
-3. Process each date as a separate project
-4. Use identical settings for comparable results
-5. Export in same format for temporal analysis
+1. Napravite predložak sa svojim standardnim postavkama.
+2. Koristite dosljednu postavku cilja kalibracije svake sesije.
+3. Obradite svaki datum kao zaseban projekt.
+4. Koristite identične postavke za usporedive rezultate.
+5. Izvezite u isti format za vremensku analizu.
 
-### Large Datasets
+### Veliki skupovi podataka
 
-For projects with many images (500+):
+Za projekte s mnogo slika (više od 500):
 
-* Consider breaking into smaller projects by date or area
-* Use Chloros+ parallel processing for faster results
-* Consider CLI or API for batch automation
-* Adjust minimum recalibration interval to reduce target detection time
-
-***
-
-## Verifying Your Settings
-
-Before starting to process, review these key settings:
-
-* [ ] Camera model correctly detected in File Browser
-* [ ] Vignette correction enabled
-* [ ] Reflectance calibration enabled
-* [ ] At least one calibration target image imported
-* [ ] Desired multispectral indices added
-* [ ] Export format appropriate for your workflow
-* [ ] PPK settings configured (if using .daq with expposure events)
+* Razmotrite njihovo razbijanje na manje projekte po datumu ili području.
+* Koristite Chloros+ paralelnu obradu za brže rezultate.
+* Razmotrite CLI ili API za grupnu automatizaciju.
+* Podesite minimalni interval ponovne kalibracije kako biste smanjili vrijeme otkrivanja cilja.
 
 ***
 
-## Next Steps
+## Provjera konfiguracije
 
-Once your settings are configured:
+Prije nego počnete s obradom, pregledajte ove ključne postavke:
 
-1. **Mark calibration target images** - See [Choosing Target Images](choosing-target-images.md)
-2. **Start processing** - See [Starting the Processing](starting-the-processing.md)
-3. **Monitor progress** - See [Monitoring the Processing](monitoring-the-processing.md)
+* [ ] Model kamere ispravno otkriven u pregledniku datoteka.
+* [ ] Ispravak vinjete omogućen.
+* [ ] Omogućena je kalibracija refleksije.
+* [ ] Barem jedna uvezena slika cilja kalibracije.
+* [ ] Dodani željeni multispektralni indeksi.
+* [ ] Format izvoza prikladan za vaš tijek rada.
+* [ ] Konfigurirane PPK postavke (ako koristite .daq s događajima izloženosti).
 
-For complete details on all available settings, see the [Project Settings](../project-settings/project-settings.md) reference documentation.
+***
+
+## Sljedeći koraci
+
+Nakon što su postavke konfigurirane:
+
+1. **Provjerite ciljne slike kalibracije**: Pogledajte [Odabir ciljnih slika](choosing-target-images.md)
+2. **Pokrenite obradu**: Pogledajte [Pokretanje obrade](starting-the-processing.md)
+3. **Praćenje napretka**: Vidi [Praćenje obrade](monitoring-the-processing.md).
+
+Za detaljne informacije o svim dostupnim postavkama pogledajte referentnu dokumentaciju [Postavke projekta](../project-settings/project-settings.md).

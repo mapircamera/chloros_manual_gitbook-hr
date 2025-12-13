@@ -1,47 +1,47 @@
-# GUI : Navigation
+# GUI: Navigacija
 
-When you first launch Chloros and Chloros (Browser) it will start up its backend. Once it is ready the top left main menu icon will be revealed <img src=".gitbook/assets/image (1).png" alt="" data-size="line"> .
+Kada prvi put pokrenete Chloros i Chloros (preglednik), pokrenut će se vaš backend. Kada je spreman, ikona glavnog izbornika pojavit će se u gornjem lijevom kutu. <img src=".gitbook/assets/image (1).png" alt="" data-size="line"> .
 
 <figure><img src=".gitbook/assets/header.JPG" alt=""><figcaption></figcaption></figure>
 
-From left to right the top header contains:
+S lijeva na desno, gornje zaglavlje sadrži:
 
-### <img src=".gitbook/assets/image (1) (1).png" alt="" data-size="line"> Main Menu
+### <img src=".gitbook/assets/image (1) (1).png" alt="" data-size="line"> Glavni izbornik
 
-From the main menu you can start a new project, open an existing project or open the project folder.
+Iz glavnog izbornika možete započeti novi projekt, otvoriti postojeći projekt ili otvoriti mapu projekta.
 
-### <img src=".gitbook/assets/image (2).png" alt="" data-size="line"> Play/Start Button
+### <img src=".gitbook/assets/image (2).png" alt="" data-size="line"> Gumb za reprodukciju/pokretanje
 
-When enabled, the start processing button starts the image processing pipeline.
+Kada je omogućeno, gumb za početak obrade pokreće proces obrade slike.
 
-### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Progress Bar <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
+### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Traka napretka <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
 
-In the free Chloros mode, which processes all files sequentially, the progress bar will show 2 stages: Target Detect and Processing.
+U besplatnom načinu rada Chloros, koji obrađuje sve datoteke uzastopno, traka napretka će pokazati dvije faze: otkrivanje cilja i obrada.
 
-In the paid Chloros+ licensed mode, which process all files simultaneously, the progress bar shows 4 stages: Detecting, Analyzing, Calibrating, Exporting. If you hover your mouse cursor over the Chloros+ progress bar it will drop down the extended 4 progress bar panel so you can follow along. Clicking the top progress bar will freeze the dropdown panel, clicking again unfreezes it.
+U načinu plaćene licence Chloros+, koji obrađuje sve datoteke istovremeno, traka napretka prikazuje četiri faze: otkrivanje, analiza, kalibracija i izvoz. Postavljanje pokazivača miša iznad Chloros+ trake napretka prikazat će proširenu ploču trake napretka tako da možete pratiti proces. Klikom na gornju traku napretka zamrznut će se padajući izbornik; ponovnim klikom će se odlediti.
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 
-## Side Menu
+## Bočni izbornik
 
-The left sidebar menu contains various icons to interact with:
+Izbornik na lijevoj bočnoj traci sadrži nekoliko ikona za interakciju:
 
-#### <img src=".gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> [Project Settings](project-settings/project-settings.md)
+#### <img src=".gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> [Postavke projekta](project-settings/project-settings.md)
 
-The Project Setting tab allows you to adjust project global and project processing settings. Adjust these prior to starting to process your files.
+Kartica Postavke projekta omogućuje vam podešavanje globalnih postavki i postavki obrade za projekt. Postavite ga prije nego počnete obrađivati ​​svoje datoteke.
 
-#### <img src=".gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> File Browser
+#### <img src=".gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> File Explorer
 
-Add files/folders and remove files from the project. Duplicate files are ignored. Check the target column box for any target image, and the processing will only look at checked images for targets, greatly speeding up your processing time.
+Dodajte datoteke/mape i uklonite datoteke iz projekta. Duplicirane datoteke se zanemaruju. Označite okvir u ciljnom stupcu za bilo koju ciljanu sliku, a obrada će tražiti samo slike označene kao ciljane, što znatno ubrzava vrijeme obrade.
 
-#### <img src=".gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> [Image Viewer](image-viewer-gui/opening-an-image-full-screen.md)
+#### <img src=".gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> [Preglednik slika](image-viewer-gui/opening-an-image-full-screen.md)
 
-When an image is clicked in the main image viewer it is opened full screen in the Image Viewer tab.
+Kada kliknete na sliku u glavnom pregledniku slika, ona se otvara na cijelom zaslonu u kartici Preglednik slika.
 
-#### <img src=".gitbook/assets/icon_log.JPG" alt="" data-size="line"> Debug Log
+#### <img src=".gitbook/assets/icon_log.JPG" alt="" data-size="line"> Dnevnik otklanjanja pogrešaka
 
-Review the log for debug prints when issues happen. Copy/download the log and send to [MAPIR Support](https://www.mapir.camera/community/contact) for assistance.
+Pregledajte zapisnik radi ispisa otklanjanja pogrešaka kada se pojave problemi. Kopirajte/preuzmite zapisnik i pošaljite ga [tehničkoj podršci MAPIR](https://www.mapir.camera/community/contact) za pomoć.
 
-#### <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> [User Login](chloros+-login.md)
+#### <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> [Prijava korisnika](chloros+-login.md)
 
-The user login sidebar allows you to log into your Chloros+ account to unlock advanced features. You can also view the current application version, as well as adjust the language of the displayed text in Chloros GUI and CLI.
+Bočna traka za prijavu korisnika omogućuje vam da se prijavite na svoj Chloros+ račun kako biste otključali napredne značajke. Također možete vidjeti trenutnu verziju aplikacije, kao i prilagoditi jezik teksta koji se prikazuje u Chloros GUI i CLI.
