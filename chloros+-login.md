@@ -12,23 +12,14 @@ Kada se prijavite, prikazat će se detalji vašeg računa:
 
 Prijavite se svojim vjerodajnicama za Chloros+ kako biste omogućili CLI obradu.
 
-**Sintaksa:**
-
-```bash
+**Sintaksa:**```bash
 chloros-cli login <email> <password>
-```
-
-**Primjer:**
-
-```powershell
+```**Primjer:**```powershell
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style=&quot;upozorenje&quot; %}
-**Posebni znakovi**: Koristite jednostruke navodnike oko zaporki koje sadrže znakove kao što su `$`, `!` ili razmake.
-{% endhint %}
-
-**Izlaz:**
+{% hint style=&quot;upozorenje&quot; %}**Posebni znakovi**: Koristite jednostruke navodnike oko zaporki koje sadrže znakove kao što su `$`, `!` ili razmake.
+{% endhint %}**Izlaz:**
 
 <figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
 

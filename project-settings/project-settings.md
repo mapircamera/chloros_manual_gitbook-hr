@@ -7,10 +7,8 @@ Bočna traka s postavkama projekta Chloros <img src="../.gitbook/assets/icon_pro
 Za pristup postavkama projekta:
 
 1. Otvorite projekt u Chlorosu
-2. Kliknite karticu **Postavke projekta** <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> na lijevoj bočnoj traci.
-3. Ploča postavki prikazat će sve dostupne opcije postavki organizirane po kategorijama.
-
-***
+2. Kliknite karticu **Postavke projekta**<img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> na lijevoj bočnoj traci.
+3. Ploča postavki prikazat će sve dostupne opcije postavki organizirane po kategorijama.***
 
 ## Otkrivanje cilja
 
@@ -121,9 +119,7 @@ Ove postavke kontroliraju način na koji Chloros obrađuje i kalibrira vaše sli
   * Jedna kamera + jedan pin: Pin 2 automatski se postavlja na "Ne koristi"
   * Jedna komora + dvije igle: Pin 2 automatski se postavlja na "Ne koristi"
   * Više kamera: potreban je ručni odabir
-* **Napomena**: Ista kamera ne može se dodijeliti pinu 1 i pinu 2 istovremeno.
-
-***
+* **Napomena**: Ista kamera ne može se dodijeliti pinu 1 i pinu 2 istovremeno.***
 
 ## Indeks
 
@@ -178,9 +174,7 @@ Ove postavke kontroliraju format i kvalitetu izvezenih obrađenih slika.
   * **TIFF (16-bitni)**: Preporučeno za znanstvene analize i profesionalne tijekove rada. Čuva maksimalnu kvalitetu podataka bez artefakata kompresije. Idealno za multispektralnu analizu i naknadnu obradu u GIS softveru.
   * **TIFF (32-bitni, postotak)**: Idealno za tijekove rada koji zahtijevaju vrijednosti refleksije u postotnom obliku (0-100%). Nudi maksimalnu preciznost za radiometrijska mjerenja.
   * **PNG (8-bitni)**: Idealan za web pregled i općenito gledanje. Manje veličine datoteka s kompresijom bez gubitaka, ali smanjenim dinamičkim rasponom.
-  * **JPG (8-bitni)**: Manje veličine datoteka, idealne samo za preglede i web pregled. Koristi kompresiju s gubitkom, što nije prikladno za znanstvenu analizu.
-
-***
+  * **JPG (8-bitni)**: Manje veličine datoteka, idealne samo za preglede i web pregled. Koristi kompresiju s gubitkom, što nije prikladno za znanstvenu analizu.***
 
 ## Spremite predložak projekta
 
@@ -196,9 +190,7 @@ Ova vam značajka omogućuje spremanje trenutnih postavki projekta kao predlošk
   1. Konfigurirajte sve postavke projekta koje želite
   2. Unesite naziv predloška (na primjer, "RedEdge Survey3 NDVI Standard").
   3. Pritisnite ikonu za spremanje.
-  4. Sada se predložak može učitati prilikom izrade novih projekata.
-
-***
+  4. Sada se predložak može učitati prilikom izrade novih projekata.***
 
 ## Spremi mapu projekta
 
@@ -211,11 +203,7 @@ Ova postavka određuje gdje se novi projekti spremaju prema zadanim postavkama.
   * Postavite mrežni pogon za timsku suradnju.
   * Prijeđite na pogon s više prostora za pohranu velikih skupova podataka.
   * Organizirajte projekte prema godini, klijentu ili vrsti projekta u različitim mapama.
-* **Napomena**: Promjena ove postavke utječe samo na NOVE projekte. Postojeći projekti ostaju na svojim izvornim lokacijama.
-
-***
-
-## Postojanost konfiguracije
+* **Napomena**: Promjena ove postavke utječe samo na NOVE projekte. Postojeći projekti ostaju na svojim izvornim lokacijama.***## Postojanost konfiguracije
 
 Sve postavke projekta automatski se spremaju s datotekom projekta (format projekta __INLINE0006___). Kada ponovno otvorite projekt, sve postavke će se vratiti točno onakve kakve ste ih ostavili.
 
@@ -224,9 +212,9 @@ Sve postavke projekta automatski se spremaju s datotekom projekta (format projek
 Postavke se primjenjuju sljedećim redoslijedom:
 
 1. **Zadane postavke sustava**: Ugrađene zadane postavke koje definira Chloros
-2. **Postavke predloška**: Ako učitate predložak prilikom izrade projekta
-3. **Postavke projekta spremljene**: Postavke spremljene s datotekom projekta
-4. **Ručne postavke**: sve promjene koje napravite tijekom trenutne sesije
+2.**Postavke predloška**: Ako učitate predložak prilikom izrade projekta
+3.**Postavke projekta spremljene**: Postavke spremljene s datotekom projekta
+4.**Ručne postavke**: sve promjene koje napravite tijekom trenutne sesije
 
 ### Postavljanje i obrada slike
 
@@ -236,15 +224,13 @@ Većina promjena postavki (osobito u kategorijama Renderiranje i Izvoz) uzrokova
 * Radni imenik
 * Kalibrirani format slike (primjenjuje se prilikom izvoza)
 
-***
+***## Najbolji primjeri iz prakse
 
-## Najbolji primjeri iz prakse
-
-1. **Počnite sa zadanim postavkama** – Zadane postavke dobro funkcioniraju za većinu MAPIR sustava kamera i tipičnih radnih procesa.
-2. **Stvorite predloške** – Nakon što ste optimizirali postavke za određeni tijek rada ili kameru, spremite ih kao predložak kako biste osigurali dosljednost između projekata.
-3. **Testirajte prije potpune obrade**: Kada eksperimentirate s novim postavkama, testirajte ih na malom podskupu slika prije obrade cijelog skupa podataka.
-4. **Dokumentirajte svoje postavke**: Koristite opisne nazive predložaka koji označavaju sustav kamere, vrstu obrade i namjeravanu upotrebu (na primjer, “Survey3\_RGB\_NDVI\_Agriculture”).
-5. **Odabir formata izvoza**: Odaberite format izvoza na temelju krajnje upotrebe:
+1.**Počnite sa zadanim postavkama**– Zadane postavke dobro funkcioniraju za većinu MAPIR sustava kamera i tipičnih radnih procesa.
+2.**Stvorite predloške**– Nakon što ste optimizirali postavke za određeni tijek rada ili kameru, spremite ih kao predložak kako biste osigurali dosljednost između projekata.
+3.**Testirajte prije potpune obrade**: Kada eksperimentirate s novim postavkama, testirajte ih na malom podskupu slika prije obrade cijelog skupa podataka.
+4.**Dokumentirajte svoje postavke**: Koristite opisne nazive predložaka koji označavaju sustav kamere, vrstu obrade i namjeravanu upotrebu (na primjer, “Survey3\_RGB\_NDVI\_Agriculture”).
+5.**Odabir formata izvoza**: Odaberite format izvoza na temelju krajnje upotrebe:
    * Znanstvena analiza → TIFF (16 bit ili 32 bit)
    * GIS obrada → TIFF (16 bita)
    * Brzi pregled → PNG (8 bita)

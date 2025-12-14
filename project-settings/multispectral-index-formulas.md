@@ -73,9 +73,7 @@ $$
 
 _Referenca: Pinty, B. i M. Verstraete. GEMI: nelinearni indeks za praćenje globalne vegetacije sa satelita. Vegetacija 101 (1992): 15-20._
 
-***
-
-## GARI - Indeks otpornosti na zelenu atmosferu
+***## GARI - Indeks otpornosti na zelenu atmosferu
 
 Ovaj indeks je osjetljiviji na širok raspon koncentracija klorofila i manje osjetljiv na atmosferske utjecaje od NDVI.
 
@@ -85,9 +83,7 @@ $$
 
 Gama konstanta je težinska funkcija koja ovisi o uvjetima aerosola u atmosferi. ENVI koristi vrijednost od 1,7, što je vrijednost koju preporučuju Gitelson, Kaufman i Merzylak (1996., stranica 296).
 
-_Referenca: Gitelson, A., Y. Kaufman i M. Merzylak. «Korištenje zelenog kanala u daljinskom otkrivanju globalne vegetacije iz EOS-MODIS-a». Daljinsko očitavanje okoliša 58 (1996): 289-298._
-
-***
+_Referenca: Gitelson, A., Y. Kaufman i M. Merzylak. «Korištenje zelenog kanala u daljinskom otkrivanju globalne vegetacije iz EOS-MODIS-a». Daljinsko očitavanje okoliša 58 (1996): 289-298._***
 
 ## GCI - Indeks zelenog klorofila
 
@@ -115,9 +111,7 @@ GLI vrijednosti se kreću između -1 i +1. Negativne vrijednosti predstavljaju t
 
 _Referenca: Louhaichi, M., M. Borman i D. Johnson. "Prostorno smještena platforma i snimanje iz zraka za dokumentiranje utjecaja ispaše na pšenicu." Geocarto International 16, br. 1 (2001): 65-70._
 
-***
-
-## GNDVI - Zeleni normalizirani vegetacijski indeks razlike
+***## GNDVI - Zeleni normalizirani vegetacijski indeks razlike
 
 Ovaj indeks je sličan NDVI, osim što mjeri zeleni spektar od 540 do 570 nm umjesto crvenog spektra. Ovaj indeks je osjetljiviji na koncentraciju klorofila nego NDVI.
 
@@ -125,9 +119,7 @@ $$
 GNDVI = {(NIR - Green) \over (NIR + Green)  }
 $$
 
-_Referenca: Gitelson, A. i M. Merzlyak. "Daljinsko otkrivanje koncentracije klorofila u lišću viših biljaka." Advances in Space Research 22 (1998): 689-692._
-
-***
+_Referenca: Gitelson, A. i M. Merzlyak. "Daljinsko otkrivanje koncentracije klorofila u lišću viših biljaka." Advances in Space Research 22 (1998): 689-692._***
 
 ## GOSAVI - Indeks vegetacije prilagođen zelenom tlu
 
@@ -139,9 +131,7 @@ $$
 
 _Referenca: Sripada, R., et al. "Određivanje potreba kukuruza za dušikom tijekom sezone pomoću infracrvene aerofotografije u boji." Doktorska disertacija, Državno sveučilište Sjeverne Karoline, 2005._
 
-***
-
-## GRVI - Vegetacijski indeks zelenog omjera
+***## GRVI - Vegetacijski indeks zelenog omjera
 
 Ovaj indeks je osjetljiv na stope fotosinteze u šumskim krošnjama, budući da su zelene i crvene refleksije pod velikim utjecajem promjena u pigmentima lišća.
 
@@ -149,9 +139,7 @@ $$
 GRVI = {NIR \over Green }
 $$
 
-_Referenca: Sripada, R., et al. "Aerosnimanje u infracrvenoj boji za određivanje potreba kukuruza za dušikom na početku sezone." Agronomski vjesnik 98 (2006): 968-977._
-
-***
+_Referenca: Sripada, R., et al. "Aerosnimanje u infracrvenoj boji za određivanje potreba kukuruza za dušikom na početku sezone." Agronomski vjesnik 98 (2006): 968-977._***
 
 ## GSAVI - Vegetacijski indeks prilagođen zelenom tlu
 
@@ -183,9 +171,7 @@ Visoke LAI vrijednosti obično se kreću od približno 0 do 3,5. Međutim, kada 
 
 _Referenca: Boegh, E., H. Soegaard, N. Broge, C. Hasager, N. Jensen, K. Schelde i A. Thomsen. "Multispektralni podaci iz zraka za kvantificiranje indeksa lisne površine, koncentracije dušika i učinkovitosti fotosinteze u poljoprivredi." Daljinska istraživanja okoliša 81, br. 2-3 (2002): 179-193._
 
-***
-
-## LCI - Indeks klorofila u lišću
+***## LCI - Indeks klorofila u lišću
 
 Ovaj se indeks koristi za procjenu sadržaja klorofila u višim biljkama, osjetljivim na varijacije refleksije uzrokovane apsorpcijom klorofila.
 
@@ -193,9 +179,7 @@ $$
 LCI = {NIR2 - RedEdge \over NIR2 + Red}
 $$
 
-_Referenca: Datt, B. "Daljinsko očitavanje sadržaja vode u lišću eukaliptusa." Journal of Plant Physiology 154, br. 1 (1999): 30-36._
-
-***
+_Referenca: Datt, B. "Daljinsko očitavanje sadržaja vode u lišću eukaliptusa." Journal of Plant Physiology 154, br. 1 (1999): 30-36._***
 
 ## MNLI: modificirani nelinearni indeks
 
@@ -219,17 +203,13 @@ $$
 
 _Referenca: Qi, J., A. Chehbouni, A. Huete, Y. Kerr i S. Sorooshian. "Modificirani indeks vegetacije prilagođen tlu." Daljinska detekcija okoliša 48 (1994): 119-126._
 
-***
-
-## NDRE: RedEdge normalizirana razlika
+***## NDRE: RedEdge normalizirana razlika
 
 Ovaj indeks je sličan NDVI, ali uspoređuje kontrast između NIR i RedEdge umjesto Red, koji često ranije otkriva vegetacijski stres.
 
 $$
 NDRE = {NIR - RedEdge \over NIR + RedEdge  }
-$$
-
-***
+$$***
 
 ## NDVI – Normalizirani vegetacijski indeks razlike
 
@@ -243,9 +223,7 @@ Vrijednost ovog indeksa kreće se između -1 i 1. Uobičajeni raspon za zelenu v
 
 _Referenca: Rouse, J., R. Haas, J. Schell i D. Deering. Praćenje vegetacijskih sustava u Velikim ravnicama pomoću ERTS-a. Treći ERTS simpozij, NASA (1973.): 309-317._
 
-***
-
-## NLI – Nelinearni indeks
+***## NLI – Nelinearni indeks
 
 Ovaj indeks pretpostavlja da je odnos između mnogih vegetacijskih indeksa i površinskih biofizičkih parametara nelinearan. Linearizira odnose s površinskim parametrima koji imaju tendenciju da budu nelinearni.
 
@@ -253,9 +231,7 @@ $$
 NLI = {NIR^{2} - Red \over NIR^{2} + Red  }
 $$
 
-_Referenca: Goel, N. i W. Qin. "Utjecaji arhitekture krošnji na odnose između različitih vegetacijskih indeksa i LAI i Fpar: računalna simulacija." Remote Sensing Reviews 10 (1994): 309-347._
-
-***
+_Referenca: Goel, N. i W. Qin. "Utjecaji arhitekture krošnji na odnose između različitih vegetacijskih indeksa i LAI i Fpar: računalna simulacija." Remote Sensing Reviews 10 (1994): 309-347._***
 
 ## OSAVI – Optimizirani vegetacijski indeks prilagođen tlu
 
@@ -267,9 +243,7 @@ $$
 
 Referenca: Rondeaux, G., M. Steven i F. Baret. "Optimizacija vegetacijskih indeksa prilagođenih tlu." Daljinsko očitavanje okoliša 55 (1996): 95-107._
 
-***
-
-## RDVI: renormalizirani vegetacijski indeks razlike
+***## RDVI: renormalizirani vegetacijski indeks razlike
 
 Ovaj indeks koristi razliku između bliskih infracrvenih i crvenih valnih duljina, zajedno s NDVI, kako bi istaknuo zdravu vegetaciju. Neosjetljiv je na učinke geometrije promatranja tla i sunca.
 
@@ -277,9 +251,7 @@ $$
 RDVI = {(NIR- Red) \over \sqrt{(NIR + Red)}  }
 $$
 
-_Referenca: Roujean, J. i F. Breon. "Procjena PAR-a apsorbiranog vegetacijom iz dvosmjernih mjerenja refleksije." Daljinsko očitavanje okoliša 51 (1995): 375-384._
-
-***
+_Referenca: Roujean, J. i F. Breon. "Procjena PAR-a apsorbiranog vegetacijom iz dvosmjernih mjerenja refleksije." Daljinsko očitavanje okoliša 51 (1995): 375-384._***
 
 ## SAVI - Vegetacijski indeks prilagođen tlu
 
@@ -303,9 +275,7 @@ $$
 
 _Referenca: Bannari, A., H. Asalhi i P. Teillet. "Transformirani vegetacijski indeks (TDVI) za kartiranje vegetacijskog pokrova." U Zborniku simpozija o geoznanostima i daljinskom otkrivanju, IGARSS &#x27;02, IEEE International, svezak 5 (2002)._
 
-***
-
-## VARI - indeks otpornosti na vidljivu atmosferu
+***## VARI - indeks otpornosti na vidljivu atmosferu
 
 Ovaj se indeks temelji na ARVI i koristi se za procjenu udjela vegetacije u sceni s niskom osjetljivošću na atmosferske utjecaje.
 
@@ -313,9 +283,7 @@ $$
 VARI = {Green - Red \over Green + Red - Blue  }
 $$
 
-_Referenca: Gitelson, A., et al. "Linije vegetacije i tla u vidljivom spektralnom prostoru: koncept i tehnika za daljinsku procjenu udjela vegetacije." International Journal of Remote Sensing 23 (2002): 2537-2562._
-
-***
+_Referenca: Gitelson, A., et al. "Linije vegetacije i tla u vidljivom spektralnom prostoru: koncept i tehnika za daljinsku procjenu udjela vegetacije." International Journal of Remote Sensing 23 (2002): 2537-2562._***
 
 ## WDRVI - Vegetacijski indeks širokog dinamičkog raspona
 

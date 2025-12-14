@@ -1,90 +1,86 @@
 # Slojevi slike
 
-Padajući izbornik Slojevi slike u pregledniku slika Chloros omogućuje vam brzo prebacivanje između različitih verzija iste slike, od originalnih snimaka do obrađenih rezultata refleksije i izračunatih indeksnih slika.
+Padajući izbornik Slojevi slike u Chloros Image Vieweru omogućuje vam brzo prebacivanje između različitih verzija iste slike - od originalnih snimaka do obrađenih rezultata refleksije i izračunatih indeksnih slika.
 
 ## Što su slojevi slike?
 
-U Chlorosu, **slojevi** se odnose na različite rezultate slike dostupne za jednu izvornu sliku. Kada obrađujete slike, Chloros stvara nekoliko verzija:
+U Chlorosu, **slojevi** se odnose na različite izlazne slike dostupne za jednu izvornu sliku. Kada obrađujete slike, Chloros stvara više verzija:
 
 * **Originalne slike** (JPG i RAW datoteke s vašeg fotoaparata)
-* Rezultati **refleksija kalibrirana** (ako je omogućena kalibracija refleksije)
+* **Izlazi kalibracije refleksije** (ako je kalibracija refleksije bila omogućena)
 * **Ciljne slike** (ako slika sadrži kalibracijske ciljeve)
-* **Indeksne slike** (NDVI, NDRE, GNDVI, itd., ako su indeksi konfigurirani)
-
-**Padajući izbornik za odabir slojeva** koji se nalazi u gornjem desnom kutu preglednika slika omogućuje vam trenutno prebacivanje između ovih verzija bez napuštanja preglednika.
-
-***
+* **Indeksne slike**(NDVI, NDRE, GNDVI, itd. ako su indeksi konfigurirani)**Padajući izbornik za odabir slojeva**u gornjem desnom kutu preglednika slika omogućuje vam trenutno prebacivanje između ovih verzija bez napuštanja preglednika.***
 
 ## Dostupne vrste slojeva
 
-###JPG
+### JPG
 
 * Izvorna JPG pretpregledna slika s vašeg fotoaparata
 * Uvijek dostupno za sve slike
-* Sirovo, kako je snimljeno kamerom
-* Najbrže za učitavanje i prikaz
+* Neobrađeno, kako je snimljeno kamerom
+* Najbrži za učitavanje i prikaz
 
-**Kada vidjeti:**
+**Kada pogledati:**
 
 * Brzi pregled izvorne snimke
 * Provjera kompozicije i kadriranja slike
 * Provjera kvalitete snimanja prije obrade
 
-### RAW (original)
+### RAW (Original)
 
-* Izvorni podaci iz RAW senzora vašeg fotoaparata.
-*Bijeljeno bez naknadne obrade.
-* Veća bitna dubina od JPG-a (obično 12 ili 14-bitni podaci senzora).
+* Izvorni RAW podaci senzora s vašeg fotoaparata
+* Debayered bez naknadne obrade
+* Veća dubina bita nego JPG (obično 12-bitni ili 14-bitni podaci senzora)
 
-**Kada vidjeti:**
+**Kada pogledati:**
 
-* Provjerite kvalitetu izvornih podataka senzora.
-* Provjerite ima li problema sa senzorom ili artefaktima.
-* Usporedite rezultate prije i poslije obrade.
+* Provjera kvalitete izvornih podataka senzora
+* Provjera problema sa senzorom ili artefakata
+* Usporedba rezultata obrade prije/poslije
 
-### RAW (objektiv)
+### RAW (cilj)
 
-*Pojavljuje se samo za slike za koje je identificirano da sadrže kalibracijske ciljeve
-* Prikazuje izvornu RAW sliku s otkrivenom metom
-* Koristi se za provjeru je li otkrivanje cilja bilo uspješno
+* Pojavljuje se samo za slike za koje je identificirano da sadrže kalibracijske ciljeve
+* Prikazuje izvornu RAW sliku s otkrivenim ciljem
+* Koristi se za provjeru uspješnosti otkrivanja cilja
 
-**Kada vidjeti:**
+**Kada pogledati:**
 
-* Potvrdite da su kalibracijski ciljevi ispravno otkriveni
-* Provjerite kvalitetu slike objektiva
-* Riješite probleme s kalibracijom
+* Potvrđujemo da su kalibracijski ciljevi ispravno otkriveni
+* Provjera ciljne kvalitete slike
+* Rješavanje problema s kalibracijom
 
-{% hint style=&quot;info&quot; %}
-**Ciljni sloj** – Ovaj se sloj pojavljuje samo u padajućem izborniku za slike koje sadrže kalibracijske ciljeve. Normalne slike neće imati ovu opciju.
+{% hint style="info" %}
+**Ciljni sloj**: Ovaj se sloj pojavljuje samo u padajućem izborniku za slike koje sadrže kalibracijske ciljeve. Uobičajene slike snimanja neće imati ovu opciju.
 {% endhint %}
 
 ### RAW (refleksija)
 
-* Refleksija izlazne slike kalibrirana.
-* Vinjeta ispravljena (ako je omogućena u renderiranju).
+* Kalibrirana izlazna slika refleksije
+* Vinjeta ispravljena (ako je omogućena u obradi)
 * Refleksija kalibrirana pomoću ciljanih podataka (ako je omogućeno)
 * Višepojasni TIFF sa svim kanalima kamere
-*Vrijednosti piksela predstavljaju postotak refleksije (kada se koristi način postotka)
-* Spremno za rukovanje s [Index/LUT Sandbox](index-lut-sandbox.md)
+* Vrijednosti piksela predstavljaju postotak refleksije (kada se koristi način postotka)
+* Spremno za manipuliranje pomoću [Index/LUT Sandbox](index-lut-sandbox.md)
 
-**Kada gledati:**
+**Kada pogledati:**
 
-* Provjerite kalibrirane rezultate
-* Provjerite kvalitetu kalibracije
-* Provjerite vrijednosti piksela kako biste osigurali znanstvenu točnost
-* Usporedite s originalom kako biste vidjeli učinke kalibracije
+* Provjera kalibriranih rezultata
+* Provjera kvalitete kalibracije
+* Provjera znanstvene točnosti vrijednosti piksela
+* Uspoređivanje s originalom kako bi se vidjeli učinci kalibracije
 
-{% hint style=&quot;uspjeh&quot; %}
-**Preporučeno**: koristite sloj RAW (refleksija) kada provjeravate vrijednosti piksela za znanstvena mjerenja i analize.
+{% hint style="success" %}
+**Preporučeno**: Koristite sloj RAW (Reflectance) kada provjeravate vrijednosti piksela za znanstvena mjerenja i analize.
 {% endhint %}
 
 ### RAW (NDVI Index)... i slično
 
-*Slika izračunatog indeksa vegetacije (NDVI u ovom primjeru)
-* Naziv indeksa mijenja se ovisno o indeksu koji je konfiguriran tijekom obrade
-* Primjeri: RAW (NDVI indeks), RAW (NDRE indeks), RAW (GNDVI indeks), itd.
-*Slika u sivim tonovima s jednim pojasom prikazuje rezultate izračuna indeksa
-* Jedan sloj se pojavljuje za svaki indeks konfiguriran u postavkama projekta.
+* Slika izračunatog indeksa vegetacije (NDVI u ovom primjeru)
+* Naziv indeksa mijenja se ovisno o tome koji je indeks konfiguriran tijekom obrade
+* Primjeri: RAW (NDVI indeks), RAW (NDRE indeks), RAW (GNDVI indeks) itd.
+* Slika s jednom trakom u sivim tonovima prikazuje rezultate izračuna indeksa
+* Za svaki indeks konfiguriran u postavkama projekta pojavljuje se jedan sloj
 
 **Moguća imena indeksa:**
 
@@ -98,152 +94,129 @@ U Chlorosu, **slojevi** se odnose na različite rezultate slike dostupne za jedn
 
 **Kada pogledati:**
 
-* Ispitajte rezultate izračuna indeksa.
-* Provjerite raspone vrijednosti indeksa.
-* Identificirajte područja interesa.
-* Provjerite indeksne slike prije korištenja u GIS-u ili analizi.
+* Ispitivanje rezultata izračuna indeksa
+* Provjera raspona vrijednosti indeksa
+* Identificiranje područja interesa
+* Provjera indeksnih slika prije upotrebe u GIS-u ili analizi
 
-***
+***## Korištenje selektora slojeva
 
-## Korištenje birača slojeva
+### Otvaranje padajućeg izbornika
 
-### Otvorite padajući izbornik
+1. Otvorite sliku na cijelom zaslonu (kliknite bilo koju sličicu u pregledniku slika)
+2. Pronađite**padajući izbornik slojeva**u gornjem desnom kutu preglednika
+3. Padajući izbornik prikazuje trenutno odabrani sloj (npr. "JPG")
+4. Pritisnite padajući izbornik kako biste vidjeli sve dostupne slojeve
 
-1. Otvorite sliku na cijelom zaslonu (kliknite bilo koju sličicu u pregledniku slika).
-2. Pronađite **padajući izbornik slojeva** u gornjem desnom kutu preglednika.
-3. Padajući izbornik prikazuje trenutno odabrani sloj (na primjer, “JPG”).
-4. Pritisnite padajući izbornik kako biste vidjeli sve dostupne slojeve.
+### Promjena slojeva
 
-### Promijeni sloj
+1. Pritisnite padajući izbornik slojeva da biste otvorili popis
+2. Prikazani su svi dostupni slojevi za trenutnu sliku
+3. Pritisnite bilo koji naziv sloja da biste se prebacili na tu verziju
+4. Slika se odmah ažurira kako bi se prikazao odabrani sloj**Brzo prebacivanje:**
 
-1. Pritisnite padajući izbornik slojeva da biste otvorili popis.
-2. Prikazuju se svi dostupni slojevi za trenutnu sliku.
-3. Pritisnite bilo koji naziv sloja da biste se prebacili na tu verziju.
-4. Slika se odmah ažurira kako bi se prikazao odabrani sloj.
-
-**Brza promjena:**
-
-* Padajući izbornik pamti vaš posljednji odabir.
-* Prilikom navigacije na sljedeću sliku, Chloros pokušava prikazati istu vrstu sloja.
-*Ako taj sloj ne postoji na slici ispod, zadani je JPG.
+* Padajući izbornik pamti vaš posljednji odabir
+* Prilikom navigacije do sljedeće slike, Chloros pokušava prikazati istu vrstu sloja
+* Ako taj sloj ne postoji na sljedećoj slici, zadani je JPG
 
 ### Dostupnost sloja
 
-Nisu svi slojevi dostupni za sve slike:
+Nisu svi slojevi dostupni za svaku sliku:
 
-**Uvijek dostupno:**
+**Uvijek na raspolaganju:**
 
-* ✅ JPG (sve slike su pregledane u JPG).
+* ✅ JPG (svaka slika ima JPG pregled)
 
 **Uvjetno dostupno:**
 
-* ⚠️ RAW (original): samo ako je slika snimljena u RAW ili RAW+JPG modu.
-* ⚠️ RAW (cilj) - Samo ako slika sadrži otkrivene ciljeve kalibracije.
-* ⚠️ RAW (refleksija): samo nakon obrade s omogućenom kalibracijom refleksije.
-* ⚠️ RAW (\[Index] Index): samo nakon obrade s konfiguriranim indeksima.
+* ⚠️ RAW (Original) - Samo ako je slika snimljena u RAW ili RAW+JPG načinu
+* ⚠️ RAW (cilj) - Samo ako slika sadrži otkrivene ciljeve kalibracije
+* ⚠️ RAW (refleksija) - Samo nakon obrade s omogućenom kalibracijom refleksije
+* ⚠️ RAW (\[Indeks] Indeks) - Samo nakon obrade s konfiguriranim indeksima
 
-***
+***## Postojanost sloja
 
-## Postojanost sloja
+### Kretanje između slika
 
-### Navigacija između slika
+Kada prijeđete na drugu sliku (pomoću tipki sa strelicama ili klikom na minijature):**Postavke slojeva su sačuvane:**
 
-Kada prijeđete na drugu sliku (pomoću tipki sa strelicama ili klikom na minijature):
+* Ako gledate "RAW (reflektantnost)", sljedeća slika prikazuje "RAW (reflektantnost)" (ako je dostupno)
+* Ako gledate "RAW (NDVI indeks)", sljedeća slika prikazuje "RAW (NDVI indeks)" (ako je dostupno)
+* Ako isti sloj ne postoji, zadani je JPG
 
-**Preference slojeva su sačuvane:**
-
-* Ako je prikazano "RAW (refleksija)", sljedeća slika prikazuje "RAW (refleksija)" (ako je dostupno).
-* Ako se prikaže "RAW (NDVI indeks)", sljedeća slika prikazuje "RAW (NDVI indeks)" (ako je dostupno).
-* Ako isti sloj ne postoji, zadani je JPG.
-
-**Primjer tijeka rada:**
-
-1. Otvorite sliku 1, prebacite se na RAW (NDVI indeks).
-2. Pritisnite → za pregled slike 2.
-3. Slika 2 automatski prikazuje RAW (NDVI Index) sloj.
-4. Nastavite pregledavati: Sve slike prikazuju NDVI sloj.
-5. Vrlo učinkovit za pregled rezultata indeksa na mnogim slikama.
-
-***
+**Primjer tijeka rada:**1. Otvorite sliku 1, prebacite se na RAW (NDVI indeks)
+2. Pritisnite → za pregled slike 2
+3. Slika 2 automatski prikazuje RAW (NDVI Index) sloj
+4. Nastavite s navigacijom - sve slike prikazuju NDVI sloj
+5. Vrlo učinkovit za pregled rezultata indeksa na mnogim slikama***
 
 ## Uobičajeni tijek rada
 
 ### Tijek rada 1: Usporedba prije/poslije
 
-**Cilj**: Usporedite izvornu sliku s kalibriranom slikom.
+**Cilj**: Usporedite izvornu i kalibriranu sliku
 
-1. Otvorite obrađenu sliku u pregledniku slika.
-2. Odaberite **RAW (Original)** iz padajućeg izbornika.
-3. Zabilježite vinjetiranje i nekalibrirane vrijednosti.
-4. Prebacite se na **RAW (Reflectance)** u padajućem izborniku.
-5. Usporedite: Vinjetiranje je uklonjeno i vrijednosti su kalibrirane.
+1. Otvorite obrađenu sliku u pregledniku slika
+2. Odaberite**RAW (Original)**s padajućeg izbornika
+3. Zabilježite vinjetiranje i nekalibrirane vrijednosti
+4. Prebacite se na**RAW (Reflectance)**s padajućeg izbornika
+5. Usporedite - vinjetiranje uklonjeno, vrijednosti kalibrirane
 
-### Tijek rada 2: Pregledajte indeks
+### Tijek rada 2: Pregled indeksa**Cilj**: Brzo pregledajte NDVI rezultate u skupu podataka
 
-**Cilj**: Brzi pregled NDVI rezultata u cijelom skupu podataka.
+1. Otvorite prvu obrađenu sliku
+2. Odaberite**RAW (NDVI indeks)**s padajućeg izbornika
+3. Koristite tipku sa strelicom → za navigaciju do sljedeće slike
+4. NDVI sloj ostaje automatski
+5. Nastavite kroz sve slike, provjeravajući NDVI uzorke
+6. Prijeđite na**RAW (NDRE indeks)**za usporedbu
 
-1. Otvorite prvu obrađenu sliku.
-2. Odaberite **RAW (NDVI indeks)** iz padajućeg izbornika.
-3. Koristite tipku sa strelicom → za navigaciju do sljedeće slike.
-4. NDVI sloj se automatski održava.
-5. Nastavite sa svim slikama, provjeravajući NDVI uzorke.
-6. Prijeđite na **RAW (NDRE indeks)** za usporedbu.
+### Tijek rada 3: Provjera cilja**Cilj**: Provjerite jesu li sve ciljane slike ispravno otkrivene
 
-### Tijek rada 3: Provjera cilja
+1. Dođite do ciljane slike
+2. Odaberite**RAW (cilj)**s padajućeg izbornika
+3. Provjerite jesu li kalibracijski ciljevi jasno vidljivi i otkriveni
+4. Idite na sljedeću ciljanu sliku
+5. Ponovite provjeru za sve ciljeve
 
-**Cilj**: Provjerite jesu li sve ciljane slike ispravno otkrivene.
+### Tijek rada 4: Provjera vrijednosti piksela**Cilj**: provjeriti znanstvenu točnost vrijednosti refleksije
 
-1. Dođite do ciljane slike.
-2. Odaberite **RAW (Lens)** iz padajućeg izbornika.
-3. Provjerite jesu li kalibracijski ciljevi jasno vidljivi i otkriveni.
-4. Prijeđite na sljedeću ciljnu sliku.
-5. Ponovite provjeru za sve mete.
+1. Otvorite obrađenu sliku
+2. Odaberite sloj**RAW (Reflectance)**3. Omogući način rada**Postotak piksela**(gumb u gornjoj desnoj alatnoj traci)
+4. Pomaknite kursor preko vegetacijskih područja
+5. Provjerite jesu li vrijednosti piksela u očekivanim rasponima (30-70% za NIR, 5-15% za crvenu)
+6. Provjerite tla i vodena područja za odgovarajuće vrijednosti***
 
-### Tijek rada 4: Provjera vrijednosti piksela
-
-**Cilj**: Provjerite vrijednosti refleksije kako biste osigurali znanstvenu točnost.
-
-1. Otvorite obrađenu sliku.
-2. Odaberite sloj **RAW (Reflectance)**.
-3. Aktivirajte način rada **Pixel Percentage** (gumb na gornjoj desnoj alatnoj traci).
-4. Pomaknite kursor preko područja vegetacije.
-5. Provjerite jesu li vrijednosti piksela unutar očekivanih raspona (30-70% za NIR, 5-15% za crvenu).
-6. Provjerite imaju li površine tla i vode odgovarajuće vrijednosti.
-
-***
-
-## Razumijevanje vrijednosti piksela po sloju
+## Razumijevanje vrijednosti piksela prema sloju
 
 Različiti slojevi pokazuju različite raspone vrijednosti piksela:
 
 ### JPG sloj
 
-* **Raspon**: 0-255 (8 bita)
-* **Značenje**: Prikaz vrijednosti, s gama korekcijom
+* **Raspon**: 0-255 (8-bitni)
+* **Značenje**: Prikazane vrijednosti, gama-ispravljene
 * **Uporaba**: Samo vizualni pregled, ne za znanstvena mjerenja
 
 ### RAW (Original)
 
-* **Raspon**: 0-65535 (16 bita)
-* **Značenje**: Neobrađeni digitalni brojevi senzora.
-* **Upotreba**: Provjera performansi senzora, bez kalibracije.
+* **Raspon**: 0-65535 (16-bitni)
+* **Značenje**: neobrađeni digitalni brojevi senzora
+* **Uporaba**: Provjera rada senzora, nije kalibriran
 
 ### RAW (refleksija)
 
 * **Raspon**: 0-65,535 (16-bitni TIFF) ili 0,0-1,0 (32-bitni postotak)
 * **Značenje**: Kalibrirani postotak refleksije
-* **Upotreba**: Znanstvena mjerenja i analize
-
-**Za 16-bitni TIFF:** Podijelite sa 65,535 da biste dobili postotak refleksije **Za 32-bitni Postotak:** Vrijednosti izravno predstavljaju postotak (0,5 = 50% refleksije)
+* **Upotreba**: Znanstvena mjerenja i analize**Za 16-bitni TIFF:**Divide by 65,535 to get percent reflectance**For 32-bit Percent:** Values directly represent percent (0.5 = 50% reflectance)
 
 ### RAW (indeksne slike)
 
-* **Raspon**: varira ovisno o indeksu (obično -1,0 do +1,0 za normalizirane indekse)
-* **Značenje**: rezultat izračuna indeksa
+* **Raspon**: varira prema indeksu (obično -1,0 do +1,0 za normalizirane indekse)
+* **Značenje**: Rezultat izračuna indeksa
 * **Primjeri**:
-  * NDVI: -1 do +1 (vegetacija obično 0,4 do 0,9)
-  * NDRE: -1 do +1 (otkrivanje stresa)
-  * EVI: od 0 do 1 (poboljšana vegetacija)
+* NDVI: -1 do +1 (vegetacija obično 0,4 do 0,9)
+* NDRE: -1 do +1 (otkrivanje stresa)
+* EVI: 0 do 1 (pojačana vegetacija)
 
 ***
 
@@ -251,102 +224,78 @@ Različiti slojevi pokazuju različite raspone vrijednosti piksela:
 
 ### Učinkovito prebacivanje slojeva
 
-* **Poznavanje tipkovničkih prečaca**: Iako nema tipkovničkih prečaca za slojeve, navigacijske strelice (←/→) rade na svim slojevima
-* **Dosljedni tijek rada** – Odaberite jedan sloj (npr. NDVI) i pregledajte cijeli skup podataka prije prebacivanja na drugi
-* **Brze usporedbe** – Prebacite se između Izvornika i Refleksije da biste provjerili kvalitetu obrade
+* **Svijest o tipkovničkim prečacima**: Iako ne postoji tipkovnički prečac za slojeve, navigacijske strelice (←/→) rade na svim slojevima
+* **Dosljedni tijek rada**: Odaberite jedan sloj (npr. NDVI) i pregledajte cijeli skup podataka prije prebacivanja na drugi
+* **Brze usporedbe**: Prebacite se između Izvornika i Refleksije da biste provjerili kvalitetu obrade
 
 ### Razmatranja izvedbe
 
-* **JPG se učitava brže** – Koristite ovo za brzo pregledavanje mnogih slika.
-* **RAW slojevi se učitavaju sporije**: veća razlučivost i dubina bita.
-* **Indeksni slojevi**: brzina slična slojevima refleksije.
-* **Prvo učitavanje je najsporije** - Sljedeći prikazi istog sloja pohranjuju se u predmemoriju i brži su.
+* **JPG se najbrže učitava**: Koristite za brzu navigaciju kroz mnoge slike
+* **RAW slojevi se učitavaju sporije**: veća razlučivost i dubina bita
+* **Indeksni slojevi**: Slična brzina kao slojevi refleksije
+* **Prvo učitavanje je najsporije**: Sljedeći prikazi istog sloja pohranjuju se u predmemoriju i brži su
 
 ### Provjera kvalitete
 
-* **Uvijek provjerite RAW (Original)** - Provjerite kvalitetu izvornih podataka prije nego što povjerujete obrađenim rezultatima.
-* **Usporedi slojeve** - Koristite mijenjanje slojeva da potvrdite da je obrada radila ispravno.
-* **Provjerite raspone indeksa**: Koristite način postotnih piksela sa slojevima indeksa kako biste provjerili jesu li vrijednosti razumne.
-
-***
-
-## Rješavanje problema
+* **Uvijek provjeravajte RAW (Original)**: Provjerite kvalitetu izvornih podataka prije nego što povjerujete obrađenim izlazima
+* **Usporedite slojeve**: upotrijebite promjenu slojeva za provjeru ispravnosti obrade
+* **Provjerite raspone indeksa**: koristite način rada Postotak piksela sa slojevima indeksa da provjerite jesu li vrijednosti razumne***## Rješavanje problema
 
 ### Sloj nije dostupan
 
-**Problem**: Očekivani sloj se ne pojavljuje u padajućem izborniku.
+**Problem**: Očekivani sloj se ne pojavljuje u padajućem izborniku**Mogući uzroci:**
 
-**Mogući uzroci:**
+* Slika nije obrađena (dostupni su samo JPG i RAW (Original))
+* Kalibracija refleksije bila je onemogućena tijekom obrade
+* Određeni indeks nije konfiguriran u postavkama projekta
+* Slika je samo ciljna slika (nema generiranih indeksa za ciljeve)
 
-*Slika nije obrađivana (dostupni samo JPG i RAW (original)).
-*Kalibracija refleksije bila je onemogućena tijekom obrade.
-* U postavkama projekta nije konfiguriran nikakav određeni indeks.
-* Slika je samo ciljna slika (za ciljeve nisu generirani indeksi).
+**Rješenja:**1. Provjerite je li slika obrađena (provjerite izlaznu mapu za obrađene datoteke)
+2. Provjerite postavke projekta kako biste potvrdili da su indeksi konfigurirani
+3. Ponovno obradi s omogućenim željenim indeksima
 
-**Rješenja:**
+### Prikazan je pogrešan sloj**Problem**: slika se otvara u neočekivanom sloju**Uzrok**: Postavke sloja iz prethodne slike prenesene su naprijed, ali taj sloj ne postoji na trenutnoj slici**Rješenje**: Chloros se automatski vraća na JPG kada preferirani sloj nije dostupan - to je normalno ponašanje
 
-1. Provjerite je li slika obrađena (provjerite izlaznu mapu za obrađene datoteke).
-2. Provjerite konfiguraciju projekta kako biste potvrdili da su indeksi konfigurirani.
-3. Ponovno obradite s omogućenim željenim indeksima.
+### Ne mogu vidjeti kalibracijske ciljeve**Problem**: RAW (Target) sloj ne prikazuje detekciju cilja**Mogući uzroci:**
 
-### Prikazan neispravan sloj
+* Ciljevi nisu otkriveni tijekom obrade
+* Slika zapravo ne sadrži ciljeve
+* Postavke detekcije cilja prestroge
 
-**Problem**: slika se otvara na neočekivanom sloju.
+**Rješenja:**1. Provjerite zapisnik otklanjanja pogrešaka za poruke "Cilj je pronađen".
+2. Provjerite da slika doista sadrži vidljive kalibracijske ciljeve
+3. Podesite postavke otkrivanja cilja u postavkama projekta
+4. Pogledajte [Odabir ciljnih slika](../processing-images-gui/choosing-target-images.md)***
 
-**Uzrok**: Postavke sloja prenesene su s prethodne slike, ali taj sloj ne postoji na trenutnoj slici.
-
-**Popravak**: Chloros se automatski vraća na JPG kada preferirani sloj nije dostupan; To je normalno ponašanje.
-
-### Ciljevi kalibracije nisu vidljivi.
-
-**Problem**: RAW (ciljani) sloj ne prikazuje otkrivanje cilja.
-
-**Mogući uzroci:**
-
-*Mete nisu otkrivene tijekom obrade.
-*Slika zapravo ne sadrži ciljeve.
-* Postavke detekcije cilja su prestroge.
-
-**Rješenja:**
-
-1. Provjerite zapisnik za otklanjanje pogrešaka za poruke "Cilj je pronađen".
-2. Provjerite sadrži li slika stvarno vidljive ciljeve kalibracije.
-3. Podesite postavke otkrivanja cilja u postavkama projekta.
-4. Pogledajte [Odabir ciljanih slika](../processing-images-gui/choosing-target-images.md).
-
-***
-
-## Povezane funkcije
+## Povezane značajke
 
 ### Alati za preglednik slika
 
 Kada gledate bilo koji sloj, možete koristiti:
 
-* **Kontrole zumiranja**: Povećajte da biste pregledali detalje.
-* **Panorama**: kliknite i povucite za pomicanje zumirane slike.
-* **Provjera vrijednosti piksela**: Pregledajte vrijednosti na lokaciji kursora.
-* **Navigacijske strelice**: Krećite se između slika zadržavajući sloj.
-* **Pixel Percentage Mode**: Prebacivanje između DN i postotnog prikaza.
+* **Kontrole zumiranja**: Povećajte za pregled detalja
+* **Pomicanje**: kliknite i povucite za pomicanje po zumiranoj slici
+* **Provjera vrijednosti piksela**: Pogledajte vrijednosti na lokaciji kursora
+* **Navigacijske strelice**: Krećite se između slika zadržavajući sloj
+* **Način postotka piksela**: Prebacivanje između DN i postotnog prikaza
 
-Pogledajte [Otvori sliku preko cijelog zaslona](opening-an-image-full-screen.md) za potpunu dokumentaciju preglednika slika.
+Pogledajte [Otvaranje slike preko cijelog zaslona](opening-an-image-full-screen.md) za potpunu dokumentaciju Preglednika slika.
 
-### Indeks/LUT sandbox
+### Index/LUT Sandbox
 
-Za interaktivno testiranje i vizualizaciju indeksa:
+Za interaktivno testiranje indeksa i vizualizaciju:
 
-* **Izračun indeksa u stvarnom vremenu** - Isprobajte različite formule indeksa.
-* **LUT Mapiranje boja**: Primijenite gradijente boja na indekse u sivim tonovima.
-* **Izvoz vizualizacija**: Spremite indeksne slike u boji.
+* **Izračun indeksa u stvarnom vremenu**: testirajte različite formule indeksa
+* **LUT mapiranje boja**: Primijenite gradijente boja na indekse u sivim tonovima
+* **Izvoz vizualizacija**: Spremite indeksne slike u boji
 
-Pogledajte [Index Sandbox/LUT](index-lut-sandbox.md) za detalje.
-
-***
+Pogledajte [Index/LUT Sandbox](index-lut-sandbox.md) za detalje.***
 
 ## Sljedeći koraci
 
-Sada kada znate slojeve slike:
+Sada kada razumijete slojeve slike:
 
-* [**Otvori sliku preko cijelog zaslona**](opening-an-image-full-screen.md): Potpuni vodič za preglednik slika.
-* [**Index Sandbox/LUT**](index-lut-sandbox.md): Interaktivni prikaz indeksa
-* [**Formule multispektralnog indeksa**](../project-settings/multispectral-index-formulas.md): referenca dostupnih indeksa
-* [**Završetak obrade**](../processing-images-gui/finishing-the-processing.md): Razumijevanje obrađenih rezultata
+* [**Otvaranje slike preko cijelog zaslona**](opening-an-image-full-screen.md) - Kompletan vodič za preglednik slika
+* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Interaktivna vizualizacija indeksa
+* [**Formule multispektralnog indeksa**](../project-settings/multispectral-index-formulas.md) - Referenca dostupnih indeksa
+* [**Završetak obrade**](../processing-images-gui/finishing-the-processing.md) - Razumijevanje obrađenih izlaza
