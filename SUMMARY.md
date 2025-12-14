@@ -1,4 +1,4 @@
-# Sadržaj
+# Table of contents
 
 * [Početak rada](README.md)
 * [GUI: Navigacija](navigation.md)
@@ -6,8 +6,13 @@
 * [CLI: naredbeni redak](CLI.md)
 * [API: Python SDK](api-python-sdk.md)
 * [Podržane kamere](supported-cameras.md)
+<<<<<<< HEAD
 * [Formati izlazne slike](output-image-formats.md)
 * [Kloros+ Prijava](chloros+-login.md)
+=======
+* [\[Formati izlazne slike\](formati-izlazne slike.md)](formati-izlazne-slike-formati-izlazne-slike.md.md)
+* [Kloros+ Prijava](kloros+-prijava.md)
+>>>>>>> 4dd2efe869844186a6a2c87839fc822837bc0b2a
 * [Kalibracijski ciljevi](calibration-targets.md)
 * [Podržani jezici](supported-languages.md)
 * [Preuzmi](download.md)
