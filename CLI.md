@@ -24,7 +24,7 @@
 
 {% hint style="upozorenje" %}
 **Zahtjevi licence**: CLI zahtijeva plaćenu pretplatu Chloros+. Standardni (besplatni) planovi nemaju CLI pristup. Posjetite [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) za nadogradnju.
-{% završni savjet %}
+{% endhint %}
 
 ## Brzi početak
 
@@ -39,7 +39,7 @@ CLI je automatski uključen u instalacijski program Chloros:
 
 {% hint style="uspjeh" %}
 Instalacijski program automatski dodaje `chloros-cli` vašem sistemu PATH. Ponovno pokrenite terminal nakon instalacije.
-{% završni savjet %}
+{% endhint %}
 
 ### Prvo postavljanje
 
@@ -163,7 +163,7 @@ chloros-cli logout
 
 {% hint style="info" %}
 **SDK korisnici**: Python SDK također pruža programsku `logout()` metodu za brisanje vjerodajnica unutar Python skripti. Pogledajte [dokumentaciju Python SDK] (api-python-sdk.md#logout) za detalje.
-{% završni savjet %}
+{% endhint %}
 
 ***
 
@@ -294,7 +294,7 @@ chloros-cli language ja
 
 {% hint style="uspjeh" %}
 **Automatska postojanost**: Vaše postavke jezika spremaju se u `~/.chloros/cli_language.json` i traju tijekom svih sesija.
-{% završni savjet %}
+{% endhint %}
 
 ***
 
@@ -390,7 +390,7 @@ Chloros+ CLI **automatski skalira**paralelnu obradu kako bi odgovarala mogućnos
 
 {% hint style="uspjeh" %}
 **Automatska optimizacija**: CLI automatski otkriva specifikacije vašeg sustava i konfigurira optimalnu paralelnu obradu. Nije potrebna ručna konfiguracija!
-{% završni savjet %}
+{% endhint %}
 
 ### Debayerove metode
 
@@ -409,7 +409,7 @@ CLI koristi **High Quality (Faster)** kao zadani i preporučeni debayer algorita
 
 {% hint style="uspjeh" %}
 **Preporuka**: Uvijek omogućite korekciju vinjete kako biste osigurali jednoliku svjetlinu u okviru.
-{% završni savjet %}
+{% endhint %}
 
 ### Kalibracija refleksije
 
@@ -421,7 +421,7 @@ Pretvara neobrađene vrijednosti senzora u standardizirane postotke refleksije p
 
 {% hint style="info" %}
 **Zahtjevi**: Provjerite jesu li kalibracijske ploče pravilno eksponirane i vidljive na vašim slikama radi točne konverzije refleksije.
-{% završni savjet %}
+{% endhint %}
 
 ### PPK ispravci
 
@@ -607,7 +607,7 @@ Uobičajena vremena obrade za 100 slika (12 MP svaka):
 
 {% hint style="info" %}
 **Savjet za performanse**: Vrijeme obrade ovisi o broju slika, razlučivosti i specifikacijama računala.
-{% završni savjet %}
+{% endhint %}
 
 ***
 

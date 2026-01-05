@@ -52,7 +52,7 @@ U Chloros, **slojevi** se odnose na različite izlazne slike dostupne za jednu i
 
 {% hint style="info" %}
 **Ciljni sloj**: Ovaj se sloj pojavljuje samo u padajućem izborniku za slike koje sadrže kalibracijske ciljeve. Uobičajene slike snimanja neće imati ovu opciju.
-{% završni savjet %}
+{% endhint %}
 
 ### RAW (refleksija)
 
@@ -72,7 +72,7 @@ U Chloros, **slojevi** se odnose na različite izlazne slike dostupne za jednu i
 
 {% hint style="uspjeh" %}
 **Preporučeno**: koristite sloj RAW (Reflectance) kada provjeravate vrijednosti piksela za znanstvena mjerenja i analize.
-{% završni savjet %}
+{% endhint %}
 
 ### RAW (NDVI Index)... i slično
 

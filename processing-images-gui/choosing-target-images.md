@@ -24,7 +24,7 @@ Kada označite stupac Target za određene slike:
 
 {% hint style="uspjeh" %}
 **Poboljšanje brzine**: Označavanje 2-3 ciljane slike u skupu podataka od 500 slika može smanjiti vrijeme otkrivanja cilja s 30+ minuta na manje od 1 minute.
-{% završni savjet %}
+{% endhint %}
 
 ***
 
@@ -192,7 +192,7 @@ Iako se ne preporučuje za znanstveni rad, možete obraditi bez ciljeva:
 
 {% hint style="upozorenje" %}
 **Ne preporučuje se**: bez kalibracije refleksije, vrijednosti piksela predstavljaju samo relativnu svjetlinu, a ne znanstvena mjerenja refleksije. Koristite mete kalibracije za točne, ponovljive rezultate.
-{% završni savjet %}
+{% endhint %}
 
 ***
 

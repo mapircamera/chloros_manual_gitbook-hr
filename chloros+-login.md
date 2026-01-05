@@ -6,7 +6,7 @@ Korisnički <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> iz
 
 Kada se prijavite, bit će prikazani detalji vašeg računa:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" data-size="line"><figcaption></figcaption></figure>
 
 ## CLI Prijava
 

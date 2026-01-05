@@ -10,7 +10,7 @@ Nakon što ste izradili ili otvorili projekt u Chloros, sljedeći korak je dodav
 
 {% hint style="info" %}
 **Podržane vrste datoteka**: Chloros podržava RAW+JPG i JPG slikovne datoteke s MAPIR Survey3W i Survey3N kamera. Preporučuju se samo RAW+JPG.
-{% završni savjet %}
+{% endhint %}
 
 ***
 
@@ -107,7 +107,7 @@ Chloros automatski otkriva i zanemaruje duplicirane datoteke:
 
 {% hint style="upozorenje" %}
 **Važno**: Nemojte preimenovati ili mijenjati izvorne slikovne datoteke prije uvoza. Chloros oslanja se na izvorne nazive datoteka i metapodatke za pravilnu obradu.
-{% završni savjet %}
+{% endhint %}
 
 ***
 

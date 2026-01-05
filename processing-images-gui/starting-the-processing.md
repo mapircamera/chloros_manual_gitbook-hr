@@ -15,7 +15,7 @@ Prije nego što kliknete gumb Start, provjerite je li sve spremno:
 
 {% hint style="info" %}
 **Savjet**: Kliknite na nekoliko slika u pregledniku datoteka kako biste provjerili jesu li ispravno učitane prije obrade.
-{% završni savjet %}
+{% endhint %}
 
 ***
 
@@ -38,7 +38,7 @@ Gumb Start/Play nalazi se u gornjoj traci zaglavlja Chloros:
 
 {% hint style="uspjeh" %}
 **Obrada započeta**: Jednom kada se klikne, Chloros automatski upravlja svim koracima obrade - otkrivanje cilja, debayering, kalibracija, izračun indeksa i izvoz.
-{% završni savjet %}
+{% endhint %}
 
 ***
 
@@ -90,7 +90,7 @@ Chloros radi u dva različita načina obrade ovisno o vašoj licenci:
 
 {% hint style="info" %}
 **Chloros+ Brzina**: Paralelna obrada može biti 5-10 puta brža od sekvencijalnog načina za velike skupove podataka. Projekt od 500 slika koji traje 2 sata u besplatnom načinu rada može se dovršiti za 15-20 minuta s Chloros+.
-{% završni savjet %}
+{% endhint %}
 
 ***
 
@@ -174,7 +174,7 @@ Nakon pokretanja, cijeli cjevovod se pokreće automatski:
 
 {% hint style="upozorenje" %}
 **Savjet za performanse**: Za najbolju izvedbu Chloros+ zatvorite ostale aplikacije i pustite Chloros da koristi sve resurse sustava.
-{% završni savjet %}
+{% endhint %}
 
 ### Obrada se ne može pauzirati
 
@@ -229,7 +229,7 @@ Ako trebate zaustaviti obradu:
 
 {% hint style="upozorenje" %}
 **Nema djelomičnih rezultata**: Otkazivanjem se odbacuje sav napredak. Chloros ne sprema djelomično obrađene slike.
-{% završni savjet %}
+{% endhint %}
 
 ***
 
@@ -258,7 +258,7 @@ Stvarno vrijeme obrade uvelike varira ovisno o:
 
 {% hint style="info" %}
 **Prvo pokretanje**: Početna obrada može potrajati dulje jer Chloros gradi predmemorije i profile. Naknadna obrada sličnih skupova podataka bit će brža.
-{% završni savjet %}
+{% endhint %}
 
 ***
 

@@ -22,7 +22,7 @@ Preuzmite najnoviju verziju Chloros da biste započeli s multispektralnom obrado
 
 {% hint style="info" %}
 **GPU ubrzanje**: Chloros+ korisnici s NVIDIA GPU-om (4GB+ VRAM) mogu koristiti CUDA ubrzanje za znatno bržu obradu. Korisnici Chloros+ također dobivaju višenitnu obradu za maksimalnu brzinu.
-{% završni savjet %}
+{% endhint %}
 
 ***
 
@@ -49,7 +49,7 @@ Preuzmite najnoviju verziju Chloros da biste započeli s multispektralnom obrado
 
 {% hint style="uspjeh" %}
 Instalacijski program automatski dodaje `chloros-cli` vašem sustavu PATH za pristup s naredbenog retka.
-{% završni savjet %}
+{% endhint %}
 
 ***
 

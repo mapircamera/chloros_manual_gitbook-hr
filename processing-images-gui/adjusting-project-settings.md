@@ -10,7 +10,7 @@ Prije obrade vaših slika, važno je konfigurirati postavke projekta kako bi odg
 
 {% hint style="info" %}
 **Postavke se automatski spremaju** s vašim projektom. Kada ponovno otvorite projekt, vraćaju se sve postavke.
-{% završni savjet %}
+{% endhint %}
 
 ***
 
@@ -152,7 +152,7 @@ Ako koristite MAPIR DAQ snimače s GPS-om za preciznu geolokaciju:
 
 {% hint style="upozorenje" %}
 **Važno**: igle za ekspoziciju moraju biti ispravno dodijeljene odgovarajućim kamerama. Netočna dodjela rezultirat će pogrešnim geolokacijskim podacima.
-{% završni savjet %}
+{% endhint %}
 
 ***
 

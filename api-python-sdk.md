@@ -24,7 +24,7 @@
 
 {% hint style="upozorenje" %}
 **Zahtjevi za licencu**: Python SDK zahtijeva plaćenu pretplatu Chloros+ za pristup API. Standardni (besplatni) planovi nemaju pristup API/SDK. Posjetite [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) za nadogradnju.
-{% završni savjet %}
+{% endhint %}
 
 ## Brzi početak
 
@@ -38,7 +38,7 @@ pip install chloros-sdk
 
 {% hint style="info" %}
 **Prvo postavljanje**: Prije korištenja SDK, aktivirajte svoju licencu Chloros+ otvaranjem Chloros, Chloros (preglednik) ili Chloros CLI i prijavom sa svojim vjerodajnicama. Ovo treba učiniti samo jednom.
-{% završni savjet %}
+{% endhint %}
 
 ### Osnovna upotreba
 
@@ -137,7 +137,7 @@ SDK koristi istu licencu kao Chloros, Chloros (preglednik) i Chloros CLI. Aktivi
 
 {% hint style="info" %}
 **Odjava**: korisnici SDK mogu programski obrisati predmemorirane vjerodajnice pomoću metode `logout()`. Pogledajte metodu [logout()](#logout) u API Referenci.
-{% završni savjet %}
+{% endhint %}
 
 ### Testiraj vezu
 
@@ -404,7 +404,7 @@ print(f"Logout successful: {result}")
 
 {% hint style="info" %}
 **Potrebna je ponovna autentifikacija**: Nakon pozivanja `logout()`, morate se ponovno prijaviti putem Chloros, Chloros (preglednik) ili Chloros CLI prije korištenja SDK.
-{% završni savjet %}
+{% endhint %}
 
 ***
 

@@ -11,7 +11,7 @@ Kartica Karta prikazuje vaše slike na interaktivnoj 2D karti na temelju njihovi
 
 {% hint style="info" %}
 **Potreban GPS**: Na karti će se pojaviti samo slike s ugrađenim GPS koordinatama u svojim EXIF metapodacima. Provjerite ima li fotoaparat uključen GPS tijekom snimanja.
-{% završni savjet %}
+{% endhint %}
 
 ***
 
@@ -38,7 +38,7 @@ Kartica **Mapa**<img src="../.gitbook/assets/image (3).png" alt="" data-size="li
 
 {% hint style="info" %}
 Klikom na zaglavlja stupaca tablice također se sortiraju podaci retka
-{% završni savjet %}
+{% endhint %}
 
 ***
 
@@ -54,7 +54,7 @@ Svaka slika s GPS podacima predstavljena je oznakom na karti:
 
 {% hint style="uspjeh" %}
 SUPER-ZUMIRANJE: Kada dosegnete maksimalnu razinu zumiranja od dobavljača pločica karte, pločica se zatim povećava nakon daljnjeg zumiranja, što vam omogućuje da vidite oznake koje su blizu jedna drugoj.
-{% završni savjet %}
+{% endhint %}
 
 ### Pregled lebdeći
 
@@ -88,7 +88,7 @@ Kartica Karta podržava dva pružatelja pločica za pozadinske slike karte:
 
 Možete odabrati vrstu sloja karte (s lijeva na desno):
 
-&#x20;<img src="../.gitbook/assets/image (23).png" alt="" data-size="original">
+&#x20;<img src="../.gitbook/assets/image (23).png" alt="" data-size="line">
 
 ### Teren
 

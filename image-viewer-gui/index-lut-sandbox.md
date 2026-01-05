@@ -32,7 +32,7 @@ Sandbox pruža:
 
 {% hint style="uspjeh" %}
 **Najbolji tijek rada**: Koristite Sandbox za eksperimentiranje i pronalaženje optimalnih postavki indeksa i LUT-a, a zatim primijenite te postavke tijekom obrade projekta za cijeli skup podataka.
-{% završni savjet %}
+{% endhint %}
 
 ***
 
@@ -115,7 +115,7 @@ Za potpunu dokumentaciju formule indeksa, pogledajte [Multispektralne formule in
 
 {% hint style="uspjeh" %}
 **Snaga vizualizacije**: Primjena LUT-a u boji na indeksnu sliku u sivim tonovima dramatično olakšava prepoznavanje uzoraka, anomalija i područja od interesa na prvi pogled.
-{% završni savjet %}
+{% endhint %}
 
 ### Primjena LUT-a na indeksnu sliku
 
@@ -139,7 +139,7 @@ Nakon što se prikaže indeksna slika
 
 {% hint style="uspjeh" %}
 **Najbolja praksa**: Za indekse vegetacije kao što je NDVI, gradijent Red-Yellow-Green je najintuitivniji jer se usklađuje s prirodnim asocijacijama boja (zeleno=zdravo, žuto=umjereno, crveno=pod stresom).
-{% završni savjet %}
+{% endhint %}
 
 ### Podešavanje klasa boja
 
@@ -208,7 +208,7 @@ Kada vrijednosti piksela padnu izvan vašeg definiranog minimalnog/maksimalnog r
 
 {% hint style="upozorenje" %}
 **Ograničenje prozirnosti**: prozirni pikseli pojavit će se kao boja pozadine u pregledniku. Prilikom izvoza tijekom obrade, prozirnost se čuva u PNG formatu, ali ne i u JPG.
-{% završni savjet %}
+{% endhint %}
 
 #### 3. Pozadina indeksa
 
@@ -255,7 +255,7 @@ Za potpunu kontrolu nad svojom vizualizacijom, možete stvoriti **prilagođene g
 
 {% hint style="info" %}
 **Spremanje prilagođenih gradijenata**: prilagođeni gradijenti se mogu spremiti i ponovno koristiti. Pritisnite ikonu za spremanje na ploči LUT da biste sačuvali prilagođene sheme boja za buduću upotrebu.
-{% završni savjet %}
+{% endhint %}
 
 ***
 
@@ -274,7 +274,7 @@ Sve LUT prilagodbe u sandboxu ažuriraju sliku **trenutačno i interaktivno**:
 
 {% hint style="uspjeh" %}
 **Povratne informacije uživo**: trenutne vizualne povratne informacije omogućuju vam brzo eksperimentiranje s različitim postavkama dok ne pronađete optimalnu vizualizaciju za svoje potrebe analize.
-{% završni savjet %}
+{% endhint %}
 
 ### Tijek rada iterativnog usavršavanja
 
@@ -309,7 +309,7 @@ Razumijevanje stvarnih vrijednosti piksela ključno je za postavljanje efektivni
 
 {% hint style="info" %}
 **Dinamički raspon**: Različiti usjevi, godišnja doba i faze rasta imat će različite raspone vrijednosti. Uvijek provjerite vrijednosti piksela u vašem određenom skupu podataka prije postavljanja LUT raspona.
-{% završni savjet %}
+{% endhint %}
 
 ***
 
@@ -354,7 +354,7 @@ Exponential index:
 
 {% hint style="upozorenje" %}
 **Provjera formule**: Provjerite koristi li vaša formula trake dostupne u vašem fotoaparatu. Na primjer, RedEdge dostupan je samo na fotoaparatima s filtrom RedEdge.
-{% završni savjet %}
+{% endhint %}
 
 ***
 
