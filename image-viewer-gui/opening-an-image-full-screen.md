@@ -1,6 +1,6 @@
-# Otvorite sliku na cijelom zaslonu
+# Otvaranje slike preko cijelog zaslona
 
-Chloros Image Viewer pruža namjensko sučelje preko cijelog zaslona za pregled, analizu i manipuliranje vašim multispektralnim slikama. Bilo da se radi o izvornim slikama ili obrađenim rezultatima, preglednik slika nudi moćne alate za pregled i analizu.
+Chloros Image Viewer pruža namjensko sučelje preko cijelog zaslona za pregled, analizu i manipuliranje vašim multispektralnim slikama. Bilo da gledate izvorne slike ili obrađene izlaze, Image Viewer nudi moćne alate za pregled i analizu.
 
 ## Pristup pregledniku slika
 
@@ -8,198 +8,219 @@ Chloros Image Viewer pruža namjensko sučelje preko cijelog zaslona za pregled,
 
 Najčešći način otvaranja slike u pregledniku slika:
 
-1. Provjerite jeste li na kartici **File Explorer**. <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
-2. Kliknite bilo koju**minijaturu slike**u rešetki slike
-3. Slika se otvara u**glavnom području pregleda**(središte zaslona)
+1. Provjerite jeste li na kartici **Preglednik datoteka** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">
+2. Kliknite bilo koju **minijaturu slike** u rešetki slike
+3. Slika se otvara u **glavnom području pregleda** (središte zaslona)
 4. Slika je sada učitana i spremna za prikaz preko cijelog zaslona
 
-### Otvori karticu preglednika slika
+### Otvaranje kartice Preglednik slika
 
 Nakon što se slika učita u područje pregleda:
 
-1. Kliknite ikonu**Preglednik slika**<img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> na lijevoj bočnoj traci.
-2. Otvorit će se kartica Image Viewer, prikazujući odabranu sliku na cijelom zaslonu.
-3. Napredni alati za vizualizaciju i analizu bit će dostupni na lijevoj bočnoj traci.***
+1. Kliknite ikonu **Preglednik slika** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> na lijevoj bočnoj traci
+2. Otvara se kartica Image Viewer, prikazujući odabranu sliku preko cijelog zaslona
+3. Napredni alati za pregled i analizu postaju dostupni na lijevoj bočnoj traci
+
+***
 
 ## Pregled sučelja preglednika slika
 
 ### Glavno područje prikaza
 
-Veći dio ekrana prikazuje sliku:
+Najveći dio zaslona prikazuje vašu sliku:
 
-* **Puna razlučivost**: Slike se prikazuju u izvornoj razlučivosti.
+* **Puna razlučivost**: Slike prikazane u izvornoj razlučivosti
 * **Zumiranje**: Koristite kontrole ili kotačić miša za zumiranje
-* **Mogućnost pomicanja** – kliknite i povucite za pomicanje kada je zumirano
-* **Održavani omjer slike**: Slike se proporcionalno mijenjaju***
+* **Pannable**: kliknite i povucite da biste se kretali kada ste zumirani
+* **Zadržan omjer slike**: Slike se proporcionalno mijenjaju***
 
-## Opcije prikaza
+## Opcije gledanja
 
 ### Osnovna navigacija slikama
 
 #### Pregledajte slike
 
-Krećite se skupom slika pomoću tipkovničkih prečaca ili gumba:
+Krećite se kroz skup slika pomoću tipkovničkih prečaca ili gumba:
 
-* **Slika ispod**: Kliknite gumb → ili pritisnite tipku**→** (desna strelica)
-* **Slika iznad**: Kliknite gumb ← ili pritisnite tipku**←** (strelica lijevo)
-* **Idite na određenu sliku**- Vratite se u preglednik datoteka i kliknite željenu sličicu
+* **Sljedeća slika**: Kliknite gumb → ili pritisnite tipku**→** (strelica desno).
+* **Prethodna slika**: Kliknite gumb ← ili pritisnite tipku**←** (strelica lijevo).
+* **Skoči na određenu sliku**: Vratite se na preglednik datoteka i kliknite željenu sličicu
 
 #### Kontrole zumiranja
 
-Podesite povećanje za pregled detalja slike:**Uvećaj:**
+Podesite povećanje za pregled detalja slike:
 
-* Pritisnite gumb **+** (plus).
-* Pritisnite tipku **+**ili**=**.
-* Pomičite se kotačićem miša **gore**.**Ukloniti:**
+**Uvećaj:*** Pritisnite gumb **+** (plus).
+* Pritisnite tipku **+**ili**=*** Pomaknite kotačić miša **gore**
 
-* Pritisnite gumb **−** (minus).
+**Smanji:*** Pritisnite gumb **−** (minus).
 * Pritisnite tipku **−** (minus).
-* Pomičite se kotačićem miša **dolje**.**Prilagodi ekranu:**
+* Pomaknite kotačić miša **dolje**
 
-* Pritisnite gumb **↔** (Prilagodi).
+**Prilagodi ekranu:*** Pritisnite gumb **↔** (Prilagodi).
 * Pritisnite tipku **0** (nula).
-* Dupli klik na sliku.
+* Dvaput kliknite na sliku
 
 #### Pomicanje kada je zumirano
 
-Kada se proširi izvan veličine zaslona:
+Kada je uvećano iznad veličine zaslona:
 
-1. Pomaknite kursor miša preko slike.
-2. Kliknite i **držite lijevu tipku miša**.
-3.**Povucite**za pomicanje slike.
-4. Otpustite za zaustavljanje pomicanja.**Alternativa**: Koristite tipke sa strelicama za pomicanje u malim koracima.***## Provjera vrijednosti piksela
+1. Pomaknite pokazivač miša preko slike
+2. Kliknite i **držite lijevu tipku miša**
 
-### Prikaz vrijednosti piksela na pokazivaču
+3.**Povucite** za pomicanje slike
+4. Otpustite za zaustavljanje pomicanja
 
-Dok pomičete kursor miša preko slike, vrijednosti piksela se prikazuju u stvarnom vremenu:
+**Alternativa**: Koristite tipke sa strelicama za pomicanje u malim koracima***
 
-**Mjesto prikaza vrijednosti:**
+## Provjera vrijednosti piksela
 
-* **Plutajući broj i crvena linija u legendi gradijenta LUT s desne strane**
-* **Kada se dodatno poveća, pokretna vrijednost blizu pokazivača i istaknutog piksela**
-* Prikazuje vrijednosti piksela **ispod kursora ili označeno**
-* Ažuriranja kada pomaknete miš
+### Pregled vrijednosti piksela na kursoru
 
-***## Vrste slika koje se mogu vidjeti
+Dok pomičete kursor miša preko slike, vrijednosti piksela prikazuju se u stvarnom vremenu:**Mjesto prikaza vrijednosti:*** **Plutajući broj i crvena linija u legendi gradijenta LUT s desne strane*** **Kada se dodatno poveća, plutajuća vrijednost u blizini kursora i istaknutog piksela*** Prikazuje vrijednosti za piksel **ispod pokazivača ili označeno*** Ažuriranja dok pomičete miš
 
-### Izvorne slike (pretprocesiranje)**RAW + JPG slike s fotoaparata:**
+***
 
-* Prikazuje RAW podatke u pretpregledu
-* Prikazuje izvorne vrijednosti bez ispravka
+## Vrste slika koje možete vidjeti
+
+### Izvorne slike (prethodna obrada)
+
+**RAW + JPG slike s fotoaparata:**
+
+* Prikaz RAW podataka u pretpreglednom stanju
+* Prikaži originalne, nekorigirane vrijednosti
 * Korisno za provjeru kvalitete slike prije obrade
 
 ### Kalibrirane slike refleksije
 
 **Nakon obrade:**
 
-* Vinjeta ispravljena.
-* Kalibrirana refleksija.
-* Višepojasni TIFF (crveni, zeleni, NIR, itd.).
-* Znanstveni podaci spremni za analizu.
+* Vinjeta ispravljena
+* Refleksija kalibrirana
+* Višepojasni TIFF (Red, Green, NIR, itd.)
+* Znanstveni podaci spremni za analizu
 
 ### Indeksne slike
 
 **NDVI, NDRE, GNDVI, itd. (\_NDVI.tif datoteke):**
 
-*Jednotračne slike u sivim tonovima
-*Vrijednosti piksela predstavljaju rezultate izračuna indeksa
-*Tipični raspon od -1 do +1 za normalizirane indekse
-* LUT-ovi u boji mogu se primijeniti za prikaz
+* Jednopojasne slike u sivim tonovima
+* Vrijednosti piksela predstavljaju rezultate izračuna indeksa
+* Raspon obično od -1 do +1 za normalizirane indekse
+* Može primijeniti LUT-ove u boji za vizualizaciju
 
-***## Primjena indeksa i LUT-ova
+***
 
-Primijenite multispektralne indekse i tablice pretraživanja boja:
+## Indeks i LUT aplikacija
 
-1. Pronađite**Index/LUT Sandbox**na bočnoj traci <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">
-2. Odaberite vegetacijski indeks (NDVI, NDRE, itd.)
-3. Odaberite multispektralnu formulu ili izradite prilagođenu (samo Chloros+)
-4. Primijenite gradijent tablice pretraživanja boja (LUT) za prikaz
+Primijenite multispektralne indekse i tablice pretraživanja u boji:
+
+1. Pronađite **Index/LUT Sandbox**u**Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> bočnoj traci
+2. Odaberite indeks vegetacije (NDVI, NDRE, itd.)
+3. Odaberite multispektralnu formulu ili izradite vlastitu prilagođenu (samo Chloros+)
+4. Primijenite LUT gradijent boje za vizualizaciju
 5. Podesite raspone vrijednosti i pragove
 
-Pogledajte [Index/LUT Sandbox](index-lut-sandbox.md) za detaljne upute.***
+Pogledajte [Index/LUT Sandbox](index-lut-sandbox.md) za detaljne upute.
+
+***
 
 ## Tipkovnički prečaci
 
 ### Navigacija
 
-* **→** (desna strelica): sljedeća slika
-* **←** (strelica lijevo): prethodna slika
-* **Početna**: prva slika na popisu
+* **→** (desna strelica): Sljedeća slika
+* **←** (Strelica lijevo): Prethodna slika
+* **Početna**: Prva slika na popisu
 * **Kraj**: Zadnja slika na popisu
 
-###Zum
+### Zumiraj
 
-* *****ili**=**: Povećaj
+* **+**ili**=**: Povećaj
 * **−**: Smanji
 * **0** (nula): Prilagodi zaslonu
 * **Kotačić miša**: Povećaj/smanji
 
-### Kontrole zaslona
+### Pregled kontrole
 
-* **P**: Uključi/isključi način rada postotka piksela
+* **P**: Uključivanje/isključivanje postotka piksela
 * **L**: Promjena ploče slojeva
 * **Esc**: Zatvaranje cijelog zaslona ili povratak na preglednik datoteka
 
-### Ostali
+### Ostalo
 
 * **Ctrl+S**: Spremi trenutnu sliku
-* **F**: Način rada preko cijelog zaslona (ako je dostupan)***
+* **F**: Prikaz preko cijelog zaslona (ako je dostupan)***
 
 ### Provjera izračuna indeksa
 
 Provjerite jesu li indeksi ispravno izračunati:
 
-1. Otvorite NDVI ili drugu indeksnu sliku.
-2. Provjerite područja s vegetacijom:
-   * **NDVI**: Treba prikazati između 0,4 i 0,9 za zdrave biljke.
-   * **NDRE**: više vrijednosti za snažan rast
-   * **GNDVI**: sličan NDVI, ali osjetljiv na klorofil
-3. Provjerite odsutnost vegetacije:
-   * **Prizemlje**: Blizu 0 ili blago negativno.
-   * **Voda**: Negativne vrijednosti (od -0,5 do 0).***## Rješavanje problema s prikazom
+1. Otvorite NDVI ili drugu indeksnu sliku
+2. Provjerite područja vegetacije:
+   * **NDVI**: Trebao bi pokazati 0,4-0,9 za zdrave biljke
+   * **NDRE**: Više vrijednosti za snažan rast
+   * **GNDVI**: Sličan NDVI, ali osjetljiv na klorofil
+3. Provjerite ne-vegetaciju:
+   * **Tlo**: Blizu 0 ili blago negativno
+   * **Voda**: Negativne vrijednosti (-0,5 do 0)***
+
+## Rješavanje problema s gledanjem
 
 ### Slika se ne otvara
 
 **Mogući uzroci:**
 
-* Datoteka je oštećena tijekom obrade.
-* Format datoteke nije podržan.
-* Nedovoljno memorije za velike slike.
+* Datoteka je oštećena tijekom obrade
+* Nepodržani format datoteke
+* Nedovoljno memorije za veliku sliku
 
-**Rješenja:**1. Pokušajte je otvoriti u vanjskom pregledniku da provjerite integritet datoteke.
-2. Provjerite odgovara li format datoteke očekivanoj vrsti.
-3. Zatvorite ostale aplikacije kako biste oslobodili memoriju.
-4. Pokušajte s manjom ili drugačijom slikom.
+**Rješenja:**
 
-### Crno-bijela slika**Mogući uzroci:**
+1. Pokušajte otvoriti u vanjskom pregledniku da provjerite integritet datoteke
+2. Provjerite odgovara li format datoteke očekivanoj vrsti
+3. Zatvorite ostale aplikacije kako biste oslobodili memoriju
+4. Pokušajte s manjom/različitom slikom
 
-* Raspon vrijednosti izvan kapaciteta prikaza.
-* 32-bitna plutajuća slika s neobičnim vrijednostima.
-* Greška u izračunu indeksa.
+### Prikaz crne ili bijele slike
 
-**Rješenja:**1. Provjerite vrijednosti piksela: ako su sve preniske ili previsoke, prilagodite raspon prikaza.
-2. Pokušajte ga otvoriti u QGIS-u ili sličnom s automatskim podešavanjem raspona.
-3. Provjerite ima li pogrešaka u dnevniku otklanjanja pogrešaka obrade.
+**Mogući uzroci:**
 
-### Vrijednosti piksela pojavljuju se netočno**Mogući uzroci:**
+* Raspon vrijednosti izvan mogućnosti prikaza
+* 32-bitna float slika s neobičnim vrijednostima
+* Pogreška izračuna indeksa
 
-* Prikaz netočne slike (izvorna naspram obrađene).
-* Kalibracija nije pravilno primijenjena.
-*Podaci svjetlosnog senzora nisu uključeni u unos.
-* Način postotka nije ispravno aktiviran.
+**Rješenja:**
 
-**Rješenja:**1. Provjerite vidite li obrađeni izlaz (provjerite nastavak naziva datoteke).
-2. Provjerite status gumba postotnog načina rada.
-3. Usporedite s poznatim točnim slikama iz istog skupa podataka.***
+1. Provjerite vrijednosti piksela - ako su sve vrlo niske ili vrlo visoke, prilagodite raspon prikaza
+2. Pokušajte otvoriti u QGIS-u ili sličnom s automatskim podešavanjem raspona
+3. Provjerite zapisnik otklanjanja pogrešaka od obrade za pogreške
+
+### Vrijednosti piksela čine se pogrešnim
+
+**Mogući uzroci:**
+
+* Gledanje pogrešne slike (izvorna naspram obrađene)
+* Kalibracija nije pravilno primijenjena
+* Podaci svjetlosnog senzora nisu uključeni u unos
+* Način postotka nije ispravno uključen
+
+**Rješenja:**
+
+1. Provjerite gledate li obrađeni izlaz (provjerite sufiks naziva datoteke)
+2. Provjerite stanje gumba postotnog načina rada
+3. Usporedite s poznatim dobrim slikama iz istog skupa podataka
+
+***
 
 ## Sljedeći koraci
 
-Sada kada možete vidjeti slike na cijelom ekranu:
+Sada kada možete gledati slike preko cijelog zaslona:
 
-* [**Slojevi slike**](image-layers.md): Saznajte više o višepojasnom prikazu.
-* [**Index Sandbox/LUT**](index-lut-sandbox.md): Primijenite prilagođene indekse i mapiranje boja.
-* [**Formule multispektralnog indeksa**](../project-settings/multispectral-index-formulas.md): Razumijevanje dostupnih indeksa.
+* [**Slojevi slike**](image-layers.md) - Saznajte više o višepojasnoj vizualizaciji
+* [**Index/LUT Sandbox**](index-lut-sandbox.md) - Primijenite prilagođene indekse i mapiranje boja
+* [**Formule multispektralnog indeksa**](../project-settings/multispectral-index-formulas.md) - Razumijevanje dostupnih indeksa
 
 Za radni tijek obrade pogledajte:
 
-* [**Obrada slike (GUI)**](../processing-images-gui/adding-files-to-a-project.md): Kompletan vodič za obradu.
+* [**Obrada slika (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Kompletan vodič za obradu

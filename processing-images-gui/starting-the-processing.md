@@ -1,366 +1,352 @@
-# Starting the Processing
+# Pokretanje obrade
 
-Once you've imported your images, marked your calibration targets, and configured your project settings, you're ready to begin processing. This page guides you through initiating the Chloros processing pipeline.
+Nakon što uvezete svoje slike, označite ciljeve kalibracije i konfigurirate postavke projekta, spremni ste za početak obrade. Ova stranica vas vodi kroz pokretanje cjevovoda za obradu Chloros.
 
-## Pre-Processing Checklist
+## Kontrolni popis prije obrade
 
-Before clicking the Start button, verify that everything is ready:
+Prije nego što kliknete gumb Start, provjerite je li sve spremno:
 
-* [ ] **Files imported** - All images appear in File Browser
-* [ ] **Target images marked** - Target column checked for calibration images
-* [ ] **Camera models detected** - Camera Model column shows correct cameras
-* [ ] **Settings configured** - Project Settings reviewed and adjusted
-* [ ] **Indices selected** - Desired multispectral indices added (if needed)
-* [ ] **Export format chosen** - Output format appropriate for your workflow
-
-{% hint style="info" %}
-**Tip**: Click through a few images in the File Browser to verify they loaded correctly before processing.
-{% endhint %}
-
-***
-
-## Starting the Processing
-
-### Locate the Start Button
-
-The Start/Play button is located in the top header bar of Chloros:
-
-* Position: Top center of the window
-* Icon: **Play/Start button** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
-* Status: Button is enabled (bright) when ready to process
-
-### Click to Start
-
-1. Click the **Play/Start button** in the top header
-2. Processing begins immediately
-3. The button becomes disabled (grayed out) during processing
-4. Progress bar updates, showing processing status
-
-{% hint style="success" %}
-**Processing Started**: Once clicked, Chloros automatically handles all processing steps - target detection, debayering, calibration, index calculation, and export.
-{% endhint %}
-
-***
-
-## Understanding Processing Modes
-
-Chloros operates in two different processing modes depending on your license:
-
-### Free Mode (Sequential Processing)
-
-**Available to all users**
-
-**How it works:**
-
-* Processes images one at a time, sequentially
-* Single-threaded operation
-* Lower memory usage
-
-**Progress bar shows 2 stages:**
-
-1. **Target Detect** - Scanning for calibration targets
-2. **Processing** - Applying calibration and exporting images
-
-**Processing time:**
-
-* Much slower than Chloros+ parallel mode
-* Suitable for small to medium datasets (< 200 images)
-
-### Chloros+ Mode (Parallel Processing)
-
-**Requires Chloros+ license**
-
-**How it works:**
-
-* Processes multiple images simultaneously
-* Multi-threaded operation (up to 16 parallel workers)
-* Utilizes multiple CPU cores
-* Optional GPU (CUDA) acceleration with NVIDIA graphics cards
-
-**Progress bar shows 4 stages:**
-
-1. **Detecting** - Finding calibration targets
-2. **Analyzing** - Examining image metadata and preparing pipeline
-3. **Calibrating** - Applying corrections and calibrations
-4. **Exporting** - Saving processed images and indices
-
-**Progress bar interaction:**
-
-* **Hover mouse** over bar to see detailed 4-stage dropdown panel
-* **Click** progress bar to freeze the dropdown panel in place
-* **Click again** to unfreeze and hide panel
-
-**Processing time:**
-
-* Significantly faster than free mode
-* Scales with CPU core count
-* GPU acceleration further improves speed
+* [ ] **Uvezene datoteke** - Sve slike pojavljuju se u pregledniku datoteka
+* [ ] **Ciljne slike označene** - Ciljni stupac je provjeren za kalibracijske slike
+* [ ] **Otkriveni modeli kamera** - Stupac Model kamera prikazuje ispravne kamere
+* [ ] **Postavke konfigurirane** - Postavke projekta pregledane i prilagođene
+* [ ] **Odabrani indeksi** - dodani željeni multispektralni indeksi (ako je potrebno)
+* [ ] **Odabrani format izvoza** - Izlazni format prikladan za vaš tijek rada
 
 {% hint style="info" %}
-**Chloros+ Speed**: Parallel processing can be 5-10x faster than sequential mode for large datasets. A 500-image project that takes 2 hours in free mode may complete in 15-20 minutes with Chloros+.
-{% endhint %}
+**Savjet**: Kliknite na nekoliko slika u pregledniku datoteka kako biste provjerili jesu li ispravno učitane prije obrade.
+{% završni savjet %}
 
 ***
 
-## What Happens During Processing
+## Pokretanje obrade
 
-### Stage 1: Target Detection
+### Pronađite gumb Start
 
-**What Chloros does:**
+Gumb Start/Play nalazi se u gornjoj traci zaglavlja Chloros:
 
-* Scans marked target images (or all images if none marked)
-* Identifies the 4 calibration panels in each target
-* Extracts reflectance values from target panels
-* Records target timestamps for calibration scheduling
+* Položaj: gornji središnji dio prozora
+* Ikona: **gumb za reprodukciju/pokretanje** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
+* Status: Gumb je omogućen (svijetli) kada je spreman za obradu
 
-**Duration:** 1-30 seconds (with marked targets), 5-30+ minutes (unmarked)
+### Kliknite za početak
 
-### Stage 2: Debayering (RAW Conversion)
+1. Kliknite gumb **Play/Start** u gornjem zaglavlju
+2. Obrada počinje odmah
+3. Gumb postaje onemogućen (zasivljen) tijekom obrade
+4. Traka napretka se ažurira, prikazuje status obrade
 
-**What Chloros does:**
-
-* Converts RAW Bayer pattern data to full RGB images
-* Applies high-quality demosaicing algorithm
-* Preserves maximum image quality and detail
-
-**Duration:** Varies by image count and CPU speed
-
-### Stage 3: Calibration
-
-**What Chloros does:**
-
-* **Vignette correction**: Removes lens darkening at edges
-* **Reflectance calibration**: Normalizes using target reflectance values
-* Applies corrections across all bands/channels
-* Uses appropriate calibration target for each image based on timestamp
-
-**Duration:** Majority of processing time
-
-### Stage 4: Index Calculation
-
-**What Chloros does:**
-
-* Calculates configured multispectral indices (NDVI, NDRE, etc.)
-* Applies band math to calibrated images
-* Generates index images for each selected index
-
-**Duration:** A few seconds per image
-
-### Stage 5: Export
-
-**What Chloros does:**
-
-* Saves calibrated images in selected format
-* Exports index images with configured LUT colors
-* Writes files to camera model subfolders
-* Preserves original filenames with suffixes
-
-**Duration:** Varies by export format and file size
+{% hint style="uspjeh" %}
+**Obrada započeta**: Jednom kada se klikne, Chloros automatski upravlja svim koracima obrade - otkrivanje cilja, debayering, kalibracija, izračun indeksa i izvoz.
+{% završni savjet %}
 
 ***
 
-## Processing Behavior
+## Razumijevanje načina obrade
 
-### Automatic Processing Pipeline
+Chloros radi u dva različita načina obrade ovisno o vašoj licenci:
 
-Once started, the entire pipeline runs automatically:
+### Slobodan način rada (sekvencijalna obrada)
 
-* No user interaction needed
-* All configured steps execute in sequence
-* Progress updates shown in real-time
+**Dostupno svim korisnicima**
 
-### Computer Usage During Processing
+**Kako radi:**
 
-**Free Mode:**
+* Obrađuje slike jednu po jednu, uzastopno
+* Jednonitni rad
+* Manja upotreba memorije
 
-* Relatively low CPU usage (single-threaded)
-* Computer remains responsive for other tasks
-* Safe to minimize Chloros and work in other applications
+**Traka napretka prikazuje 2 faze:**
 
-**Chloros+ Parallel Mode:**
+1.**Target Detect** - Skeniranje ciljeva za kalibraciju
+2. **Obrada** - Primjena kalibracije i izvoz slika**Vrijeme obrade:**
 
-* High CPU usage (multi-threaded, up to 16 cores)
-* With GPU acceleration: High GPU usage
-* Computer may be less responsive during processing
-* Avoid starting other CPU-intensive tasks
+* Puno sporije od Chloros+ paralelnog načina rada
+* Prikladno za male do srednje skupove podataka (< 200 slika)
 
-{% hint style="warning" %}
-**Performance Tip**: For best Chloros+ performance, close other applications and let Chloros use full system resources.
-{% endhint %}
+### Chloros+ način rada (paralelna obrada)
 
-### Processing Cannot Be Paused
+**Zahtijeva licencu Chloros+**
 
-**Important limitations:**
+**Kako radi:**
 
-* Once started, processing cannot be paused
-* You can cancel processing, but progress is lost
-* Partial results are not saved
-* Must restart from beginning if canceled
+* Obrađuje više slika istovremeno
+* Višenitni rad (do 16 paralelnih radnika)
+* Koristi više CPU jezgri
+* Dodatno GPU (CUDA) ubrzanje s NVIDIA grafičkim karticama
 
-**Planning tip:** For very large projects, consider processing in batches or using CLI for better control.
+**Traka napretka prikazuje 4 faze:**
 
-***
+1.**Otkrivanje** - Pronalaženje ciljeva kalibracije
+2. **Analiziranje** - Ispitivanje metapodataka slike i priprema cjevovoda
+3. **Kalibracija** - Primjena korekcija i kalibracija
+4. **Izvoz** - Spremanje obrađenih slika i indeksa**Interakcija trake napretka:*** **Zadržite pokazivač miša** iznad trake da vidite detaljnu padajuću ploču u 4 stupnja
+* **Kliknite** traku napretka da zamrznete padajuću ploču na mjestu
+* **Kliknite ponovo** da odmrznete i sakrijete ploču**Vrijeme obrade:**
 
-## Monitoring Your Processing
+* Znatno brže od besplatnog načina rada
+* Vage s brojem jezgri CPU-a
+* GPU ubrzanje dodatno poboljšava brzinu
 
-While processing runs, you can:
-
-* **Watch progress bar** - See overall completion percentage
-* **View current stage** - Detect, Analyze, Calibrate, or Export
-* **Check log tab** - See detailed processing messages and warnings
-* **Preview completed images** - Some export files may appear during processing
-
-For detailed information on monitoring, see [Monitoring the Processing](monitoring-the-processing.md).
+{% hint style="info" %}
+**Chloros+ Brzina**: Paralelna obrada može biti 5-10 puta brža od sekvencijalnog načina za velike skupove podataka. Projekt od 500 slika koji traje 2 sata u besplatnom načinu rada može se dovršiti za 15-20 minuta s Chloros+.
+{% završni savjet %}
 
 ***
 
-## Canceling Processing
+## Što se događa tijekom obrade
 
-If you need to stop processing:
+### Faza 1: Otkrivanje cilja
 
-### How to Cancel
+**Što radi Chloros:**
 
-1. Locate the **Stop/Cancel button** (replaces Start button during processing)
-2. Click the Stop button
-3. Processing halts immediately
-4. Partial results are discarded
+* Skenira označene ciljne slike (ili sve slike ako nijedna nije označena)
+* Identificira 4 kalibracijske ploče u svakoj meti
+* Izdvaja vrijednosti refleksije iz ciljnih ploča
+* Bilježi ciljne vremenske oznake za planiranje kalibracije
 
-### When to Cancel
+**Trajanje:** 1-30 sekundi (s označenim metama), 5-30+ minuta (neoznačeno)
 
-**Valid reasons to cancel:**
+### Faza 2: Debayering (RAW konverzija)
 
-* Realized incorrect settings were used
-* Forgot to mark target images
-* Wrong images imported
-* System running too slow or unresponsive
+**Što radi Chloros:**
 
-**After canceling:**
+* Pretvara RAW podatke Bayerovog uzorka u pune RGB slike
+* Primjenjuje visokokvalitetni algoritam demosaicinga
+* Čuva maksimalnu kvalitetu slike i detalje
 
-* Review and fix any issues
-* Adjust settings as needed
-* Restart processing from the beginning
-* For the cleanest experience, completely close Chloros and restart
+**Trajanje:** Zavisi od broja slika i brzine procesora
 
-{% hint style="warning" %}
-**No Partial Results**: Canceling discards all progress. Chloros does not save partially processed images.
-{% endhint %}
+### Faza 3: Kalibracija
+
+**Što radi Chloros:*** **Korekcija vinjete**: Uklanja zatamnjenje leće na rubovima
+* **Kalibracija refleksije**: Normalizira pomoću ciljanih vrijednosti refleksije
+* Primjenjuje ispravke na sve pojaseve/kanale
+* Koristi odgovarajući cilj kalibracije za svaku sliku na temelju vremenske oznake
+
+**Trajanje:** Većina vremena obrade
+
+### Faza 4: Izračun indeksa
+
+**Što radi Chloros:**
+
+* Izračunava konfigurirane multispektralne indekse (NDVI, NDRE, itd.)
+* Primjenjuje matematiku pojasa na kalibrirane slike
+* Generira slike indeksa za svaki odabrani indeks
+
+**Trajanje:** Nekoliko sekundi po slici
+
+### Faza 5: Izvoz
+
+**Što radi Chloros:**
+
+* Sprema kalibrirane slike u odabranom formatu
+* Izvozi indeksne slike s konfiguriranim LUT bojama
+* Zapisuje datoteke u podmape modela fotoaparata
+* Čuva izvorne nazive datoteka sa sufiksima
+
+**Trajanje:** Razlikuje se ovisno o formatu izvoza i veličini datoteke***
+
+## Ponašanje obrade
+
+### Cjevovod za automatsku obradu
+
+Nakon pokretanja, cijeli cjevovod se pokreće automatski:
+
+* Nije potrebna interakcija korisnika
+* Svi konfigurirani koraci izvršavaju se u nizu
+* Ažuriranja napretka prikazana u stvarnom vremenu
+
+### Upotreba računala tijekom obrade
+
+**Slobodni način rada:**
+
+* Relativno nisko korištenje CPU-a (jednonitno)
+* Računalo ostaje osjetljivo na druge zadatke
+* Sigurno minimizirati Chloros i raditi u drugim aplikacijama
+
+**Chloros+ Paralelni način rada:**
+
+* Velika upotreba CPU-a (višenitni, do 16 jezgri)
+* S GPU ubrzanjem: Visoka upotreba GPU-a
+* Računalo može slabije reagirati tijekom obrade
+* Izbjegavajte pokretanje drugih CPU-intenzivnih zadataka
+
+{% hint style="upozorenje" %}
+**Savjet za performanse**: Za najbolju izvedbu Chloros+ zatvorite ostale aplikacije i pustite Chloros da koristi sve resurse sustava.
+{% završni savjet %}
+
+### Obrada se ne može pauzirati
+
+**Važna ograničenja:**
+
+* Jednom započeta obrada ne može se pauzirati
+* Možete otkazati obradu, ali napredak se gubi
+* Djelomični rezultati se ne spremaju
+* Mora se ponovno pokrenuti od početka ako se otkaže
+
+**Savjet za planiranje:** Za vrlo velike projekte razmislite o obradi u serijama ili upotrebi CLI za bolju kontrolu.***
+
+## Praćenje vaše obrade
+
+Tijekom obrade možete:
+
+* **Pogledajte traku napretka** - Pogledajte ukupni postotak završetka
+* **Pogledajte trenutnu fazu** - Otkrijte, analizirajte, kalibrirajte ili izvezite
+* **Provjeri karticu dnevnika** - Pogledajte detaljne poruke obrade i upozorenja
+* **Pregled dovršenih slika** - Neke datoteke za izvoz mogu se pojaviti tijekom obrade
+
+Za detaljne informacije o nadzoru pogledajte [Nadgledanje obrade](monitoring-the-processing.md).
 
 ***
 
-## Processing Time Estimates
+## Otkazivanje obrade
 
-Actual processing time varies greatly based on:
+Ako trebate zaustaviti obradu:
 
-* Number of images
-* Image resolution
-* RAW vs JPG input format
-* Processing mode (Free vs Chloros+)
-* CPU speed and core count
-* GPU availability (Chloros+ only)
-* Number of indices to calculate
-* Export format complexity
+### Kako otkazati
 
-### Rough Estimates (Chloros+, 12MP images, modern CPU)
+1. Pronađite **gumb Stop/Cancel** (zamjenjuje gumb Start tijekom obrade)
+2. Pritisnite gumb Stop
+3. Obrada se odmah zaustavlja
+4. Djelomični rezultati se odbacuju
 
-| Image Count | Free Mode | Chloros+ (CPU) | Chloros+ (GPU) |
+### Kada otkazati
+
+**Valjani razlozi za otkazivanje:**
+
+* Uočeno da su korištene netočne postavke
+* Zaboravili ste označiti ciljane slike
+* Uvezene su pogrešne slike
+* Sustav radi presporo ili ne reagira
+
+**Nakon otkazivanja:**
+
+* Pregledajte i riješite probleme
+* Po potrebi prilagodite postavke
+* Ponovno pokrenite obradu od početka
+* Za najčišće iskustvo potpuno zatvorite Chloros i ponovno pokrenite
+
+{% hint style="upozorenje" %}
+**Nema djelomičnih rezultata**: Otkazivanjem se odbacuje sav napredak. Chloros ne sprema djelomično obrađene slike.
+{% završni savjet %}
+
+***
+
+## Procjena vremena obrade
+
+Stvarno vrijeme obrade uvelike varira ovisno o:
+
+* Broj slika
+* Rezolucija slike
+* RAW u odnosu na JPG ulazni format
+* Način obrade (besplatno u odnosu na Chloros+)
+* Brzina procesora i broj jezgri
+* Dostupnost GPU-a (samo Chloros+)
+* Broj indeksa za izračunavanje
+* Složenost izvoznog formata
+
+### Grube procjene (Chloros+, slike od 12 MP, moderni CPU)
+
+| Broj slika | Slobodan način | Chloros+ (CPU) | Chloros+ (GPU) |
 | ----------- | --------- | -------------- | -------------- |
-| 50 images   | 15-20 min | 5-8 min        | 3-5 min        |
-| 100 images  | 30-40 min | 10-15 min      | 5-8 min        |
-| 200 images  | 1-1.5 hrs | 20-30 min      | 10-15 min      |
-| 500 images  | 2-3 hrs   | 45-60 min      | 20-30 min      |
-| 1000 images | 4-6 hrs   | 1.5-2 hrs      | 40-60 min      |
+| 50 slika | 15-20 min | 5-8 min | 3-5 min |
+| 100 slika | 30-40 min | 10-15 min | 5-8 min |
+| 200 slika | 1-1,5 sati | 20-30 min | 10-15 min |
+| 500 slika | 2-3 sata | 45-60 min | 20-30 min |
+| 1000 slika | 4-6 sati | 1,5-2 sata | 40-60 min |
 
 {% hint style="info" %}
-**First Run**: Initial processing may take longer as Chloros builds caches and profiles. Subsequent processing of similar datasets will be faster.
-{% endhint %}
+**Prvo pokretanje**: Početna obrada može potrajati dulje jer Chloros gradi predmemorije i profile. Naknadna obrada sličnih skupova podataka bit će brža.
+{% završni savjet %}
 
 ***
 
-## Common Issues at Start
+## Uobičajeni problemi na početku
 
-### Start Button Disabled (Grayed Out)
+### Gumb Start onemogućen (zasivljen)
 
-**Possible causes:**
+**Mogući uzroci:**
 
-* No images imported
-* Backend not fully started
-* Previous processing still running
-* Project not fully loaded
+* Nema uvezenih slika
+* Pozadina nije u potpunosti pokrenuta
+* Prethodna obrada još uvijek traje
+* Projekt nije u potpunosti učitan
 
-**Solutions:**
+**Rješenja:**
 
-1. Wait for backend to fully initialize (check main menu icon)
-2. Verify images are imported in File Browser
-3. Restart Chloros if button remains disabled
-4. Check Debug Log for error messages
+1. Pričekajte da se pozadina u potpunosti inicijalizira (provjerite ikonu glavnog izbornika)
+2. Provjerite jesu li slike uvezene u preglednik datoteka
+3. Ponovno pokrenite Chloros ako gumb ostane onemogućen
+4. Provjerite zapisnik otklanjanja pogrešaka za poruke o pogrešci
 
-### Processing Starts Then Immediately Fails
+### Obrada počinje, a zatim odmah ne uspijeva
 
-**Possible causes:**
+**Mogući uzroci:**
 
-* No valid images in project
-* Corrupted image files
-* Insufficient disk space
-* Insufficient memory (RAM)
+* Nema valjanih slika u projektu
+* Oštećene slikovne datoteke
+* Nedovoljno prostora na disku
+* Nedovoljno memorije (RAM)
 
-**Solutions:**
+**Rješenja:**
 
-1. Check Debug Log <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> for error messages
-2. Verify disk space available
-3. Try processing a smaller subset of images
-4. Verify images are not corrupted
+1. Provjerite zapisnik otklanjanja pogrešaka <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> za poruke o pogreškama
+2. Provjerite dostupan prostor na disku
+3. Pokušajte obraditi manji podskup slika
+4. Provjerite jesu li slike oštećene
 
-### "No Targets Detected" Warning
+### Upozorenje "Nisu otkriveni ciljevi".
 
-**Possible causes:**
+**Mogući uzroci:**
 
-* Forgot to mark target images
-* Target images don't contain visible targets
-* Target detection settings too strict
+* Zaboravili ste označiti ciljane slike
+* Slike meta ne sadrže vidljive mete
+* Postavke detekcije cilja prestroge
 
-**Solutions:**
+**Rješenja:**
 
-1. Review [Choosing Target Images](choosing-target-images.md)
-2. Mark appropriate images in Target column
-3. Verify targets are visible in marked images
-4. Adjust target detection settings if needed
-
-***
-
-## Tips for Successful Processing
-
-### Before Starting
-
-1. **Test with small subset first** - Process 10-20 images to verify settings
-2. **Check available disk space** - Ensure 2-3x dataset size free
-3. **Close unnecessary applications** - Free up system resources
-4. **Verify target images** - Preview marked targets to ensure quality
-5. **Save project** - Project auto-saves, but good practice to save manually
-
-### During Processing
-
-1. **Avoid system sleep** - Disable power saving modes
-2. **Keep Chloros in foreground** - Or at least visible in taskbar
-3. **Monitor progress occasionally** - Check for warnings or errors
-4. **Don't load other heavy applications** - Especially with Chloros+ parallel mode
-
-### Chloros+ GPU Acceleration
-
-If using NVIDIA GPU acceleration:
-
-1. Update NVIDIA drivers to latest version
-2. Ensure GPU has 4GB+ VRAM
-3. Close GPU-intensive applications (games, video editing)
-4. Monitor GPU temperature (ensure adequate cooling)
+1. Pregledajte [Odabir ciljanih slika] (choosing-target-images.md)
+2. Označite odgovarajuće slike u stupcu Cilj
+3. Provjerite jesu li ciljevi vidljivi na označenim slikama
+4. Po potrebi prilagodite postavke otkrivanja cilja
 
 ***
 
-## Next Steps
+## Savjeti za uspješnu obradu
 
-Once processing has started:
+### Prije početka
 
-1. **Monitor the progress** - See [Monitoring the Processing](monitoring-the-processing.md)
-2. **Wait for completion** - Processing runs automatically
-3. **Review results** - See [Finishing the Processing](finishing-the-processing.md)
+1. **Prvo testirajte s malim podskupom** - Obradite 10-20 slika za provjeru postavki
+2. **Provjerite raspoloživi prostor na disku** - Osigurajte 2-3 puta veću veličinu skupa podataka
+3. **Zatvorite nepotrebne aplikacije** - Oslobodite resurse sustava
+4. **Provjerite ciljne slike** - Pregledajte označene ciljeve kako biste osigurali kvalitetu
+5. **Spremi projekt** - Projekt se automatski sprema, ali dobra praksa je ručno spremanje
 
-For information about what to do during processing, see [Monitoring the Processing](monitoring-the-processing.md).
+### Tijekom obrade
+
+1. **Izbjegavajte stanje mirovanja sustava** - Onemogućite načine rada za uštedu energije
+2. **Neka Chloros bude u prednjem planu** - Ili barem vidljivo na programskoj traci
+3. **Povremeno pratite napredak** - Provjerite postoje li upozorenja ili pogreške
+4. **Ne učitavajte druge teške aplikacije** - Posebno s Chloros+ paralelnim načinom rada
+
+### Chloros+ GPU ubrzanje
+
+Ako koristite NVIDIA GPU ubrzanje:
+
+1. Ažurirajte NVIDIA upravljačke programe na najnoviju verziju
+2. Osigurajte da GPU ima 4 GB+ VRAM-a
+3. Zatvorite aplikacije koje zahtijevaju GPU (igre, uređivanje videa)
+4. Pratite temperaturu GPU-a (osigurajte odgovarajuće hlađenje)
+
+***
+
+## Sljedeći koraci
+
+Nakon što obrada započne:
+
+1. **Nadgledajte napredak** - Pogledajte [Praćenje obrade](monitoring-the-processing.md)
+2. **Pričekajte završetak** - Obrada se pokreće automatski
+3. **Rezultati pregleda** - Pogledajte [Završetak obrade](finishing-the-processing.md)
+
+Za informacije o tome što učiniti tijekom obrade, pogledajte [Praćenje obrade](monitoring-the-processing.md).

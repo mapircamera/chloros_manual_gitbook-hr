@@ -1,165 +1,163 @@
-# Map Markers
+# Oznake karte
 
-The Map tab displays your images on an interactive 2D map based on their GPS coordinates. This provides a geographic overview of your capture session and helps you visualize spatial coverage. It is also useful when first importing your images to quickly remove any images you do not need to process.
+Kartica Karta prikazuje vaše slike na interaktivnoj 2D karti na temelju njihovih GPS koordinata. Ovo pruža geografski pregled vaše sesije snimanja i pomaže vam da vizualizirate prostornu pokrivenost. Također je korisno pri prvom uvozu vaših slika za brzo uklanjanje svih slika koje ne morate obraditi.
 
-## Accessing the Map Tab
+## Pristup kartici Karta
 
-1. Open or create a project in Chloros
-2. Import images that contain GPS metadata
-3. Click the **Map** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> tab in the left sidebar
-4. The map will display markers at each image's GPS location
-
-{% hint style="info" %}
-**GPS Required**: Only images with embedded GPS coordinates in their EXIF metadata will appear on the map. Ensure your camera has GPS enabled during capture.
-{% endhint %}
-
-***
-
-## Adjusting Images from Map Tab
-
-The **Map** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> tab has the same add  <img src="../.gitbook/assets/image.png" alt="" data-size="line">   <img src="../.gitbook/assets/image (1).png" alt="" data-size="line">  and remove  <img src="../.gitbook/assets/image (2).png" alt="" data-size="line">  file buttons as the [**File Browser**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> tab does. It also shows the same project file table list but with different column headers:
-
-### File Name
-
-* Original filename from the camera
-* Maintains camera naming convention (e.g., IMG\_0001.RAW)
-
-### Latitude
-
-* The image's latitude
-
-### Longitude
-
-* The image's longitude
-
-### Altitude
-
-* The image's altitude
+1. Otvorite ili kreirajte projekt u Chloros
+2. Uvezite slike koje sadrže GPS metapodatke
+3. Kliknite karticu **Karta** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> na lijevoj bočnoj traci
+4. Karta će prikazati markere na GPS lokaciji svake slike
 
 {% hint style="info" %}
-Clicking the table column headers also sorts the row data
-{% endhint %}
+**Potreban GPS**: Na karti će se pojaviti samo slike s ugrađenim GPS koordinatama u svojim EXIF metapodacima. Provjerite ima li fotoaparat uključen GPS tijekom snimanja.
+{% završni savjet %}
 
 ***
 
-## Image Markers
+## Podešavanje slika s kartice Karta
 
-Each image with GPS data is represented by a marker on the map:
+Kartica **Mapa**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> ima isti dodatak <img src="../.gitbook/assets/image.png" alt="" data-size="line"> <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> i uklonite <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> gumbe za datoteke kao [**Preglednik datoteka**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> kartica radi. Također prikazuje isti popis tablice datoteke projekta, ali s različitim zaglavljima stupaca:
 
-### Marker Display
+### Naziv datoteke
 
-* Markers indicate the exact GPS coordinates where each image was captured
-* Clustered markers may group together when zoomed out
-* Zoom in to see individual image locations
+* Izvorni naziv datoteke s fotoaparata
+* Održava konvenciju imenovanja fotoaparata (npr. IMG\_0001.RAW)
 
-{% hint style="success" %}
-SUPER-ZOOM: When you reach the maximum zoom level from the map tile provider the tile is then enlarged upon further zoom, allowing you to see markers that are close together.
-{% endhint %}
+### Geografska širina
 
-### Hover Preview
+* Geografska širina slike
 
-* **Hover your mouse** over any marker to see a thumbnail preview of that image
-* This allows quick visual identification without leaving the map view
-* Useful for locating specific images within a large capture session
+### Zemljopisna dužina
+
+* Zemljopisna dužina slike
+
+### Nadmorska visina
+
+* Nadmorska visina slike
+
+{% hint style="info" %}
+Klikom na zaglavlja stupaca tablice također se sortiraju podaci retka
+{% završni savjet %}
 
 ***
 
-## Map Tile Providers
+## Markeri slika
 
-{% hint style="success" %}
-**Automatic Selection**: Chloros automatically chooses the tile service that provides the best zoom level for your current map location. You can manually switch between providers if desired.
-{% endhint %}
+Svaka slika s GPS podacima predstavljena je oznakom na karti:
 
-The Map tab supports two tile providers for the background map imagery:
+### Prikaz markera
 
-### Google Maps
+* Oznake označavaju točne GPS koordinate na kojima je svaka slika snimljena
+* Grupirani markeri mogu se grupirati zajedno kada se umanje
+* Povećajte kako biste vidjeli pojedinačne lokacije slika
 
-* Standard satellite and map imagery from Google
-* Best for general worldwide coverage
+{% hint style="uspjeh" %}
+SUPER-ZUMIRANJE: Kada dosegnete maksimalnu razinu zumiranja od dobavljača pločica karte, pločica se zatim povećava nakon daljnjeg zumiranja, što vam omogućuje da vidite oznake koje su blizu jedna drugoj.
+{% završni savjet %}
+
+### Pregled lebdeći
+
+* **Zadržite pokazivač miša** iznad bilo kojeg markera da biste vidjeli minijaturni pregled te slike
+* Ovo omogućuje brzu vizualnu identifikaciju bez napuštanja prikaza karte
+* Korisno za lociranje određenih slika unutar velike sesije snimanja
+
+***
+
+## Dobavljači pločica karte
+
+{% hint style="uspjeh" %}
+**Automatski odabir**: Chloros automatski odabire uslugu pločica koja pruža najbolju razinu zumiranja za vašu trenutnu lokaciju na karti. Po želji se možete ručno prebacivati ​​između pružatelja usluga.
+{% završni savjet %}
+
+Kartica Karta podržava dva pružatelja pločica za pozadinske slike karte:
+
+### Google karte
+
+* Standardne satelitske slike i karte s Googlea
+* Najbolje za opću svjetsku pokrivenost
 
 ### ESRI
 
-* Satellite and aerial imagery from ESRI ArcGIS
-* Often provides higher resolution imagery in certain regions
+* Satelitske i zračne slike iz ESRI ArcGIS
+* Često daje slike veće rezolucije u određenim regijama
 
 ***
 
-## Map Tile Types
+## Vrste pločica karte
 
-You can choose the map layer type (from left to right):
+Možete odabrati vrstu sloja karte (s lijeva na desno):
 
 &#x20;<img src="../.gitbook/assets/image (23).png" alt="" data-size="original">
 
-### Terrain
+### Teren
 
-Shows elevation profiles and map tiles with details (roads, etc)
+Prikazuje visinske profile i pločice karte s detaljima (ceste, itd.)
 
-### Map
+### Karta
 
-Shows standard (lower bandwidth) map tiles with details (roads, etc)
+Prikazuje standardne (niža propusnost) pločice karte s detaljima (ceste, itd.)
 
-### Satellite
+### Satelit
 
-Shows detailed (higher bandwidth) satellite map tiles
+Prikazuje detaljne (veća propusnost) pločice satelitske karte
 
-### Hybrid
+### Hibrid
 
-Shows satellite map tiles with added details (roads, etc)
-
-***
-
-## Map Navigation
-
-### Zoom Controls
-
-* **Zoom In/Out**: Use mouse scroll wheel or zoom buttons
-* **Fullscreen**: Fullscreen the map
-
-### Pan Controls
-
-* **Pan**: Click and drag to move around the map
+Prikazuje pločice satelitske karte s dodanim detaljima (ceste, itd.)
 
 ***
 
-## Use Cases
+## Navigacija kartom
 
-### Flight Path Visualization
+### Kontrole zumiranja
 
-* View the coverage area of drone capture sessions
-* Identify gaps in image coverage
-* Verify flight path execution
+* **Uvećanje/smanjenje**: Koristite kotačić miša ili gumbe za zumiranje
+* **Cijeli zaslon**: Prikaz karte preko cijelog zaslona
 
-### Ground Survey Review
+### Pan kontrole
 
-* See the spatial distribution of ground-based captures
-* Locate calibration target images relative to survey area
-* Plan additional capture locations
+* **Pomicanje**: kliknite i povucite za kretanje po karti***
 
-### Quality Control
+## Slučajevi upotrebe
 
-* Quickly identify images captured in unexpected locations
-* Verify GPS accuracy across the dataset
-* Cross-reference image locations with field notes
+### Vizualizacija putanje leta
+
+* Pogledajte područje pokrivenosti sesija snimanja dronom
+* Identificirajte nedostatke u pokrivenosti slike
+* Provjerite izvršenje putanje leta
+
+### Pregled terena
+
+* Pogledajte prostornu distribuciju zemaljskih snimanja
+* Locirajte slike cilja kalibracije u odnosu na područje istraživanja
+* Planirajte dodatne lokacije za snimanje
+
+### Kontrola kvalitete
+
+* Brzo identificirajte slike snimljene na neočekivanim lokacijama
+* Provjerite točnost GPS-a u skupu podataka
+* Lokacija slika s unakrsnim referencama s bilješkama na terenu
 
 ***
 
-## Troubleshooting
+## Rješavanje problema
 
-### No Markers Appearing
+### Nema oznaka
 
-**Possible causes:**
+**Mogući uzroci:**
 
-* Images do not contain GPS metadata
-* GPS was disabled on camera during capture
-* EXIF data was stripped by external software
+* Slike ne sadrže GPS metapodatke
+* GPS je bio onemogućen na fotoaparatu tijekom snimanja
+* EXIF podatke uklonio je vanjski softver
 
-**Solution**: Verify GPS is enabled on your camera and re-import original files
+**Rješenje**: Provjerite je li GPS omogućen na vašoj kameri i ponovno uvezite originalne datoteke
 
-### Markers in Wrong Location
+### Markeri na pogrešnoj lokaciji
 
-**Possible causes:**
+**Mogući uzroci:**
 
-* Camera GPS had poor satellite fix
-* GPS drift during capture
+* GPS kamere imao je lošu satelitsku vezu
+* GPS drift tijekom snimanja
 
-**Solution**: This is typically a capture-time issue; consider using PPK/RTK GPS for precision applications
+**Rješenje**: ovo je obično problem s vremenom snimanja; razmislite o korištenju PPK/RTK GPS-a za precizne primjene

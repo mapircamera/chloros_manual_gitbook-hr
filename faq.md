@@ -1,71 +1,72 @@
 ---
-description: Preguntas frecuentes
+description: Frequently Asked Questions
 metaLinks:
   alternates:
     - https://app.gitbook.com/s/o044KN3Ws0uIDvOmSkcR/faq
 ---
-# Često postavljana pitanja
 
-<details>
+# FAQ
 
-<summary>Mogu li Chlorosom obrađivati ​​slike s kamera koje nisu MAPIR?</summary>
+<detalji>
 
-Ne, Chloros podržava samo obradu slike s MAPIR kamera. Za više informacija pogledajte popis [podržanih modela kamera](supported-cameras.md). Nudimo obradu drugih kamera u MAPIR Cloudu, pogledajte cijeli popis [ovdje](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
+<summary>Mogu li slike s kamera koje nisu marke MAPIR obraditi s Chloros?</summary>
+
+Ne, Chloros podržava samo obradu slika MAPIR kamere. Za više informacija pogledajte popis [podržanih modela kamera](supported-cameras.md). Nudimo obradu drugih kamera na MAPIR Cloudu, pogledajte cijeli popis [ovdje](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
 
 </details>
 
-<details>
+<detalji>
 
 <summary>Mogu li kalibrirati svoje slike za refleksiju bez kalibracijske mete?</summary>
 
-Ne. Bez ciljane slike kalibracije snimljene otprilike u isto vrijeme kao i neciljne slike, nećete moći povezati vrijednosti piksela slike s poznatim postotkom refleksije. Ako također ne uključite snimanje s MAPIR svjetlosnog senzora, spektar ambijentalnog svjetla neće se mjeriti i rezultati refleksije neće biti točni.
+Ne. Bez slike kalibracijske mete snimljene oko trenutka kada se snimaju neciljne slike, nećete moći povezati vrijednosti piksela slike s poznatim postotkom refleksije. Ako također ne uključite evidenciju svjetlosnog senzora MAPIR, tada se spektar ambijentalnog svjetla neće mjeriti, a rezultati refleksije neće biti točni.
 
 </details>
 
-<details>
+<detalji>
 
-<summary>Mogu li urediti svoje slike prije obrade u Chlorosu?</summary>
+<summary>Mogu li urediti svoje slike prije obrade u Chloros?</summary>
 
-Ne. Chloros pretpostavlja da ulazni podaci nisu promijenjeni. Nemojte mijenjati nazive datoteka.
-
-</details>
-
-<details>
-
-<summary>Mogu li postaviti svoje MAPIR Survey3 kamere na automatsku ekspoziciju i obrađivati ​​slike u Chlorosu?</summary>
-
-Ne. Skupovi slikovnih podataka Survey3 moraju imati fiksnu/zaključanu ekspoziciju, tako da automatska brzina zatvarača i automatski ISO nisu dopušteni. Sve slike s istog modela fotoaparata moraju imati identičnu brzinu zatvarača i ISO (ekspoziciju).
+Br. Chloros pretpostavlja da ulazni podaci nisu izmijenjeni. Nemojte mijenjati nazive datoteka.
 
 </details>
 
-<details>
+<detalji>
 
-<summary>Može li Chloros obraditi ili analizirati ortomozaične slike?</summary>
+<summary>Mogu li postaviti svoje MAPIR Survey3 kamere na automatsku ekspoziciju i obradu slika u Chloros?</summary>
 
-Ne. Podržane su samo pojedinačne slike MAPIR kamere, a ne slike spojene zajedno kao ortomozaična karta.
-
-</details>
-
-<details>
-
-<summary>Kako mogu ubrzati korak otkrivanja cilja Chloros?</summary>
-
-U tablici preglednika datoteka, ako unaprijed odaberete ciljane slike u desnom stupcu, Chloros će tražiti samo kalibracijske ciljeve u tim slikama, uvelike ubrzavajući obradu.
+Br. Survey3 skupovi slikovnih podataka moraju imati fiksnu/zaključanu ekspoziciju, dakle bez automatske brzine zatvarača ili automatskog ISO-a. Sve slike istog modela fotoaparata moraju imati identičnu brzinu zatvarača i ISO (ekspoziciju).
 
 </details>
 
-<details>
+<detalji>
 
-<summary>Ako prenosim svoje slike u <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud,</a> trebam li ih prije učitavanja obraditi u Chlorosu?</summary>
+<sažetak>Može li Chloros obraditi ili analizirati ortomozaične slike?</sažetak>
 
-Ako ih planirate prenijeti na našu mrežnu platformu za obradu [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), nemojte uređivati ​​slike prije nego što ih učitate. Cloud će izvršiti istu obradu i mnogo više.
+Ne. Podržane su samo pojedinačne slike MAPIR kamere, a ne spojene slike poput ortomozične karte.
 
 </details>
 
-<details>
+<detalji>
 
-<summary>Hoće li MAPIR ikada podržavati značajku X? Stvarno bih želio da MAPIR ponudi X.</summary>
+<sažetak>Kako mogu ubrzati korak otkrivanja cilja Chloros?</sažetak>
 
-Uvijek smo zainteresirani za komentare o našim proizvodima. Ako naiđete na probleme s našim proizvodima ili imate bilo kakve prijedloge o tome kako ih možemo poboljšati, kontaktirajte nas (https://www.mapir.camera/community/contact) da podijelimo svoje mišljenje. Većina našeg istraživanja i razvoja vođena je najvažnijim potrebama naših kupaca.
+U tablici preglednika datoteka prethodni odabir ciljnih slika u desnom stupcu reći će Chloros da u tim slikama traži samo ciljeve kalibracije, što znatno ubrzava obradu.
+
+</details>
+
+<detalji>
+
+<sažetak>Ako ću svoje slike prenijeti u <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud</a> trebam li obraditi u Chloros prije učitavanja?</summary>
+
+Ako planirate prenijeti na našu platformu za online obradu [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), nemojte uređivati slike prije učitavanja. Cloud će izvršiti istu obradu i više.
+
+</details>
+
+<detalji>
+
+<sažetak>Hoće li MAPIR ikada podržavati X značajku? Stvarno bih volio da MAPIR nudi X.</summary>
+
+Uvijek smo zainteresirani za povratne informacije o našim proizvodima. Ako pronađete problem s našim proizvodima ili imate prijedlog o tome kako možemo poboljšati naše proizvode, [KONTAKTIRAJTE NAS] (https://www.mapir.camera/community/contact) da podijelite svoje mišljenje. Većina našeg istraživanja i razvoja vođena je slušanjem najvećih potreba naših kupaca.
 
 </details>
