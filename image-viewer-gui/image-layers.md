@@ -70,7 +70,7 @@ U Chloros, **slojevi** se odnose na različite izlazne slike dostupne za jednu i
 * Provjera znanstvene točnosti vrijednosti piksela
 * Usporedba s originalom kako bi se vidjeli učinci kalibracije
 
-{% hint style="uspjeh" %}
+{% hint style="success" %}
 **Preporučeno**: koristite sloj RAW (Reflectance) kada provjeravate vrijednosti piksela za znanstvena mjerenja i analize.
 {% endhint %}
 

@@ -22,7 +22,7 @@ Kada označite stupac Target za određene slike:
 * Otkrivanje cilja se puno brže završava
 * Sveukupno vrijeme obrade znatno je smanjeno
 
-{% hint style="uspjeh" %}
+{% hint style="success" %}
 **Poboljšanje brzine**: Označavanje 2-3 ciljane slike u skupu podataka od 500 slika može smanjiti vrijeme otkrivanja cilja s 30+ minuta na manje od 1 minute.
 {% endhint %}
 

@@ -30,7 +30,7 @@ Sandbox pruža:
 * Vremenski intenzivan
 * Najbolje kada su postavke finalizirane
 
-{% hint style="uspjeh" %}
+{% hint style="success" %}
 **Najbolji tijek rada**: Koristite Sandbox za eksperimentiranje i pronalaženje optimalnih postavki indeksa i LUT-a, a zatim primijenite te postavke tijekom obrade projekta za cijeli skup podataka.
 {% endhint %}
 
@@ -113,7 +113,7 @@ Za potpunu dokumentaciju formule indeksa, pogledajte [Multispektralne formule in
 * Sivi tonovi: znanstveno i neutralno, prikazuje neobrađene podatke
 * LUT u boji: Intuitivno i dojmljivo, naglašava uzorke i razlike
 
-{% hint style="uspjeh" %}
+{% hint style="success" %}
 **Snaga vizualizacije**: Primjena LUT-a u boji na indeksnu sliku u sivim tonovima dramatično olakšava prepoznavanje uzoraka, anomalija i područja od interesa na prvi pogled.
 {% endhint %}
 
@@ -137,7 +137,7 @@ Nakon što se prikaže indeksna slika
 3. Odaberite željeni gradijent
 4. Slika se **odmah ažurira** s novim bojama kada je okvir Index označen
 
-{% hint style="uspjeh" %}
+{% hint style="success" %}
 **Najbolja praksa**: Za indekse vegetacije kao što je NDVI, gradijent Red-Yellow-Green je najintuitivniji jer se usklađuje s prirodnim asocijacijama boja (zeleno=zdravo, žuto=umjereno, crveno=pod stresom).
 {% endhint %}
 
@@ -176,7 +176,7 @@ Nakon što se prikaže indeksna slika
 4. Pritisnite **Enter** ili kliknite izvan polja
 5. Ponovite za polje **Maksimalna vrijednost** (npr. `0.9`)
 6. Vizualizacija se **odmah ažurira**{% hint style="info" %}**Automatsko skaliranje**: Kada prvi put primijenite LUT, Chloros automatski postavlja min/max na stvarni raspon podataka na slici. Zatim možete suziti ovaj raspon kako biste se usredotočili na određene raspone vrijednosti od interesa.
-{% završni savjet %}
+{% endhint %}
 
 **Primjer podešavanja raspona NDVI:*** **Cijeli raspon**: `-1.0` do `1.0` (prikaži sve moguće vrijednosti)
 * **Fokusirano na vegetaciju**: `0.2` do `0.9` (isključuje golo tlo i vodu)
@@ -272,7 +272,7 @@ Sve LUT prilagodbe u sandboxu ažuriraju sliku **trenutačno i interaktivno**:
 * **Izmijeni isječak** → Prikaz pozadine se trenutno mijenja
 * **Uredite boje** → Prilagođeni gradijent primjenjuje se odmah**Nije potreban gumb "Primijeni"** - sve promjene su aktivne i interaktivne!
 
-{% hint style="uspjeh" %}
+{% hint style="success" %}
 **Povratne informacije uživo**: trenutne vizualne povratne informacije omogućuju vam brzo eksperimentiranje s različitim postavkama dok ne pronađete optimalnu vizualizaciju za svoje potrebe analize.
 {% endhint %}
 
@@ -319,7 +319,7 @@ Razumijevanje stvarnih vrijednosti piksela ključno je za postavljanje efektivni
 
 {% hint style="info" %}
 **Gdje stvoriti**: Prilagođeni indeksi mogu se konfigurirati u**Postavke projekta** prije obrade, kao i na bočnoj traci sandboxa preglednika slika.
-{% završni savjet %}
+{% endhint %}
 
 **Za izradu prilagođenog indeksa:**
 

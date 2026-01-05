@@ -36,7 +36,7 @@ Gumb Start/Play nalazi se u gornjoj traci zaglavlja Chloros:
 3. Gumb postaje onemogućen (zasivljen) tijekom obrade
 4. Traka napretka se ažurira, prikazuje status obrade
 
-{% hint style="uspjeh" %}
+{% hint style="success" %}
 **Obrada započeta**: Jednom kada se klikne, Chloros automatski upravlja svim koracima obrade - otkrivanje cilja, debayering, kalibracija, izračun indeksa i izvoz.
 {% endhint %}
 

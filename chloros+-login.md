@@ -20,7 +20,7 @@ chloros-cli login <email> <password>
 
 {% hint style="info" %}
 **SDK korisnici**: Python SDK također pruža programsku `logout()` metodu za brisanje predmemoriranih vjerodajnica. Pogledajte [dokumentaciju Python SDK] (api-python-sdk.md#logout) za detalje.
-{% završni savjet %}
+{% endhint %}
 
 **Primjer:**
 
@@ -30,7 +30,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 {% hint style="upozorenje" %}
 **Posebni znakovi**: Koristite jednostruke navodnike oko zaporki koje sadrže znakove kao što su `$`, `!` ili razmake.
-{% završni savjet %}
+{% endhint %}
 
 **Izlaz:**
 

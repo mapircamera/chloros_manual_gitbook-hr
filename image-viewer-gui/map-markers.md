@@ -52,7 +52,7 @@ Svaka slika s GPS podacima predstavljena je oznakom na karti:
 * Grupirani markeri mogu se grupirati zajedno kada se umanje
 * Povećajte kako biste vidjeli pojedinačne lokacije slika
 
-{% hint style="uspjeh" %}
+{% hint style="success" %}
 SUPER-ZUMIRANJE: Kada dosegnete maksimalnu razinu zumiranja od dobavljača pločica karte, pločica se zatim povećava nakon daljnjeg zumiranja, što vam omogućuje da vidite oznake koje su blizu jedna drugoj.
 {% endhint %}
 
@@ -66,9 +66,9 @@ SUPER-ZUMIRANJE: Kada dosegnete maksimalnu razinu zumiranja od dobavljača ploč
 
 ## Dobavljači pločica karte
 
-{% hint style="uspjeh" %}
+{% hint style="success" %}
 **Automatski odabir**: Chloros automatski odabire uslugu pločica koja pruža najbolju razinu zumiranja za vašu trenutnu lokaciju na karti. Po želji se možete ručno prebacivati ​​između pružatelja usluga.
-{% završni savjet %}
+{% endhint %}
 
 Kartica Karta podržava dva pružatelja pločica za pozadinske slike karte:
 

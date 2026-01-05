@@ -131,9 +131,9 @@ SDK koristi istu licencu kao Chloros, Chloros (preglednik) i Chloros CLI. Aktivi
 2. Unesite svoje vjerodajnice Chloros+ i prijavite se
 3. Licenca se pohranjuje lokalno u predmemoriju (ostaje nakon ponovnog pokretanja)
 
-{% hint style="uspjeh" %}
+{% hint style="success" %}
 **Jednokratno postavljanje**: Nakon prijave putem GUI-ja ili CLI, SDK automatski koristi predmemoriranu licencu. Nije potrebna dodatna provjera autentičnosti!
-{% završni savjet %}
+{% endhint %}
 
 {% hint style="info" %}
 **Odjava**: korisnici SDK mogu programski obrisati predmemorirane vjerodajnice pomoću metode `logout()`. Pogledajte metodu [logout()](#logout) u API Referenci.
@@ -313,7 +313,7 @@ Obradite slike projekta.
 
 {% hint style="upozorenje" %}
 **Paralelni način rada**: Zahtijeva Chloros+ licencu. Automatski se skalira na vaše CPU jezgre (do 16 radnika).
-{% završni savjet %}
+{% endhint %}
 
 **Primjer:**
 

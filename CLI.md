@@ -37,7 +37,7 @@ CLI je automatski uključen u instalacijski program Chloros:
 2. Dovršite čarobnjaka za instalaciju
 3. CLI instaliran na: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
 
-{% hint style="uspjeh" %}
+{% hint style="success" %}
 Instalacijski program automatski dodaje `chloros-cli` vašem sistemu PATH. Ponovno pokrenite terminal nakon instalacije.
 {% endhint %}
 
@@ -134,7 +134,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 {% hint style="upozorenje" %}
 **Posebni znakovi**: Koristite jednostruke navodnike oko zaporki koje sadrže znakove kao što su `$`, `!` ili razmake.
-{% završni savjet %}
+{% endhint %}
 
 **Izlaz:**<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
 
@@ -292,7 +292,7 @@ chloros-cli language ja
 | `et` | estonski | Eesti |
 | `sl` | slovenski | Slovenščina |
 
-{% hint style="uspjeh" %}
+{% hint style="success" %}
 **Automatska postojanost**: Vaše postavke jezika spremaju se u `~/.chloros/cli_language.json` i traju tijekom svih sesija.
 {% endhint %}
 
@@ -388,7 +388,7 @@ Chloros+ CLI **automatski skalira**paralelnu obradu kako bi odgovarala mogućnos
 | **Srednje klase** | 8-15 jezgri | 16-31 GB | 8-16 | Izvrsna brzina |
 | **Low-End** | 4-7 jezgri | 8-15 GB | 4-8 | Dobra brzina |
 
-{% hint style="uspjeh" %}
+{% hint style="success" %}
 **Automatska optimizacija**: CLI automatski otkriva specifikacije vašeg sustava i konfigurira optimalnu paralelnu obradu. Nije potrebna ručna konfiguracija!
 {% endhint %}
 
@@ -407,7 +407,7 @@ CLI koristi **High Quality (Faster)** kao zadani i preporučeni debayer algorita
 * **Omogućeno prema zadanim postavkama** - većina korisnika bi ovo trebala držati uključenim
 * Koristite `--no-vignette` za onemogućavanje
 
-{% hint style="uspjeh" %}
+{% hint style="success" %}
 **Preporuka**: Uvijek omogućite korekciju vinjete kako biste osigurali jednoliku svjetlinu u okviru.
 {% endhint %}
 

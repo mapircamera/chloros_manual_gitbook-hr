@@ -47,7 +47,7 @@ Preuzmite najnoviju verziju Chloros da biste započeli s multispektralnom obrado
 5. Dovršite instalaciju i pokrenite Chloros, Chloros (preglednik) ili Chloros CLI
 6. Prijavite se sa svojim [MAPIR Cloud Chloros+ računom](https://cloud.mapir.camera/pricing) (ili nastavite s besplatnom verzijom)
 
-{% hint style="uspjeh" %}
+{% hint style="success" %}
 Instalacijski program automatski dodaje `chloros-cli` vašem sustavu PATH za pristup s naredbenog retka.
 {% endhint %}
 
