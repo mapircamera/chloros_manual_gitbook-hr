@@ -1,173 +1,199 @@
-# Dodajte datoteke u projekt
+# Adding Files to a Project
 
-Nakon što ste izradili ili otvorili projekt u Chlorosu, sljedeći korak je dodavanje vaših multispektralnih slika za početak obrade. Preglednik datoteka<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> olakšava uvoz slika i upravljanje vašim skupom podataka.
+Once you've created or opened a project in Chloros, the next step is to add your multispectral images to begin processing. The File Browser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> tab makes it easy to import images and manage your dataset.
 
-## Pristup pregledniku datoteka
+## Accessing the File Browser
 
-1. Otvorite ili kreirajte projekt u Chlorosu
-2. Kliknite ikonu **Preglednik datoteka**<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> na lijevoj bočnoj traci
-3. Ploča File Explorer prikazat će popis datoteka u vašem projektu
+1. Open or create a project in Chloros
+2. Click the **File Browser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> icon in the left sidebar
+3. The File Browser panel will display your project's file list
 
-{% hint style=&quot;info&quot; %}**Podržane vrste datoteka**: Chloros podržava RAW+JPG i JPG slikovne datoteke sa Survey3W i Survey3N MAPIR kamera. Preporučuju se samo RAW+JPG datoteke.
-{% endhint %}***## Dodajte slike svom projektu
+{% hint style="info" %}
+**Supported File Types**: Chloros supports RAW+JPG and JPG image files from MAPIR Survey3W and Survey3N cameras. Only RAW+JPG are recommended.
+{% endhint %}
 
-Postoje dva glavna načina za dodavanje slika vašem projektu:
+***
 
-### Metoda 1: Dodajte datoteke
+## Adding Images to Your Project
 
-Koristite ovu opciju za uvoz pojedinačnih slikovnih datoteka ili malog odabira datoteka.
+There are two primary ways to add images to your project:
 
-1. Kliknite gumb **"Dodaj datoteke"**na vrhu ploče preglednika datoteka.
-2. Dođite do mape koja sadrži vaše slike.
-3. Odaberite jednu ili više slikovnih datoteka (držite**Ctrl**za odabir više datoteka).
-4. Kliknite**«Otvori»**za uvoz odabranih datoteka.
+### Method 1: Add Files
 
-### Metoda 2: Dodajte mapu
+Use this option to import individual image files or a small selection of files.
 
-Koristite ovu opciju za uvoz svih slika u mapi odjednom.
+1. Click the **"Add Files"** <img src="../.gitbook/assets/image.png" alt="" data-size="line"> button at the top of the File Browser panel
+2. Navigate to the folder containing your images
+3. Select one or more image files (hold **Ctrl** to select multiple files)
+4. Click **"Open"** to import the selected files
 
-1. Pritisnite gumb**"Dodaj mapu"**na vrhu ploče preglednika datoteka.
-2. Dođite do mape koja sadrži slike iz vaše sesije snimanja i odaberite je.
-3. Kliknite**«Odaberi mapu»**za uvoz svih podržanih slika iz te mape.***
+### Method 2: Add Folder
 
-## File Explorer Tablica Opis
+Use this option to import all images from a folder at once.
 
-Kada se slike uvezu, pojavljuju se u tablici sa sljedećim stupcima:
+1. Click the **"Add Folder"** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> button at the top of the File Browser panel
+2. Navigate to and select the folder containing your capture session images
+3. Click **"Select Folder"** to import all supported images from that folder
 
-### Sličica
+***
 
-* Mali pregled svake slike.
-* Kliknite na sličicu kako biste vidjeli cijelu sliku u glavnom području pregleda.
+## Understanding the File Browser Table
 
-### Naziv datoteke
+Once images are imported, they appear in a table with the following columns:
 
-* Izvorni naziv datoteke kamere.
-* Održava konvenciju imenovanja fotoaparata (npr. IMG\_0001.RAW).
+### File Name
 
-### Vremenska oznaka
+* Original filename from the camera
+* Maintains camera naming convention (e.g., IMG\_0001.RAW)
 
-* Datum i vrijeme snimanja slike.
-* Izdvojeno iz EXIF ​​​​metapodataka slike.
-* Koristi se za PPK sinkronizaciju i otkrivanje cilja kalibracije
+### Timestamp
 
-### Model kamere
+* Date and time the image was captured
+* Extracted from image EXIF metadata
+* Used for PPK synchronization and calibration target detection
 
-* Postavke kamere i filtra automatski se otkrivaju
-* Primjeri: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
-* Koristi se za primjenu ispravnih profila obrade
+### Camera Model
 
-### Stupac cilja (potvrdni okvir)
+* Automatically detected camera and filter configuration
+* Examples: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
+* Used to apply correct processing profiles
 
-* Označite ovaj okvir za slike koje sadrže kalibracijske ciljeve
-* Uvelike ubrzava otkrivanje cilja tijekom obrade
-* Pogledajte [Odabir ciljanih slika](choosing-target-images.md) za detalje
+### Target Column (Checkbox)
 
-***## Upravljanje datotekama u vašem projektu
+* Check this box for images that contain calibration targets
+* Greatly speeds up target detection during processing
+* See [Choosing Target Images](choosing-target-images.md) for details
 
-### Brisanje datoteka
+***
 
-Za uklanjanje neželjenih slika iz vašeg projekta:
+## Managing Files in Your Project
 
-1. Odaberite jednu ili više slika u tablici preglednika datoteka
-2. Pritisnite gumb**«Izbriši odabrano»**
-3. Potvrdite brisanje (datoteke se ne brišu s diska, samo se brišu iz projekta)
+### Removing Files
 
-### Sortiraj i filtriraj
+To remove unwanted images from your project:
 
-* **Razvrstaj po stupcu** – Kliknite zaglavlje bilo kojeg stupca za sortiranje slika
-* **Poredaj po vremenskoj oznaci**: Korisno za organiziranje kronoloških sekvenci snimanja.
-* **Filtar modela kamere**: Grupirajte slike prema vrsti kamere ako koristite više kamera.***
+1. Select one or more images in the File Browser table
+2. Click the **"Remove Selected"** <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> button
+3. Confirm removal (files are not deleted from disk, only removed from the project)
 
-## Pregled slike
+### Sorting and Filtering
 
-### Pogledajte cijelu sliku
+* **Sort by column**: Click any column header to sort images
+* **Timestamp sort**: Useful for organizing chronological capture sequences
+* **Camera model filter**: Group images by camera type if using multiple cameras
 
-Kliknite bilo koju sličicu slike u pregledniku datoteka kako biste je prikazali u glavnom području pregleda:
+***
 
-1. Slika se pojavljuje u središnjoj ploči za pregled.
-2. Koristite kontrole zumiranja za pregled detalja slike.
-3. Krećite se između slika pomoću tipki sa strelicama.
+## Image Preview
 
-### Brza navigacija
+### Viewing Full Image
 
-* **Slika iznad**: Kliknite lijevu strelicu ili pritisnite tipku ←.
-* **Slika ispod**: kliknite desnu strelicu ili pritisnite tipku →.
-* **Uvećanje/smanjenje**: Koristite kotačić miša ili tipke za zumiranje.
-* **Panorama**: Kliknite i povucite na sliku kada je uvećana.***
+Click any image thumbnail in the File Browser to display it in the main preview area:
 
-## Upravljanje dupliciranim datotekama
+1. Image appears in the center preview panel
+2. Use zoom controls to inspect image details
+3. Navigate between images using arrow keys
 
-Chloros automatski otkriva i zanemaruje duplicirane datoteke:
+### Quick Navigation
 
-* Datoteke s identičnim nazivima se zanemaruju.
-* Izbjegavajte slučajnu dvostruku obradu.
-* Prikazuje se poruka upozorenja kada se otkriju duplikati.
+* **Previous Image**: Click left arrow or press ← key
+* **Next Image**: Click right arrow or press → key
+* **Zoom In/Out**: Use mouse wheel or zoom buttons
+* **Pan**: Click and drag on image when zoomed in
 
-{% hint style=&quot;upozorenje&quot; %}
-**Važno**: Nemojte preimenovati ili mijenjati izvorne slikovne datoteke prije nego ih uvezete. Chloros se oslanja na izvorne nazive datoteka i metapodatke za pravilnu obradu.
-{% endhint %}***## Mješoviti skupovi podataka kamere
+***
 
-Ako vaš projekt sadrži slike s više MAPIR kamera:
+## Duplicate File Handling
 
-1. Chloros automatski detektira svaki model kamere.
-2. Svaki tip kamere obrađuje se s odgovarajućim profilom kalibracije.
-3. Istraživač datoteka prikazuje model kamere u stupcu Model kamere.
-4. Obrada primjenjuje ispravne postavke za svaku vrstu kamere.
+Chloros automatically detects and ignores duplicate files:
 
-**Primjer scenarija**: Survey3W RGN + Survey3N OCN postavljanje dvostruke kamere.***
+* Files with identical filenames are skipped
+* Prevents accidental double-processing
+* Warning message displayed when duplicates are detected
 
-## Najbolji primjeri iz prakse
+{% hint style="warning" %}
+**Important**: Do not rename or modify your original image files before importing. Chloros relies on original filenames and metadata for proper processing.
+{% endhint %}
 
-### Uredi prije uvoza
+***
 
-* Čuvajte kalibracijske slike u istoj mapi kao i slike studija.
-* Zadržite izvornu strukturu mapa vašeg fotoaparata/SD kartice.
-* Ne miješajte skupove podataka iz različitih sesija u istom projektu.
+## Mixed Camera Datasets
 
-### Imena datoteka
+If your project contains images from multiple MAPIR cameras:
 
-* Zadržite izvorne nazive datoteka fotoaparata (IMG\_0001.RAW, itd.).
-* Nemojte preimenovati datoteke prije nego ih uvezete.
-* Izvorni nazivi sadrže važne metapodatke.
+1. Chloros automatically detects each camera model
+2. Each camera type is processed with its appropriate calibration profile
+3. File Browser displays camera model in the Camera Model column
+4. Processing applies correct settings for each camera type
 
-### Slike kalibracije
+**Example scenario**: Survey3W RGN + Survey3N OCN dual-camera setup
 
-*Uvijek uključite 1-2 kalibracijske slike po sesiji.
-* Hvatanje ciljeva prije i poslije sesije hvatanja.
-*Postavite mete u iste svjetlosne uvjete kao i područje hvatanja.
-* Provjerite kalibracijske slike s okvirom Target kako biste ubrzali obradu.
+***
 
-***## Uobičajeni problemi i rješenja
+## Best Practices
 
-### Slike se ne pojavljuju nakon uvoza**Mogući uzroci:**
+### Organize Before Import
 
-* Format datoteke nije podržan (samo RAW+JPG i JPG s MAPIR kamera).
-* Slike su s kamera koje nisu MAPIR (pogledajte [Podržane kamere](../supported-cameras.md)).
-* Oštećena datoteka ili nepotpun prijenos sa SD kartice.
+* Keep calibration target images in the same folder as survey images
+* Maintain original folder structure from your camera/SD card
+* Don't mix datasets from different sessions in one project
 
-**Rješenje**: Provjerite kompatibilnost formata datoteke i modela fotoaparata.
+### File Naming
 
-### Model kamere nije otkriven**Mogući uzroci:**
+* Preserve original camera filenames (IMG\_0001.RAW, etc.)
+* Don't rename files before import
+* Original names contain important metadata
 
-* Promijenjeni EXIF ​​​​metapodaci.
-* Slike uređene u vanjskom softveru.
-* Nedovršen prijenos datoteke.
+### Calibration Target Images
 
-**Rješenje**: Ponovno uvezite izvorne neizmijenjene datoteke s fotoaparata ili SD kartice.
+* Always include 1-2 calibration target images per session
+* Capture targets before and after the capture session
+* Place targets in the same lighting conditions as capture area
+* Mark target images using the Target checkbox to speed up processing
 
-### Nedostaju vremenske oznake**Mogući uzroci:**
+***
 
-* Sat fotoaparata nije ispravno postavljen
-* EXIF podatke uklonio je vanjski softver
+## Common Issues and Solutions
 
-**Rješenje**: Provjerite je li postavka vremena kamere bila ispravna tijekom snimanja.***## Sljedeći koraci
+### Images Not Appearing After Import
 
-Nakon što se datoteke uvezu:
+**Possible causes:**
 
-1. **Provjerite popis datoteka**– Provjerite jesu li sve slike uspješno učitane.
-2.**Provjerite modele kamera**: Provjerite je li detekcija kamere ispravna.
-3.**Provjerite ciljne slike**: Pogledajte [Odabir ciljnih slika](choosing-target-images.md).
-4.**Prilagodite postavke**: Postavite opcije obrade u [Postavke projekta](adjusting-project-settings.md).
-5.**Pokreni obradu**: Pogledajte [Pokretanje obrade](starting-the-processing.md).
+* File format not supported (only RAW+JPG and JPG from MAPIR cameras)
+* Images are from non-MAPIR cameras (see [Supported Cameras](../supported-cameras.md))
+* File corruption or incomplete transfer from SD card
 
-Za detalje o postavkama projekta pogledajte [Prilagođavanje postavki projekta](adjusting-project-settings.md).
+**Solution**: Verify file format and camera model compatibility
+
+### Camera Model Not Detected
+
+**Possible causes:**
+
+* Modified EXIF metadata
+* Images edited in external software
+* Incomplete file transfer
+
+**Solution**: Re-import original, unmodified files from camera/SD card
+
+### Missing Timestamps
+
+**Possible causes:**
+
+* Camera clock not set correctly
+* EXIF data stripped by external software
+
+**Solution**: Verify camera time settings were correct during capture
+
+***
+
+## Next Steps
+
+Once your files are imported:
+
+1. **Review the file list** - Ensure all images loaded correctly
+2. **Check camera models** - Verify correct camera detection
+3. **Mark target images** - See [Choosing Target Images](choosing-target-images.md)
+4. **Adjust settings** - Configure processing options in [Project Settings](adjusting-project-settings.md)
+5. **Start processing** - See [Starting the Processing](starting-the-processing.md)
+
+For detailed information about project configuration, see [Adjusting Project Settings](adjusting-project-settings.md).

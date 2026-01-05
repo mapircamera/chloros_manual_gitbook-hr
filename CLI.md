@@ -1,44 +1,48 @@
-# CLI: Naredbeni redak
+# CLI : Command Line
 
-<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>**Chloros CLI** pruža moćan pristup naredbenog retka mehanizmu za obradu slike Chloros, omogućujući automatizaciju, skriptiranje i izravne operacije za vaše tijekove rada sa slikama.
+<figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
 
-### Glavne značajke
+The **Chloros CLI** provides powerful command-line access to the Chloros image processing engine, enabling automation, scripting, and headless operation for your imaging workflows.
 
-* 🚀 **Automatizacija**: skriptirana skupna obrada više skupova podataka
-* 🔗 **Integracija**: Integrira se u postojeće tijekove rada i procese
-* 💻 **Rad bez GUI-a**: radi bez GUI-ja
-* 🌍 **Višejezično**: Podržava 38 jezika
-* ⚡ **Paralelna obrada**: Dinamički se prilagođava vašem CPU-u (do 16 paralelnih radnika).
+### Key Features
 
-### Zahtjevi
+* 🚀 **Automation** - Script batch processing of multiple datasets
+* 🔗 **Integration** - Embed in existing workflows and pipelines
+* 💻 **Headless Operation** - Run without GUI
+* 🌍 **Multi-Language** - Support for 38 languages
+* ⚡ **Parallel Processing** - Dynamically scales to your CPU (up to 16 parallel workers)
 
-| Zahtjev | Detalji |
-| -------------------- | ------------------------------------------------------------------------------- |
-|**Operativni sustav**| Windows 10/11 (64-bitni) |
-|**Licenca**| Chloros+ ([potreban plan plaćanja](https://cloud.mapir.camera/pricing)) |
-|**Sjećanje**| Minimalno 8 GB RAM-a (preporučuje se 16 GB) |
-|**Internet**| Potrebno za aktivaciju licence |
-|**Prostor na disku**| Razlikuje se ovisno o veličini projekta |
+### Requirements
 
-{% hint style=&quot;upozorenje&quot; %}**Zahtjevi licence**: CLI zahtijeva plaćenu pretplatu na Chloros+. Standardni (besplatni) planovi nemaju pristup CLI-ju. Posjetite [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) za ažuriranje.
+| Requirement          | Details                                                             |
+| -------------------- | ------------------------------------------------------------------- |
+| **Operating System** | Windows 10/11 (64-bit)                                              |
+| **License**          | Chloros+ ([paid plan required](https://cloud.mapir.camera/pricing)) |
+| **Memory**           | 8GB RAM minimum (16GB recommended)                                  |
+| **Internet**         | Required for license activation                                     |
+| **Disk Space**       | Varies by project size                                              |
+
+{% hint style="warning" %}
+**License Requirement**: The CLI requires a paid Chloros+ subscription. Standard (free) plans do not have CLI access. Visit [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) to upgrade.
 {% endhint %}
 
-## Brzi početak
+## Quick Start
 
-### Objekt
+### Installation
 
-CLI je automatski uključen u Chloros instalacijski program:
+The CLI is automatically included with the Chloros installer:
 
-1. Preuzmite i pokrenite**Chloros Installer.exe**2. Dovršite čarobnjaka za instalaciju
-3. CLI instaliran na: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
+1. Download and run **Chloros Installer.exe**
+2. Complete the installation wizard
+3. CLI installed to: `C:\Program Files\Chloros\resources\cli\chloros-cli.exe`
 
-{% hint style=&quot;uspjeh&quot; %}
-Instalacijski program automatski dodaje `chloros-cli` u PATH vašeg sustava. Ponovno pokrenite terminal nakon instalacije.
+{% hint style="success" %}
+The installer automatically adds `chloros-cli` to your system PATH. Restart your terminal after installation.
 {% endhint %}
 
-### Početno postavljanje
+### First-Time Setup
 
-Prije korištenja CLI-ja, aktivirajte svoju Chloros+ licencu:
+Before using the CLI, activate your Chloros+ license:
 
 ```bash
 # Login with your Chloros+ account
@@ -51,85 +55,140 @@ chloros-cli status
 chloros-cli process "C:\Images\Dataset001"
 ```
 
-### Osnovna uporaba
+### Basic Usage
 
-Obradi mapu sa zadanim postavkama:
+Process a folder with default settings:
 
 ```powershell
 chloros-cli process "C:\Images\Dataset001"
-```***
+```
 
-## Referenca naredbi
+***
 
-### Opća sintaksa
+## Command Reference
+
+### General Syntax
 
 ```
 chloros-cli [global-options] <command> [command-options]
 ```
 
-***## Naredbe
+***
 
-### `process`: obradite slike
+## Commands
 
-Obradite slike u mapi s kalibracijom.**Sintaksa:**```bash
+### `process` - Process Images
+
+Process images in a folder with calibration.
+
+**Syntax:**
+
+```bash
 chloros-cli process <input-folder> [options]
-```**Primjer:**```powershell
+```
+
+**Example:**
+
+```powershell
 chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 ```
 
-#### Opcije naredbe za obradu
+#### Process Command Options
 
-| Opcija | Upišite | Zadano | Opis |
-| --------------------- | ------- | -------------- | -------------------------------------------------------------------------------- |
-| `<input-folder>` | Ruta | _Obavezno_ | Mapa koja sadrži RAW/JPG multispektralne slike |
-| `-o, --output` | Ruta | Isto kao unos | Izlazna mapa za obrađene slike |
-| `-n, --project-name` | Lanac | Automatski generirano | Prilagođeni naziv projekta |
-| `--vignette` | Indikator | Omogućeno | Omogući ispravak vinjete |
-| `--no-vignette` | Indikator | - | Onemogući korekciju vinjete |
-| `--reflectance` | Indikator | Omogućeno | Omogući kalibraciju refleksije |
-| `--no-reflectance` | Indikator | - | Onemogući kalibraciju refleksije |
-| `--ppk` | Indikator | Onemogućeno | Primijeni PPK korekcije iz podataka svjetlosnog senzora .daq |
-| `--format` | Opcija | TIFF (16 bita) | Izlazni format: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
-| `--min-target-size` | Cijeli broj | Automatski | Minimalna veličina cilja u pikselima za otkrivanje kalibracijske ploče |
-| `--target-clustering` | Cijeli broj | Automatski | Prag ciljnog grupiranja (0-100) |
-| `--exposure-pin-1` | Lanac | Ništa | Zaključaj ekspoziciju za model kamere (Pin 1) |
-| `--exposure-pin-2` | Lanac | Ništa | Zaključaj ekspoziciju za model kamere (Pin 2) |
-| `--recal-interval` | Cijeli broj | Auto | Interval rekalibracije u sekundama |
-| `--timezone-offset` | Cijeli broj | 0 | Vremensko odstupanje u satima |***
+| Option                | Type    | Default        | Description                                                                            |
+| --------------------- | ------- | -------------- | -------------------------------------------------------------------------------------- |
+| `<input-folder>`      | Path    | _Required_     | Folder containing RAW/JPG multispectral images                                         |
+| `-o, --output`        | Path    | Same as input  | Output folder for processed images                                                     |
+| `-n, --project-name`  | String  | Auto-generated | Custom project name                                                                    |
+| `--vignette`          | Flag    | Enabled        | Enable vignette correction                                                             |
+| `--no-vignette`       | Flag    | -              | Disable vignette correction                                                            |
+| `--reflectance`       | Flag    | Enabled        | Enable reflectance calibration                                                         |
+| `--no-reflectance`    | Flag    | -              | Disable reflectance calibration                                                        |
+| `--ppk`               | Flag    | Disabled       | Apply PPK corrections from .daq light sensor data                                      |
+| `--format`            | Choice  | TIFF (16-bit)  | Output format: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
+| `--min-target-size`   | Integer | Auto           | Minimum target size in pixels for calibration panel detection                          |
+| `--target-clustering` | Integer | Auto           | Target clustering threshold (0-100)                                                    |
+| `--exposure-pin-1`    | String  | None           | Lock exposure for camera model (Pin 1)                                                 |
+| `--exposure-pin-2`    | String  | None           | Lock exposure for camera model (Pin 2)                                                 |
+| `--recal-interval`    | Integer | Auto           | Recalibration interval in seconds                                                      |
+| `--timezone-offset`   | Integer | 0              | Timezone offset in hours                                                               |
 
-### `login` - Autentifikacija računa
+***
 
-Prijavite se svojim vjerodajnicama za Chloros+ kako biste omogućili CLI obradu.
+### `login` - Authenticate Account
 
-**Sintaksa:**```bash
+Login with your Chloros+ credentials to enable CLI processing.
+
+**Syntax:**
+
+```bash
 chloros-cli login <email> <password>
-```**Primjer:**```powershell
+```
+
+**Example:**
+
+```powershell
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style=&quot;upozorenje&quot; %}**Posebni znakovi**: Koristite jednostruke navodnike oko zaporki koje sadrže znakove kao što su `$`, `!` ili razmake.
-{% endhint %}**Proizlaziti:**<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>***
+{% hint style="warning" %}
+**Special Characters**: Use single quotes around passwords containing characters like `$`, `!`, or spaces.
+{% endhint %}
 
-### `logout`: brisanje vjerodajnica
+**Output:**
 
-Izbrišite pohranjene vjerodajnice i odjavite se sa svog računa.**Sintaksa:**```bash
+<figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
+
+***
+
+### `logout` - Clear Credentials
+
+Clear stored credentials and logout from your account.
+
+**Syntax:**
+
+```bash
 chloros-cli logout
-```**Primjer:**```powershell
+```
+
+**Example:**
+
+```powershell
 chloros-cli logout
-```**Izlaz:**```
+```
+
+**Output:**
+
+```
 ✓ Logout successful
 ℹ Credentials cleared from cache
-```***
+```
 
-### `status` - Provjerite status licence
+{% hint style="info" %}
+**SDK Users**: The Python SDK also provides a programmatic `logout()` method for clearing credentials within Python scripts. See the [Python SDK documentation](api-python-sdk.md#logout) for details.
+{% endhint %}
 
-Prikazuje trenutnu licencu i status provjere autentičnosti.
+***
 
-**Sintaksa:**```bash
+### `status` - Check License Status
+
+Display current license and authentication status.
+
+**Syntax:**
+
+```bash
 chloros-cli status
-```**Primjer:**```powershell
+```
+
+**Example:**
+
+```powershell
 chloros-cli status
-```**Izlaz:**```
+```
+
+**Output:**
+
+```
 ╔══════════════════════════════════════╗
 ║     LICENSE & ACCOUNT INFORMATION    ║
 ╚══════════════════════════════════════╝
@@ -138,23 +197,37 @@ chloros-cli status
 📋 Plan: Chloros+ Professional
 🔓 API/CLI Access: Enabled
 ✓ Status: Active
-```***
+```
 
-### `export-status`: Provjerite napredak izvoza
+***
 
-Prati napredak izvoza niti 4 tijekom ili nakon obrade.
+### `export-status` - Check Export Progress
 
-**Sintaksa:**```bash
+Monitor Thread 4 export progress during or after processing.
+
+**Syntax:**
+
+```bash
 chloros-cli export-status
-```**Primjer:**```powershell
+```
+
+**Example:**
+
+```powershell
 chloros-cli export-status
-```**Slučaj upotrebe:**Pozovite ovu naredbu dok je obrada u tijeku da provjerite napredak izvoza.***
+```
 
-### `language`: upravljajte jezikom sučelja
+**Use Case:** Call this command while processing is running to check export progress.
 
-Pogledajte ili promijenite jezik CLI sučelja.
+***
 
-**Sintaksa:**```bash
+### `language` - Manage Interface Language
+
+View or change the CLI interface language.
+
+**Syntax:**
+
+```bash
 # Show current language
 chloros-cli language
 
@@ -163,7 +236,11 @@ chloros-cli language --list
 
 # Set a specific language
 chloros-cli language <language-code>
-```**Primjeri:**```powershell
+```
+
+**Examples:**
+
+```powershell
 # View current language
 chloros-cli language
 
@@ -177,157 +254,203 @@ chloros-cli language es
 chloros-cli language ja
 ```
 
-#### Podržani jezici (ukupno 38)
+#### Supported Languages (38 Total)
 
-| Kod | Jezik | Domaće ime |
+| Code    | Language              | Native Name      |
 | ------- | --------------------- | ---------------- |
-| `en` | engleski | engleski |
-| `es` | španjolski | španjolski |
-| `pt` | portugalski | portugalski |
-| `fr` | francuski | francuski |
-| `de` | njemački | njemački |
-| `it` | talijanski | talijanski |
-| `ja` | japanski | 日本語 |
-| `ko` | korejski | 한국어 |
-| `zh` | Kineski (pojednostavljeni) | 简体中文 |
-| `zh-TW` | Kineski (tradicionalni) | 繁體中文 |
-| `ru` | ruski | ruski |
-| `nl` | nizozemski | Nizozemska |
-| `ar` | arapski | العربية |
-| `pl` | poljski | poljski |
-| `tr` | turski | Turkce |
-| `hi` | hindski | हिंदी |
-| `id` | indonezijski | Bahasa Indonezija |
-| `vi` | vijetnamski | Tiếng Việt |
-| `th` | tajlandski | ไทย |
-| `sv` | švedski | Svenska |
-| `da` | danski | Dansk |
-| `no` | norveški | Norsk |
-| `fi` | finski | Suomi |
-| `el` | grčki | Ελληνικά |
-| `cs` | češki | Ceština |
-| `hu` | mađarski | mađarski |
-| `ro` | rumunjski | Română |
-| `uk` | ukrajinski | Ukrajinska |
-| `pt-BR` | brazilski portugalski | brazilski portugalski |
-| `zh-HK` | kantonski | 粵語 |
-| `ms` | malajski | Bahasa Melayu |
-| `sk` | slovački | Slovenčina |
-| `bg` | bugarski | Bʺlgarski |
-| `hr` | hrvatski | Hrvatski |
-| `lt` | litvanski | Lietuvių |
-| `lv` | latvijski | Latviešu |
-| `et` | estonski | Eesti |
-| `sl` | slovenski | Slovenščina |
+| `en`    | English               | English          |
+| `es`    | Spanish               | Español          |
+| `pt`    | Portuguese            | Português        |
+| `fr`    | French                | Français         |
+| `de`    | German                | Deutsch          |
+| `it`    | Italian               | Italiano         |
+| `ja`    | Japanese              | 日本語              |
+| `ko`    | Korean                | 한국어              |
+| `zh`    | Chinese (Simplified)  | 简体中文             |
+| `zh-TW` | Chinese (Traditional) | 繁體中文             |
+| `ru`    | Russian               | Русский          |
+| `nl`    | Dutch                 | Nederlands       |
+| `ar`    | Arabic                | العربية          |
+| `pl`    | Polish                | Polski           |
+| `tr`    | Turkish               | Türkçe           |
+| `hi`    | Hindi                 | हिंदी            |
+| `id`    | Indonesian            | Bahasa Indonesia |
+| `vi`    | Vietnamese            | Tiếng Việt       |
+| `th`    | Thai                  | ไทย              |
+| `sv`    | Swedish               | Svenska          |
+| `da`    | Danish                | Dansk            |
+| `no`    | Norwegian             | Norsk            |
+| `fi`    | Finnish               | Suomi            |
+| `el`    | Greek                 | Ελληνικά         |
+| `cs`    | Czech                 | Čeština          |
+| `hu`    | Hungarian             | Magyar           |
+| `ro`    | Romanian              | Română           |
+| `uk`    | Ukrainian             | Українська       |
+| `pt-BR` | Brazilian Portuguese  | Português Brasileiro |
+| `zh-HK` | Cantonese             | 粵語             |
+| `ms`    | Malay                 | Bahasa Melayu    |
+| `sk`    | Slovak                | Slovenčina       |
+| `bg`    | Bulgarian             | Български        |
+| `hr`    | Croatian              | Hrvatski         |
+| `lt`    | Lithuanian            | Lietuvių         |
+| `lv`    | Latvian               | Latviešu         |
+| `et`    | Estonian              | Eesti            |
+| `sl`    | Slovenian             | Slovenščina      |
 
-{% hint style=&quot;uspjeh&quot; %}**Automatska postojanost**: Vaša jezična postavka sprema se u `~/.chloros/cli_language.json` i traje kroz sesije.
-{% endhint %}***### `set-project-folder`: Postavite zadanu mapu projekta
+{% hint style="success" %}
+**Automatic Persistence**: Your language preference is saved to `~/.chloros/cli_language.json` and persists across all sessions.
+{% endhint %}
 
-Promijenite zadanu lokaciju mape projekta (dijeli se s GUI-jem).
+***
 
-**Sintaksa:**```bash
+### `set-project-folder` - Set Default Project Folder
+
+Change the default project folder location (shared with GUI).
+
+**Syntax:**
+
+```bash
 chloros-cli set-project-folder <folder-path>
-```**Primjer:**```powershell
+```
+
+**Example:**
+
+```powershell
 chloros-cli set-project-folder "C:\Projects\2025"
-```***
+```
 
-### `get-project-folder`: prikaži mapu projekta
+***
 
-Prikazuje trenutnu zadanu lokaciju mape projekta.
+### `get-project-folder` - Show Project Folder
 
-**Sintaksa:**```bash
+Display the current default project folder location.
+
+**Syntax:**
+
+```bash
 chloros-cli get-project-folder
-```**Primjer:**```powershell
+```
+
+**Example:**
+
+```powershell
 chloros-cli get-project-folder
-```**Izlaz:**```
+```
+
+**Output:**
+
+```
 ℹ Current project folder: C:\Projects\2025
-```***
+```
 
-### `reset-project-folder`: vraćanje na zadane vrijednosti
+***
 
-Ponovno postavlja mapu projekta na zadanu lokaciju.
+### `reset-project-folder` - Reset to Default
 
-**Sintaksa:**```bash
+Reset the project folder to the default location.
+
+**Syntax:**
+
+```bash
 chloros-cli reset-project-folder
-```***
+```
 
-## Globalne opcije
+***
 
-Ove se opcije odnose na sve naredbe:
+## Global Options
 
-| Opcija | Upišite | Zadano | Opis |
+These options apply to all commands:
+
+| Option          | Type    | Default       | Description                                      |
 | --------------- | ------- | ------------- | ------------------------------------------------ |
-| `--backend-exe` | Ruta | Automatski otkriveno | Put do pozadinske izvršne |
-| `--port` | Cijeli broj | 5000 | API pozadinski port broj |
-| `--restart` | Indikator | - | Prisilno ponovno pokretanje pozadine (ubija postojeće procese) |
-| `--version` | Indikator | - | Prikaži informacije o verziji i izađi |
-| `--help` | Indikator | - | Prikaži informacije za pomoć i izađi |
+| `--backend-exe` | Path    | Auto-detected | Path to backend executable                       |
+| `--port`        | Integer | 5000          | Backend API port number                          |
+| `--restart`     | Flag    | -             | Force restart backend (kills existing processes) |
+| `--version`     | Flag    | -             | Show version information and exit                |
+| `--help`        | Flag    | -             | Show help information and exit                   |
 
-**Primjer s globalnim opcijama:**```powershell
+**Example with Global Options:**
+
+```powershell
 chloros-cli --port 5001 process "C:\Datasets\Survey_001"
-```***
+```
 
-## Vodič za konfiguraciju obrade
+***
 
-### Paralelna obrada
+## Processing Settings Guide
 
-Chloros+ CLI **automatski skalira**paralelnu obradu kako bi odgovarao mogućnostima vašeg računala:**Kako radi:**
+### Parallel Processing
 
-* Otkriva CPU i RAM jezgre.
-* Dodjeljuje radnike: **2× CPU jezgre** (koristi hipernitnost).
-* **Maksimalno: 16 radnika paralelno**(za veću stabilnost).**Razine sustava:**| Vrsta sustava | CPU | RAM | Radnici | Izvedba |
+Chloros+ CLI **automatically scales** parallel processing to match your computer's capabilities:
+
+**How It Works:**
+
+* Detects your CPU cores and RAM
+* Allocates workers: **2× CPU cores** (uses hyperthreading)
+* **Maximum: 16 parallel workers** (for stability)
+
+**System Tiers:**
+
+| System Type   | CPU        | RAM      | Workers  | Performance     |
 | ------------- | ---------- | -------- | -------- | --------------- |
-|**Visoki raspon**| 16+ jezgri | 32+ GB | Do 16 | Najveća brzina |
-|**Srednje klase**| 8-15 jezgri | 16-31 GB | 8-16 | Izvrsna brzina |
-|**Niski raspon**| 4-7 jezgri | 8-15 GB | 4-8 | Dobra brzina |
+| **High-End**  | 16+ cores  | 32+ GB   | Up to 16 | Maximum speed   |
+| **Mid-Range** | 8-15 cores | 16-31 GB | 8-16     | Excellent speed |
+| **Low-End**   | 4-7 cores  | 8-15 GB  | 4-8      | Good speed      |
 
-{% hint style=&quot;uspjeh&quot; %}**Automatska optimizacija**: CLI automatski otkriva specifikacije vašeg sustava i konfigurira optimalnu paralelnu obradu. Nije potrebna ručna konfiguracija!
+{% hint style="success" %}
+**Automatic Optimization**: The CLI automatically detects your system specs and configures optimal parallel processing. No manual configuration needed!
 {% endhint %}
 
-### Debayerove metode
+### Debayer Methods
 
-CLI koristi**High Quality (Faster)**kao zadani i preporučeni Debayer algoritam:
+The CLI uses **High Quality (Faster)** as the default and recommended debayer algorithm:
 
-| Metoda | Kvaliteta | Brzina| Opis |
-| ---------------------------- | ------- | ----- | ---------------------------------------------- |
-|**Visoka kvaliteta (brže)**⭐ | ⭐⭐⭐⭐ | ⚡⚡⚡ | Algoritam osjetljiv na rubove (zadano, preporučeno) |
+| Method                      | Quality | Speed | Description                                 |
+| --------------------------- | ------- | ----- | ------------------------------------------- |
+| **High Quality (Faster)** ⭐ | ⭐⭐⭐⭐    | ⚡⚡⚡   | Edge-aware algorithm (default, recommended) |
 
-### Ispravak vinjete**Što radi:** ispravlja gubitak svjetla na rubovima slike (tamniji kutovi uobičajeni na slikama fotoaparata).
+### Vignette Correction
 
-* **Omogućeno prema zadanim postavkama**: većina korisnika trebala bi držati ovu opciju uključenom.
-* Koristite `--no-vignette` da biste ga onemogućili.
+**What it does:** Corrects light falloff at image edges (darker corners common in camera imagery).
 
-{% hint style=&quot;uspjeh&quot; %}
-**Preporuka**: Uvijek uključite korekciju vinjete kako biste osigurali jednoliku svjetlinu u cijelom okviru.
+* **Enabled by default** - Most users should keep this enabled
+* Use `--no-vignette` to disable
+
+{% hint style="success" %}
+**Recommendation**: Always enable vignette correction to ensure uniform brightness across the frame.
 {% endhint %}
 
-### Kalibracija refleksije
+### Reflectance Calibration
 
-Pretvara neobrađene vrijednosti senzora u standardizirane postotke refleksije pomoću kalibracijskih ploča.
+Converts raw sensor values to standardized reflectance percentages using calibration panels.
 
-* **Omogućeno prema zadanim postavkama** – Neophodno za analizu vegetacije.
-*Zahtijeva kalibracijske ploče na slikama.
-* Koristite `--no-reflectance` da biste ga onemogućili.
+* **Enabled by default** - Essential for vegetation analysis
+* Requires calibration target panels in images
+* Use `--no-reflectance` to disable
 
-{% hint style=&quot;info&quot; %}
-**Zahtjevi**: provjerite jesu li kalibracijske ploče ispravno eksponirane i vidljive na vašim slikama radi točne konverzije refleksije.
+{% hint style="info" %}
+**Requirements**: Ensure calibration panels are properly exposed and visible in your images for accurate reflectance conversion.
 {% endhint %}
 
-### PPK popravci**Što radi:** Primjenjuje naknadno obrađene kinematičke korekcije pomoću podataka zapisnika DAQ-A-SD radi poboljšanja točnosti GPS-a.
+### PPK Corrections
 
-* **Onemogućeno prema zadanim postavkama**
-* Koristite `--ppk` da ga aktivirate
-* Zahtijeva .daq datoteke u mapi projekta senzora svjetla MAPIR DAQ-A-SD.
+**What it does:** Applies Post-Processed Kinematic corrections using DAQ-A-SD log data for improved GPS accuracy.
 
-### Izlazni formati
+* **Disabled by default**
+* Use `--ppk` to enable
+* Requires .daq files in project folder from MAPIR DAQ-A-SD light sensor.
 
-<table><thead><tr><th width="197">Format</th><th width="130.20001220703125">Bit dubina</th><th width="116.5999755859375">Veličina datoteke</th><th>Idealno za</th></tr></thead><tbody><tr><td><strong>TIFF (16-bit)</strong> ⭐</td><td>16-bitni cijeli broj</td><td>Veliki</td><td>GIS analiza, fotogrametrija (preporučeno)</td></tr><tr><td><strong>TIFF (32-bitni, postotak)</strong></td><td>32-bitni pokretni zarez</td><td>Vrlo veliki</td><td>Znanstvena analiza, istraživanje</td></tr><tr><td><strong>PNG (8-bitni)</strong></td><td>8-bitni cijeli broj</td><td>Srednji</td><td>Vizualni pregled, web dijeljenje</td></tr><tr><td><strong>JPG (8-bitni)</strong></td><td>8-bitni cijeli broj</td><td>Mali</td><td>Brzo pregled, komprimirani izlaz</td></tr></tbody></table>***
+### Output Formats
 
-## Automatizacija i skriptiranje
+<table><thead><tr><th width="197">Format</th><th width="130.20001220703125">Bit Depth</th><th width="116.5999755859375">File Size</th><th>Best For</th></tr></thead><tbody><tr><td><strong>TIFF (16-bit)</strong> ⭐</td><td>16-bit integer</td><td>Large</td><td>GIS analysis, photogrammetry (recommended)</td></tr><tr><td><strong>TIFF (32-bit, Percent)</strong></td><td>32-bit float</td><td>Very Large</td><td>Scientific analysis, research</td></tr><tr><td><strong>PNG (8-bit)</strong></td><td>8-bit integer</td><td>Medium</td><td>Visual inspection, web sharing</td></tr><tr><td><strong>JPG (8-bit)</strong></td><td>8-bit integer</td><td>Small</td><td>Quick preview, compressed output</td></tr></tbody></table>
 
-### Skupna obrada PowerShell-a
+***
 
-Automatski obradi više mapa skupova podataka:
+## Automation & Scripting
+
+### PowerShell Batch Processing
+
+Process multiple dataset folders automatically:
 
 ```powershell
 # process_all_datasets.ps1
@@ -351,9 +474,9 @@ foreach ($dataset in $datasets) {
 Write-Host "All datasets processed!" -ForegroundColor Green
 ```
 
-### Windows batch skripta
+### Windows Batch Script
 
-Jednostavna petlja za skupnu obradu:
+Simple loop for batch processing:
 
 ```batch
 @echo off
@@ -378,9 +501,9 @@ echo All datasets processed!
 pause
 ```
 
-### Python skripta za automatizaciju
+### Python Automation Script
 
-Napredna automatizacija s upravljanjem greškama:
+Advanced automation with error handling:
 
 ```python
 import subprocess
@@ -457,16 +580,18 @@ if __name__ == '__main__':
     main()
 ```
 
-***## Tijek obrade
+***
 
-### Standardni tijek rada
+## Processing Workflow
 
-1.**Unos**: Mapa koja sadrži parove RAW/JPG slika
-2.**Otkrivanje**: CLI automatski traži kompatibilne slikovne datoteke
-3.**Procesiranje**: Paralelni način rada prilagođava se vašim CPU jezgrama (Chloros+)
-4.**Izlaz**: Stvorite podmape po modelu fotoaparata s obrađenim slikama
+### Standard Workflow
 
-### Primjer izlazne strukture
+1. **Input**: Folder containing RAW/JPG image pairs
+2. **Discovery**: CLI auto-scans for supported image files
+3. **Processing**: Parallel mode scales to your CPU cores (Chloros+)
+4. **Output**: Creates camera-model subfolders with processed images
+
+### Example Output Structure
 
 ```
 MyProject/
@@ -479,167 +604,248 @@ MyProject/
     └── ...
 ```
 
-### Procjene vremena obrade
+### Processing Time Estimates
 
-Uobičajena vremena obrade za 100 slika (12 MP svaka):
+Typical processing times for 100 images (12MP each):
 
-| Način | Vrijeme | Hardver |
-| ----------------- | --------- | ---------------------------------------------- |
-|**Paralelni način rada**| 5-10 min | i7/Ryzen 7, 16GB RAM, SSD (do 16 radnika) |
-|**Paralelni način rada**| 10-15 min | i5/Ryzen 5, 8 GB RAM, HDD (do 8 radnika) |
+| Mode              | Time      | Hardware                                     |
+| ----------------- | --------- | -------------------------------------------- |
+| **Parallel Mode** | 5-10 min  | i7/Ryzen 7, 16GB RAM, SSD (up to 16 workers) |
+| **Parallel Mode** | 10-15 min | i5/Ryzen 5, 8GB RAM, HDD (up to 8 workers)   |
 
-{% hint style=&quot;info&quot; %}**Savjet za performanse**: Vrijeme obrade varira ovisno o broju slika, razlučivosti i specifikacijama računala.
-{% endhint %}***## Rješavanje problema
+{% hint style="info" %}
+**Performance Tip**: Processing time varies based on image count, resolution, and computer specs.
+{% endhint %}
 
-### CLI nije pronađen
+***
 
-**Pogreška:**```
+## Troubleshooting
+
+### CLI Not Found
+
+**Error:**
+
+```
 'chloros-cli' is not recognized as an internal or external command
-```**Rješenja:**
+```
 
-1. Provjerite mjesto instalacije:
+**Solutions:**
+
+1. Verify installation location:
 
 ```powershell
 dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 ```
 
-2. Koristite puni put ako nije u PATH:
+2. Use full path if not in PATH:
 
 ```powershell
 "C:\Program Files\Chloros\resources\cli\chloros-cli.exe" process "C:\Datasets\Field_A"
 ```
 
-3. Ručno ga dodajte u PATH:
-   *Otvorite Svojstva sustava → Varijable okoline.
-   * Uredite varijablu PATH.
-   * Dodaj: `C:\Program Files\Chloros\resources\cli`
-   * Ponovno pokrenite terminal.
+3. Add to PATH manually:
+   * Open System Properties → Environment Variables
+   * Edit PATH variable
+   * Add: `C:\Program Files\Chloros\resources\cli`
+   * Restart terminal
 
-***### Pogreška pri pokretanju pozadine.**Pogreška:**```
+***
+
+### Backend Failed to Start
+
+**Error:**
+
+```
 Backend failed to start within 30 seconds
-```**Rješenja:**1. Provjerite je li pozadina već pokrenuta (prvo je zatvorite).
-2. Provjerite da ga Windows vatrozid ne blokira.
-3. Pokušajte s drugim priključkom:
+```
+
+**Solutions:**
+
+1. Check if backend already running (close it first)
+2. Check Windows Firewall is not blocking
+3. Try different port:
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
 ```
 
-4. Prisilno ponovno pokrenite pozadinu:
+4. Force restart backend:
 
 ```powershell
 chloros-cli --restart process "C:\Datasets\Field_A"
-```***
+```
 
-### Problemi s licencom/provjerom autentičnosti
+***
 
-**Pogreška:**```
+### License / Authentication Issues
+
+**Error:**
+
+```
 Chloros+ license required for CLI access
-```**Rješenja:**1. Provjerite imate li aktivnu Chloros+ pretplatu.
-2. Prijavite se svojim vjerodajnicama:
+```
+
+**Solutions:**
+
+1. Verify you have an active Chloros+ subscription
+2. Login with your credentials:
 
 ```powershell
 chloros-cli login user@example.com 'password'
 ```
 
-3. Provjerite status licence:
+3. Check license status:
 
 ```powershell
 chloros-cli status
 ```
 
-4. Kontaktirajte podršku: info@mapir.camera***
+4. Contact support: info@mapir.camera
 
-### Slike nisu pronađene.
+***
 
-**Pogreška:**```
+### No Images Found
+
+**Error:**
+
+```
 No images found in the specified folder
-```**Rješenja:**1. Provjerite sadrži li mapa podržane formate (.RAW, .TIF, .JPG).
-2. Provjerite je li putanja mape točna (upotrijebite navodnike za staze s razmacima).
-3. Provjerite imate li dopuštenja za čitanje mape.
-4. Provjerite jesu li ekstenzije datoteka ispravne.***
+```
 
-### Obrada se zaustavlja ili prekida
+**Solutions:**
 
-**Rješenja:**1. Provjerite raspoloživi prostor na disku (provjerite ima li dovoljno za izlaz).
-2. Zatvorite ostale aplikacije kako biste oslobodili memoriju.
-3. Smanjite broj slika (serijski proces).***
+1. Verify folder contains supported formats (.RAW, .TIF, .JPG)
+2. Check folder path is correct (use quotes for paths with spaces)
+3. Ensure you have read permissions for the folder
+4. Check file extensions are correct
 
-### Port se već koristi
+***
 
-**Pogreška:**```
+### Processing Stalls or Hangs
+
+**Solutions:**
+
+1. Check available disk space (ensure enough for output)
+2. Close other applications to free memory
+3. Reduce image count (process in batches)
+
+***
+
+### Port Already in Use
+
+**Error:**
+
+```
 Port 5000 is already in use
-```**Otopina:**Navedite drugi port:
+```
+
+**Solution:**
+
+Specify a different port:
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
-```***
+```
 
-## Često postavljana pitanja
+***
 
-### P: Trebam li licencu za CLI?
+## FAQ
 
-**O:**Da! CLI zahtijeva**plaćenu Chloros+ licencu**.
+### Q: Do I need a license for the CLI?
 
-* ❌ Standardni plan (besplatno): CLI onemogućen
-* ✅ Chloros+ planovi (plaćeni): CLI potpuno omogućen
+**A:** Yes! The CLI requires a paid **Chloros+ license**.
 
-Pretplatite se na: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
+* ❌ Standard (free) plan: CLI disabled
+* ✅ Chloros+ (paid) plans: CLI fully enabled
 
-***### P: Mogu li koristiti CLI na poslužitelju bez GUI-ja?**O:** Da! CLI radi potpuno bez grafičkog sučelja. Zahtjevi:
+Subscribe at: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
-* Windows Server 2016 ili noviji
-* Visual C++ Redistributable instaliran
-* Dovoljno RAM-a (minimalno 8 GB, preporučeno 16 GB)
-* Jednokratna aktivacija GUI licence na bilo kojem računalu
+***
 
-***### P: Gdje se spremaju obrađene slike?**O:**Prema zadanim postavkama, obrađene slike spremaju se u**istu mapu kao i ulaz**u podmapama modela fotoaparata (npr. `Survey3N_RGN/`).
+### Q: Can I use the CLI on a server without GUI?
 
-Upotrijebite opciju `-o` da odredite drugu izlaznu mapu:
+**A:** Yes! The CLI runs completely headless. Requirements:
+
+* Windows Server 2016 or later
+* Visual C++ Redistributable installed
+* Sufficient RAM (8GB minimum, 16GB recommended)
+* One-time GUI license activation on any machine
+
+***
+
+### Q: Where are processed images saved?
+
+**A:** By default, processed images are saved in the **same folder as input** in camera-model subfolders (e.g., `Survey3N_RGN/`).
+
+Use `-o` option to specify different output folder:
 
 ```powershell
 chloros-cli process "C:\Input" -o "D:\Output"
-```***
+```
 
-### P: Mogu li obraditi više mapa odjednom?
+***
 
-**O:**Ne izravno s jednom naredbom, ali možete koristiti skripte za uzastopnu obradu mapa. Pogledajte odjeljak [Automatizacija i skriptiranje](CLI.md#automation--scripting).***
+### Q: Can I process multiple folders at once?
 
-### P: Kako mogu spremiti CLI izlaz u datoteku dnevnika?
+**A:** Not directly in one command, but you can use scripting to process folders sequentially. See [Automation & Scripting](CLI.md#automation--scripting) section.
 
-**PowerShell:**```powershell
+***
+
+### Q: How do I save CLI output to a log file?
+
+**PowerShell:**
+
+```powershell
 chloros-cli process "C:\Datasets\Field_A" | Tee-Object -FilePath "processing.log"
-```**Serija:**```batch
+```
+
+**Batch:**
+
+```batch
 chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
-```***
+```
 
-### P: Što se događa ako pritisnem Ctrl+C tijekom obrade?
+***
 
-**A:**CLI će učiniti sljedeće:
+### Q: What happens if I press Ctrl+C during processing?
 
-1. Zaustavit će obradu na uredan način.
-2. Isključit će pozadinu.
-3. Izaći će s kodom 130.
+**A:** The CLI will:
 
-Djelomično obrađene slike mogu ostati u izlaznoj mapi.***
+1. Stop processing gracefully
+2. Shut down the backend
+3. Exit with code 130
 
-### P: Mogu li automatizirati CLI obradu?
+Partially processed images may remain in the output folder.
 
-**O:**Naravno! CLI je dizajniran za automatizaciju. Pogledajte [Automatizacija i skriptiranje](CLI.md#automation--scripting) za PowerShell, Batch i Python primjere.***
+***
 
-### P: Kako mogu provjeriti CLI verziju?
+### Q: Can I automate CLI processing?
 
-**A:**```powershell
+**A:** Absolutely! The CLI is designed for automation. See [Automation & Scripting](CLI.md#automation--scripting) for PowerShell, Batch, and Python examples.
+
+***
+
+### Q: How do I check the CLI version?
+
+**A:**
+
+```powershell
 chloros-cli --version
-```**Izlaz:**```
+```
+
+**Output:**
+
+```
 Chloros CLI 1.0.2
-```***
+```
 
-## Potražite pomoć
+***
 
-### Pomoć za naredbeni redak
+## Getting Help
 
-Pogledajte informacije o pomoći izravno u CLI-ju:
+### Command-Line Help
+
+View help information directly in the CLI:
 
 ```powershell
 # General help
@@ -651,15 +857,19 @@ chloros-cli login --help
 chloros-cli language --help
 ```
 
-### Kanali podrške
+### Support Channels
 
 * **Email**: info@mapir.camera
-* **Web stranica**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
-* **Cijene**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)***## Potpuni primjeri
+* **Website**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
+* **Pricing**: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
-### Primjer 1: Osnovna obrada
+***
 
-Obrada sa zadanim postavkama (vinjeta, refleksija):
+## Complete Examples
+
+### Example 1: Basic Processing
+
+Process with default settings (vignette, reflectance):
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A_2025_01_15"
@@ -667,18 +877,22 @@ chloros-cli process "C:\Datasets\Field_A_2025_01_15"
 
 ***
 
-### Primjer 2: Visokokvalitetni znanstveni rezultat
+### Example 2: High-Quality Scientific Output
 
-32-bitni plutajući TIFF:
+32-bit float TIFF:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
   --format "TIFF (32-bit, Percent)" ^
   --vignette ^
   --reflectance
-```***### Primjer 3: Brza obrada pregleda
+```
 
-8-bitni PNG bez kalibracije za brzi pregled:
+***
+
+### Example 3: Fast Preview Processing
+
+8-bit PNG without calibration for quick review:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
@@ -689,17 +903,21 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ***
 
-### Primjer 4: Ispravljena obrada s PPK
+### Example 4: PPK-Corrected Processing
 
-Primijenite PPK korekcije s refleksijom:
+Apply PPK corrections with reflectance:
 
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
   --ppk ^
   --reflectance
-```***### Primjer 5: Lokacija prilagođenog izlaza
+```
 
-Obradite na drugom pogonu s određenim formatom:
+***
+
+### Example 5: Custom Output Location
+
+Process to different drive with specific format:
 
 ```powershell
 chloros-cli process "C:\Input\Raw_Images" ^
@@ -709,9 +927,9 @@ chloros-cli process "C:\Input\Raw_Images" ^
 
 ***
 
-### Primjer 6: Tijek rada provjere autentičnosti
+### Example 6: Authentication Workflow
 
-Potpuni tijek provjere autentičnosti:
+Complete authentication flow:
 
 ```powershell
 # Step 1: Login
@@ -725,11 +943,13 @@ chloros-cli process "C:\Datasets\Field_A"
 
 # Step 4: Logout (optional, when switching accounts)
 chloros-cli logout
-```***
+```
 
-### Primjer 7: Višejezična upotreba
+***
 
-Promjena jezika sučelja:
+### Example 7: Multi-Language Usage
+
+Change interface language:
 
 ```powershell
 # List available languages
