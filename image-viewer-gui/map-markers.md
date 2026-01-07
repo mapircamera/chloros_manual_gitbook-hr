@@ -88,7 +88,7 @@ Kartica Karta podržava dva pružatelja pločica za pozadinske slike karte:
 
 Možete odabrati vrstu sloja karte (s lijeva na desno):
 
-&#x20;<img src="../.gitbook/assets/image (23).png" alt="" data-size="line">
+&#x20;<img src="../.gitbook/assets/image (23).png" alt="" data-size="original">
 
 ### Teren
 
