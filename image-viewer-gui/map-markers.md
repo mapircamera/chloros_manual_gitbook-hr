@@ -2,11 +2,13 @@
 
 Kartica Karta prikazuje vaše slike na interaktivnoj 2D karti na temelju njihovih GPS koordinata. Ovo pruža geografski pregled vaše sesije snimanja i pomaže vam da vizualizirate prostornu pokrivenost. Također je korisno pri prvom uvozu vaših slika za brzo uklanjanje svih slika koje ne morate obraditi.
 
+<figure><img src="../.gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
+
 ## Pristup kartici Karta
 
 1. Otvorite ili kreirajte projekt u Chloros
 2. Uvezite slike koje sadrže GPS metapodatke
-3. Kliknite karticu **Karta** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> na lijevoj bočnoj traci
+3. Kliknite karticu **Mapa** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> na lijevoj bočnoj traci
 4. Karta će prikazati markere na GPS lokaciji svake slike
 
 {% hint style="info" %}
@@ -17,7 +19,7 @@ Kartica Karta prikazuje vaše slike na interaktivnoj 2D karti na temelju njihovi
 
 ## Podešavanje slika s kartice Karta
 
-Kartica **Mapa**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> ima isti dodatak <img src="../.gitbook/assets/image.png" alt="" data-size="line"> <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> i uklonite <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> gumbe za datoteke kao [**Preglednik datoteka**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> kartica radi. Također prikazuje isti popis tablice datoteke projekta, ali s različitim zaglavljima stupaca:
+Kartica **Mapa** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> ima iste gumbe za dodavanje <img src="../.gitbook/assets/image.png" alt="" data-size="line"> <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> i uklanjanje datoteka <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> kao i kartica [**Preglednik datoteka**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">. Također prikazuje isti popis tablice datoteke projekta, ali s različitim zaglavljima stupaca:
 
 ### Naziv datoteke
 
@@ -80,7 +82,7 @@ Kartica Karta podržava dva pružatelja pločica za pozadinske slike karte:
 ### ESRI
 
 * Satelitske i zračne slike iz ESRI ArcGIS
-* Često daje slike veće rezolucije u određenim regijama
+* Često pruža slike veće rezolucije u određenim regijama
 
 ***
 
@@ -117,7 +119,9 @@ Prikazuje pločice satelitske karte s dodanim detaljima (ceste, itd.)
 
 ### Pan kontrole
 
-* **Pomicanje**: kliknite i povucite za kretanje po karti***
+* **Pomicanje**: kliknite i povucite za kretanje po karti
+
+***
 
 ## Slučajevi upotrebe
 
@@ -151,7 +155,7 @@ Prikazuje pločice satelitske karte s dodanim detaljima (ceste, itd.)
 * GPS je bio onemogućen na fotoaparatu tijekom snimanja
 * EXIF podatke uklonio je vanjski softver
 
-**Rješenje**: Provjerite je li GPS omogućen na vašoj kameri i ponovno uvezite originalne datoteke
+**Rješenje**: Provjerite je li GPS omogućen na vašoj kameri i ponovno uvezite izvorne datoteke
 
 ### Markeri na pogrešnoj lokaciji
 

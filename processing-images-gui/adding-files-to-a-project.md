@@ -1,11 +1,11 @@
 # Dodavanje datoteka u projekt
 
-Nakon što ste izradili ili otvorili projekt u Chloros, sljedeći korak je dodavanje vaših multispektralnih slika za početak obrade. Kartica Preglednik datoteka<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> olakšava uvoz slika i upravljanje skupom podataka.
+Nakon što ste izradili ili otvorili projekt u Chloros, sljedeći korak je dodavanje vaših multispektralnih slika za početak obrade. Kartica File Browser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> olakšava uvoz slika i upravljanje vašim skupom podataka.
 
 ## Pristup pregledniku datoteka
 
 1. Otvorite ili kreirajte projekt u Chloros
-2. Kliknite ikonu **Preglednik datoteka** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> na lijevoj bočnoj traci
+2. Kliknite ikonu **File Browser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> na lijevoj bočnoj traci
 3. Ploča File Browser prikazat će popis datoteka vašeg projekta
 
 {% hint style="info" %}
@@ -31,9 +31,11 @@ Koristite ovu opciju za uvoz pojedinačnih slikovnih datoteka ili malog odabira 
 
 Koristite ovu opciju za uvoz svih slika iz mape odjednom.
 
-1. Kliknite gumb **"Dodaj mapu"** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> na vrhu ploče preglednika datoteka
+1. Pritisnite gumb **"Dodaj mapu"** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> na vrhu ploče preglednika datoteka
 2. Dođite do i odaberite mapu koja sadrži slike vaše sesije snimanja
-3. Kliknite **"Odaberi mapu"** za uvoz svih podržanih slika iz te mape***
+3. Kliknite **"Odaberi mapu"** za uvoz svih podržanih slika iz te mape
+
+***
 
 ## Razumijevanje tablice preglednika datoteka
 
@@ -48,7 +50,7 @@ Kada se slike uvezu, pojavljuju se u tablici sa sljedećim stupcima:
 
 * Datum i vrijeme snimanja slike
 * Izdvojeno iz EXIF metapodataka slike
-* Koristi se za PPK sinkronizaciju i otkrivanje cilja kalibracije
+* Koristi se za PPK sinkronizaciju i detekciju cilja kalibracije
 
 ### Model kamere
 
@@ -56,11 +58,17 @@ Kada se slike uvezu, pojavljuju se u tablici sa sljedećim stupcima:
 * Primjeri: Survey3W\_RGN, Survey3N\_OCN, Survey3W\_RGB
 * Koristi se za primjenu ispravnih profila obrade
 
-### Ciljani stupac (potvrdni okvir)
+### Ciljni stupac (potvrdni okvir)
 
 * Označite ovaj okvir za slike koje sadrže kalibracijske ciljeve
 * Uvelike ubrzava otkrivanje cilja tijekom obrade
-* Pogledajte [Odabir ciljanih slika](choosing-target-images.md) za detalje
+* Pogledajte [Odabir ciljanih slika] (choosing-target-images.md) za detalje
+
+### Pregled metapodataka slike
+
+Klikom na gumb za prebacivanje u gornjem desnom kutu iznad tablice prikazuju se metapodaci odabrane slike u području rešetke slike.
+
+<figure><img src="../.gitbook/assets/chloros_grid_meta.gif" alt=""><figcaption></figcaption></figure>
 
 ***
 
@@ -78,13 +86,15 @@ Za uklanjanje neželjenih slika iz vašeg projekta:
 
 * **Razvrstaj po stupcu**: Kliknite zaglavlje bilo kojeg stupca za sortiranje slika
 * **Razvrstavanje vremenskim žigom**: Korisno za organiziranje kronoloških nizova snimanja
-* **Filter modela kamere**: Grupirajte slike prema vrsti kamere ako koristite više kamera***
+* **Filtar modela fotoaparata**: Grupirajte slike prema vrsti fotoaparata ako koristite više fotoaparata
+
+***
 
 ## Pregled slike
 
 ### Pregled cijele slike
 
-Kliknite bilo koju sličicu slike u pregledniku datoteka da biste je prikazali u glavnom području pregleda:
+Kliknite bilo koju sličicu slike u pregledniku datoteka kako biste je prikazali u glavnom području pregleda:
 
 1. Slika se pojavljuje na središnjoj ploči za pregled
 2. Koristite kontrole zumiranja za pregled detalja slike
@@ -95,7 +105,9 @@ Kliknite bilo koju sličicu slike u pregledniku datoteka da biste je prikazali u
 * **Prethodna slika**: Kliknite lijevu strelicu ili pritisnite tipku ←
 * **Sljedeća slika**: Kliknite desnu strelicu ili pritisnite tipku →
 * **Uvećanje/smanjenje**: Koristite kotačić miša ili gumbe za zumiranje
-* **Pomicanje**: Kliknite i povucite sliku kada je uvećana***
+* **Pomicanje**: Kliknite i povucite sliku kada je uvećana
+
+***
 
 ## Rukovanje dupliciranim datotekama
 
@@ -105,7 +117,7 @@ Chloros automatski otkriva i zanemaruje duplicirane datoteke:
 * Sprječava slučajnu dvostruku obradu
 * Poruka upozorenja prikazuje se kada se otkriju duplikati
 
-{% hint style="upozorenje" %}
+{% hint style="warning" %}
 **Važno**: Nemojte preimenovati ili mijenjati izvorne slikovne datoteke prije uvoza. Chloros oslanja se na izvorne nazive datoteka i metapodatke za pravilnu obradu.
 {% endhint %}
 
@@ -120,7 +132,9 @@ Ako vaš projekt sadrži slike s više MAPIR kamera:
 3. Preglednik datoteka prikazuje model kamere u stupcu Model kamere
 4. Obrada primjenjuje ispravne postavke za svaku vrstu kamere
 
-**Primjer scenarija**: Survey3W RGN + Survey3N OCN postavljanje dvostruke kamere***
+**Primjer scenarija**: Survey3W RGN + Survey3N OCN postavljanje dvostruke kamere
+
+***
 
 ## Najbolji primjeri iz prakse
 
@@ -138,7 +152,7 @@ Ako vaš projekt sadrži slike s više MAPIR kamera:
 
 ### Slike cilja kalibracije
 
-* Uvijek uključite 1-2 slike cilja kalibracije po sesiji
+* Uvijek uključite 1-2 ciljane slike kalibracije po sesiji
 * Hvatanje ciljeva prije i poslije sesije hvatanja
 * Postavite mete u iste uvjete osvjetljenja kao područje hvatanja
 * Označite ciljne slike pomoću potvrdnog okvira Target kako biste ubrzali obradu
@@ -174,7 +188,9 @@ Ako vaš projekt sadrži slike s više MAPIR kamera:
 * Sat fotoaparata nije ispravno postavljen
 * EXIF podatke skinuo je vanjski softver
 
-**Rješenje**: Provjerite jesu li postavke vremena kamere točne tijekom snimanja***
+**Rješenje**: Provjerite jesu li postavke vremena kamere točne tijekom snimanja
+
+***
 
 ## Sljedeći koraci
 

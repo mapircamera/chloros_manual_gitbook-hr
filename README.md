@@ -1,7 +1,6 @@
 ---
 metaLinks: {}
 ---
-
 # Prvi koraci
 
 <div data-full-width="false"><figure><img src=".gitbook/assets/chloros_logo_transparent.png" alt=""><figcaption></figcaption></figure></div>
@@ -36,13 +35,21 @@ Iako je Chloros besplatan za korištenje za većinu zadataka, možda ćete pože
 
 * **Višenitna obrada**: uvelike ubrzajte obradu slika za veće projekte istovremenom obradom slika kroz cjevovod.
 * **GPU (CUDA) ubrzanje**: iskoristite prednosti današnjih opcija veće GPU memorije kako biste dodatno ubrzali proces obrade slike. Za najbolje rezultate preporučujemo 4 GB ili više VRAM-a.
-* **Chloros+**[**CLI**](CLI.md)**Pristup**: pokrenite Chloros+ iz naredbenog retka za automatizaciju i integraciju u vlastiti softver.
-* **Chloros+**[**API**](api-python-sdk.md)**Pristup:** pokrenite Chloros+ iz Python za programsku kontrolu, omogućujući besprijekornu integraciju s vašim istraživačkim kanalima, tijekovima rada analize podataka i prilagođenim aplikacijama.
+* **Chloros+** [**CLI**](CLI.md) **Pristup**: pokrenite Chloros+ iz naredbenog retka za automatizaciju i integraciju u vlastiti softver.
+* **Chloros+** [**API**](api-python-sdk.md) **Pristup:** pokrenite Chloros+ iz Python za programsku kontrolu, omogućujući besprijekornu integraciju s vašim istraživačkim kanalima, tijekovima rada analize podataka i prilagođenim aplikacijama.
 * **Korištenje više uređaja**: svaka Chloros+ licenca omogućuje registraciju 2+ uređaja. Koristite svoj MAPIR Cloud račun za upravljanje registriranim uređajima. Dodajte podršku za više uređaja nadogradnjom licence Chloros+.
-* **Prilagođene multispektralne indeksne formule:** unesite prilagođene multispektralne indekse u rasterskim kalkulatorima Chloros, kako za obradu tako i za sandbox za gledanje slika.
+* **Prilagođene multispektralne indeksne formule:** unesite prilagođene multispektralne indekse u Chloros raster kalkulatore, kako za obradu tako i za gledanje slika u sandboxu.
 
 <p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary" data-icon="envira">Chloros+ Cijene &#x26; Prijava</a></p>
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_grid_mode.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_grid_meta.gif" alt=""><figcaption></figcaption></figure>
+
+<figure><img src=".gitbook/assets/chloros_map_markers.gif" alt=""><figcaption></figcaption></figure>
 
 <figure><img src=".gitbook/assets/cli.JPG" alt=""><figcaption></figcaption></figure>
