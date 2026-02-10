@@ -22,8 +22,8 @@ Za tipične tijekove rada kamere MAPIR Survey3, zadane postavke dobro funkcionir
 
 * ✅ **Ispravak vinjete**: Omogućeno
 * ✅ **Kalibracija refleksije**: Omogućeno (zahtijeva slike meta MAPIR)
-* ✅ **Debayer metoda**: Visoka kvaliteta (brže)
-* ✅ **Format za izvoz**: TIFF (16-bitni)
+* ✅ **Debayer metoda**: Standardno (brzo, srednje kvalitete)
+* ✅ **Format izvoza**: TIFF (16-bitni)
 
 Jednostavno uvezite svoje slike i počnite s obradom s ovim zadanim postavkama.
 
@@ -53,7 +53,19 @@ Glavne mogućnosti obrade slike i kalibracije.
 * **Debayerova metoda**: Algoritam za pretvaranje RAW u 3-kanalni višespektralni
 * **Minimalni interval rekalibracije**: Vrijeme između korištenja ciljeva kalibracije (0 = koristiti sve)**Napredne postavke:*** **Pomak vremenske zone senzora svjetla**: Za PPK sinkronizaciju vremena (zadano: 0)
 * **Primijeni PPK ispravke**: koristi GPS/podatke o ekspoziciji iz .daq datoteka
-* **Igla ekspozicije 1/2**: Dodjeljuje kamere iglama ekspozicije za postavke s dvije kamere
+* **Igla za ekspoziciju 1/2**: Dodjeljuje kamere iglama za ekspoziciju za postavke s dvije kamere
+
+### Debayerova metoda
+
+Trenutno nudimo 2 metode debayeringa u Chloros:
+
+#### Standardno (brzo, srednje kvalitete)
+
+Standardni debayer obrađuje brzo, ali pokazuje debayering šum boje, što rezultira manje preciznim slikama s više šuma.
+
+#### Svjestan teksture (Sporo, najviša kvaliteta) \[Samo Chloros+]
+
+Texture Aware koristi visokokvalitetni debayer s obzirom na rubove u kombinaciji s AI/ML modelom uklanjanja šuma koji uklanja gotovo sav šum debayeringa. Model s obzirom na teksturu zahtijeva GPU memoriju (VRAM) za rad. Preporučujemo da ga koristite kada imate više od 4 GB VRAM-a za bržu obradu.
 
 ### Indeks (Multispektralni indeksi)
 
@@ -85,7 +97,7 @@ Kontrolira format i kvalitetu izlazne datoteke.
 
 **Dostupni formati:*** **TIFF (16-bit)**: Preporučeno za GIS i znanstvene analize (0-65,535 raspon)
 * **TIFF (32-bit, postotak)**: vrijednosti refleksije s pomičnim zarezom (raspon 0,0-1,0)
-* **PNG (8-bitni)**: Kompresija bez gubitaka za vizualizaciju (raspon 0-255)
+* **PNG (8-bit)**: Kompresija bez gubitaka za vizualizaciju (raspon 0-255)
 * **JPG (8-bitni)**: Najmanje datoteke, kompresija s gubitkom (0-255 raspon)***
 
 ## Spremanje i učitavanje postavki
@@ -150,7 +162,7 @@ Ako koristite MAPIR DAQ snimače s GPS-om za preciznu geolokaciju:
 * **Oznaka ekspozicije 2**: Odaberite drugu kameru ili "Ne koristi"
 * Ista kamera ne može se dodijeliti objema iglama
 
-{% hint style="upozorenje" %}
+{% hint style="warning" %}
 **Važno**: igle za ekspoziciju moraju biti ispravno dodijeljene odgovarajućim kamerama. Netočna dodjela rezultirat će pogrešnim geolokacijskim podacima.
 {% endhint %}
 
@@ -162,7 +174,7 @@ Ako koristite MAPIR DAQ snimače s GPS-om za preciznu geolokaciju:
 
 Prilikom obrade slika s više MAPIR kamera u jednom projektu:
 
-1. Chloros automatski otkriva svaki model kamere
+1. Chloros automatski detektira svaki model kamere
 2. Svaka kamera dobiva odgovarajući profil obrade
 3. PPK: Ručno dodijelite svakoj kameri iglu za ispravnu ekspoziciju
 4. Sve kamere koriste isti izvozni format i indekse
@@ -174,7 +186,7 @@ Prilikom obrade slika s više MAPIR kamera u jednom projektu:
 Za ponovljena istraživanja istog područja tijekom vremena:
 
 1. Napravite predložak sa svojim standardnim postavkama
-2. U svakoj sesiji koristite dosljednu postavku cilja kalibracije
+2. U svakoj sesiji koristite dosljedno postavljanje cilja kalibracije
 3. Obradite svaki datum kao zaseban projekt
 4. Koristite identične postavke za usporedive rezultate
 5. Izvoz u istom formatu za vremensku analizu
@@ -183,7 +195,7 @@ Za ponovljena istraživanja istog područja tijekom vremena:
 
 Za projekte s mnogo slika (500+):
 
-* Razmislite o podjeli na manje projekte prema datumu ili području
+* Razmislite o podjeli na manje projekte po datumu ili području
 * Koristite Chloros+ paralelnu obradu za brže rezultate
 * Razmotrite CLI ili API za serijsku automatizaciju
 * Podesite minimalni interval ponovne kalibracije kako biste smanjili vrijeme otkrivanja cilja

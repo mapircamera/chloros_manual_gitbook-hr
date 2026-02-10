@@ -1,6 +1,6 @@
 # Postavke projekta
 
-Postavke projekta <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> bočna traka u Chloros omogućuje vam da konfigurirate sve aspekte obrade slike, detekciju cilja kalibracije, izračune multispektralnog indeksa i opcije izvoza za vaš projekt. Ove se postavke spremaju s vašim projektom i mogu se spremiti kao predlošci za ponovnu upotrebu u više projekata.
+Bočna traka Postavke projekta <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line"> u Chloros omogućuje vam da konfigurirate sve aspekte obrade slike, detekciju cilja kalibracije, izračune multispektralnog indeksa i opcije izvoza za vaš projekt. Ove se postavke spremaju s vašim projektom i mogu se spremiti kao predlošci za ponovnu upotrebu u više projekata.
 
 ## Pristup postavkama projekta
 
@@ -21,7 +21,7 @@ Ove postavke kontroliraju način na koji Chloros otkriva i obrađuje ciljeve kal
 * **Tip**: Broj
 * **Raspon**: 0 do 10 000 piksela
 * **Zadano**: 25 piksela
-* **Opis**: Postavlja minimalnu površinu (u pikselima) potrebnu da bi se detektirana regija smatrala važećim uzorkom cilja kalibracije. Manje vrijednosti otkrit će manje mete, ali mogu povećati broj lažno pozitivnih rezultata. Veće vrijednosti zahtijevaju veće, jasnije ciljne regije za detekciju.
+* **Opis**: Postavlja minimalnu površinu (u pikselima) potrebnu da bi se detektirana regija smatrala važećim uzorkom cilja kalibracije. Manje vrijednosti otkrit će manje mete, ali mogu povećati broj lažno pozitivnih rezultata. Veće vrijednosti zahtijevaju veće, jasnije ciljane regije za detekciju.
 * **Kada prilagoditi**:
   * Povećajte ako dobivate lažne detekcije na malim artefaktima slike
   * Smanjite ako se vaši kalibracijski ciljevi čine malima na vašim slikama i ne otkrivaju se
@@ -31,7 +31,7 @@ Ove postavke kontroliraju način na koji Chloros otkriva i obrađuje ciljeve kal
 * **Tip**: Broj
 * **Raspon**: 0 do 100
 * **Zadano**: 60
-* **Opis**: Kontrolira prag grupiranja za grupiranje regija sličnih boja prilikom otkrivanja ciljeva kalibracije. Više vrijednosti zahtijevaju grupiranje više sličnih boja, što rezultira konzervativnijom detekcijom cilja. Niže vrijednosti dopuštaju više varijacija boja unutar ciljane skupine.
+* **Opis**: Upravlja pragom grupiranja za grupiranje regija sličnih boja prilikom otkrivanja ciljeva kalibracije. Više vrijednosti zahtijevaju grupiranje više sličnih boja, što rezultira konzervativnijom detekcijom cilja. Niže vrijednosti dopuštaju više varijacija boja unutar ciljane skupine.
 * **Kada prilagoditi**:
   * Povećajte ako se ciljevi kalibracije dijele na više detekcija
   * Smanjite ako kalibracijski ciljevi s varijacijom boja nisu u potpunosti otkriveni
@@ -40,7 +40,7 @@ Ove postavke kontroliraju način na koji Chloros otkriva i obrađuje ciljeve kal
 
 ## Obrada
 
-Ove postavke kontroliraju kako Chloros obrađuje i kalibrira vaše slike.
+Ove postavke kontroliraju način na koji Chloros obrađuje i kalibrira vaše slike.
 
 ### Ispravak vinjete
 
@@ -58,11 +58,12 @@ Ove postavke kontroliraju kako Chloros obrađuje i kalibrira vaše slike.
 
 ### Debayer metoda
 
-* **Vrsta**: Odabir s padajućeg izbornika
+* **Tip**: padajući odabir
 * **Opcije**:
-  * Visoka kvaliteta (brže) - Trenutno jedina dostupna opcija
-* **Zadano**: Visoka kvaliteta (brže)
-* **Opis**: Odabire algoritam demosaicing koji se koristi za pretvaranje neobrađenih Bayerovih podataka senzora uzorka u slike u boji. Metoda "Visoka kvaliteta (brže)" pruža optimalnu ravnotežu između brzine obrade i kvalitete slike.
+  * Standardno (brzo, srednje kvalitete)
+  * Svjestan teksture (Sporo, najviša kvaliteta) \[Chloros+]
+* **Zadano**: Standardno (brzo, srednje kvalitete)
+* **Opis**: odabire algoritam demosaicing koji se koristi za pretvaranje neobrađenih Bayerovih podataka senzora uzorka u slike u boji. Metoda "Standardna (brza, srednja kvaliteta)" pruža optimalnu ravnotežu između brzine obrade i kvalitete slike. "Texture Aware (Sporo, Najviša kvaliteta)" \[Chloros+] koristi visokokvalitetni debayer s obzirom na rubove u kombinaciji s AI/ML modelom uklanjanja šuma koji uklanja gotovo sav šum debayeringa. Model s obzirom na teksturu zahtijeva GPU memoriju (VRAM) za rad. Preporučujemo da ga koristite kada imate više od 4 GB VRAM-a za bržu obradu.
 * **Napomena**: Dodatne metode debayera mogu se dodati u budućim verzijama Chloros.
 
 ### Minimalni interval rekalibracije
@@ -80,7 +81,7 @@ Ove postavke kontroliraju kako Chloros obrađuje i kalibrira vaše slike.
 * **Tip**: Broj
 * **Raspon**: -12 do +12 sati
 * **Zadano**: 0 sati
-* **Opis**: Određuje pomak vremenske zone (u satima od UTC) za vremenske oznake podataka svjetlosnog senzora. Ovo se koristi prilikom obrade PPK (Post-Processed Kinematic) podatkovnih datoteka kako bi se osigurala ispravna vremenska sinkronizacija između snimljenih slika i GPS podataka.
+* **Opis**: Određuje pomak vremenske zone (u satima od UTC-a) za vremenske oznake podataka svjetlosnog senzora. Ovo se koristi prilikom obrade PPK (Post-Processed Kinematic) podatkovnih datoteka kako bi se osigurala ispravna vremenska sinkronizacija između snimljenih slika i GPS podataka.
 * **Kada prilagoditi**: Postavite ovo na pomak lokalne vremenske zone ako vaši PPK podaci koriste lokalno vrijeme umjesto UTC-a. Na primjer:
   * Pacifičko vrijeme: -8 ili -7 (ovisno o DST-u)
   * Istočno vrijeme: -5 ili -4 (ovisno o DST-u)
@@ -96,7 +97,7 @@ Ove postavke kontroliraju kako Chloros obrađuje i kalibrira vaše slike.
 
 ### Ekspozicija Pin 1
 
-* **Vrsta**: Odabir s padajućeg izbornika
+* **Tip**: padajući odabir
 * **Vidljivost**: Vidljivo samo kada je omogućena "Primijeni PPK korekcije" I podaci o izloženosti dostupni su za Pin 1
 * **Opcije**:
   * Nazivi modela fotoaparata otkriveni u projektu
@@ -110,8 +111,8 @@ Ove postavke kontroliraju kako Chloros obrađuje i kalibrira vaše slike.
 
 ### Ekspozicija Pin 2
 
-* **Vrsta**: Odabir s padajućeg izbornika
-* **Vidljivost**: Vidljivo samo kada je omogućena "Primijeni PPK korekcije" I dostupni su podaci o izloženosti za Pin 2
+* **Tip**: padajući odabir
+* **Vidljivost**: Vidljivo samo kada je omogućena "Primijeni PPK korekcije" I podaci o izloženosti dostupni su za Pin 2
 * **Opcije**:
   * Nazivi modela fotoaparata otkriveni u projektu
   * "Ne koristi" - Zanemarite ovu iglu za ekspoziciju
@@ -125,12 +126,12 @@ Ove postavke kontroliraju kako Chloros obrađuje i kalibrira vaše slike.
 
 ## Indeks
 
-Ove postavke omogućuju vam konfiguriranje multispektralnih indeksa za analizu i vizualizaciju.
+Ove postavke omogućuju konfiguriranje multispektralnih indeksa za analizu i vizualizaciju.
 
 ### Dodaj indeks
 
 * **Vrsta**: Posebna ploča za konfiguraciju indeksa
-* **Opis**: Otvara interaktivnu ploču na kojoj možete odabrati i konfigurirati multispektralne vegetacijske indekse (NDVI, NDRE, EVI itd.) za izračun tijekom obrade slike. Možete dodati više indeksa, svaki sa svojim postavkama vizualizacije.
+* **Opis**: Otvara interaktivnu ploču na kojoj možete odabrati i konfigurirati multispektralne vegetacijske indekse (NDVI, NDRE, EVI itd.) za izračunavanje tijekom obrade slike. Možete dodati više indeksa, svaki sa svojim postavkama vizualizacije.
 * **Dostupni indeksi**: Sustav uključuje 30+ unaprijed definiranih multispektralnih indeksa uključujući:
   * NDVI (normalizirani vegetacijski indeks razlike)
   * NDRE (Normalizirana razlika RedEdge)
@@ -164,7 +165,7 @@ Ove postavke kontroliraju format i kvalitetu izvezenih obrađenih slika.
 
 ### Kalibrirani format slike
 
-* **Vrsta**: Odabir s padajućeg izbornika
+* **Tip**: padajući odabir
 * **Opcije**:
   * **TIFF (16-bitni)** - Nekomprimirani 16-bitni TIFF format
   * **TIFF (32-bit, postotak)** - 32-bitni pokretni zarez TIFF s vrijednostima refleksije kao postocima
@@ -234,7 +235,7 @@ Većina promjena postavki (osobito u kategorijama obrade i izvoza) pokrenut će 
 
 ## Najbolji primjeri iz prakse
 
-1. **Počnite sa zadanim postavkama**: Zadane postavke dobro funkcioniraju za većinu sustava kamera MAPIR i tipične tijekove rada.
+1. **Počni sa zadanim postavkama**: Zadane postavke dobro funkcioniraju za većinu sustava kamera MAPIR i tipičnih radnih procesa.
 2. **Stvorite predloške**: Nakon što optimizirate postavke za određeni tijek rada ili kameru, spremite ih kao predložak kako biste osigurali dosljednost u projektima.
 3. **Testirajte prije potpune obrade**: Prilikom eksperimentiranja s novim postavkama, testirajte na malom podskupu slika prije obrade cijelog skupa podataka.
 4. **Dokumentirajte svoje postavke**: Koristite opisne nazive predložaka koji označavaju sustav kamere, vrstu obrade i namjeravanu upotrebu (npr. "Survey3\_RGB\_NDVI\_Poljoprivreda").

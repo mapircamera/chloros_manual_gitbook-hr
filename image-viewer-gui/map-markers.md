@@ -19,7 +19,7 @@ Kartica Karta prikazuje vaše slike na interaktivnoj 2D karti na temelju njihovi
 
 ## Podešavanje slika s kartice Karta
 
-Kartica **Mapa** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> ima iste gumbe za dodavanje <img src="../.gitbook/assets/image.png" alt="" data-size="line"> <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> i uklanjanje datoteka <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> kao i kartica [**Preglednik datoteka**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line">. Također prikazuje isti popis tablice datoteke projekta, ali s različitim zaglavljima stupaca:
+Kartica **Mapa**<img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> ima isti dodatak <img src="../.gitbook/assets/image.png" alt="" data-size="line"> <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> i uklonite <img src="../.gitbook/assets/image (2).png" alt="" data-size="line"> gumbe za datoteke kao [**Datoteka Preglednik**](../processing-images-gui/adding-files-to-a-project.md) <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> kartica radi. Također prikazuje isti popis tablice datoteke projekta, ali s različitim zaglavljima stupaca:
 
 ### Naziv datoteke
 
@@ -55,7 +55,7 @@ Svaka slika s GPS podacima predstavljena je oznakom na karti:
 * Povećajte kako biste vidjeli pojedinačne lokacije slika
 
 {% hint style="success" %}
-SUPER-ZUMIRANJE: Kada dosegnete maksimalnu razinu zumiranja od dobavljača pločica karte, pločica se zatim povećava nakon daljnjeg zumiranja, što vam omogućuje da vidite oznake koje su blizu jedna drugoj.
+SUPER-ZUMIRANJE: Kada dosegnete maksimalnu razinu zumiranja od pružatelja pločica karte, pločica se zatim povećava nakon daljnjeg zumiranja, što vam omogućuje da vidite oznake koje su blizu jedna drugoj.
 {% endhint %}
 
 ### Pregled lebdeći
@@ -82,7 +82,7 @@ Kartica Karta podržava dva pružatelja pločica za pozadinske slike karte:
 ### ESRI
 
 * Satelitske i zračne slike iz ESRI ArcGIS
-* Često pruža slike veće rezolucije u određenim regijama
+* Često daje slike veće rezolucije u određenim regijama
 
 ***
 
@@ -119,9 +119,7 @@ Prikazuje pločice satelitske karte s dodanim detaljima (ceste, itd.)
 
 ### Pan kontrole
 
-* **Pomicanje**: kliknite i povucite za kretanje po karti
-
-***
+* **Pomicanje**: kliknite i povucite za kretanje po karti***
 
 ## Slučajevi upotrebe
 

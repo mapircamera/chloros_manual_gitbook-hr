@@ -1,15 +1,15 @@
 # Dodavanje datoteka u projekt
 
-Nakon što ste izradili ili otvorili projekt u Chloros, sljedeći korak je dodavanje vaših multispektralnih slika za početak obrade. Kartica File Browser<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> olakšava uvoz slika i upravljanje vašim skupom podataka.
+Nakon što ste izradili ili otvorili projekt u Chloros, sljedeći korak je dodavanje vaših multispektralnih slika za početak obrade. Kartica Preglednik datoteka<img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> olakšava uvoz slika i upravljanje skupom podataka.
 
 ## Pristup pregledniku datoteka
 
 1. Otvorite ili kreirajte projekt u Chloros
-2. Kliknite ikonu **File Browser** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> na lijevoj bočnoj traci
+2. Kliknite ikonu **Preglednik datoteka** <img src="../.gitbook/assets/icon_file-browser.JPG" alt="" data-size="line"> na lijevoj bočnoj traci
 3. Ploča File Browser prikazat će popis datoteka vašeg projekta
 
 {% hint style="info" %}
-**Podržane vrste datoteka**: Chloros podržava RAW+JPG i JPG slikovne datoteke s MAPIR Survey3W i Survey3N kamera. Preporučuju se samo RAW+JPG.
+**Podržane vrste datoteka**: Chloros podržava RAW+JPG i JPG slikovne datoteke s kamera MAPIR Survey3W i Survey3N. Preporučuju se samo RAW+JPG.
 {% endhint %}
 
 ***
@@ -31,11 +31,9 @@ Koristite ovu opciju za uvoz pojedinačnih slikovnih datoteka ili malog odabira 
 
 Koristite ovu opciju za uvoz svih slika iz mape odjednom.
 
-1. Pritisnite gumb **"Dodaj mapu"** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> na vrhu ploče preglednika datoteka
+1. Kliknite gumb **"Dodaj mapu"** <img src="../.gitbook/assets/image (1).png" alt="" data-size="line"> na vrhu ploče preglednika datoteka
 2. Dođite do i odaberite mapu koja sadrži slike vaše sesije snimanja
-3. Kliknite **"Odaberi mapu"** za uvoz svih podržanih slika iz te mape
-
-***
+3. Kliknite **"Odaberi mapu"** za uvoz svih podržanih slika iz te mape***
 
 ## Razumijevanje tablice preglednika datoteka
 
@@ -50,7 +48,7 @@ Kada se slike uvezu, pojavljuju se u tablici sa sljedećim stupcima:
 
 * Datum i vrijeme snimanja slike
 * Izdvojeno iz EXIF metapodataka slike
-* Koristi se za PPK sinkronizaciju i detekciju cilja kalibracije
+* Koristi se za PPK sinkronizaciju i otkrivanje cilja kalibracije
 
 ### Model kamere
 
@@ -86,9 +84,7 @@ Za uklanjanje neželjenih slika iz vašeg projekta:
 
 * **Razvrstaj po stupcu**: Kliknite zaglavlje bilo kojeg stupca za sortiranje slika
 * **Razvrstavanje vremenskim žigom**: Korisno za organiziranje kronoloških nizova snimanja
-* **Filtar modela fotoaparata**: Grupirajte slike prema vrsti fotoaparata ako koristite više fotoaparata
-
-***
+* **Filter modela kamere**: Grupirajte slike prema vrsti kamere ako koristite više kamera***
 
 ## Pregled slike
 
@@ -105,9 +101,7 @@ Kliknite bilo koju sličicu slike u pregledniku datoteka kako biste je prikazali
 * **Prethodna slika**: Kliknite lijevu strelicu ili pritisnite tipku ←
 * **Sljedeća slika**: Kliknite desnu strelicu ili pritisnite tipku →
 * **Uvećanje/smanjenje**: Koristite kotačić miša ili gumbe za zumiranje
-* **Pomicanje**: Kliknite i povucite sliku kada je uvećana
-
-***
+* **Pomicanje**: Kliknite i povucite sliku kada je uvećana***
 
 ## Rukovanje dupliciranim datotekama
 
@@ -132,9 +126,7 @@ Ako vaš projekt sadrži slike s više MAPIR kamera:
 3. Preglednik datoteka prikazuje model kamere u stupcu Model kamere
 4. Obrada primjenjuje ispravne postavke za svaku vrstu kamere
 
-**Primjer scenarija**: Survey3W RGN + Survey3N OCN postavljanje dvostruke kamere
-
-***
+**Primjer scenarija**: Survey3W RGN + Survey3N OCN postavljanje dvije kamere***
 
 ## Najbolji primjeri iz prakse
 
@@ -188,9 +180,7 @@ Ako vaš projekt sadrži slike s više MAPIR kamera:
 * Sat fotoaparata nije ispravno postavljen
 * EXIF podatke skinuo je vanjski softver
 
-**Rješenje**: Provjerite jesu li postavke vremena kamere točne tijekom snimanja
-
-***
+**Rješenje**: Provjerite jesu li postavke vremena kamere točne tijekom snimanja***
 
 ## Sljedeći koraci
 

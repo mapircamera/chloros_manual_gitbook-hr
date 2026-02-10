@@ -11,17 +11,17 @@ Preuzmite najnoviju verziju Chloros da biste započeli s multispektralnom obrado
 ### Zahtjevi sustava
 
 | Zahtjev | Minimalno | Preporučeno |
-| -------------------- | -------------------------------- | -------------------------------- |
+| -------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
 | **Operativni sustav** | Windows 10 (64-bitni) | Windows 11 (64-bitni) |
 | **Procesor** | Intel Core i5 ili ekvivalent | Intel Core i7 ili bolji |
 | **Memorija (RAM)** | 8 GB | 16 GB ili više |
 | **Grafička kartica** | DirectX 11 kompatibilan | NVIDIA GPU s 4 GB+ VRAM |
 | **Skladištenje** | 6 GB slobodnog prostora | SSD s 10 GB+ slobodnog prostora |
 | **Zaslon** | 1920x1080 | 2560x1440 ili više |
-| **Internet** | Potrebno za aktivaciju licence | Potrebno za aktivaciju licence |
+| **Internet** | Potrebno za \[opcionalno] Chloros+ aktivaciju licence | Potrebno za \[opcionalno] Chloros+ aktivaciju licence |
 
 {% hint style="info" %}
-**GPU ubrzanje**: Chloros+ korisnici s NVIDIA GPU-om (4GB+ VRAM) mogu koristiti CUDA ubrzanje za znatno bržu obradu. Korisnici Chloros+ također dobivaju višenitnu obradu za maksimalnu brzinu.
+**GPU ubrzanje**: Chloros+ korisnici s NVIDIA GPU-ima mogu koristiti CUDA ubrzanje za znatno bržu obradu. Chloros+ korisnici također dobivaju višenitnu obradu za maksimalnu brzinu.
 {% endhint %}
 
 ***
@@ -32,9 +32,9 @@ Preuzmite najnoviju verziju Chloros da biste započeli s multispektralnom obrado
 
 ### Najnovije stabilno izdanje
 
-**Instalacijski program Chloros za Windows*** **Verzija**: 1.0.4
-* **Datum objave**: 5. siječnja 2026
-* **Veličina datoteke (preuzimanje)**: 1,8 GB
+**Instalacijski program Chloros za Windows*** **Verzija**: 1.0.5
+* **Datum izlaska**: 10. veljače 2026
+* **Veličina datoteke (preuzimanje)**: 1,6 GB
 * **Veličina datoteke (instalirana)**: 5,7 GB
 * **Vrsta datoteke**: .exe (Windows Installer)
 
@@ -44,7 +44,7 @@ Preuzmite najnoviju verziju Chloros da biste započeli s multispektralnom obrado
 2. Dvaput kliknite instalacijski program za početak instalacije
 3. Slijedite upute čarobnjaka za instalaciju
 4. Odaberite instalacijski direktorij (zadano: `C:\Program Files\[USER]\Chloros\`)
-5. Dovršite instalaciju i pokrenite Chloros, Chloros (preglednik) ili Chloros CLI
+5. Dovršite instalaciju i pokrenite Chloros ili Chloros CLI
 6. Prijavite se sa svojim [MAPIR Cloud Chloros+ računom](https://cloud.mapir.camera/pricing) (ili nastavite s besplatnom verzijom)
 
 {% hint style="success" %}
@@ -69,8 +69,7 @@ pip install chloros-sdk
 
 Instalacija Chloros uključuje:
 
-* ✅ **Chloros** - Potpuno opremljeno grafičko sučelje
-* ✅ **Chloros (preglednik)** - web sučelje za sustave nižih specifikacija
+* ✅ **Chloros** - Potpuno opremljeno grafičko sučelje (GUI)
 * ✅ **Chloros CLI** - sučelje naredbenog retka (zahtijeva licencu Chloros+)
 * ✅ **Chloros SDK** - Python API (potrebna licenca Chloros+)
 * ✅ **Profili kamere** - unaprijed konfigurirani predlošci kamere MAPIR***
@@ -84,6 +83,7 @@ Otključajte napredne značajke s Chloros+ pretplatom:
 * 💻 **CLI Access** - Automatizirajte pomoću alata naredbenog retka
 * 🐍 **Python SDK** - programski pristup API
 * 📱 **Više uređaja** - Koristite na 2-10+ uređaja (ovisno o planu)
+* **🐻 Advanced Texture Aware Debayer Method** - visokokvalitetni debayer s obzirom na rubove u kombinaciji s AI/ML modelom uklanjanja šuma koji uklanja gotovo sav šum debayeringa.&#x20;
 * 🧮 **Prilagođene formule** - Stvorite prilagođene multispektralne indekse
 
 <p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Pogledajte planove Chloros+ &#x26; Cijene</a></p>
@@ -102,7 +102,6 @@ Otključajte napredne značajke s Chloros+ pretplatom:
 
 **Aplikacija se ne pokreće:**
 
-* Isprobajte verziju Chloros (preglednik).
 * Provjerite je li instaliran Windows 10/11 (64-bitni)
 * Ažurirajte upravljačke programe za grafiku
 * Provjerite Windows Event Viewer za detalje pogreške
@@ -128,6 +127,17 @@ Trebate li pomoć s instalacijom ili postavljanjem?
 
 <detalji>
 
+<summary>Verzija 1.0.5</summary>
+
+#### **Datum izlaska**: 10. veljače 2026**Nove značajke*** **Texture Aware Debayer Method \[samo Chloros+] -** Texture Aware koristi visokokvalitetni edge-aware debayer u kombinaciji s AI/ML modelom uklanjanja šuma koji uklanja gotovo sav šum debayeringa.
+* **Podrška za T4P kalibracijske ciljeve*** **Brža Chloros+ GPU obrada, bolje upravljanje memorijom**
+
+**Ispravke grešaka*** Potpuno novo sučelje (GUI), sada bi trebalo raditi na svim Windows računalima.
+
+</details>
+
+<detalji>
+
 <summary>Verzija 1.0.4</summary>
 
 #### **Datum izlaska**: 5. siječnja 2026**Nove značajke*** **Prebacivanje slike/metapodataka**: Dodano uključivanje u preglednik datoteka za pregled metapodataka odabrane slike u tablici umjesto u rešetki slike
@@ -137,7 +147,7 @@ Trebate li pomoć s instalacijom ili postavljanjem?
   * Podržava Google Maps i ESRI pločice karte (automatski odabire najbolju uslugu pločica na temelju dostupnosti razine zumiranja)
   * Pregled minijatura pokazivača miša na oznakama karte
 
-**Ispravke grešaka*** Poboljšana podrška za instaliranje Chloros na računalima koja ne govore engleski
+**Ispravke grešaka*** Poboljšana podrška za instaliranje Chloros na računala koja ne govore engleski
 
 </details>
 
@@ -157,7 +167,7 @@ Trebate li pomoć s instalacijom ili postavljanjem?
 
 ***
 
-## Ugovor o licenci**Vlasnički softver** - Autorska prava (c) 2025 MAPIR Inc.
+## Ugovor o licenci**Vlasnički softver** - Autorska prava (c) 2026 MAPIR Inc.
 
 Zabranjeno je neovlašteno korištenje, distribucija ili izmjena.
 
