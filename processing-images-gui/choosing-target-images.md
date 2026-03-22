@@ -1,6 +1,6 @@
 # Odabir ciljanih slika
 
-Označavanje slika koje sadrže kalibracijske ciljeve ključni je korak koji značajno ubrzava cjevovod Chloros obrade. Prethodnim odabirom ciljanih slika eliminirate potrebu da Chloros skenira svaku sliku u vašem skupu podataka radi kalibracijskih ciljeva.
+Označavanje slika koje sadrže kalibracijske ciljeve ključni je korak koji značajno ubrzava proces obrade Chloros. Prethodnim odabirom ciljanih slika eliminirate potrebu da Chloros skenira svaku sliku u vašem skupu podataka radi kalibracijskih ciljeva.
 
 ## Zašto označiti ciljne slike?
 
@@ -66,11 +66,11 @@ Prije obrade još jednom provjerite:
 
 * Snimite ciljane slike neposredno prije i tijekom vaše sesije snimanja
 * U istim uvjetima osvjetljenja kao i vaš DAQ svjetlosni senzor
-* U idealnom slučaju snimajte ciljane slike što je češće moguće za najbolje rezultate. U suprotnom će se podaci svjetlosnog senzora koristiti za podešavanje kalibracije tijekom vremena.
+* Bilo bi idealno snimati ciljne slike što je češće moguće za najbolje rezultate. U suprotnom će se podaci svjetlosnog senzora koristiti za podešavanje kalibracije tijekom vremena.
 
 **Pozicija kamere:**
 
-* Držite kameru iznad mete tako da je centrirana i ispunjava oko 40-60% središta slike.
+* Držite kameru iznad cilja tako da je centrirana i ispunjava oko 40-60% središta slike.
 * Držite kameru paralelno/nadir s ciljanom površinom
 
 **Rasvjeta:**
@@ -88,7 +88,7 @@ Prije obrade još jednom provjerite:
 
 ### Koliko ciljanih slika?
 
-**Minimum:**1 ciljna slika po sesiji.**Preporučeno:** 3-5 ciljanih slika po sesiji.**Raspored najbolje prakse:**
+**Minimalno:**1 ciljana slika po sesiji.**Preporučeno:** 3-5 ciljanih slika po sesiji.**Raspored najbolje prakse:**
 
 * 3-5 slika snimljenih nedugo nakon snimanja svjetlosnog senzora
 * Rotirajte kameru između snimanja za najbolje rezultate
@@ -148,7 +148,7 @@ Ako Chloros ne otkriva ispravno vaše ciljeve, prilagodite ove postavke u [Posta
 3. Ponovno uhvatite ciljeve ako je kvaliteta loša
 4. Po potrebi prilagodite postavke otkrivanja cilja
 
-### Problem: Lažna detekcija ciljeva
+### Problem: Lažne detekcije ciljeva
 
 **Mogući uzroci:**
 
@@ -190,7 +190,7 @@ Iako se ne preporučuje za znanstveni rad, možete obraditi bez ciljeva:
 3. Korekcija vinjete će se i dalje primjenjivati
 4. Izlaz neće biti kalibriran za apsolutnu refleksiju
 
-{% hint style="upozorenje" %}
+{% hint style="warning" %}
 **Ne preporučuje se**: bez kalibracije refleksije, vrijednosti piksela predstavljaju samo relativnu svjetlinu, a ne znanstvena mjerenja refleksije. Koristite mete kalibracije za točne, ponovljive rezultate.
 {% endhint %}
 
@@ -204,4 +204,4 @@ Nakon što označite svoje ciljne slike:
 2. **Pokrenite obradu** - Pogledajte [Pokretanje obrade](starting-the-processing.md)
 3. **Praćenje napretka** - Pogledajte [Praćenje obrade](monitoring-the-processing.md)
 
-Za više informacija o samim kalibracijskim ciljevima pogledajte [Calibration Targets](../calibration-targets.md).
+Za više informacija o samim ciljevima kalibracije pogledajte [Calibration Targets](../calibration-targets.md).

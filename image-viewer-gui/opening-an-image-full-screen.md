@@ -114,7 +114,7 @@ Dok pomičete kursor miša preko slike, vrijednosti piksela prikazuju se u stvar
 Primijenite multispektralne indekse i tablice pretraživanja u boji:
 
 1. Pronađite **Index/LUT Sandbox**u**Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> bočnoj traci
-2. Odaberite vegetacijski indeks (NDVI, NDRE, itd.)
+2. Odaberite indeks vegetacije (NDVI, NDRE, itd.)
 3. Odaberite multispektralnu formulu ili izradite vlastitu prilagođenu (samo Chloros+)
 4. Primijenite LUT gradijent boje za vizualizaciju
 5. Podesite raspone vrijednosti i pragove

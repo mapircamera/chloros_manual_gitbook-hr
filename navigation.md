@@ -8,7 +8,20 @@ S lijeva na desno gornje zaglavlje sadrži:
 
 ### <img src=".gitbook/assets/image (1) (1) (1) (1).png" alt="" data-size="line"> Glavni izbornik
 
-Iz glavnog izbornika možete započeti novi projekt, otvoriti postojeći projekt ili otvoriti mapu projekta.
+<figure><img src=".gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+
+Iz glavnog izbornika možete:
+
+* **Novi projekt** — izradite novi projekt
+* **Otvori projekt** — otvori postojeći projekt
+* **Otvori mapu projekta** — otvorite mapu projekta u vašem pregledniku datoteka
+* **Dodaj datoteke** — dodajte pojedinačne slikovne datoteke trenutnom projektu _(vidljivo nakon otvaranja projekta)_
+* **Dodaj mapu** — dodajte mapu slika trenutnom projektu _(vidljivo nakon otvaranja projekta)_
+* **Pokreni obradu / Zaustavi obradu** — pokrenite ili zaustavite cjevovod za obradu slike _(omogućeno nakon dodavanja datoteka)_
+
+{% hint style="info" %}
+**Samo Windows**: Grafičko korisničko sučelje Chloros dostupno je na Windows. Korisnici Linux trebali bi vidjeti dokumentaciju [CLI](CLI.md) i [Python SDK](api-python-sdk.md) za obradu bez glave.
+{% endhint %}
 
 ### <img src=".gitbook/assets/image (2) (1).png" alt="" data-size="line"> Gumb za reprodukciju/pokretanje
 
@@ -16,7 +29,7 @@ Kada je omogućeno, gumb za početak obrade pokreće cjevovod za obradu slike.
 
 ### <img src=".gitbook/assets/image (4).png" alt="" data-size="line"> Traka napretka <img src=".gitbook/assets/image (5).png" alt="" data-size="line">
 
-U besplatnom načinu rada Chloros, koji obrađuje sve datoteke uzastopno, traka napretka će pokazati 2 faze: Otkrivanje cilja i Obrada.
+U besplatnom Chloros modu, koji obrađuje sve datoteke uzastopno, traka napretka će pokazati 2 faze: Otkrivanje cilja i Obrada.
 
 U plaćenom licenciranom načinu rada Chloros+, koji obrađuje sve datoteke istovremeno, traka napretka prikazuje 4 faze: otkrivanje, analiza, kalibracija, izvoz. Ako pokazivačem miša prijeđete preko Chloros+ trake napretka, spustit će se proširena ploča s 4 trake napretka kako biste mogli pratiti. Klikom na gornju traku napretka zamrznut ćete padajuću ploču, ponovnim klikom je odmrzavate.
 
@@ -40,12 +53,12 @@ Kada se slika klikne u glavnom pregledniku slika, ona se otvara na cijelom zaslo
 
 #### <img src=".gitbook/assets/image (7).png" alt="" data-size="line"> [Mapa](image-viewer-gui/map-markers.md)
 
-Pregledajte svoje slike na interaktivnoj 2D karti na temelju njihovih GPS koordinata. Podržava Google Maps i pružatelje pločica ESRI, automatski odabirući najbolju uslugu za vašu lokaciju. Zadržite pokazivač iznad markera da biste vidjeli preglede minijatura slika.
+Pregledajte svoje slike na interaktivnoj 2D karti na temelju njihovih GPS koordinata. Podržava Google Maps i pružatelje pločica ESRI, automatski odabirući najbolju uslugu za vašu lokaciju. Zadržite pokazivač miša iznad markera da biste vidjeli pregled minijatura slika.
 
 #### <img src=".gitbook/assets/icon_log.JPG" alt="" data-size="line"> Dnevnik otklanjanja pogrešaka
 
 Pregledajte zapisnik za ispise otklanjanja pogrešaka kada se pojave problemi. Kopirajte/preuzmite zapisnik i pošaljite [MAPIR Support](https://www.mapir.camera/community/contact) za pomoć.
 
-#### <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> [Korisnička prijava](chloros+-login.md)
+#### <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> [Korisnička prijava](kloros+-login.md)
 
 Bočna traka za prijavu korisnika omogućuje vam prijavu na vaš Chloros+ račun za otključavanje naprednih značajki. Također možete vidjeti trenutnu verziju aplikacije, kao i prilagoditi jezik prikazanog teksta u Chloros GUI i CLI.

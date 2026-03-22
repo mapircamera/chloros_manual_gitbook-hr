@@ -18,7 +18,7 @@ U Chloros, **slojevi** se odnose na različite izlazne slike dostupne za jednu i
 * Izvorna JPG pretpregledna slika s vašeg fotoaparata
 * Uvijek dostupno za sve slike
 * Neobrađeno, kako je snimljeno kamerom
-* Najbrži za učitavanje i prikaz
+* Najbrže za učitavanje i prikaz
 
 **Kada pogledati:**
 
@@ -153,7 +153,7 @@ Kada prijeđete na drugu sliku (pomoću tipki sa strelicama ili klikom na minija
 1. Otvorite sliku 1, prebacite se na RAW (NDVI indeks)
 2. Pritisnite → za pregled slike 2
 3. Slika 2 automatski prikazuje RAW (NDVI Index) sloj
-4. Nastavite s navigacijom - sve slike prikazuju sloj NDVI
+4. Nastavite s navigacijom - sve slike prikazuju NDVI sloj
 5. Vrlo učinkovit za pregled rezultata indeksa na mnogim slikama
 
 ***
@@ -229,7 +229,7 @@ Različiti slojevi pokazuju različite raspone vrijednosti piksela:
 
 ### RAW (indeksne slike)
 
-* **Raspon**: Varira ovisno o indeksu (obično -1,0 do +1,0 za normalizirane indekse)
+* **Raspon**: Varira prema indeksu (obično -1,0 do +1,0 za normalizirane indekse)
 * **Značenje**: Rezultat izračuna indeksa
 * **Primjeri**:
   * NDVI: -1 do +1 (vegetacija obično 0,4 do 0,9)
@@ -304,10 +304,10 @@ Različiti slojevi pokazuju različite raspone vrijednosti piksela:
 Kada gledate bilo koji sloj, možete koristiti:
 
 * **Kontrole zumiranja**: Povećajte za pregled detalja
-* **Pomicanje**: kliknite i povucite za pomicanje po zumiranoj slici
-* **Provjera vrijednosti piksela**: Pogledajte vrijednosti na mjestu kursora
+* **Pomicanje**: Kliknite i povucite za pomicanje po zumiranoj slici
+* **Provjera vrijednosti piksela**: Pogledajte vrijednosti na lokaciji kursora
 * **Navigacijske strelice**: Krećite se između slika uz zadržavanje sloja
-* **Postotni način piksela**: Prebacivanje između DN i postotnog prikaza
+* **Način postotka piksela**: Prebacivanje između DN i postotnog prikaza
 
 Pogledajte [Otvaranje slike preko cijelog zaslona](opening-an-image-full-screen.md) za potpunu dokumentaciju o pregledniku slika.
 

@@ -20,4 +20,4 @@ metaLinks:
 
 ### **PNG (8-bitni)**
 
-8-bitni (digitalni broj piksela 0 - 255) PNG (.png) format izlaza. Kompresija bez gubitaka prikladna za web pregled i vizualizaciju.
+8-bitni (digitalni broj piksela 0 - 255) PNG (.png) format izlaza. Kompresija bez gubitaka pogodna za web pregled i vizualizaciju.

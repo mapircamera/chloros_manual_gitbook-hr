@@ -1,6 +1,6 @@
 # Završetak obrade
 
-Nakon što Chloros završi obradu, vrijeme je da pregledate svoje rezultate, potvrdite kvalitetu ispisa i pripremite svoje obrađene slike za upotrebu u svom tijeku rada. Ova vas stranica vodi kroz završne korake i sljedeće radnje.
+Nakon što Chloros dovrši obradu, vrijeme je da pregledate svoje rezultate, provjerite kvalitetu ispisa i pripremite svoje obrađene slike za upotrebu u svom tijeku rada. Ova vas stranica vodi kroz završne korake i sljedeće radnje.
 
 ## Indikacija završene obrade
 
@@ -185,7 +185,7 @@ Za vođenje evidencije obrade ili slanje MAPIR Podršci:
 * ✅ **Projektna datoteka** - Sadrži sve postavke za ponovnu obradu ako je potrebno
 * ✅ **Debug Log** - detalji obrade dokumenata
 * ✅ **Slike cilja kalibracije** - Za provjeru i ponovnu obradu**Preporuke za pohranu:*** **Trenutna sigurnosna kopija**: vanjski tvrdi disk
-* **Dugoročna arhiva**: Pohrana u oblaku (Google Drive, Dropbox itd.)
+* **Dugoročna arhiva**: Pohrana u oblaku (Google Drive, Dropbox, itd.)
 * **Kritični podaci**: Čuvajte 2-3 kopije na različitim mjestima***
 
 ## Sljedeća obrada
@@ -253,7 +253,7 @@ Ako naiđete na probleme:
 
 ## Sažetak: Potpuni tijek rada
 
-Sada ste dovršili potpuni tijek obrade Chloros:
+Sada ste dovršili cijeli radni tijek obrade Chloros:
 
 1. ✅ **Kreirani projekt** - Pogledajte [Projekti](../projects.md)
 2. ✅ **Dodane datoteke** - Pogledajte [Dodavanje datoteka](adding-files-to-a-project.md)

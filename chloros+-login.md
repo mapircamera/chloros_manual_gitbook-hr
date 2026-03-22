@@ -6,11 +6,11 @@ Korisnički <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> iz
 
 Kada se prijavite, bit će prikazani detalji vašeg računa:
 
-<figure><img src=".gitbook/assets/user_account.JPG" alt="" data-size="line"><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/user_account.JPG" alt="" width="375"><figcaption></figcaption></figure>
 
 ## CLI Prijava
 
-Prijavite se svojim vjerodajnicama Chloros+ kako biste omogućili obradu CLI.
+Prijavite se svojim vjerodajnicama Chloros+ kako biste omogućili obradu CLI. Na Linux (bez GUI), ovo je jedini način da aktivirate svoju licencu.
 
 **Sintaksa:**
 
@@ -28,7 +28,7 @@ chloros-cli login <email> <password>
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style="upozorenje" %}
+{% hint style="warning" %}
 **Posebni znakovi**: Koristite jednostruke navodnike oko zaporki koje sadrže znakove kao što su `$`, `!` ili razmake.
 {% endhint %}
 
@@ -36,12 +36,21 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 <figure><img src=".gitbook/assets/cli login_w.JPG" alt=""><figcaption></figcaption></figure>
 
+### Pohrana vjerodajnica
+
+Predmemorirane vjerodajnice pohranjuju se na lokaciji specifičnoj za platformu:
+
+| Platforma | Put predmemorije vjerodajnica |
+| --- | --- |
+| **Windows** | `%APPDATA%\Chloros\cache\` |
+| **Linux** | `~/.cache/chloros/` |
+
 ### Istek plana
 
 Istek plana u GUI-ju pokazuje kada će vaša licenca postati nevažeća. Za ponavljajuće mjesečne pretplate istek je na kraju mjeseca. Za godišnje pretplate to je godina nakon što ste započeli pretplatu. Provjera licence zahtijeva mjesečnu internetsku vezu za provjeru, uz 30 dana odgode.
 
 ### Ograničenje uređaja
 
-Svaki plan Chloros+ nudi različit broj registriranih uređaja. Svaki uređaj na koji se prijavite s računom Chloros+ računat će se u vaš broj registriranih uređaja. Možete preimenovati i ukloniti uređaj na stranici vašeg računa MAPIR Cloud.
+Svaki plan Chloros+ nudi različit broj registriranih uređaja. Svaki uređaj na koji se prijavite pomoću računa Chloros+ računat će se u vaš broj registriranih uređaja. Možete preimenovati i ukloniti uređaj na stranici vašeg računa MAPIR Cloud.
 
-<table><thead><tr><th width="168.5999755859375" align="right">Chloros+ Plan</th><th align="center">BAKAR</th><th align="center">BRONCA</th><th align="center">SREBRO</th><th align="center">ZLATO</th></tr></thead><tbody><tr><td align="right">Podržani uređaji</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>
+<table><thead><tr><th width="168.5999755859375" align="right">Chloros+ plan</th><th align="center">BAKAR</th><th align="center">BRONCA</th><th align="center">SREBRO</th><th align="center">ZLATO</th></tr></thead><tbody><tr><td align="right">Podržani uređaji</td><td align="center">2</td><td align="center">2</td><td align="center">5</td><td align="center">10</td></tr></tbody></table>

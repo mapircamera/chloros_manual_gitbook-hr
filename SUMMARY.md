@@ -34,3 +34,14 @@
 * [Slojevi slike] (image-viewer-gui/image-layers.md)
 * [Index/LUT Sandbox](image-viewer-gui/index-lut-sandbox.md)
 * [Oznake na karti] (image-viewer-gui/map-markers.md)
+
+## Linux & rubno računalstvo
+
+* [Linux Pregled](linux/linux-overview.md)
+* [Instalacija Linux](linux/linux-installation.md)
+* [Vodič za NVIDIA Jetson] (linux/nvidia-jetson-guide.md)
+
+## Arhitektura obrade
+
+* [Dynamic Compute Adaptation] (processing-architecture/dynamic-compute-adaptation.md)
+* [Cjevovod za obradu] (processing-architecture/processing-pipeline.md)

@@ -9,7 +9,7 @@ Nakon što ste izradili ili otvorili projekt u Chloros, sljedeći korak je dodav
 3. Ploča File Browser prikazat će popis datoteka vašeg projekta
 
 {% hint style="info" %}
-**Podržane vrste datoteka**: Chloros podržava RAW+JPG i JPG slikovne datoteke s kamera MAPIR Survey3W i Survey3N. Preporučuju se samo RAW+JPG.
+**Podržane vrste datoteka**: Chloros podržava RAW+JPG i JPG slikovne datoteke s MAPIR Survey3W i Survey3N kamera. Preporučuju se samo RAW+JPG.
 {% endhint %}
 
 ***
@@ -48,7 +48,7 @@ Kada se slike uvezu, pojavljuju se u tablici sa sljedećim stupcima:
 
 * Datum i vrijeme snimanja slike
 * Izdvojeno iz EXIF metapodataka slike
-* Koristi se za PPK sinkronizaciju i otkrivanje cilja kalibracije
+* Koristi se za PPK sinkronizaciju i detekciju cilja kalibracije
 
 ### Model kamere
 
@@ -84,13 +84,13 @@ Za uklanjanje neželjenih slika iz vašeg projekta:
 
 * **Razvrstaj po stupcu**: Kliknite zaglavlje bilo kojeg stupca za sortiranje slika
 * **Razvrstavanje vremenskim žigom**: Korisno za organiziranje kronoloških nizova snimanja
-* **Filter modela kamere**: Grupirajte slike prema vrsti kamere ako koristite više kamera***
+* **Filter modela fotoaparata**: Grupirajte slike prema vrsti fotoaparata ako koristite više fotoaparata***
 
 ## Pregled slike
 
 ### Pregled cijele slike
 
-Kliknite bilo koju sličicu slike u pregledniku datoteka kako biste je prikazali u glavnom području pregleda:
+Kliknite bilo koju sličicu slike u pregledniku datoteka da biste je prikazali u glavnom području pregleda:
 
 1. Slika se pojavljuje na središnjoj ploči za pregled
 2. Koristite kontrole zumiranja za pregled detalja slike
@@ -126,7 +126,7 @@ Ako vaš projekt sadrži slike s više MAPIR kamera:
 3. Preglednik datoteka prikazuje model kamere u stupcu Model kamere
 4. Obrada primjenjuje ispravne postavke za svaku vrstu kamere
 
-**Primjer scenarija**: Survey3W RGN + Survey3N OCN postavljanje dvije kamere***
+**Primjer scenarija**: Survey3W RGN + Survey3N OCN postavljanje dvostruke kamere***
 
 ## Najbolji primjeri iz prakse
 

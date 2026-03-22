@@ -8,27 +8,29 @@
 
 * 🚀 **Automatizacija** - Skupna obrada skripte više skupova podataka
 * 🔗 **Integracija** - Ugradite u postojeće tijekove rada i cjevovode
-* 💻 **Operacija bez glave** - Pokrenite bez GUI-ja
+* 💻 **Operacije bez glave** - Pokrenite bez GUI-ja
 * 🌍 **Multi-Language** - Podrška za 38 jezika
-* ⚡ **Paralelna obrada** - Dinamički se prilagođava vašem CPU-u (do 16 paralelnih radnika)
+* ⚡ **Paralelna obrada** - [Dynamic Compute Adaptation](processing-architecture/dynamic-compute-adaptation.md) automatski optimizira za vaš hardver
 
 ### Zahtjevi
 
 | Zahtjev | Detalji |
 | -------------------- | ------------------------------------------------------------------ |
-| **Operativni sustav** | Windows 10/11 (64-bit) |
+| **Operativni sustav** | Windows 10/11 (64-bit), Linux x86_64 (amd64), Linux arm64 (NVIDIA Jetson JetPack 6) |
 | **Licenca** | Chloros+ ([potreban plan uz plaćanje](https://cloud.mapir.camera/pricing)) |
 | **Sjećanje** | Minimalno 8 GB RAM-a (preporučuje se 16 GB) |
 | **Internet** | Potrebno za aktivaciju licence |
 | **Prostor na disku** | Razlikuje se prema veličini projekta |
 
-{% hint style="upozorenje" %}
+{% hint style="warning" %}
 **Zahtjevi licence**: CLI zahtijeva plaćenu pretplatu Chloros+. Standardni (besplatni) planovi nemaju CLI pristup. Posjetite [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) za nadogradnju.
 {% endhint %}
 
 ## Brzi početak
 
 ### Instalacija
+
+#### Windows
 
 CLI je automatski uključen u instalacijski program Chloros:
 
@@ -41,11 +43,27 @@ CLI je automatski uključen u instalacijski program Chloros:
 Instalacijski program automatski dodaje `chloros-cli` vašem sistemu PATH. Ponovno pokrenite terminal nakon instalacije.
 {% endhint %}
 
+#### Linux
+
+Instalirajte `.deb` paket za svoju arhitekturu:
+
+```bash
+# Linux amd64
+sudo dpkg -i chloros-amd64.deb
+
+# Linux arm64 (NVIDIA Jetson, JetPack 6)
+sudo dpkg -i chloros-arm64-jp6.deb
+```
+
+Za detaljnu postavku Linux pogledajte [Instalacija Linux](linux/linux-installation.md).
+
 ### Prvo postavljanje
 
 Prije korištenja CLI, aktivirajte svoju Chloros+ licencu:
 
-```bash
+**Windows:**
+
+```powershell
 # Login with your Chloros+ account
 chloros-cli login user@example.com 'your_password'
 
@@ -56,17 +74,38 @@ chloros-cli status
 chloros-cli process "C:\Images\Dataset001"
 ```
 
+**Linux:**
+
+```bash
+# Login with your Chloros+ account
+chloros-cli login user@example.com 'your_password'
+
+# Check license status
+chloros-cli status
+
+# Process your first project
+chloros-cli process ~/images/dataset001
+```
+
 ### Osnovna upotreba
 
-Obradi mapu sa zadanim postavkama:
+Obradite mapu sa zadanim postavkama:
+
+**Windows:**
 
 ```powershell
 chloros-cli process "C:\Images\Dataset001"
 ```
 
+**Linux:**
+
+```bash
+chloros-cli process ~/images/dataset001
+```
+
 ***
 
-## Referenca naredbi
+## Referenca naredbe
 
 ### Opća sintaksa
 
@@ -88,10 +127,14 @@ Obradite slike u mapi s kalibracijom.
 chloros-cli process <input-folder> [options]
 ```
 
-**Primjer:**
+**Primjeri:**
 
-```powershell
+```bash
+# Windows
 chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
+
+# Linux
+chloros-cli process ~/datasets/survey_001 --vignette --reflectance
 ```
 
 #### Mogućnosti naredbe procesa
@@ -109,6 +152,9 @@ chloros-cli process "C:\Datasets\Survey_001" --vignette --reflectance
 | `--format` | Izbor | TIFF (16-bitni) | Izlazni format: `TIFF (16-bit)`, `TIFF (32-bit, Percent)`, `PNG (8-bit)`, `JPG (8-bit)` |
 | `--min-target-size` | Cijeli broj | Auto | Minimalna veličina cilja u pikselima za otkrivanje kalibracijske ploče |
 | `--target-clustering` | Cijeli broj | Auto | Ciljni prag grupiranja (0-100) |
+| `--debayer` | Izbor | `standard` | Debayer metoda: `standard` ili `texture-aware` (samo Chloros+) |
+| `--target`, `--targets` | Zastava | Onemogućeno | Tražite samo ciljeve kalibracije u podmapi "target" ili "targets" (ubrzava obradu) |
+| `--indices` | Popis | Ništa | Vegetacijski indeksi za izračunavanje (npr. `--indices NDVI NDRE GNDVI`) |
 | `--exposure-pin-1` | Niz | Ništa | Zaključaj ekspoziciju za model kamere (Pin 1) |
 | `--exposure-pin-2` | Niz | Ništa | Zaključaj ekspoziciju za model kamere (Pin 2) |
 | `--recal-interval` | Cijeli broj | Auto | Interval rekalibracije u sekundama |
@@ -128,11 +174,11 @@ chloros-cli login <email> <password>
 
 **Primjer:**
 
-```powershell
+```bash
 chloros-cli login user@example.com 'MyP@ssw0rd123'
 ```
 
-{% hint style="upozorenje" %}
+{% hint style="warning" %}
 **Posebni znakovi**: Koristite jednostruke navodnike oko zaporki koje sadrže znakove kao što su `$`, `!` ili razmake.
 {% endhint %}
 
@@ -140,7 +186,7 @@ chloros-cli login user@example.com 'MyP@ssw0rd123'
 
 ### `logout` - Obriši vjerodajnice
 
-Obrišite pohranjene vjerodajnice i odjavite se sa svog računa.
+Izbrišite pohranjene vjerodajnice i odjavite se sa svog računa.
 
 **Sintaksa:**
 
@@ -150,7 +196,7 @@ chloros-cli logout
 
 **Primjer:**
 
-```powershell
+```bash
 chloros-cli logout
 ```
 
@@ -179,7 +225,7 @@ chloros-cli status
 
 **Primjer:**
 
-```powershell
+```bash
 chloros-cli status
 ```
 
@@ -210,7 +256,7 @@ chloros-cli export-status
 
 **Primjer:**
 
-```powershell
+```bash
 chloros-cli export-status
 ```
 
@@ -235,7 +281,7 @@ chloros-cli language <language-code>
 
 **Primjeri:**
 
-```powershell
+```bash
 # View current language
 chloros-cli language
 
@@ -300,7 +346,7 @@ chloros-cli language ja
 
 ### `set-project-folder` - Postavite zadanu mapu projekta
 
-Promijenite zadanu lokaciju mape projekta (dijeli se s GUI-jem).
+Promijenite zadanu lokaciju mape projekta (dijeli se s GUI na Windows).
 
 **Sintaksa:**
 
@@ -308,10 +354,14 @@ Promijenite zadanu lokaciju mape projekta (dijeli se s GUI-jem).
 chloros-cli set-project-folder <folder-path>
 ```
 
-**Primjer:**
+**Primjeri:**
 
-```powershell
+```bash
+# Windows
 chloros-cli set-project-folder "C:\Projects\2025"
+
+# Linux
+chloros-cli set-project-folder ~/projects/2025
 ```
 
 ***
@@ -328,14 +378,19 @@ chloros-cli get-project-folder
 
 **Primjer:**
 
-```powershell
+```bash
 chloros-cli get-project-folder
 ```
 
 **Izlaz:**
 
 ```
+
+# Windows
 ℹ Current project folder: C:\Projects\2025
+
+# Linux
+ℹ Current project folder: /home/user/.local/share/chloros/projects
 ```
 
 ***
@@ -352,53 +407,122 @@ chloros-cli reset-project-folder
 
 ***
 
+### `selftest` - Pokrenite dijagnostiku sustava
+
+Pokrenite 7 dijagnostičkih provjera za provjeru konfiguracije vašeg sustava.
+
+**Sintaksa:**
+
+```bash
+chloros-cli selftest
+```
+
+**Izvršena dijagnostika:**
+
+1. Provjera verzije
+2. Dostupnost luka (5000)
+3. Pozadinsko pokretanje
+4. API test povezivosti
+5. Podaci o sustavu i otkrivanje GPU-a
+6. Verifikacija modela denoisera
+7. Provjera dostupnosti CUDA
+
+{% hint style="info" %}
+**Korisno za rješavanje problema**: Pokrenite `selftest` nakon instalacije kako biste provjerili je li vaš sustav ispravno konfiguriran, posebno na Linux/Jetson gdje GPU i CUDA postavke mogu trebati provjeru.
+{% endhint %}
+
+***
+
+### `update` - Provjerite ima li ažuriranja (samo Linux)
+
+Provjerite i instalirajte CLI ažuriranja na Linux sustave.
+
+**Sintaksa:**
+
+```bash
+# Check for updates without installing
+chloros-cli update --check
+
+# Check for and install updates
+chloros-cli update
+```
+
+| Opcija | Opis |
+| --------- | ---------------------------------- |
+| `--check` | Provjerite samo ažuriranja, nemojte instalirati |
+
+{% hint style="info" %}
+Ova naredba je dostupna samo na Linux. Na Windows ažuriranja se isporučuju kroz instalacijski program.
+{% endhint %}
+
+***
+
 ## Globalne opcije
 
 Ove se opcije odnose na sve naredbe:
 
 | Opcija | Upišite | Zadano | Opis |
-| --------------- | ------- | ------------- | ------------------------------------------------ |
+| ----------------- | ------- | ------------- | ------------------------------------------------ |
 | `--backend-exe` | Put | Automatski otkriveno | Put do pozadinske izvršne |
 | `--port` | Cijeli broj | 5000 | Pozadinski API broj porta |
 | `--restart` | Zastava | - | Prisilno ponovno pokretanje pozadine (ubija postojeće procese) |
 | `--version` | Zastava | - | Prikaži informacije o verziji i izađi |
 | `--help` | Zastava | - | Prikaži informacije za pomoć i izađi |
 
+{% hint style="info" %}
+**Pozadinsko automatsko otkrivanje**: `--backend-exe` put se automatski otkriva po platformi:
+* **Windows**: `C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe`
+* **Linux (.deb)**: `/usr/lib/chloros/chloros-backend`
+* **Linux (ručno)**: `/opt/mapir/chloros/backend/chloros-backend`
+{% endhint %}
+
 **Primjer s globalnim opcijama:**
+
+**Windows:**
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Survey_001"
+```
+
+**Linux:**
+
+```bash
+chloros-cli --port 5001 process ~/datasets/survey_001
 ```
 
 ***
 
 ## Vodič za postavke obrade
 
-### Paralelna obrada
+### Paralelna obrada i dinamička prilagodba računanja
 
-Chloros+ CLI **automatski skalira**paralelnu obradu kako bi odgovarala mogućnostima vašeg računala:**Kako radi:**
+Chloros 1.1.0 uključuje [Dynamic Compute Adaptation](processing-architecture/dynamic-compute-adaptation.md) — mehanizam za obradu **automatski otkriva vaš hardver** i odabire optimalnu strategiju:
 
-* Otkriva vaše CPU jezgre i RAM
-* Dodjeljuje radnike: **2× CPU jezgre** (koristi hipernitnost)
-* **Maksimalno: 16 paralelnih radnika** (radi stabilnosti)**Razine sustava:**
-
-| Vrsta sustava | CPU | RAM | Radnici | Izvedba |
-| ------------- | ---------- | -------- | -------- | --------------- |
-| **High-End** | 16+ jezgri | 32+ GB | Do 16 | Najveća brzina |
-| **Srednje klase** | 8-15 jezgri | 16-31 GB | 8-16 | Izvrsna brzina |
-| **Low-End** | 4-7 jezgri | 8-15 GB | 4-8 | Dobra brzina |
+| Platforma | Strategija | Radnici | Cjevovod | Bilješke |
+| --- | --- | --- | --- | --- |
+| **Jetson Nano 8GB** | `GPU_SINGLE` | 1 | `tiled_gpu` | Memorijski učinkovito, serijalizirano |
+| **Jetson Orin NX 16GB** | `GPU_PARALLEL` | 3 | `fused_gpu` | Istodobna GPU obrada |
+| **Stolno računalo s 8 GB GPU** | `GPU_SINGLE` | 3 | `tiled_gpu` | Dobre performanse radne površine |
+| **Stolno računalo s 12 GB+ GPU** | `GPU_PARALLEL` | 3-4 | `fused_gpu` | Optimalne performanse radne površine |
+| **Sustav samo za CPU** | `CPU_PARALLEL` | jezgre - 1 | `cpu_fallback` | GPU nije potreban |
 
 {% hint style="success" %}
-**Automatska optimizacija**: CLI automatski otkriva specifikacije vašeg sustava i konfigurira optimalnu paralelnu obradu. Nije potrebna ručna konfiguracija!
+**Nije potrebna ručna konfiguracija!** Chloros automatski detektira vaš CPU, GPU, RAM i (na Jetson) toplinske senzore, a zatim automatski konfigurira optimalni cjevovod obrade.
 {% endhint %}
 
 ### Debayerove metode
 
-CLI koristi **High Quality (Faster)** kao zadani i preporučeni debayer algoritam:
+| Metoda | CLI Zastava | Kvaliteta | Brzina | Licenca |
+| --- | --- | --- | --- | --- |
+| **Standardno (brzo, srednje kvalitete)** | `--debayer standard` | dobro | Brzo | Besplatno / Chloros+ |
+| **Svjestan teksture (Sporo, najviša kvaliteta)** | `--debayer texture-aware` | Najviša | Sporo | Samo Chloros+ |
 
-| Metoda | Kvaliteta | Brzina | Opis |
-| ---------------------------- | ------- | ----- | ---------------------------------------------- |
-| **Visoka kvaliteta (brže)** ⭐ | ⭐⭐⭐⭐ | ⚡⚡⚡ | Algoritam svjestan rubova (zadano, preporučeno) |
+Zadana metoda debayera je **Standardno**. Metoda**Texture Aware** koristi AI/ML model uklanjanja šuma za ispis najviše kvalitete, ali zahtijeva licencu Chloros+ i NVIDIA GPU.
+
+```bash
+# Use Texture Aware debayer (Chloros+ only)
+chloros-cli process ~/datasets/field_a --debayer texture-aware
+```
 
 ### Ispravak vinjete
 
@@ -439,9 +563,9 @@ Pretvara neobrađene vrijednosti senzora u standardizirane postotke refleksije p
 
 ## Automatizacija i skriptiranje
 
-### PowerShell skupna obrada
+### Skupna obrada PowerShell (Windows)
 
-Automatski obradi više mapa skupa podataka:
+Automatski obradi više mapa skupa podataka na Windows:
 
 ```powershell
 # process_all_datasets.ps1
@@ -465,9 +589,9 @@ foreach ($dataset in $datasets) {
 Write-Host "All datasets processed!" -ForegroundColor Green
 ```
 
-### Windows Skupna skripta
+### Windows Skupna skripta (Windows)
 
-Jednostavna petlja za skupnu obradu:
+Jednostavna petlja za skupnu obradu na Windows:
 
 ```batch
 @echo off
@@ -492,9 +616,35 @@ echo All datasets processed!
 pause
 ```
 
-### Python skripta za automatizaciju
+### Skupna obrada Bash (Linux)
 
-Napredna automatizacija s obradom grešaka:
+Obradi višestruke mape skupa podataka na Linux:
+
+```bash
+#!/bin/bash
+# process_all_datasets.sh
+
+for dataset in ~/datasets/2026/*/; do
+    name=$(basename "$dataset")
+    echo "Processing $name..."
+
+    chloros-cli process "$dataset" \
+        --vignette \
+        --reflectance
+
+    if [ $? -eq 0 ]; then
+        echo "✓ $name complete"
+    else
+        echo "✗ $name failed"
+    fi
+done
+
+echo "All datasets processed!"
+```
+
+### Python skripta za automatizaciju (više platformi)
+
+Napredna automatizacija s rukovanjem greškama (radi na Windows i Linux):
 
 ```python
 import subprocess
@@ -519,6 +669,9 @@ def process_dataset(input_folder):
 
 def main():
     """Process all datasets in a directory"""
+    # Adjust path for your platform
+    # Windows: Path('C:/Datasets/2025')
+    # Linux:   Path.home() / 'datasets' / '2025'
     datasets_dir = Path('C:/Datasets/2025')
     log_file = Path('processing_log.txt')
     
@@ -596,17 +749,20 @@ MyProject/
     └── ...
 ```
 
-### Procjene vremena obrade
+### Procjena vremena obrade
 
 Uobičajena vremena obrade za 100 slika (12 MP svaka):
 
-| Način | Vrijeme | Hardver |
-| ----------------- | --------- | ---------------------------------------------- |
-| **Paralelni način** | 5-10 min | i7/Ryzen 7, 16GB RAM, SSD (do 16 radnika) |
-| **Paralelni način** | 10-15 min | i5/Ryzen 5, 8GB RAM, HDD (do 8 radnika) |
+| Platforma | Način | Procijenjeno vrijeme | Bilješke |
+| --- | --- | --- | --- |
+| **Stolno računalo 12GB+ GPU** | `GPU_PARALLEL` | 5-10 min | Najbrža opcija |
+| **Desktop 8GB GPU** | `GPU_SINGLE` | 10-15 min | Dobra izvedba |
+| **Jetson Orin NX 16GB** | `GPU_PARALLEL` | 15-25 min | Rubno računanje |
+| **Jetson Nano 8GB** | `GPU_SINGLE` | 30-60 min | Ograničena memorija |
+| **Samo CPU** | `CPU_PARALLEL` | 20-40 min | GPU nije potreban |
 
 {% hint style="info" %}
-**Savjet za performanse**: Vrijeme obrade ovisi o broju slika, razlučivosti i specifikacijama računala.
+**Savjet za performanse**: Vrijeme obrade ovisi o broju slika, razlučivosti, metodi debayera i hardveru. Texture Aware debayer traje znatno dulje nego Standard. Pogledajte [Dynamic Compute Adaptation] (processing-architecture/dynamic-compute-adaptation.md) za detalje.
 {% endhint %}
 
 ***
@@ -615,13 +771,13 @@ Uobičajena vremena obrade za 100 slika (12 MP svaka):
 
 ### CLI Nije pronađen
 
-**Pogreška:**
+**Windows Greška:**
 
 ```
 'chloros-cli' is not recognized as an internal or external command
 ```
 
-**Rješenja:**
+**Windows rješenja:**
 
 1. Provjerite mjesto instalacije:
 
@@ -636,10 +792,37 @@ dir "C:\Program Files\Chloros\resources\cli\chloros-cli.exe"
 ```
 
 3. Ručno dodajte u PATH:
-   * Otvorite Svojstva sustava → Varijable okoline
+   * Otvorite Svojstva sustava → Varijable okruženja
    * Uredite PATH varijablu
    * Dodaj: `C:\Program Files\Chloros\resources\cli`
    * Ponovno pokrenite terminal
+
+**Linux Greška:**
+
+```
+chloros-cli: command not found
+```
+
+**Linux rješenja:**
+
+1. Provjerite instalaciju:
+
+```bash
+which chloros-cli
+dpkg -L chloros-amd64  # or chloros-arm64-jp6
+```
+
+2. Ponovno učitajte svoju ljusku:
+
+```bash
+source ~/.bashrc
+```
+
+3. Provjerite dopuštenja:
+
+```bash
+sudo chmod +x /usr/bin/chloros-cli
+```
 
 ***
 
@@ -653,17 +836,31 @@ Backend failed to start within 30 seconds
 **Rješenja:**
 
 1. Provjerite je li pozadina već pokrenuta (prvo je zatvorite)
-2. Provjerite Windows Vatrozid ne blokira
+2. Provjerite da vatrozid ne blokira (Windows) ili provjerite dostupnost porta (Linux: `lsof -i :5000`)
 3. Pokušajte s drugim priključkom:
 
-```powershell
+```bash
+# Windows
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
+
+# Linux
+chloros-cli --port 5001 process ~/datasets/field_a
 ```
 
 4. Prisilno ponovno pokretanje pozadine:
 
-```powershell
+```bash
+# Windows
 chloros-cli --restart process "C:\Datasets\Field_A"
+
+# Linux
+chloros-cli --restart process ~/datasets/field_a
+```
+
+5. Na Linux, provjerite postoji li pozadinska izvršna datoteka:
+
+```bash
+ls -la /usr/lib/chloros/chloros-backend
 ```
 
 ***
@@ -680,13 +877,13 @@ Chloros+ license required for CLI access
 1. Provjerite imate li aktivnu Chloros+ pretplatu
 2. Prijavite se svojim vjerodajnicama:
 
-```powershell
+```bash
 chloros-cli login user@example.com 'password'
 ```
 
 3. Provjerite status licence:
 
-```powershell
+```bash
 chloros-cli status
 ```
 
@@ -712,7 +909,7 @@ No images found in the specified folder
 
 ### Obrada se zaustavlja ili prekida**Rješenja:**
 
-1. Provjerite raspoloživi prostor na disku (osigurajte dovoljno za ispis)
+1. Provjerite raspoloživi prostor na disku (osigurajte dovoljno za izlaz)
 2. Zatvorite ostale aplikacije kako biste oslobodili memoriju
 3. Smanjite broj slika (obradite u serijama)
 
@@ -725,12 +922,22 @@ No images found in the specified folder
 Port 5000 is already in use
 ```
 
-**Otopina:**
+**Rješenja:**
 
-Navedite drugi priključak:
+**Windows:**
 
 ```powershell
 chloros-cli --port 5001 process "C:\Datasets\Field_A"
+```
+
+**Linux:**
+
+```bash
+# Find what's using port 5000
+lsof -i :5000
+
+# Use a different port
+chloros-cli --port 5001 process ~/datasets/field_a
 ```
 
 ***
@@ -739,21 +946,26 @@ chloros-cli --port 5001 process "C:\Datasets\Field_A"
 
 ### P: Trebam li licencu za CLI?
 
-**O:**Da! CLI zahtijeva plaćenu licencu**Chloros+**.
+**O:**Da! CLI zahtijeva plaćenu**Chloros+ licencu**.
 
-* ❌ Standardni (besplatni) plan: CLI onemogućen
+* ❌ Standardni (besplatni) paket: CLI onemogućen
 * ✅ Chloros+ (plaćeni) planovi: CLI potpuno omogućen
 
 Pretplatite se na: [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing)
 
 ***
 
-### P: Mogu li koristiti CLI na poslužitelju bez GUI-ja?**O:** Da! CLI radi potpuno bez glave. Zahtjevi:
-
+### P: Mogu li koristiti CLI na poslužitelju bez GUI-ja?**O:** Da! CLI radi potpuno bez glave. Ovo je primarni slučaj upotrebe na Linux.**Windows poslužitelj:**
 * Windows poslužitelj 2016 ili noviji
 * Visual C++ Redistributable instaliran
-* Dovoljno RAM-a (minimalno 8 GB, preporučuje se 16 GB)
-* Jednokratna aktivacija GUI licence na bilo kojem računalu
+
+**Linux poslužitelj:**
+* Ubuntu 20.04+ / Debian 11+ (amd64) ili JetPack 6 (arm64)
+* Instalirajte putem `.deb` paketa
+
+**Obje platforme:**
+* Minimalno 8 GB RAM-a (preporučuje se 16 GB)
+* Jednokratna aktivacija licence: `chloros-cli login user@example.com 'password'`
 
 ***
 
@@ -761,8 +973,12 @@ Pretplatite se na: [https://cloud.mapir.camera/pricing](https://cloud.mapir.came
 
 Upotrijebite opciju `-o` da odredite drugu izlaznu mapu:
 
-```powershell
+```bash
+# Windows
 chloros-cli process "C:\Input" -o "D:\Output"
+
+# Linux
+chloros-cli process ~/input -o ~/output
 ```
 
 ***
@@ -781,6 +997,12 @@ chloros-cli process "C:\Datasets\Field_A" | Tee-Object -FilePath "processing.log
 chloros-cli process "C:\Datasets\Field_A" > processing.log 2>&1
 ```
 
+**Linux Bash:**
+
+```bash
+chloros-cli process ~/datasets/field_a 2>&1 | tee processing.log
+```
+
 ***
 
 ### P: Što se događa ako pritisnem Ctrl+C tijekom obrade?**A:** CLI će:
@@ -793,11 +1015,11 @@ Djelomično obrađene slike mogu ostati u izlaznoj mapi.
 
 ***
 
-### P: Mogu li automatizirati obradu CLI?**O:** Apsolutno! CLI je dizajniran za automatizaciju. Pogledajte [Automatizacija i skriptiranje](CLI.md#automation--scripting) za PowerShell, Batch i Python primjere.***
+### P: Mogu li automatizirati obradu CLI?**O:** Apsolutno! CLI dizajniran je za automatizaciju. Pogledajte [Automatizacija i skriptiranje](CLI.md#automation--scripting) za PowerShell (Windows), Batch (Windows), Bash (Linux) i Python (kroz platformu) primjere.***
 
 ### P: Kako mogu provjeriti verziju CLI?**A:**
 
-```powershell
+```bash
 chloros-cli --version
 ```
 
@@ -805,7 +1027,7 @@ chloros-cli --version
 
 ```
 
-Chloros CLI 1.0.2
+Chloros CLI 1.1.0
 ```
 
 ***
@@ -816,7 +1038,7 @@ Chloros CLI 1.0.2
 
 Pogledajte informacije o pomoći izravno u CLI:
 
-```powershell
+```bash
 # General help
 chloros-cli --help
 
@@ -838,8 +1060,16 @@ chloros-cli language --help
 
 Proces sa zadanim postavkama (vinjeta, refleksija):
 
+**Windows:**
+
 ```powershell
 chloros-cli process "C:\Datasets\Field_A_2025_01_15"
+```
+
+**Linux:**
+
+```bash
+chloros-cli process ~/datasets/field_a_2025_01_15
 ```
 
 ***
@@ -848,10 +1078,21 @@ chloros-cli process "C:\Datasets\Field_A_2025_01_15"
 
 32-bitni float TIFF:
 
+**Windows:**
+
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
   --format "TIFF (32-bit, Percent)" ^
   --vignette ^
+  --reflectance
+```
+
+**Linux:**
+
+```bash
+chloros-cli process ~/datasets/field_a \
+  --format "TIFF (32-bit, Percent)" \
+  --vignette \
   --reflectance
 ```
 
@@ -861,10 +1102,21 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 8-bitni PNG bez kalibracije za brzi pregled:
 
+**Windows:**
+
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
   --format "PNG (8-bit)" ^
   --no-vignette ^
+  --no-reflectance
+```
+
+**Linux:**
+
+```bash
+chloros-cli process ~/datasets/field_a \
+  --format "PNG (8-bit)" \
+  --no-vignette \
   --no-reflectance
 ```
 
@@ -874,9 +1126,19 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 Primijenite PPK korekcije s refleksijom:
 
+**Windows:**
+
 ```powershell
 chloros-cli process "C:\Datasets\Field_A" ^
   --ppk ^
+  --reflectance
+```
+
+**Linux:**
+
+```bash
+chloros-cli process ~/datasets/field_a \
+  --ppk \
   --reflectance
 ```
 
@@ -884,7 +1146,9 @@ chloros-cli process "C:\Datasets\Field_A" ^
 
 ### Primjer 5: Lokacija prilagođenog izlaza
 
-Prebaci na drugi pogon s određenim formatom:
+Obradi na drugu lokaciju s određenim formatom:
+
+**Windows:**
 
 ```powershell
 chloros-cli process "C:\Input\Raw_Images" ^
@@ -892,13 +1156,21 @@ chloros-cli process "C:\Input\Raw_Images" ^
   --format "TIFF (16-bit)"
 ```
 
+**Linux:**
+
+```bash
+chloros-cli process ~/input/raw_images \
+  -o ~/output/processed \
+  --format "TIFF (16-bit)"
+```
+
 ***
 
 ### Primjer 6: Tijek rada provjere autentičnosti
 
-Potpuni tijek provjere autentičnosti:
+Potpuni tijek provjere autentičnosti (isti na svim platformama):
 
-```powershell
+```bash
 # Step 1: Login
 chloros-cli login user@example.com 'MyP@ssw0rd'
 
@@ -906,7 +1178,9 @@ chloros-cli login user@example.com 'MyP@ssw0rd'
 chloros-cli status
 
 # Step 3: Process images
-chloros-cli process "C:\Datasets\Field_A"
+# Windows: chloros-cli process "C:\Datasets\Field_A"
+# Linux:   chloros-cli process ~/datasets/field_a
+chloros-cli process ~/datasets/field_a
 
 # Step 4: Logout (optional, when switching accounts)
 chloros-cli logout
@@ -916,9 +1190,9 @@ chloros-cli logout
 
 ### Primjer 7: Upotreba više jezika
 
-Promjena jezika sučelja:
+Promjena jezika sučelja (isti na svim platformama):
 
-```powershell
+```bash
 # List available languages
 chloros-cli language --list
 
@@ -926,7 +1200,9 @@ chloros-cli language --list
 chloros-cli language es
 
 # Process with Spanish interface
-chloros-cli process "C:\Vuelos\Campo_A"
+# Windows: chloros-cli process "C:\Vuelos\Campo_A"
+# Linux:   chloros-cli process ~/vuelos/campo_a
+chloros-cli process ~/vuelos/campo_a
 
 # Change back to English
 chloros-cli language en

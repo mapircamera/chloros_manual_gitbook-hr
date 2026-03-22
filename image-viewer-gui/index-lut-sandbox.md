@@ -31,7 +31,7 @@ Sandbox pruža:
 * Najbolje kada su postavke finalizirane
 
 {% hint style="success" %}
-**Najbolji tijek rada**: Koristite Sandbox za eksperimentiranje i pronalaženje optimalnih postavki indeksa i LUT-a, a zatim primijenite te postavke tijekom obrade projekta za cijeli skup podataka.
+**Najbolji tijek rada**: Koristite Sandbox za eksperimentiranje i pronalaženje optimalnih postavki indeksa i LUT-a, zatim primijenite te postavke tijekom obrade projekta za cijeli skup podataka.
 {% endhint %}
 
 ***
@@ -50,10 +50,10 @@ Sandbox vam omogućuje sljedeće:
 
 ### Otvaranje sandboxa
 
-Index/LUT Sandboxu se pristupa u **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> kartici bočne trake:
+Sandboxu Index/LUT pristupa se u kartici bočne trake **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">:
 
 1. Pritisnite sliku u rešetki slika preglednika datoteka, ona se otvara u kartici **Preglednik slika** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">
-2. Kliknite karticu **Preglednik slika** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> da biste otvorili lijevu skočnu bočnu traku ako već nije otvorena
+2. Kliknite karticu **Preglednik slika** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> da biste otvorili lijevu iskačuću bočnu traku ako već nije otvorena
 
 ### Odabir slike na koju će se primijeniti indeks/LUT
 
@@ -67,7 +67,7 @@ Za rad s indeksom u pregledniku slika <img src="../.gitbook/assets/icon_image-vi
 
 ### Primjena indeksa na sliku
 
-Nakon što je slika na cijelom zaslonu i bočna traka kartice **Preglednik slika** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> otvorena je:
+Nakon što se slika prikaže preko cijelog zaslona i otvori se bočna traka kartice **Preglednik slika** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">:
 
 1. Označite okvir Index na vrhu bočne trake
 2. Odaberite filtar svoje kamere s lijevog padajućeg izbornika
@@ -96,7 +96,7 @@ Bare soil: 0.0 to 0.2
 Water: -0.1 to 0.1
 ```
 
-Za potpunu dokumentaciju formule indeksa, pogledajte [Multispektralne formule indeksa](../project-settings/multispectral-index-formulas.md).
+Za potpunu dokumentaciju formule indeksa, pogledajte [Formule multispektralnog indeksa](../project-settings/multispectral-index-formulas.md).
 
 ***
 
@@ -121,11 +121,11 @@ Za potpunu dokumentaciju formule indeksa, pogledajte [Multispektralne formule in
 
 Nakon što se prikaže indeksna slika
 
-1. Kliknite gumb <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> "+Dodaj LUT"
+1. Pritisnite gumb <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> "+Dodaj LUT"
 2. Odaberite gradijent boje
 3. Podesite krajnje točke min/maks
 4. Podesite način izrezivanja
-5. Označite okvir Index na bočnoj traci kartice **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> da biste primijenili LUT
+5. Označite okvir Index na bočnoj traci kartice **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> kako biste primijenili LUT
 
 ### Odabir gradijenta boje
 
@@ -133,7 +133,7 @@ Nakon što se prikaže indeksna slika
 
 1. Na ploči LUT pronađite**traku gradijenta u boji**
 
-2. Zadržite pokazivač miša iznad njega da vidite dostupne unaprijed postavljene gradijentne postavke
+2. Zadržite pokazivač miša iznad njega da biste vidjeli dostupne unaprijed postavljene gradijentne postavke
 3. Odaberite željeni gradijent
 4. Slika se **odmah ažurira** s novim bojama kada je okvir Index označen
 
@@ -189,11 +189,11 @@ Nakon što se prikaže indeksna slika
 
 ### Izrezivanje vrijednosti izvan raspona
 
-Kada vrijednosti piksela padnu izvan vašeg definiranog minimalnog/maksimalnog raspona, možete kontrolirati kako se one prikazuju pomoću **načina izrezivanja**.
+Kada vrijednosti piksela padnu izvan vašeg definiranog minimalnog/maksimalnog raspona, možete kontrolirati način na koji se prikazuju pomoću **načina izrezivanja**.
 
 #### **Dostupne opcije načina izrezivanja:**
 
-#### 1. Minimum i Maksimum
+#### 1. Minimum i maksimum
 
 * Pikseli **ispod minimuma**→ prikaz koristeći**prvu boju** u gradijentu (npr. crvena)
 * Pikseli **iznad maksimuma**→ prikaz koristeći**zadnju boju** u gradijentu (npr. zelena)
@@ -206,7 +206,7 @@ Kada vrijednosti piksela padnu izvan vašeg definiranog minimalnog/maksimalnog r
 * **Slučaj upotrebe**: GIS preklapanje, izdvajanje određenih raspona vrijednosti, isticanje samo područja od interesa
 * **Primjer**: Prikaži samo NDVI 0.4-0.7 u boji, sve ostalo prozirno
 
-{% hint style="upozorenje" %}
+{% hint style="warning" %}
 **Ograničenje prozirnosti**: prozirni pikseli pojavit će se kao boja pozadine u pregledniku. Prilikom izvoza tijekom obrade, prozirnost se čuva u PNG formatu, ali ne i u JPG.
 {% endhint %}
 
@@ -219,7 +219,7 @@ Kada vrijednosti piksela padnu izvan vašeg definiranog minimalnog/maksimalnog r
 #### 4. Izvorna pozadina
 
 * Pikseli **izvan raspona**prikazuju**izvornu multispektralnu sliku*** Pikseli **unutar raspona**pokazuju**gradijent boje*** **Slučaj upotrebe**: Najintuitivniji - kombinira prirodni kontekst slike s analitičkim slojem boja
-* **Primjer**: pogledajte stvarni izgled polja/usjeva s označenim bojama označenim područjima stresa
+* **Primjer**: pogledajte stvarni izgled polja/usjeva s prekrivenim područjima stresa kodiranim bojama
 
 ### Odabir pravog načina isjecanja
 
@@ -250,7 +250,7 @@ Za potpunu kontrolu nad svojom vizualizacijom, možete stvoriti **prilagođene g
 * **Uklonite graničnik**: Dvaput kliknite kvadratić u boji da biste uklonili uzorak**Strategije prilagodbe:*** **Obrnuti gradijent**: Promijenite redoslijed boja da biste obrnuli značenje (npr. zeleno=nisko, crveno=visoko)
 * **Boje robne marke**: uskladite paletu boja vaše organizacije za izvješća
 * **Bez daltonista**: Koristite narančasto-plave ili ljubičasto-žute kombinacije
-* **Optimizacija ispisa**: Odaberite boje koje funkcioniraju i u boji i u sivim tonovima ispisa
+* **Optimizacija ispisa**: Odaberite boje koje funkcioniraju i pri ispisu u boji i u sivim tonovima
 * **Više pragova**: Koristite različite boje na određenim pragovima vrijednosti za klasifikaciju
 
 {% hint style="info" %}
@@ -269,7 +269,7 @@ Sve LUT prilagodbe u sandboxu ažuriraju sliku **trenutačno i interaktivno**:
 * **Odaberi gradijent** → Boje se trenutno ažuriraju
 * **Prilagodi raspon vrijednosti** → Kontrast se mijenja u stvarnom vremenu
 * **Promijeni klase** → Glatkoća gradijenta ažurira se odmah
-* **Izmijeni isječak** → Prikaz pozadine se trenutno mijenja
+* **Izmijeni isječak** → Pozadinski prikaz se trenutno mijenja
 * **Uredite boje** → Prilagođeni gradijent primjenjuje se odmah**Nije potreban gumb "Primijeni"** - sve promjene su aktivne i interaktivne!
 
 {% hint style="success" %}
@@ -352,7 +352,7 @@ Exponential index:
 (NIR / Red) ^ 2
 ```
 
-{% hint style="upozorenje" %}
+{% hint style="warning" %}
 **Provjera formule**: Provjerite koristi li vaša formula trake dostupne u vašem fotoaparatu. Na primjer, RedEdge dostupan je samo na fotoaparatima s filtrom RedEdge.
 {% endhint %}
 

@@ -55,7 +55,7 @@ Svaka slika s GPS podacima predstavljena je oznakom na karti:
 * Povećajte kako biste vidjeli pojedinačne lokacije slika
 
 {% hint style="success" %}
-SUPER-ZUMIRANJE: Kada dosegnete maksimalnu razinu zumiranja od pružatelja pločica karte, pločica se zatim povećava nakon daljnjeg zumiranja, što vam omogućuje da vidite oznake koje su blizu jedna drugoj.
+SUPER-ZUMIRANJE: Kada dosegnete maksimalnu razinu zumiranja od dobavljača pločica karte, pločica se zatim povećava nakon daljnjeg zumiranja, što vam omogućuje da vidite oznake koje su blizu jedna drugoj.
 {% endhint %}
 
 ### Pregled lebdeći
@@ -81,7 +81,7 @@ Kartica Karta podržava dva pružatelja pločica za pozadinske slike karte:
 
 ### ESRI
 
-* Satelitske i zračne slike iz ESRI ArcGIS
+* Satelitske i zračne snimke iz ESRI ArcGIS
 * Često daje slike veće rezolucije u određenim regijama
 
 ***
@@ -114,7 +114,7 @@ Prikazuje pločice satelitske karte s dodanim detaljima (ceste, itd.)
 
 ### Kontrole zumiranja
 
-* **Uvećanje/smanjenje**: Koristite kotačić miša ili gumbe za zumiranje
+* **Uvećanje/smanjenje**: Koristite kotačić miša ili tipke za zumiranje
 * **Cijeli zaslon**: Prikaz karte preko cijelog zaslona
 
 ### Pan kontrole
@@ -153,7 +153,7 @@ Prikazuje pločice satelitske karte s dodanim detaljima (ceste, itd.)
 * GPS je bio onemogućen na fotoaparatu tijekom snimanja
 * EXIF podatke uklonio je vanjski softver
 
-**Rješenje**: Provjerite je li GPS omogućen na vašoj kameri i ponovno uvezite izvorne datoteke
+**Rješenje**: Provjerite je li GPS omogućen na vašoj kameri i ponovno uvezite originalne datoteke
 
 ### Markeri na pogrešnoj lokaciji
 

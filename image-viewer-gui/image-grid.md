@@ -17,6 +17,6 @@ Kako se slike obrađuju, gumbi će se pojaviti u gornjem lijevom kutu mrežnog p
 * **Reflektant** - Kalibrirane slike refleksije
 * **RWA (Index/LUT)** - Izračunate slike multispektralnog indeksa s LUT gradijentom u boji
 
-Klikom na sličice rešetke slike otvara se [Image Viewer] (opening-an-image-full-screen.md) cijelog zaslona. Ako je način gledanja na rešetki postavljen na određeni izvoz kao što je "Ciljevi", kada se klikne minijatura rešetke, otvorit će se izvezena ciljna slika na cijelom zaslonu.
+Klikom na sličice rešetke slike otvara se [Image Viewer] (opening-an-image-full-screen.md) cijelog zaslona. Ako je način gledanja na mreži postavljen na određeni izvoz kao što je "Cilje", kada se klikne minijatura mreže, otvorit će se izvezena ciljna slika na cijelom zaslonu.
 
 <figure><img src="../.gitbook/assets/chloros_grid_mode.gif" alt=""><figcaption></figcaption></figure>

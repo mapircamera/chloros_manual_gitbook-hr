@@ -32,7 +32,7 @@ _Referenca: Huete, A., et al. "Pregled radiometrijskih i biofizičkih performans
 
 ## FCI1 - Indeks šumskog pokrivača 1
 
-Ovaj indeks razlikuje šumske krošnje od drugih vrsta vegetacije pomoću višespektralnih slika refleksije koje uključuju crveni rubni pojas.
+Ovaj indeks razlikuje šumske krošnje od drugih vrsta vegetacije pomoću višespektralnih slika refleksije koje uključuju crvenu rubnu traku.
 
 $$
 FCI1 = Red * RedEdge
@@ -52,7 +52,7 @@ $$
 FCI2 = Red * NIR
 $$
 
-Pošumljena područja imat će niže vrijednosti FCI2 zbog manje refleksije drveća i prisutnosti sjena unutar krošnji.
+Pošumljena područja će imati niže vrijednosti FCI2 zbog manje refleksije drveća i prisutnosti sjena unutar krošnji.
 
 _Referenca: Becker, Sarah J., Craig S.T. Daughtry i Andrew L. Russ. "Robusni indeksi šumskog pokrova za multispektralne slike." Fotogrametrijsko inženjerstvo i daljinska detekcija 84.8 (2018): 505-512._
 
@@ -98,7 +98,7 @@ $$
 GCI = {NIR \over Green} - 1
 $$
 
-Široke NIR i zelene valne duljine omogućuju bolje predviđanje sadržaja klorofila, a istovremeno omogućuju veću osjetljivost i veći omjer signala i šuma.
+Široke NIR i zelene valne duljine omogućuju bolje predviđanje sadržaja klorofila uz veću osjetljivost i veći omjer signala i šuma.
 
 Referenca: Gitelson, A., Y. Gritz i M. Merzlyak. "Odnosi između sadržaja klorofila u lišću i spektralne refleksije i algoritama za nedestruktivnu procjenu klorofila u lišću viših biljaka." Journal of Plant Physiology 160 (2003): 271-282._
 
@@ -106,7 +106,7 @@ Referenca: Gitelson, A., Y. Gritz i M. Merzlyak. "Odnosi između sadržaja kloro
 
 ## GLI - Green indeks lista
 
-Ovaj je indeks izvorno dizajniran za korištenje s digitalnom RGB kamerom za mjerenje pokrivenosti pšenice, gdje se crveni, zeleni i plavi digitalni brojevi (DN) kreću od 0 do 255.
+Ovaj je indeks izvorno dizajniran za korištenje s digitalnom kamerom RGB za mjerenje pokrivenosti pšenice, gdje se crveni, zeleni i plavi digitalni brojevi (DN) kreću od 0 do 255.
 
 $$
 GLI = {(Green - Red) + (Green - Blue)  \over (2 * Green) + Red + Blue }
@@ -180,7 +180,7 @@ $$
 EVI = 2.5 *  {(NIR - Red) \over (NIR + 6 * Red - 7.5 * Blue + 1)}
 $$
 
-Visoke vrijednosti LAI obično se kreću od približno 0 do 3,5. Međutim, kada scena sadrži oblake i druge svijetle značajke koje proizvode zasićene piksele, vrijednosti LAI mogu premašiti 3,5. U idealnom slučaju, prije stvaranja LAI slike, trebali biste maskirati oblake i svijetla obilježja iz scene.
+Visoke vrijednosti LAI obično se kreću od približno 0 do 3,5. Međutim, kada scena sadrži oblake i druge svijetle značajke koje proizvode zasićene piksele, vrijednosti LAI mogu premašiti 3,5. Idealno biste trebali maskirati oblake i svijetla obilježja iz svoje scene prije stvaranja LAI slike.
 
 _Referenca: Boegh, E., H. Soegaard, N. Broge, C. Hasager, N. Jensen, K. Schelde i A. Thomsen. "Višespektralni podaci iz zraka za kvantificiranje indeksa lisne površine, koncentracije dušika i fotosintetske učinkovitosti u poljoprivredi." Daljinska istraživanja okoliša 81, br. 2-3 (2002): 179-193._
 
@@ -206,7 +206,7 @@ $$
 MNLI = {(NIR^{2} - Red) * (1 + L) \over (NIR^{2} + Red + L)  }
 $$
 
-_Referenca: Yang, Z., P. Willis i R. Mueller. "Utjecaj AWIFS slike poboljšanog omjera pojasa na točnost klasifikacije usjeva." Zbornik radova simpozija Pecora 17 Remote Sensing (2008.), Denver, CO._
+_Referenca: Yang, Z., P. Willis i R. Mueller. "Utjecaj AWIFS slike poboljšanog omjera pojasa na točnost klasifikacije usjeva." Zbornik simpozija Pecora 17 Remote Sensing (2008.), Denver, CO._
 
 ***
 
@@ -248,13 +248,13 @@ Referenca: Rouse, J., R. Haas, J. Schell i D. Deering. Praćenje vegetacijskih s
 
 ## NLI - Nelinearni indeks
 
-Ovaj indeks pretpostavlja da je odnos između mnogih vegetacijskih indeksa i površinskih biofizičkih parametara nelinearan. Linearizira odnose s površinskim parametrima koji su obično nelinearni.
+Ovaj indeks pretpostavlja da je odnos između mnogih vegetacijskih indeksa i površinskih biofizičkih parametara nelinearan. Linearizira odnose s površinskim parametrima koji imaju tendenciju da budu nelinearni.
 
 $$
 NLI = {NIR^{2} - Red \over NIR^{2} + Red  }
 $$
 
-_Referenca: Goel, N. i W. Qin. "Utjecaji arhitekture nadstrešnica na odnose između različitih vegetacijskih indeksa i LAI i Fpar: računalna simulacija." Remote Sensing Reviews 10 (1994): 309-347._
+_Referenca: Goel, N. i W. Qin. "Utjecaji arhitekture krošnji na odnose između različitih vegetacijskih indeksa i LAI i Fpar: računalna simulacija." Remote Sensing Reviews 10 (1994): 309-347._
 
 ***
 

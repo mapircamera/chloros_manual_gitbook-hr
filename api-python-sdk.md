@@ -15,14 +15,14 @@
 
 | Zahtjev | Detalji |
 | -------------------- | ------------------------------------------------------------------ |
-| **Chloros Desktop** | Mora se instalirati lokalno |
+| **Chloros instaliran** | Windows: Desktop instalacija; Linux: paket `.deb` |
 | **Licenca** | Chloros+ ([potreban plan uz plaćanje](https://cloud.mapir.camera/pricing)) |
-| **Operativni sustav** | Windows 10/11 (64-bit) |
+| **Operativni sustav** | Windows 10/11 (64-bit), Linux x86_64 (amd64), Linux arm64 (NVIDIA Jetson JetPack 6) |
 | **Python** | Python 3.7 ili noviji |
 | **Sjećanje** | Minimalno 8 GB RAM-a (preporučuje se 16 GB) |
 | **Internet** | Potrebno za aktivaciju licence |
 
-{% hint style="upozorenje" %}
+{% hint style="warning" %}
 **Zahtjevi za licencu**: Python SDK zahtijeva plaćenu pretplatu Chloros+ za pristup API. Standardni (besplatni) planovi nemaju pristup API/SDK. Posjetite [https://cloud.mapir.camera/pricing](https://cloud.mapir.camera/pricing) za nadogradnju.
 {% endhint %}
 
@@ -30,14 +30,14 @@
 
 ### Instalacija
 
-Instaliraj putem pipa:
+Instalirajte putem pipa:
 
 ```bash
 pip install chloros-sdk
 ```
 
 {% hint style="info" %}
-**Prvo postavljanje**: Prije korištenja SDK, aktivirajte svoju licencu Chloros+ otvaranjem Chloros, Chloros (preglednik) ili Chloros CLI i prijavom sa svojim vjerodajnicama. Ovo treba učiniti samo jednom.
+**Prvo postavljanje**: Prije korištenja SDK, aktivirajte svoju licencu Chloros+ otvaranjem Chloros, Chloros (preglednik) ili Chloros CLI i prijavom sa svojim vjerodajnicama. Ovo treba učiniti samo jednom. Na Linux (bez GUI-ja), koristite: `chloros-cli login user@example.com 'password'`
 {% endhint %}
 
 ### Osnovna upotreba
@@ -47,9 +47,16 @@ Obradite mapu sa samo nekoliko redaka:
 ```python
 from chloros_sdk import process_folder
 
-# One-line processing
+# One-line processing (Windows)
 results = process_folder("C:\\DroneImages\\Flight001")
+
+# One-line processing (Linux)
+results = process_folder("/home/user/drone_images/flight001")
 ```
+
+{% hint style="info" %}
+**Putovi na više platformi**: Primjeri kodova na ovoj stranici koriste putove u stilu Windows (npr. `C:\\DroneImages\\Flight001`). Na Linux umjesto toga koristite staze Linux (npr. `/home/user/drone_images/flight001` ili `~/drone_images/flight001`). SDK radi identično na obje platforme.
+{% endhint %}
 
 ### Potpuna kontrola
 
@@ -65,7 +72,8 @@ chloros = ChlorosLocal()
 chloros.create_project("MyProject", camera="Survey3N_RGN")
 
 # Import images
-chloros.import_images("C:\\DroneImages\\Flight001")
+chloros.import_images("C:\\DroneImages\\Flight001")  # Windows
+# chloros.import_images("/home/user/drone_images/flight001")  # Linux
 
 # Configure settings
 chloros.configure(
@@ -86,7 +94,7 @@ chloros.process(mode="parallel", wait=True)
 
 Prije instaliranja SDK, provjerite imate li:
 
-1. **Chloros Desktop** instaliran ([preuzimanje](download.md))
+1. **Chloros instaliran** — Windows: Desktop instalacijski program ([preuzimanje](download.md)); Linux: `.deb` paket ([Linux instalacija](linux/linux-installation.md))
 2. **Python 3.7+** instaliran ([python.org](https://www.python.org))
 3. **Aktivna licenca Chloros+** ([nadogradnja](https://cloud.mapir.camera/pricing))
 
@@ -112,7 +120,7 @@ pip install chloros-sdk[dev]
 
 ### Provjerite instalaciju
 
-Provjerite je li SDK pravilno instaliran:
+Provjerite je li SDK ispravno instaliran:
 
 ```python
 import chloros_sdk
@@ -125,18 +133,20 @@ print(f"Chloros SDK version: {chloros_sdk.__version__}")
 
 ### Aktivacija licence
 
-SDK koristi istu licencu kao Chloros, Chloros (preglednik) i Chloros CLI. Aktivirajte jednom putem GUI ili CLI:
+SDK koristi istu licencu kao Chloros, Chloros (preglednik) i Chloros CLI. Aktivirajte jednom putem GUI ili CLI:**Windows:**Otvorite**Chloros ili Chloros (preglednik)** i prijavite se na kartici Korisnik <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line"> ili koristite karticu CLI.**Linux:** Koristite CLI (GUI nije dostupan):
 
-1. Otvorite **Chloros ili Chloros (preglednik)**i prijavite se na karticu Korisnik <img src=".gitbook/assets/icon_user.JPG" alt="" data-size="line">. Ili otvorite**CLI**.
-2. Unesite svoje vjerodajnice Chloros+ i prijavite se
-3. Licenca se pohranjuje lokalno u predmemoriju (ostaje nakon ponovnog pokretanja)
+```bash
+chloros-cli login user@example.com 'your_password'
+```
+
+Licenca se pohranjuje lokalno u predmemoriju i traje nakon ponovnog pokretanja.
 
 {% hint style="success" %}
 **Jednokratno postavljanje**: Nakon prijave putem GUI-ja ili CLI, SDK automatski koristi predmemoriranu licencu. Nije potrebna dodatna provjera autentičnosti!
 {% endhint %}
 
 {% hint style="info" %}
-**Odjava**: korisnici SDK mogu programski obrisati predmemorirane vjerodajnice pomoću metode `logout()`. Pogledajte metodu [logout()](#logout) u API Referenci.
+**Odjava**: korisnici SDK mogu programski očistiti predmemorirane vjerodajnice pomoću metode `logout()`. Pogledajte metodu [logout()](#logout) u API Referenci.
 {% endhint %}
 
 ### Testiraj vezu
@@ -187,18 +197,28 @@ ChlorosLocal(
 **Primjeri:**
 
 ```python
-# Default (auto-start backend)
+# Default (auto-start backend, auto-detect path on Windows and Linux)
 chloros = ChlorosLocal()
 
 # Connect to running backend
 chloros = ChlorosLocal(auto_start_backend=False)
 
-# Custom backend path
+# Custom backend path (Windows)
 chloros = ChlorosLocal(backend_exe="C:/Custom/chloros-backend.exe")
 
-# Custom timeout
-chloros = ChlorosLocal(timeout=60)
+# Custom backend path (Linux)
+chloros = ChlorosLocal(backend_exe="/opt/mapir/chloros/backend/chloros-backend")
+
+# Custom timeout with longer startup (e.g., for Jetson)
+chloros = ChlorosLocal(timeout=60, backend_startup_timeout=120)
 ```
+
+{% hint style="info" %}
+**Automatsko otkrivanje više platformi**: SDK automatski pokušava ispravnu pozadinsku putanju za vašu platformu:
+* **Windows**: `C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe`
+* **Linux (.deb)**: `/usr/lib/chloros/chloros-backend`
+* **Linux (ručno)**: `/opt/mapir/chloros/backend/chloros-backend`
+{% endhint %}
 
 ***
 
@@ -258,7 +278,7 @@ Konfigurirajte postavke obrade.
 
 | Parametar | Upišite | Zadano | Opis |
 | ------------------------ | ---- | ----------------------- | -------------------------------- |
-| `debayer` | str | "Visoka kvaliteta (brže)" | Debayerova metoda |
+| `debayer` | str | "Standardno (brzo, srednje kvalitete)" | Debayerova metoda |
 | `vignette_correction` | bool | `True` | Omogući ispravak vinjete |
 | `reflectance_calibration` | bool | `True` | Omogući kalibraciju refleksije |
 | `indices` | popis | `None` | Vegetacijski indeksi za izračunavanje |
@@ -285,7 +305,7 @@ chloros.configure(
 
 # Advanced configuration
 chloros.configure(
-    debayer="High Quality (Faster)",
+    debayer="Standard (Fast, Medium Quality)",
     vignette_correction=True,
     reflectance_calibration=True,
     ppk=True,
@@ -311,7 +331,7 @@ Obradite slike projekta.
 
 **Povrati:** `dict` - Rezultati obrade
 
-{% hint style="upozorenje" %}
+{% hint style="warning" %}
 **Paralelni način rada**: Zahtijeva Chloros+ licencu. Automatski se skalira na vaše CPU jezgre (do 16 radnika).
 {% endhint %}
 
@@ -352,14 +372,34 @@ print(config['Project Settings'])
 
 #### `get_status()`
 
-Dobijte informacije o statusu pozadine.
+Dobijte informacije o statusu pozadine uključujući napredak obrade po niti.
 
-**Vraća:** `dict` - Status pozadine**Primjer:**
+**Povratak:** `dict` - status pozadine sa sljedećom strukturom:
+
+```python
+{
+    "running": True,
+    "url": "http://localhost:5000",
+    "processing": {
+        "percent": 75.0,
+        "phase": "processing"
+    },
+    "export": {
+        "percent": 50.0,
+        "phase": "exporting",
+        "active": True
+    }
+}
+```
+
+**Primjer:**
 
 ```python
 status = chloros.get_status()
 print(f"Running: {status['running']}")
 print(f"URL: {status['url']}")
+print(f"Processing: {status['processing']['percent']}%")
+print(f"Export: {status['export']['percent']}% - Active: {status['export']['active']}")
 ```
 
 ***
@@ -403,7 +443,7 @@ print(f"Logout successful: {result}")
 ```
 
 {% hint style="info" %}
-**Potrebna je ponovna autentifikacija**: Nakon pozivanja `logout()`, morate se ponovno prijaviti putem Chloros, Chloros (preglednik) ili Chloros CLI prije korištenja SDK.
+**Potrebna je ponovna autentifikacija**: Nakon poziva `logout()`, morate se ponovno prijaviti putem Chloros, Chloros (preglednik) ili Chloros CLI prije korištenja SDK.
 {% endhint %}
 
 ***
@@ -477,9 +517,13 @@ with ChlorosLocal() as chloros:
 
 ## Potpuni primjeri
 
+{% hint style="info" %}
+**Korisnici Linux**: Svi primjeri u nastavku koriste staze Windows. Zamijenite staze `C:\\...` svojim stazama Linux (npr. `/home/user/...` ili `~/...`). Sve funkcije SDK identične su na svim platformama.
+{% endhint %}
+
 ### Primjer 1: Osnovna obrada
 
-Obradi mapu sa zadanim postavkama:
+Obradite mapu sa zadanim postavkama:
 
 ```python
 from chloros_sdk import process_folder
@@ -511,7 +555,7 @@ print(f"Imported {len(import_results.get('files', []))} images")
 
 # Configure advanced settings
 chloros.configure(
-    debayer="High Quality (Faster)",
+    debayer="Standard (Fast, Medium Quality)",
     vignette_correction=True,
     reflectance_calibration=True,
     ppk=False,
@@ -708,7 +752,7 @@ def process_safely(folder_path):
         return False, f"License error: {e}. Upgrade to Chloros+ at cloud.mapir.camera/pricing"
     
     except ChlorosBackendError as e:
-        return False, f"Backend error: {e}. Ensure Chloros Desktop is installed."
+        return False, f"Backend error: {e}. Ensure Chloros is installed (Windows installer or Linux .deb package)."
     
     except ChlorosProcessingError as e:
         return False, f"Processing error: {e}"
@@ -892,7 +936,7 @@ except ChlorosLicenseError:
     print("Chloros+ license required. Upgrade at cloud.mapir.camera/pricing")
 
 except ChlorosBackendError:
-    print("Backend failed to start. Ensure Chloros Desktop is installed.")
+    print("Backend failed to start. Ensure Chloros is installed (Windows installer or Linux .deb package).")
 
 except ChlorosProcessingError as e:
     print(f"Processing failed: {e}")
@@ -973,19 +1017,30 @@ for i in range(0, len(images), batch_size):
 
 **Problem:** SDK ne uspijeva pokrenuti pozadinu**Rješenja:**
 
-1. Provjerite je li Chloros Desktop instaliran:
+1. Provjerite je li instaliran Chloros:
 
 ```python
 import os
-backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe"
+import platform
+
+# Auto-detect backend path
+if platform.system() == "Windows":
+    backend_path = r"C:\Program Files\MAPIR\Chloros\resources\backend\chloros-backend.exe"
+else:
+    backend_path = "/usr/lib/chloros/chloros-backend"
+
 print(f"Backend exists: {os.path.exists(backend_path)}")
 ```
 
-2. Provjerite Windows Firewall ne blokira
+2. Provjerite vatrozid (Windows) ili dostupnost priključka (Linux: `lsof -i :5000`)
 3. Isprobajte ručni pozadinski put:
 
 ```python
+# Windows
 chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
+
+# Linux
+chloros = ChlorosLocal(backend_exe="/opt/mapir/chloros/backend/chloros-backend")
 ```
 
 ***
@@ -998,9 +1053,14 @@ chloros = ChlorosLocal(backend_exe="C:\\Path\\To\\chloros-backend.exe")
 ```python
 from pathlib import Path
 import os
+import platform
 
-# Check cache location (Windows)
-cache_path = Path(os.getenv('APPDATA')) / 'Chloros' / 'cache'
+# Check cache location
+if platform.system() == "Windows":
+    cache_path = Path(os.getenv('APPDATA')) / 'Chloros' / 'cache'
+else:
+    cache_path = Path.home() / '.cache' / 'chloros'
+
 print(f"Cache exists: {cache_path.exists()}")
 ```
 
@@ -1050,7 +1110,7 @@ chloros = ChlorosLocal(timeout=120)  # 2 minutes
 
 ***
 
-### Port se već koristi**Problem:** Pozadinski port 5000 zauzet**Rješenja:**
+### Port se već koristi**Problem:** Pozadinski priključak 5000 zauzet**Rješenja:**
 
 ```python
 # Use different port
@@ -1060,8 +1120,14 @@ chloros = ChlorosLocal(api_url="http://localhost:5001")
 Ili pronađite i zatvorite sukobljeni proces:
 
 ```powershell
-# PowerShell
+# Windows PowerShell
 Get-NetTCPConnection -LocalPort 5000
+```
+
+```bash
+# Linux
+lsof -i :5000
+kill $(lsof -t -i :5000)
 ```
 
 ***
@@ -1196,11 +1262,14 @@ chloros.process(progress_callback=notebook_progress)
 
 **O:** Samo za početnu aktivaciju licence. Nakon prijave putem Chloros, Chloros (preglednik) ili Chloros CLI licenca se lokalno predmemorira i radi izvan mreže 30 dana.***
 
-### P: Mogu li koristiti SDK na poslužitelju bez GUI-ja?**O:** Da! Zahtjevi:
+### P: Mogu li koristiti SDK na poslužitelju bez GUI-ja?**O:** Da! SDK radi bez glave na Windows i Linux poslužiteljima.**Linux (preporučeno za bez glave):**
+* Instalirajte putem `.deb` paketa
+* Aktiviraj licencu: `chloros-cli login user@example.com 'password'`
 
+**Windows poslužitelj:**
 * Windows poslužitelj 2016 ili noviji
 * Chloros instaliran (jednokratno)
-* Licenca aktivirana na bilo kojem računalu (spremljena licenca kopirana na poslužitelj)
+* Licenca se aktivira putem CLI ili na bilo kojem računalu
 
 ***
 
@@ -1245,17 +1314,23 @@ Project_Path/
 
 ***
 
-### P: Mogu li obraditi slike iz Python skripti koje se izvode prema rasporedu?**O:** Da! Koristite Windows Planer zadataka sa Python skriptama:
+### P: Mogu li obraditi slike iz Python skripti koje se izvode prema rasporedu?**O:** Da! Koristite svoj planer OS-a s Python skriptama:
 
 ```python
 # scheduled_processing.py
 from chloros_sdk import process_folder
 
 # Process today's flights
-results = process_folder("C:\\Flights\\Today")
+results = process_folder("/data/flights/today")  # Linux
+# results = process_folder("C:\\Flights\\Today")  # Windows
 ```
 
-Napravite raspored putem Task Scheduler-a za svakodnevno pokretanje.
+**Windows:** Zakažite raspored putem Planera zadataka za svakodnevno pokretanje.**Linux:** Raspored putem cron-a:
+
+```cron
+# Run at 2 AM daily
+0 2 * ** /usr/bin/python3 /home/user/scheduled_processing.py >> /var/log/chloros.log 2>&1
+```
 
 ***
 

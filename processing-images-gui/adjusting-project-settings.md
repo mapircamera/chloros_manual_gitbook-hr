@@ -23,7 +23,7 @@ Za tipične tijekove rada kamere MAPIR Survey3, zadane postavke dobro funkcionir
 * ✅ **Ispravak vinjete**: Omogućeno
 * ✅ **Kalibracija refleksije**: Omogućeno (zahtijeva slike meta MAPIR)
 * ✅ **Debayer metoda**: Standardno (brzo, srednje kvalitete)
-* ✅ **Format izvoza**: TIFF (16-bitni)
+* ✅ **Format za izvoz**: TIFF (16-bitni)
 
 Jednostavno uvezite svoje slike i počnite s obradom s ovim zadanim postavkama.
 
@@ -37,7 +37,7 @@ Ploča Postavke projekta organizirana je u nekoliko kategorija. U nastavku je sa
 
 Kontrolira kako Chloros identificira ciljeve kalibracije na vašim slikama.
 
-**Ključne postavke:*** **Minimalno područje uzorka za kalibraciju**: prag veličine za otkrivanje cilja (zadano: 25 piksela)
+**Ključne postavke:*** **Minimalno područje uzorka za kalibraciju**: Prag veličine za otkrivanje cilja (zadano: 25 piksela)
 * **Minimalno ciljano grupiranje**: Prag sličnosti za grupiranje ciljnih regija (zadano: 60)**Kada prilagoditi:**
 
 * Povećajte područje uzorka ako dođe do lažnih detekcija
@@ -53,7 +53,7 @@ Glavne mogućnosti obrade slike i kalibracije.
 * **Debayerova metoda**: Algoritam za pretvaranje RAW u 3-kanalni višespektralni
 * **Minimalni interval rekalibracije**: Vrijeme između korištenja ciljeva kalibracije (0 = koristiti sve)**Napredne postavke:*** **Pomak vremenske zone senzora svjetla**: Za PPK sinkronizaciju vremena (zadano: 0)
 * **Primijeni PPK ispravke**: koristi GPS/podatke o ekspoziciji iz .daq datoteka
-* **Igla za ekspoziciju 1/2**: Dodjeljuje kamere iglama za ekspoziciju za postavke s dvije kamere
+* **Pribadača za ekspoziciju 1/2**: Dodjeljuje kamere iglama za ekspoziciju za postavke s dvije kamere
 
 ### Debayerova metoda
 
@@ -97,7 +97,7 @@ Kontrolira format i kvalitetu izlazne datoteke.
 
 **Dostupni formati:*** **TIFF (16-bit)**: Preporučeno za GIS i znanstvene analize (0-65,535 raspon)
 * **TIFF (32-bit, postotak)**: vrijednosti refleksije s pomičnim zarezom (raspon 0,0-1,0)
-* **PNG (8-bit)**: Kompresija bez gubitaka za vizualizaciju (raspon 0-255)
+* **PNG (8-bitni)**: Kompresija bez gubitaka za vizualizaciju (raspon 0-255)
 * **JPG (8-bitni)**: Najmanje datoteke, kompresija s gubitkom (0-255 raspon)***
 
 ## Spremanje i učitavanje postavki
@@ -186,7 +186,7 @@ Prilikom obrade slika s više MAPIR kamera u jednom projektu:
 Za ponovljena istraživanja istog područja tijekom vremena:
 
 1. Napravite predložak sa svojim standardnim postavkama
-2. U svakoj sesiji koristite dosljedno postavljanje cilja kalibracije
+2. U svakoj sesiji koristite dosljednu postavku cilja kalibracije
 3. Obradite svaki datum kao zaseban projekt
 4. Koristite identične postavke za usporedive rezultate
 5. Izvoz u istom formatu za vremensku analizu
@@ -195,7 +195,7 @@ Za ponovljena istraživanja istog područja tijekom vremena:
 
 Za projekte s mnogo slika (500+):
 
-* Razmislite o podjeli na manje projekte po datumu ili području
+* Razmislite o podjeli na manje projekte prema datumu ili području
 * Koristite Chloros+ paralelnu obradu za brže rezultate
 * Razmotrite CLI ili API za serijsku automatizaciju
 * Podesite minimalni interval ponovne kalibracije kako biste smanjili vrijeme otkrivanja cilja

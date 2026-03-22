@@ -12,7 +12,7 @@ Za korisnike bez Chloros+ licence:
 
 **Prikaz napretka u 2 faze:**
 
-1.**Target Detect** - Pronalaženje kalibracijskih ciljeva na slikama
+1.**Otkrivanje cilja** - Pronalaženje ciljeva kalibracije na slikama
 2. **Obrada** - Primjena ispravaka i izvoz**Traka napretka prikazuje:**
 
 * Ukupni postotak završetka (0-100%)
@@ -21,7 +21,7 @@ Za korisnike bez Chloros+ licence:
 
 ### Chloros+ Traka napretka
 
-Za korisnike s licencom Chloros+:
+Za korisnike s Chloros+ licencom:
 
 **Prikaz napretka u 4 faze:**
 
@@ -30,12 +30,16 @@ Za korisnike s licencom Chloros+:
 3. **Kalibracija** - Primjena korekcija vinjete i refleksije
 4. **Izvoz** - Spremanje obrađenih datoteka**Interaktivne značajke:*** **Zadržite pokazivač iznad** trake napretka da biste vidjeli proširenu ploču s 4 stupnja
 * **Kliknite** traku napretka za zamrzavanje/pričvršćivanje proširene ploče
-* **Kliknite ponovno** za odmrzavanje i automatsko skrivanje nakon odlaska miša
+* **Kliknite ponovo** za odmrzavanje i automatsko skrivanje nakon odlaska miša
 * Svaka faza pokazuje pojedinačni napredak (0-100%)
 
 ***
 
 ## Razumijevanje svake faze obrade
+
+{% hint style="info" %}
+**Arhitektura cjevovoda**: Ova 4 stupnja GUI-ja odgovaraju [cjevovodu za obradu s 4 niti](../processing-architecture/processing-pipeline.md). Na sustavima s GPU ubrzanjem, Thread 3 (kalibracija) ima koristi od [Dynamic Compute Adaptation](../processing-architecture/dynamic-compute-adaptation.md) koja optimizira obradu za vaš specifični hardver.
+{% endhint %}
 
 ### Faza 1: Detekcija (otkrivanje cilja)
 
@@ -69,7 +73,7 @@ Za korisnike s licencom Chloros+:
 
 * Čitanje EXIF metapodataka slike (vremenske oznake, postavke ekspozicije)
 * Određivanje strategije kalibracije na temelju ciljnih vremenskih oznaka
-* Organiziranje reda čekanja za obradu slike
+* Organiziranje reda čekanja za obradu slika
 * Priprema radnika za paralelnu obradu (samo Chloros+)
 
 **Trajanje:** 5-30 sekundi**Indikator napretka:**
@@ -86,7 +90,7 @@ Za korisnike s licencom Chloros+:
 
 **Što se događa:*** **Debayering**: Pretvaranje RAW Bayerovog uzorka u 3 kanala
 * **Korekcija vinjete**: Uklanjanje zatamnjenja ruba leće
-* **Kalibracija refleksije**: normalizacija s ciljnim vrijednostima
+* **Kalibracija refleksije**: normalizacija s ciljanim vrijednostima
 * **Izračun indeksa**: Izračunavanje multispektralnih indeksa
 * Obrada svake slike kroz cijeli cjevovod
 
@@ -135,7 +139,7 @@ Zapisnik otklanjanja pogrešaka pruža detaljne informacije o napretku obrade i 
 
 1. Kliknite ikonu **Debug Log** <img src="../.gitbook/assets/icon_log.JPG" alt="" data-size="line"> na lijevoj bočnoj traci
 2. Otvara se ploča zapisnika koja prikazuje poruke obrade u stvarnom vremenu
-3. Automatsko pomicanje za prikaz najnovijih poruka
+3. Automatski se pomiče za prikaz najnovijih poruka
 
 ### Razumijevanje poruka dnevnika
 
@@ -272,7 +276,7 @@ Kada je GPU ubrzanje omogućeno:
 
 * Provjerite zapisnik otklanjanja pogrešaka za pogreške
 * Provjerite dostupan prostor na disku
-* Provjerite Upravitelj zadataka kako biste osigurali da Chloros radi
+* Provjerite Upravitelj zadataka kako biste bili sigurni da Chloros radi
 
 **Poruke o pogrešci pojavljuju se često:**
 
@@ -369,6 +373,6 @@ Nakon završetka obrade:
 1. **Rezultati pregleda** - Pogledajte [Završetak obrade](finishing-the-processing.md)
 2. **Provjeri izlaznu mapu** - Provjerite sve datoteke koje su ispravno izvezene
 3. **Pregledajte dnevnik otklanjanja pogrešaka** - Provjerite postoje li upozorenja ili pogreške
-4. **Pregled obrađenih slika** - Koristite Image Viewer ili vanjski softver
+4. **Pregled obrađenih slika** - Koristite Preglednik slika ili vanjski softver
 
 Za informacije o pregledavanju i korištenju obrađenih rezultata pogledajte [Završetak obrade](finishing-the-processing.md).

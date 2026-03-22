@@ -8,7 +8,7 @@ Prije nego što kliknete gumb Start, provjerite je li sve spremno:
 
 * [ ] **Uvezene datoteke** - Sve slike pojavljuju se u pregledniku datoteka
 * [ ] **Ciljne slike označene** - Ciljni stupac je provjeren za kalibracijske slike
-* [ ] **Otkriveni modeli kamera** - Stupac Model kamera prikazuje ispravne kamere
+* [ ] **Otkriveni modeli kamera** - stupac Model kamera prikazuje ispravne kamere
 * [ ] **Postavke konfigurirane** - Postavke projekta pregledane i prilagođene
 * [ ] **Odabrani indeksi** - dodani željeni multispektralni indeksi (ako je potrebno)
 * [ ] **Odabrani format izvoza** - Izlazni format prikladan za vaš tijek rada
@@ -37,7 +37,7 @@ Gumb Start/Play nalazi se u gornjoj traci zaglavlja Chloros:
 4. Traka napretka se ažurira, prikazuje status obrade
 
 {% hint style="success" %}
-**Obrada započeta**: Jednom kada se klikne, Chloros automatski upravlja svim koracima obrade - otkrivanje cilja, debayering, kalibracija, izračun indeksa i izvoz.
+**Obrada započeta**: Nakon što se klikne, Chloros automatski upravlja svim koracima obrade - otkrivanje cilja, debayering, kalibracija, izračun indeksa i izvoz.
 {% endhint %}
 
 ***
@@ -70,17 +70,17 @@ Chloros radi u dva različita načina obrade ovisno o vašoj licenci:
 
 **Kako radi:**
 
-* Obrađuje više slika istovremeno
-* Višenitni rad (do 16 paralelnih radnika)
-* Koristi više CPU jezgri
-* Dodatno GPU (CUDA) ubrzanje s NVIDIA grafičkim karticama
+* Obrađuje više slika istovremeno koristeći [4-nitni cjevovod za obradu](../processing-architecture/processing-pipeline.md)
+* [Dynamic Compute Adaptation](../processing-architecture/dynamic-compute-adaptation.md) automatski odabire optimalnu strategiju za vaš hardver
+* GPU (CUDA) ubrzanje s NVIDIA grafičkim karticama (stolno računalo i Jetson)
+* Skala od Jetson Nano (1 radnik) do stolnog računala s 12 GB+ GPU (3-4 radnika)
 
-**Traka napretka prikazuje 4 faze:**
+**Traka napretka prikazuje 4 faze** (koje odgovaraju 4 niti cjevovoda):
 
-1.**Otkrivanje** - Pronalaženje ciljeva kalibracije
-2. **Analiziranje** - Ispitivanje metapodataka slike i priprema cjevovoda
-3. **Kalibracija** - Primjena korekcija i kalibracija
-4. **Izvoz** - Spremanje obrađenih slika i indeksa**Interakcija trake napretka:*** **Zadržite pokazivač miša** iznad trake da vidite detaljnu padajuću ploču u 4 stupnja
+1. **Otkrivanje** (Nit 1) - Pronalaženje ciljeva kalibracije
+2. **Analiziranje** (Nit 2) - Ispitivanje metapodataka slike i računalna kalibracija
+3. **Kalibracija** (nit 3) - GPU debayering, ispravak vinjete, izračun indeksa
+4. **Izvoz** (Thread 4) - Spremanje obrađenih slika i indeksa**Interakcija trake napretka:*** **Zadržite pokazivač miša** iznad trake da vidite detaljnu padajuću ploču u 4 stupnja
 * **Kliknite** traku napretka da zamrznete padajuću ploču na mjestu
 * **Kliknite ponovo** da odmrznete i sakrijete ploču**Vrijeme obrade:**
 
@@ -89,7 +89,7 @@ Chloros radi u dva različita načina obrade ovisno o vašoj licenci:
 * GPU ubrzanje dodatno poboljšava brzinu
 
 {% hint style="info" %}
-**Chloros+ Brzina**: Paralelna obrada može biti 5-10 puta brža od sekvencijalnog načina za velike skupove podataka. Projekt od 500 slika koji traje 2 sata u besplatnom načinu rada može se dovršiti za 15-20 minuta s Chloros+.
+**Chloros+ Brzina**: Paralelna obrada može biti 5-10x brža od sekvencijalnog načina za velike skupove podataka. Projekt od 500 slika koji traje 2 sata u besplatnom načinu rada može se dovršiti za 15-20 minuta s Chloros+.
 {% endhint %}
 
 ***
@@ -100,7 +100,7 @@ Chloros radi u dva različita načina obrade ovisno o vašoj licenci:
 
 **Što radi Chloros:**
 
-* Skenira označene ciljne slike (ili sve slike ako nijedna nije označena)
+* Skenira označene ciljane slike (ili sve slike ako nijedna nije označena)
 * Identificira 4 kalibracijske ploče u svakoj meti
 * Izdvaja vrijednosti refleksije iz ciljnih ploča
 * Bilježi ciljne vremenske oznake za planiranje kalibracije
@@ -141,7 +141,7 @@ Chloros radi u dva različita načina obrade ovisno o vašoj licenci:
 **Što radi Chloros:**
 
 * Sprema kalibrirane slike u odabranom formatu
-* Izvozi indeksne slike s konfiguriranim LUT bojama
+* Izvoz indeksnih slika s konfiguriranim LUT bojama
 * Zapisuje datoteke u podmape modela fotoaparata
 * Čuva izvorne nazive datoteka sa sufiksima
 
@@ -172,7 +172,7 @@ Nakon pokretanja, cijeli cjevovod se pokreće automatski:
 * Računalo može slabije reagirati tijekom obrade
 * Izbjegavajte pokretanje drugih CPU-intenzivnih zadataka
 
-{% hint style="upozorenje" %}
+{% hint style="warning" %}
 **Savjet za performanse**: Za najbolju izvedbu Chloros+ zatvorite ostale aplikacije i pustite Chloros da koristi sve resurse sustava.
 {% endhint %}
 
@@ -227,7 +227,7 @@ Ako trebate zaustaviti obradu:
 * Ponovno pokrenite obradu od početka
 * Za najčišće iskustvo potpuno zatvorite Chloros i ponovno pokrenite
 
-{% hint style="upozorenje" %}
+{% hint style="warning" %}
 **Nema djelomičnih rezultata**: Otkazivanjem se odbacuje sav napredak. Chloros ne sprema djelomično obrađene slike.
 {% endhint %}
 
@@ -306,7 +306,7 @@ Stvarno vrijeme obrade uvelike varira ovisno o:
 
 **Rješenja:**
 
-1. Pregledajte [Odabir ciljanih slika] (choosing-target-images.md)
+1. Pregled [Odabir ciljnih slika] (choosing-target-images.md)
 2. Označite odgovarajuće slike u stupcu Cilj
 3. Provjerite jesu li ciljevi vidljivi na označenim slikama
 4. Po potrebi prilagodite postavke otkrivanja cilja
