@@ -1,373 +1,299 @@
 # Index/LUT Sandbox
 
-Index/LUT Sandbox je interaktivni radni prostor unutar Chloros Image Viewera koji vam omogućuje eksperimentiranje s multispektralnim izračunima indeksa i vizualizacijama boja u stvarnom vremenu. Ovaj moćni alat pomaže vam u testiranju različitih indeksa, pročišćavanju raspona vrijednosti i stvaranju vizualizacija spremnih za objavljivanje bez ponovne obrade cijelog skupa podataka.
+Index/LUT Sandbox je interaktivni radni prostor u bočnoj traci preglednika slika Chloros. Odaberete formulu, povežete kanale svoje kamere s njom, obojite je gradijentom i podesite raspon vrijednosti — a slika se ažurira uživo dok to radite. Od verzije 1.2.0 možete i **spremiti ono što ste izradili**, za jednu sliku ili za cijeli projekt, bez ponovne obrade.
 
-## Što je Index/LUT Sandbox?
+## Za što služi Sandbox
 
-### Svrha
-
-Sandbox pruža:
-
-* **Izračun indeksa u stvarnom vremenu** - Trenutačno primijenite bilo koji indeks vegetacije
-* **Interaktivna LUT prilagodba** - Fino podešavanje prijelaza i raspona boja
-* **Optimizacija tijeka rada** - Odredite najbolje postavke prije skupne obrade
-
-### Sandbox naspram Project Processing
-
-**Indeks/LUT Sandbox (Interaktivno):**
-
-* Jedna po jedna slika
-* Trenutačne povratne informacije
-* Eksperimentalno i iterativno
-* Nema trajnih promjena datoteka
-* Savršeno za istraživanje i testiranje
-
-**Obrada projekta (serija):**
-
-* Cijeli skup podataka odjednom
-* Unaprijed konfigurirane postavke
-* Trajne izlazne datoteke
-* Vremenski intenzivan
-* Najbolje kada su postavke finalizirane
+| Index/LUT Sandbox (interaktivni)        | Obrada projekta (serijska)       |
+| -------------------------------------- | -------------------------------- |
+| Jedna slika odjednom, trenutačna povratna informacija  | Cijeli skup podataka u jednom pokretanju     |
+| Eksperimentalno i iterativno             | Prethodno konfigurirane postavke          |
+| Izvodi se uživo; sprema samo na zahtjev  | Uvijek zapisuje datoteke proizvoda      |
+| Savršeno za pronalaženje pravih postavki | Najbolje kada su postavke konačne |
 
 {% hint style="success" %}
-**Najbolji tijek rada**: Koristite Sandbox za eksperimentiranje i pronalaženje optimalnih postavki indeksa i LUT-a, zatim primijenite te postavke tijekom obrade projekta za cijeli skup podataka.
+**Uobičajeni tijek rada**: podesite Sandbox dok vizualizacija ne bude onakva kakvu želite, zatim izvezite izravno iz Sandboxa ili kopirajte iste postavke indeksa i LUT-a u [Postavke projekta](../project-settings/project-settings.md) kako bi ih sljedeći tijek obrade primijenio na svaku sliku.
 {% endhint %}
 
 ***
 
-## Rad s Index/LUT Sandboxom
+## Otvaranje Sandboxa
 
-### Razumijevanje unaprijed izračunatih indeksa
+1. Kliknite na sliku u mreži — otvara se u punom zaslonu na kartici **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">
+2. Kliknite ikonu **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> kako biste izvukli lijevu bočnu traku ako već nije otvorena
+3. Odaberite višebandni sloj iz padajućeg izbornika slojeva u gornjem desnom kutu — **RAW (Reflectance)** je uobičajen izbor, jer su indeksne vrijednosti izračunate na kalibriranoj refleksiji usporedive između slika
 
-U Chloros, indeksi se mogu primijeniti tijekom obrade projekta. Da biste odredili koje postavke indeksa i LUT želite primijeniti na izvoze, najlakše je koristiti sandbox preglednika slika.
+Bočna traka prikazuje, odozgo prema dolje:
 
-Sandbox vam omogućuje sljedeće:
+* naziv slike i njezin model kamere
+* gumb **Izvoz/Spremi sliku(e)** — pojavljuje se nakon što se označi Indeks ili LUT
+* potvrdne okvire za **Indeks**i**LUT**
+* panel za konfiguraciju indeksa
+* panel **Vrijednosti pokazivača** s očitavanjem, histogramom i kontrolom GSD-a
 
-* **Primijenite novi indeks i gradijente boja (LUT)** za vizualizaciju podataka
-* **Interaktivno prilagodite postavke vizualizacije*** **Pogledajte** već izračunate indeksne slike
-* **Provjerite** vrijednosti piksela na svim razinama zumiranja
+{% hint style="warning" %}
+**Nije dostupno za mono kamere.** Na jednobandnoj LATTICE M3M slici oba su potvrdna okvira onemogućena, s alatnom napomenom _&quot;Nije dostupno za mono (M3M) senzore&quot;_ — višebandni indeks nije definiran na jednoj traci. Za izračunavanje indeksa s M3M kamera, kombinirajte dvije ili više u poravnati višebandni sloj i upotrijebite LATTICE mehanizam za indekse.
+{% endhint %}
 
-### Otvaranje sandboxa
+***
 
-Sandboxu Index/LUT pristupa se u kartici bočne trake **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">:
+## Primjena indeksa
 
-1. Pritisnite sliku u rešetki slika preglednika datoteka, ona se otvara u kartici **Preglednik slika** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">
-2. Kliknite karticu **Preglednik slika** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> da biste otvorili lijevu iskačuću bočnu traku ako već nije otvorena
+1. Označite okvir **Index** na vrhu bočne trake
+2. Odaberite filtar vaše kamere iz padajućeg izbornika s lijeve strane (`RGN`, `OCN`, `NGB`, `RGB`, `RE`, `NIR`)
+3. Odaberite formulu indeksa iz padajućeg izbornika s desne strane — 27 ugrađenih formula, plus sve prilagođene formule koje ste spremili
+4. Formula se ispod prikazuje kao matematička formula, s praznim krugom na svakom slotu trake. **Povucite obojeni krug kanala na slot** kako biste ga povezali
+5. Kada su svi slotovi koje formula koristi povezani, slika se ažurira i prikazuje vrijednosti indeksa
+6. Pomaknite pokazivač miša preko slike kako biste pročitali vrijednosti; panel **Vrijednosti pokazivača** dodaje redak indeksa s vrijednošću ispod pokazivača
 
-### Odabir slike na koju će se primijeniti indeks/LUT
+Dvostruko kliknite na vezanu utičnicu kako biste je očistili. Nedovršena formula je normalno stanje tijekom povlačenja, a ne greška — slika se jednostavno ne ažurira dok formula nije dovršena.
 
-Za rad s indeksom u pregledniku slika <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> sandbox:
+Krugovi kanala su obojeni: crveno = Red, zeleno = Green, plavo = Blue, narančasto = Orange, cijan = Cyan, ljubičasto = NIR, magenta = RE. Ista se boja koristi za točkice kanala i krivulje histograma na ploči **Vrijednosti pokazivača**.
 
-1. **Otvorite sliku** iz mreže glavne slike klikom na nju
-2. Zatim će se otvoriti kartica **Preglednik slika** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">
-3. Kliknite **Padajući izbornik slojeva** (gore desno od preglednika)
-4. Odaberite sloj s padajućeg izbornika:
-   * RAW (refleksija)
-
-### Primjena indeksa na sliku
-
-Nakon što se slika prikaže preko cijelog zaslona i otvori se bočna traka kartice **Preglednik slika** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line">:
-
-1. Označite okvir Index na vrhu bočne trake
-2. Odaberite filtar svoje kamere s lijevog padajućeg izbornika
-3. Odaberite željenu formulu indeksa s desnog padajućeg izbornika
-4. Povucite krugove boja kanala filtra na mjesta u donjoj formuli indeksa
-5. Nakon što je formula valjana, slika će se ažurirati i prikazati vrijednosti indeksa
-6. Pomičite pokazivač miša kako biste vidjeli vrijednosti na mjestu pokazivača
-7. Povećajte kako biste vidjeli pojedinačne piksele i njihove pridružene vrijednosti
-
-Svaki indeks ima određeni raspon vrijednosti i značenje:
-
-#### NDVI Primjer
+### Primjer indeksa s LUT-om
 
 ```
 
 Formula: (NIR - Red) / (NIR + Red)
 
-For Survey3W RGN camera:
-NIR = 850nm band
-Red = 661nm band
+For a Survey3W RGN camera:
+  NIR = 850 nm band
+  Red = 661 nm band
 
-Result range: -1.0 to +1.0
-Typical vegetation: 0.4 to 0.9
-Stressed vegetation: 0.2 to 0.4
-Bare soil: 0.0 to 0.2
-Water: -0.1 to 0.1
+Result range:          -1.0 to +1.0
+Typical vegetation:     0.4 to 0.9
+Stressed vegetation:    0.2 to 0.4
+Bare soil:              0.0 to 0.2
+Water:                 -0.1 to 0.1
 ```
 
-Za potpunu dokumentaciju formule indeksa, pogledajte [Formule multispektralnog indeksa](../project-settings/multispectral-index-formulas.md).
+Za potpunu referencu formule — sve tri liste prednastavki i koja imena gdje funkcioniraju — pogledajte [Multispectral Index Formulas](../project-settings/multispectral-index-formulas.md).
 
-***
+### Sa označenim indeksom, ali bez LUT-a
 
-## Rad s LUT-ovima (pretraživačke tablice)
+Slika se iscrtava u **sivoj skali**, rastegnuta između dviju vrijednosti praga. To je namjerno: indeksna slika su skalarni podaci, a siva skala je njihovo vjerno prikazivanje. Dodajte LUT kada želite boju.***
 
-### Što je LUT?
+## Rad s LUT-ovima (tablicama za traženje)**Tablica za traženje** mapira indeksne vrijednosti na boje: ulaz NDVI 0,65, izlaz određena zelena boja. Ona ne mijenja podatke — mijenja način na koji ih čitate.
 
-**Look-Up Table (LUT)** preslikava numeričke vrijednosti indeksa u boje za vizualizaciju:
+### Dodavanje LUT-a
 
-* **Ulaz**: vrijednost indeksnog piksela (npr. NDVI 0,65)
-* **Izlaz**: RGB boja (npr. svijetlo zelena)
-* **Svrha**: učiniti obrasce lakšim za vidjeti i interpretirati**Nijanse sive naspram LUT u boji:**
-
-* Sivi tonovi: znanstveno i neutralno, prikazuje neobrađene podatke
-* LUT u boji: Intuitivno i dojmljivo, naglašava uzorke i razlike
-
-{% hint style="success" %}
-**Snaga vizualizacije**: Primjena LUT-a u boji na indeksnu sliku u sivim tonovima dramatično olakšava prepoznavanje uzoraka, anomalija i područja od interesa na prvi pogled.
-{% endhint %}
-
-### Primjena LUT-a na indeksnu sliku
-
-Nakon što se prikaže indeksna slika
-
-1. Pritisnite gumb <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> "+Dodaj LUT"
+1. Kliknite gumb <img src="../.gitbook/assets/image (1) (1) (1).png" alt="" data-size="line">**&quot;+ Dodaj LUT&quot;** ispod formule
 2. Odaberite gradijent boje
-3. Podesite krajnje točke min/maks
-4. Podesite način izrezivanja
-5. Označite okvir Index na bočnoj traci kartice **Image Viewer** <img src="../.gitbook/assets/icon_image-viewer.JPG" alt="" data-size="line"> kako biste primijenili LUT
+3. Postavite minimum i maksimum obrezivanja
+4. Odaberite način obrezivanja
+5. Označite okvir **LUT** u bočnoj traci za iscrtavanje
 
-### Odabir gradijenta boje
+Kutija za potvrdu **LUT** ostaje onemogućena dok se LUT zapravo ne konfigurira na indeksu.
 
-**Odabir gradijenta:**
+### Odabir gradijenta boja
 
-1. Na ploči LUT pronađite**traku gradijenta u boji**
+Pređite mišem preko **trake gradijenta**kako biste otvorili popis unaprijed postavljenih vrijednosti — Chloros dolazi s**sedam** unaprijed postavljenih gradijenata:
 
-2. Zadržite pokazivač miša iznad njega da biste vidjeli dostupne unaprijed postavljene gradijentne postavke
-3. Odaberite željeni gradijent
-4. Slika se **odmah ažurira** s novim bojama kada je okvir Index označen
+| # | Gradijent                            | Oblik                                                               |
+| - | ----------------------------------- | ------------------------------------------------------------------- |
+| 1 | Red → Žuta → Green (**zadano**)  | Divergentno — odgovara uobičajenoj intuiciji o vegetaciji, zelena = zdrava |
+| 2 | Ljubičasta → Žuta → Green             | Divergentna, s izraženim donjim krajem                                  |
+| 3 | Smeđa → Bijela → Blue                | Divergentna oko svijetle sredine                                   |
+| 4 | Crna → Ljubičasta → Ružičasta → Blago žuta | Sekvencijalna, od tamne do svijetle                                           |
+| 5 | Red → Žuta → Blue                 | Divergentni, oko svijetlog središnje tonusa                                   |
+| 6 | Ljubičasta → Blue → Green → Žuta      | Sekvencijalni, od tamnog prema svijetlom                                           |
+| 7 | Orange → Bijela → Ljubičasta            | Divergentni, oko svijetlog središnje tonusa                                   |
 
-{% hint style="success" %}
-**Najbolja praksa**: Za indekse vegetacije kao što je NDVI, gradijent Red-Yellow-Green je najintuitivniji jer se usklađuje s prirodnim asocijacijama boja (zeleno=zdravo, žuto=umjereno, crveno=pod stresom).
-{% endhint %}
+**Divergentni**gradijent postavlja neutralnu boju u sredinu vašeg prozora, što je dobro čitljivo kada srednja točka ima značenje (prag, referentni datum).**Sekvencijalni** gradijent monotono teče od tamne do svijetle boje, što je dobro čitljivo za količinu koja ima samo &quot;više&quot; i &quot;manje&quot;.
 
-### Podešavanje klasa boja
+Svaki preset ima sedam bojenih stanica. Kliknite na preset i slika se odmah ažurira (kada je potvrđen okvir za LUT).
 
-**Kontrola klasa**određuje koliko će se diskretnih koraka boja pojaviti u vašem gradijentu:**Opcije brojanja razreda:*** **2-5 razreda**: Vrlo široke kategorije, različite zone
-* **6-10 klasa**: Uravnotežen, dobar za klasifikaciju
-* **11-20 razredi**: glatki gradijenti, kontinuirani izgled
-* **20+ klasa**: Gotovo kontinuirano, maksimalna glatkoća**Kako prilagoditi:**
+### Uređivanje bojenih stanica
 
-1. Na ploči LUT pronađite**kvadratiće uzoraka boja ispod trake gradijenta**
+Ispod trake gradijenta nalazi se red uzoraka boja, po jedan za svaku stanicu:
 
-2. Podesite broj klasa zbrajanjem pomoću gumba +
-3. Uklonite broj klasa dvostrukim klikom na uzorak boje
-4. Gradijent se ažurira **u stvarnom vremenu** na slici**Učinak na vizualizaciju:*** **Manje klasa** (3-5): Stvara različite zone, pojednostavljenu klasifikaciju, lakše razlikovati kategorije
-* **Srednje klase** (6-10): Uravnotežen pristup, dobar za većinu primjena
-* **Više razreda** (15-20): glatki prijelazi, detaljne varijacije, fotografski izgled**Kada koristiti:*** **Nekoliko razreda (3-5)**: slajdovi prezentacije, klasifikacijske karte, jednostavna izvješća
-* **Srednji razredi (6-10)**: Opća analiza, uravnoteženi detalji, standardna izvješća
-* **Mnogo razreda (15-20)**: znanstvena analiza, detaljna inspekcija, rezultati kvalitete publikacije
+* **Promijenite boju**: kliknite na uzorak boje kako biste otvorili odabirač boja (kolo boja, klizači za odabir boje /HSV ili heksadecimalni kod kao što je `#FF0000`)
+* **Dodaj stanku**: kliknite gumb**+** na kraju retka — dodaje se bijela stanka
+* **Ukloni stanku**:**dvaput kliknite** na uzorak boje
+* **Sačuvajte uređeni gradijent**: kliknite ikonu spremanja pokraj trake s gradijentom kako biste dodali svoj uređeni gradijent na popis unaprijed postavljenih vrijednosti i mogli ga ponovno odabrati
 
-### Fino podešavanje raspona vrijednosti
+Gradijent koji ste konfigurirali na indeksu pohranjuje se s tim indeksom u postavkama projekta, tako da ostaje sačuvan nakon zatvaranja i ponovnog otvaranja projekta.
 
-**Kontrole raspona vrijednosti**određuju koje se vrijednosti indeksa preslikavaju na koje boje u vašem gradijentu:**Kontrole raspona na LUT ploči:*** **Minimalna vrijednost**: Donja granica ljestvice boja
-* **Maksimalna vrijednost**: Gornja granica ljestvice boja
-* **Međuvrijednosti**: Automatski se raspoređuje između min. i maks. (na temelju broja klasa)
+**Manje stanica**stvara oštre zone koje se tumače kao klasifikacija;**više stanica** stvara glatke, gotovo fotografske prijelaze. Tri do pet stanica pogodno je za prezentacijske slajdove i karte klasifikacije; šest do deset za opću analizu; petnaest ili više za detaljni pregled i publikacijske grafike.
 
-#### Podešavanje Min/Max vrijednosti
+### Postavljanje raspona vrijednosti
 
-**Za podešavanje raspona vrijednosti:**
+Kontrola praga je **klizač s dvostrukom ručkom**koji se proteže od −1 do +1, s uređivim tekstualnim poljem na svakom kraju za točne vrijednosti i gumbom**AUTO**.
 
-1. Na ploči LUT pronađite polja za unos**Minimalna vrijednost**i**Maksimalna vrijednost**
+* Povucite bilo koju ručku ili upišite broj u njezino polje i pritisnite Enter
+* **AUTO**postavlja raspon na**
 
-2. Pritisnite polje**Minimalna vrijednost**
+2. i 98. percentil** vrijednosti indeksa slike — dobra polazna točka koja zanemaruje odstupajuće vrijednosti. Chloros prilagodljivo zaokružuje rezultat, na 4 decimalna mjesta za vrlo uzak raspon, 3 za uzak raspon i 2 u ostalim slučajevima
+* Bilo koja ručna prilagodba ima prednost nad postavkom AUTO dok ponovno ne pritisnete AUTO
 
-3. Upišite željenu minimalnu vrijednost (npr. `0.2`)
-4. Pritisnite **Enter** ili kliknite izvan polja
-5. Ponovite za polje **Maksimalna vrijednost** (npr. `0.9`)
-6. Vizualizacija se **odmah ažurira**{% hint style="info" %}**Automatsko skaliranje**: Kada prvi put primijenite LUT, Chloros automatski postavlja min/max na stvarni raspon podataka na slici. Zatim možete suziti ovaj raspon kako biste se usredotočili na određene raspone vrijednosti od interesa.
-{% endhint %}
+Primjer prozora za NDVI:
 
-**Primjer podešavanja raspona NDVI:*** **Cijeli raspon**: `-1.0` do `1.0` (prikaži sve moguće vrijednosti)
-* **Fokusirano na vegetaciju**: `0.2` do `0.9` (isključuje golo tlo i vodu)
-* **Samo zdrava vegetacija**: `0.5` do `0.9` (istaknite samo jake biljke)
-* **Detekcija stresa**: `0.2` do `0.5` (naglasite problematična područja)
-* **Prilagođeni raspon**: Prilagodite na temelju promatranih vrijednosti piksela**Zašto prilagođavati raspone?*** **Pojačajte kontrast** u području koje vas zanima
-* **Isključi irelevantne vrijednosti** (npr. vodena tijela, golo tlo)
-* **Standardizirajte vizualizaciju** na više slika ili datuma
-* **Naglasite suptilne razlike** unutar uskog raspona vrijednosti
+| Cilj                                    | Min  | Max |
+| --------------------------------------- | ---- | --- |
+| Prikaži sve                            | −1.0 | 1.0 |
+| Samo vegetacija, isključi tlo i vodu | 0.2  | 0.9 |
+| Samo zdrava vegetacija                | 0.5  | 0.9 |
+| Naglasiti stres                        | 0.2  | 0.5 |
 
-### Izrezivanje vrijednosti izvan raspona
+Sužavanje prozora povećava kontrast unutar vašeg područja interesa i sve ostalo izbacuje izvan dosega — gdje **način obrezivanja** odlučuje što se s tim događa.***
 
-Kada vrijednosti piksela padnu izvan vašeg definiranog minimalnog/maksimalnog raspona, možete kontrolirati način na koji se prikazuju pomoću **načina izrezivanja**.
+## Načini obrezivanja
 
-#### **Dostupne opcije načina izrezivanja:**
+Kada vrijednost indeksa piksela izađe izvan prozora min/max, način obrezivanja odlučuje kako će biti iscrtan.
 
-#### 1. Minimum i maksimum
+| Naziv padajućeg izbornika | Pohranjena vrijednost | Piksele izvan raspona iscrtava se kao                                                                                                |
+| ------------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Minimum i maksimum** (zadano) | `clip`            | Najbliža boja na kraju gradijenta — vrijednosti ispod minimuma uzimaju prvu boju, vrijednosti iznad maksimuma uzimaju posljednju |
+| **Prozirna pozadina**      | `transparent`     | Potpuno prozirna (prava alfa)                                                                                                  |
+| **Indeksna pozadina**| `indexColor`      | Siva skala, rastegnuta preko**cjelokupnog** indeksnog raspona slike, tako da je struktura izvan raspona i dalje vidljiva u sivoj boji                |
+| **Izvorna pozadina**         | `backgroundColor` | Sama podloga slike, tako da se boja preklapa na vrh stvarne scene                                                |
 
-* Pikseli **ispod minimuma**→ prikaz koristeći**prvu boju** u gradijentu (npr. crvena)
-* Pikseli **iznad maksimuma**→ prikaz koristeći**zadnju boju** u gradijentu (npr. zelena)
-* **Slučaj upotrebe**: Naglasite ekstreme, prikažite cijeli raspon podataka sa zasićenim bojama na granicama
-* **Primjer**: vrijednosti NDVI ispod 0,2 sve su crvene, vrijednosti iznad 0,9 sve su zelene
-
-#### 2. Prozirna pozadina
-
-* Pikseli **izvan raspona**postaju**potpuno prozirni*** Samo pikseli **unutar raspona** prikazuju gradijent boja
-* **Slučaj upotrebe**: GIS preklapanje, izdvajanje određenih raspona vrijednosti, isticanje samo područja od interesa
-* **Primjer**: Prikaži samo NDVI 0.4-0.7 u boji, sve ostalo prozirno
-
-{% hint style="warning" %}
-**Ograničenje prozirnosti**: prozirni pikseli pojavit će se kao boja pozadine u pregledniku. Prilikom izvoza tijekom obrade, prozirnost se čuva u PNG formatu, ali ne i u JPG.
-{% endhint %}
-
-#### 3. Pozadina indeksa
-
-* Pikseli **izvan raspona**prikazuju se u**sivim tonovima** (prikazuju sirove vrijednosti indeksa)
-* Pikseli **unutar raspona**pokazuju**gradijent boje*** **Slučaj upotrebe**: Suptilno isticanje, održavanje konteksta uz naglašavanje područja interesa
-* **Primjer**: bojom označite vegetaciju pod stresom (NDVI 0.3-0.5) dok zdrava područja prikazujete sivom bojom
-
-#### 4. Izvorna pozadina
-
-* Pikseli **izvan raspona**prikazuju**izvornu multispektralnu sliku*** Pikseli **unutar raspona**pokazuju**gradijent boje*** **Slučaj upotrebe**: Najintuitivniji - kombinira prirodni kontekst slike s analitičkim slojem boja
-* **Primjer**: pogledajte stvarni izgled polja/usjeva s prekrivenim područjima stresa kodiranim bojama
-
-### Odabir pravog načina isjecanja
-
-| Način izrezivanja | Najbolje za | Stil vizualizacije |
-| -------------------------------- | ------------------------------------------------ | ---------------------------- |
-| **Minimum i Maksimum** | Prikaz potpunih podataka, znanstvena analiza | Svi pikseli u boji |
-| **Prozirna pozadina** | GIS preklapanja, izdvajanje određenih raspona | Boja u rasponu, prazno izvan |
-| **Pozadina indeksa** | Suptilan naglasak, održavanje konteksta podataka | Boja u rasponu, siva izvan |
-| **Izvorna pozadina** | Izvješća, prezentacije, intuitivna analiza | Boja u rasponu, fotografija izvan |
-
-### Stvaranje prilagođenih LUT boja
-
-Za potpunu kontrolu nad svojom vizualizacijom, možete stvoriti **prilagođene gradijente boja** uređivanjem pojedinačnih točaka boja.**Za izradu prilagođenog gradijenta:**
-
-1. Na ploči LUT pronađite**traku pregleda gradijenta**
-
-2. Potražite**kvadrate uzorka boje** ispod gradijenta
-3. **Kliknite graničnik u boji** da biste ga odabrali
-4. Otvara se **birač boja**
-
-5. Odaberite novu boju pomoću:
-   * **Kotačić u boji**: Vizualni odabir boja
-   * **RGB/HSV klizači**: Precizna kontrola boja
-   * **Unos heksadecimalnog koda**: Točna specifikacija boje (npr. `#FF0000` za crvenu)
-6. Kliknite na birač boja **za primjenu nove boje**
-
-7. Gradijent se**odmah ažurira** na slici**Dodavanje ili uklanjanje graničnika u boji:*** **Dodajte točku**: Kliknite ikonu + da dodate novi uzorak na kraju
-* **Uklonite graničnik**: Dvaput kliknite kvadratić u boji da biste uklonili uzorak**Strategije prilagodbe:*** **Obrnuti gradijent**: Promijenite redoslijed boja da biste obrnuli značenje (npr. zeleno=nisko, crveno=visoko)
-* **Boje robne marke**: uskladite paletu boja vaše organizacije za izvješća
-* **Bez daltonista**: Koristite narančasto-plave ili ljubičasto-žute kombinacije
-* **Optimizacija ispisa**: Odaberite boje koje funkcioniraju i pri ispisu u boji i u sivim tonovima
-* **Više pragova**: Koristite različite boje na određenim pragovima vrijednosti za klasifikaciju
+| Način                       | Najbolje za                               | Izgled                                      |
+| -------------------------- | -------------------------------------- | ----------------------------------------- |
+| **Minimalno i maksimalno**      | Potpuni prikaz podataka, znanstvena analiza | Svaki piksel obojen                      |
+| **Prozirna pozadina**        | GIS preklopi, izoliranje vrijednosnog pojasa  | Boja unutar prozora, ništa izvan |
+| **Pozadina s indeksom**       | Naglašavanje uz očuvanje konteksta podataka | Boja unutra, sivo vani               |
+| **Izvorna pozadina**       | Izvještaji i prezentacije              | Boja unutra, fotografija vani         |
 
 {% hint style="info" %}
-**Spremanje prilagođenih gradijenata**: prilagođeni gradijenti se mogu spremiti i ponovno koristiti. Pritisnite ikonu za spremanje na ploči LUT da biste sačuvali prilagođene sheme boja za buduću upotrebu.
+**Pikseli bez podataka uvijek su prozirni, u svakom načinu rada.** Piksel čiji je indeks nefinit (dijeljenje s 0/0) ili je točno −1,0 ili +1,0 (indikatori zasićenosti, kada jedna traka mjeri nulu dok druga ne) tretira se kao piksel bez podataka, a ne kao ekstremna vrijednost. Na taj se način izbjegava da preeksponirane svjetline i potpuno zasjenjena područja budu prikazana na vašoj skali boja kao najekstremnije vrijednosti u kadru. Isti pravilo definira koje piksele napajaju AUTO prage i histogram indeksa, pa su sva tri usklađena.
+{% endhint %}
+
+Prozirnost se zadržava kada se izvoz zapisa kao PNG. Ne može se predstaviti u JPG formatu.
+
+***
+
+## Čitanje vrijednosti tijekom podešavanja
+
+Ploča **Vrijednosti pokazivača** ispod konfiguracijske ploče mjerni je instrument za Sandbox:
+
+* Pomaknite pokazivač preko slike i pročitajte izvorišne vrijednosti po kanalu, plus vrijednost indeksa u vlastitom retku
+* Uključite gumb **INDEKS** iznad histograma kako biste vidjeli raspodjelu indeksnih vrijednosti u kadru, pri čemu su vaša dva praga klipa iscrtana kao narančaste isprekidane linije, a vrijednost kursora kao bijela linija — ovo je najbrži način odabira prozora koji doista sadrži vaše podatke
+* Uključite **KURSOR** kako biste vidjeli linije markera na vrijednostima ispod pokazivača
+* Zumirajte više od 60× (manje ako je postavljena veličina GSD bloka) kako biste istaknuli pojedinačne prikazane piksele lebdećom vrijednošću
+
+Praktična rutina:
+
+1. Zabilježite vrijednosti iznad zdravog raslinja, pod stresom, gole zemlje i vode
+2. Pogledajte gdje se ti klasteri nalaze na histogramu indeksa
+3. Postavite min/max kako biste obuhvatili klaster koji vas zanima
+4. Odaberite način obrezivanja — _Original Background_ zadržava scenu vidljivom oko njega
+
+***
+
+## Izvoz iz Sandboxa
+
+Sve navedeno gore je prikaz uživo dok ga ne spremite. Gumb **Izvoz/Spremanje slike(a)** na vrhu bočne trake otvara prozor koji se klizi preko bočne trake (umjesto da prekriva sliku, tako da i dalje možete vidjeti o čemu odlučujete).
+
+<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>### Opcije
+
+| Opcija                          | Učinak                                                                                                                                            |
+| ------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Primijeni na trenutnu sliku**      | Sačuvajte točno sliku koja se prikazuje, s ovim postavkama                                                                                                |
+| **Primijeni na sve slike u projektu** | Ponovno pokreće istu konfiguraciju na svakoj slici u projektu. Slike bez pojaseva koje ovaj indeks treba se preskaču i ne tretiraju se kao neuspjesi |
+| **Indeksna/LUT gradijentna traka**      | Također zapisuje zasebnu sliku legende za svaki izvoz, s označenim rasponom vrijednosti                                                                     |
+| **Indeksni histogram**             | Također zapisuje zasebnu sliku histograma za svaki izvoz, koja prikazuje min/max podataka i pragove za obrezivanje (clip)                                               |
+
+Ako je **veličina GSD bloka** na kartici slike veća od 1, prozor će vas na to upozoriti prije potvrde: izvoz spremava ono što gledate, uključujući prosječno izračunavanje po blokovima. Prvo vratite kontrolu GSD na 1 ako želite punu rezoluciju.
+
+### Kamo se datoteke spremaju
+
+Svaki klik na **Izvezi**stvara**novi, nikad neupotrebljavani mapu**:
+
+```
+<project folder>/Sandbox_Exports/<IndexName>_<Index|LUT>_<NNN>/
+```
+
+Primjeri: `Sandbox_Exports/NDVI_LUT_001/`, a zatim `Sandbox_Exports/NDVI_LUT_002/` za sljedeće pokretanje. Brojanje se temelji na skeniranju sadržaja diska, stoga ostaje nepromijenjeno nakon ponovnog pokretanja i brisanja mapa ručno. Ništa se nikada ne prepišava — cijela je svrha Sandboxa uspoređivanje jednog pokušaja s prethodnim.
+
+Unutar mape, za svaku sliku:
+
+| Datoteka                                                   | Sadržaj                                                   |
+| ------------------------------------------------------ | ---------------------------------------------------------- |
+| `<source name>_<IndexName>_<Index\|LUT>.png`           | Renderirana slika, piksel za piksel ono što je prikazivač pokazao |
+| `<source name>_<IndexName>_<Index\|LUT>_legend.png`    | Sporedna datoteka s gradijentnom trkom, ako je zatraženo                     |
+| `<source name>_<IndexName>_<Index\|LUT>_histogram.png` | Sporedna datoteka s histogramom indeksa, ako je zatraženo                  |
+
+Dva sporedna zapisa uvijek se spremaju u **punoj rezoluciji**, čak i kada je glavna slika prosječno obrađena po blokovima: veličina bloka je rezolucija zaslona, a oba sporedna zapisa čitaju stvarne indeksne vrijednosti po pikselu. Također ispisuju više podataka nego verzije na zaslonu — obje ispisuju prozor za istezanje _i_ stvarne min/max vrijednosti podataka, pa je spremljena legenda i dalje čitljiva mjesecima kasnije bez otvorenog projekta.
+
+### Napredak i rezultati
+
+Izvoz cijelog projekta traje nekoliko minuta, pa tijekom izvoza primate povratne informacije putem kanala za praćenje napretka u stvarnom vremenu, umjesto da program blokira:
+
+* Traka napretka prikazuje `current / total` i datoteku koja se zapisuje
+* Kada završi, okno izvještava o tome koliko je slika izvezeno, koliko je preskočeno i o putanji izlazne mape
+* Preskočene slike su navedene s razlogom (prikazuje se do pet razloga, a zatim redak &quot;+N više&quot;). Uobičajeni razlog je sloj koji nema kanale potrebne za ovaj indeks
+* Ako **ni** jedna slika u projektu ne može koristiti indeks, izvršavanje se prijavljuje kao neuspješno umjesto da vam ostavi praznu mapu
+
+U jednom trenutku može se izvršavati samo jedno izvoženje u sandboxu. Pokretanje drugog dok je prvo u tijeku odbijeno je jasnom porukom umjesto da se dva izvršavanja natječu za istu datoteku projekta.
+
+### Mreža preuzima pokretanje
+
+Svako dovršeno pokretanje pojavljuje se kao vlastito gumb na alatnoj traci [mreže slika](image-grid.md), s oznakom `<IndexName> <Index|LUT> <NNN>`. Tako uspoređujete pokrete: izvezite dva puta s različitim gradijentima ili pragovima, a zatim prebacujte između dva gumba na mreži.
+
+***
+
+## Prilagođene formule indeksa (Chloros
+
++)
+
+{% hint style="info" %}
+**Gdje ih stvoriti**: u bočnoj traci Sandboxa ili u**Postavkama projekta** prije obrade. Oba se upisuju u istu listu na razini projekta.
+{% endhint %}
+
+1. Otvorite kalkulator prilagođenih formula iz padajućeg izbornika za formulu indeksa (zahtijeva prijavu s kvalificiranom pretplatomChloros
+
++)
+2. Napišite formulu koristeći **simbole traka** `x`, `y`, `z`, `a`, `b`, `c` — nisu nazivi bendova
+3. Dostupni operateri: `+`, `-`, `*`, `/`, `^` i `()` za grupiranje
+4. Dostupne funkcije: `sqrt()`, `log()`, `ln()`, `abs()`, `sign()`, `log1p()`, `log2()`
+5. Nazovite ga i spremite — pojavljuje se na dnu padajućeg izbornika formula i njegove utore povezujete povlačenjem krugova kanala, točno kao kod ugrađenog preseta
+
+```
+
+Modified NDVI with an offset:   (y-x)/(y+x+0.5)
+Simple ratio:                   y/x
+Three-band difference:          (y-x)/(y+x-z)
+Squared ratio:                  (y/x)^2
+```
+
+{% hint style="warning" %}
+**Prilagođene formule su dostupne samo putem GUI-ja.** OpcijaCLI
+
+/SDK
+
+`--indices` proširuje 22 ugrađena naziva prednastavki i tiho preskače sve ostalo, uključujući vaše prilagođene formule. Da biste grupno primijenili prilagođenu formulu, konfigurirajte je u Postavkama projekta i pokrenite obradu ili upotrijebite izvoz &quot;Primijeni na sve slike projekta&quot; u Sandboxu.
 {% endhint %}
 
 ***
 
-## Interaktivni tijek rada
+## Rješavanje problema
 
-### Ažuriranja u stvarnom vremenu
+### &quot;Ovaj sloj nema kanale koji su potrebni ovom indeksu&quot;
 
-Sve LUT prilagodbe u sandboxu ažuriraju sliku **trenutačno i interaktivno**:
+Formula čita položaj kanala koji trenutni sloj nema — na primjer, indeks s tri utora na datoteci s jednim ili dva kanala. Prelazite na višebandni sloj (reflektancije ili debayered), ili odaberite indeks koji odgovara filtru vaše kamere.
 
-* **Promijeni sloj** → Slika se odmah mijenja
-* **Odaberi gradijent** → Boje se trenutno ažuriraju
-* **Prilagodi raspon vrijednosti** → Kontrast se mijenja u stvarnom vremenu
-* **Promijeni klase** → Glatkoća gradijenta ažurira se odmah
-* **Izmijeni isječak** → Pozadinski prikaz se trenutno mijenja
-* **Uredite boje** → Prilagođeni gradijent primjenjuje se odmah**Nije potreban gumb "Primijeni"** - sve promjene su aktivne i interaktivne!
+### &quot;Nije moguće dohvatiti pozadinski sustav za obradu slika&quot;
 
-{% hint style="success" %}
-**Povratne informacije uživo**: trenutne vizualne povratne informacije omogućuju vam brzo eksperimentiranje s različitim postavkama dok ne pronađete optimalnu vizualizaciju za svoje potrebe analize.
-{% endhint %}
+Pozadinski sustav ne odgovara. Provjerite karticu Zapisnik (Log); ako se pozadinski proces (backend) ponovno pokreće, Sandbox se sam oporavi čim se on vrati.
 
-### Tijek rada iterativnog usavršavanja
+### Slika se nije promijenila kada sam povukao krug
 
-**Tipični tijek rada optimizacije LUT-a:**
+Formula još nije dovršena. Nedovršena formula tretira se kao normalno stanje tijekom povlačenja — ništa se ne iscrtava i ništa se ne prijavljuje kao pogreška. Ispunite svako mjesto koje formula koristi.
 
-1.**Odaberite indeksni sloj** (npr. RAW (refleksija))
-2. **Primijeni indeks** - Odaberite filtar kamere i formulu indeksa, povucite krugove u boji na odgovarajuće mjesto u formuli indeksa
-3. **Primijeni LUT gradijent** - Počnite s Red-Yellow-Green unaprijed postavljenom postavkom
-4. **Provjerite vrijednosti piksela** - Pomičite kursor okolo, zabilježite raspone vrijednosti
-5. **Prilagodi min/max** - Suzi za fokusiranje na vegetaciju (npr. 0,2 do 0,9)
-6. **Odaberite isječak** - pokušajte s "Izvornom pozadinom" za kontekst
-7. **Pročistite boje** - Prilagodite gradijent ako je potrebno za određeni naglasak
-8. **Dovršite postavke**- Postavke dokumenta i kopirajte u Postavke projekta za obradu izvoza
+### Cijela slika je jedne boje
 
-### Provjera vrijednosti piksela
+Vaš prozor za obrezivanje vjerojatno je daleko izvan podataka. Pritisnite **AUTO**kako biste ga pomaknuli na 2. / 98. percentil, ili uključite histogram**INDEX** kako biste vidjeli gdje se podaci zapravo nalaze.
 
-Razumijevanje stvarnih vrijednosti piksela ključno je za postavljanje efektivnih LUT raspona:**Kako provjeriti vrijednosti:**
+### Izvezene boje ne odgovaraju onome što sam vidio
 
-1. Vrijednosti piksela prikazuju se kada slika ima**potvrđene** okvire Index ili Index i LUT.
-2. **Pomičite kursor** preko različitih područja slike
-3. **Promatrajte vrijednosti piksela** prikazane u legendi dok lebdite
-4. Povećajte kako biste vidjeli pojedinačne piksele istaknute plutajućom vrijednošću
-5. **Zabilježite** raspone vrijednosti za različite značajke:
-   * **Zdrava vegetacija**: npr. NDVI 0,55-0,85
-   * **Vegetacija pod stresom**: npr. NDVI 0,30-0,50
-   * **Golo tlo**: npr. NDVI 0,05-0,25
-   * **Voda** (ako postoji): npr. NDVI -0,05 do 0,10**Korištenje vrijednosti piksela za postavljanje LUT raspona:**Nakon provjere vrijednosti piksela, prilagodite svoj LUT min/max u skladu s tim:**Primjer scenarija:*** **Opažanje**: Vrijednosti tla = 0,05-0,25, Opterećeno = 0,25-0,50, Zdravo = 0,50-0,85
-* **Cilj**: Vizualizirajte samo zdravlje biljaka (isključite tlo)
-* **Postavke LUT-a**: Min = `0.25`, Maks = `0.85`
-* **Izrezivanje**: "Izvorna pozadina" za prikaz tla u prirodnoj boji
-* **Rezultat**: Gradijent boja odnosi se samo na vegetaciju, tlo se prikazuje kao izvorna slika
-
-{% hint style="info" %}
-**Dinamički raspon**: Različiti usjevi, godišnja doba i faze rasta imat će različite raspone vrijednosti. Uvijek provjerite vrijednosti piksela u vašem određenom skupu podataka prije postavljanja LUT raspona.
-{% endhint %}
-
-***
-
-## Prilagođeni indeksi (Chloros+)
-
-### Stvaranje prilagođenih formula indeksa
-
-{% hint style="info" %}
-**Gdje stvoriti**: Prilagođeni indeksi mogu se konfigurirati u**Postavke projekta** prije obrade, kao i na bočnoj traci sandboxa preglednika slika.
-{% endhint %}
-
-**Za izradu prilagođenog indeksa:**
-
-1.**Otvorite postavke projekta** (prije obrade) ili bočnu traku sandboxa preglednika slika
-2. Dođite do **Padajućeg izbornika formule indeksa**
-
-3. Potražite opciju**"Prilagođeno"** (morate biti prijavljeni s Chloros+ licencom)
-4. **Definirajte svoju formulu** koristeći varijable pojasa:
-   * Nazivi bendova: `NIR`, `Red`, `Green`, `Blue`, `RedEdge` itd.
-   * Operatori: `+`, `-`, `*`, `/`, `^` (eksponent)
-   * Funkcije: `sqrt()`, `abs()`, itd. (ako je podržano)
-   * Zagrade: `()` za redoslijed operacija
-5. **Imenujte svoj indeks** (npr. "MyIndex" ili "CustomNDVI")
-6. **Spremite konfiguraciju**
-
-**Primjer prilagođenih formula:**
-
-```
-
-Modified NDVI with offset:
-(NIR - Red) / (NIR + Red + 0.5)
-
-Simple ratio:
-NIR / Red
-
-Complex multi-band:
-(NIR - Red) / (NIR + Red - Blue)
-
-Exponential index:
-(NIR / Red) ^ 2
-```
-
-{% hint style="warning" %}
-**Provjera formule**: Provjerite koristi li vaša formula trake dostupne u vašem fotoaparatu. Na primjer, RedEdge dostupan je samo na fotoaparatima s filtrom RedEdge.
-{% endhint %}
+Trebale bi — put izvoza je namjerno ogledalo uživo pretpregleda, uključujući alfu u načinu obrezivanja, a prosječenje po blokovima primjenjuje se _nakon_ obojavanja točno onako kako to radi preglednik. Ako se razlikuju, provjerite je li se veličina GSD bloka promijenila između pregledavanja i izvoza.
 
 ***
 
 ## Sljedeći koraci
 
-Sada kada razumijete Index/LUT Sandbox:
-
-* **Primijeni na obradu**: Koristite otkrivene postavke u [Postavke projekta](../project-settings/project-settings.md)
-* **Skupni proces**: Primijenite optimizirane indekse na pune skupove podataka
-* **Saznajte više**: Pročitajte [Formule multispektralnog indeksa](../project-settings/multispectral-index-formulas.md)
-
-Povezana dokumentacija:
-
-* [**Slojevi slike**](image-layers.md) - Upravljanje slojevima i vizualizacija
-* [**Otvaranje slike preko cijelog zaslona**](opening-an-image-full-screen.md) - Osnove preglednika slika
-* [**Obrada slika (GUI)**](../processing-images-gui/adding-files-to-a-project.md) - Potpuni tijek obrade
+* [**Slojevi slike**](image-layers.md) — na kojem sloju izvršiti indeks i što znače njegove vrijednosti
+* [**Otvaranje slike u punom zaslonu**](opening-an-image-full-screen.md) — detaljno o prikazu kursora, histogramu i GSD kontroli
+* [**Multispektralne formule indeksa**](../project-settings/multispectral-index-formulas.md) — svaki preddefinirani indeks, na svakoj površini
+* [**Postavke projekta**](../project-settings/project-settings.md) — spremanje pronađenih postavki u izvršavanje obrade

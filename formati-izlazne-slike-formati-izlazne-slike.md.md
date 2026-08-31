@@ -1,2 +1,2 @@
-# \[Formati izlazne slike]\(formati-izlazne slike.md)
+# \[Formati izlazne slike](formati-izlazne slike.md)\
 
