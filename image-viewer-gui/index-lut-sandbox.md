@@ -32,7 +32,7 @@ Bočna traka prikazuje, odozgo prema dolje:
 * panel **Vrijednosti pokazivača** s očitavanjem, histogramom i kontrolom GSD-a
 
 {% hint style="warning" %}
-**Nije dostupno za mono kamere.** Na jednobandnoj LATTICE M3M slici oba su potvrdna okvira onemogućena, s alatnom napomenom _&quot;Nije dostupno za mono (M3M) senzore&quot;_ — višebandni indeks nije definiran na jednoj traci. Za izračunavanje indeksa s M3M kamera, kombinirajte dvije ili više u poravnati višebandni sloj i upotrijebite LATTICE mehanizam za indekse.
+**Nije dostupno za mono kamere.** Na jednobandnoj LATTICE M3M slici oba su potvrdna okvira onemogućena, s alatnom napomenom _"Nije dostupno za mono (M3M) senzore"_ — višebandni indeks nije definiran na jednoj traci. Za izračunavanje indeksa s M3M kamera, kombinirajte dvije ili više u poravnati višebandni sloj i upotrijebite LATTICE mehanizam za indekse.
 {% endhint %}
 
 ***
@@ -77,7 +77,7 @@ Slika se iscrtava u **sivoj skali**, rastegnuta između dviju vrijednosti praga.
 
 ### Dodavanje LUT-a
 
-1. Kliknite gumb <img src="../.gitbook/assets/image (1) (1) (1).png" alt="" data-size="line">**&quot;+ Dodaj LUT&quot;** ispod formule
+1. Kliknite gumb <img src="../.gitbook/assets/image (1) (1) (1).png" alt="" data-size="line">**"+ Dodaj LUT"** ispod formule
 2. Odaberite gradijent boje
 3. Postavite minimum i maksimum obrezivanja
 4. Odaberite način obrezivanja
@@ -99,7 +99,7 @@ Pređite mišem preko **trake gradijenta**kako biste otvorili popis unaprijed po
 | 6 | Ljubičasta → Blue → Green → Žuta      | Sekvencijalni, od tamnog prema svijetlom                                           |
 | 7 | Orange → Bijela → Ljubičasta            | Divergentni, oko svijetlog središnje tonusa                                   |
 
-**Divergentni**gradijent postavlja neutralnu boju u sredinu vašeg prozora, što je dobro čitljivo kada srednja točka ima značenje (prag, referentni datum).**Sekvencijalni** gradijent monotono teče od tamne do svijetle boje, što je dobro čitljivo za količinu koja ima samo &quot;više&quot; i &quot;manje&quot;.
+**Divergentni**gradijent postavlja neutralnu boju u sredinu vašeg prozora, što je dobro čitljivo kada srednja točka ima značenje (prag, referentni datum).**Sekvencijalni** gradijent monotono teče od tamne do svijetle boje, što je dobro čitljivo za količinu koja ima samo "više" i "manje".
 
 Svaki preset ima sedam bojenih stanica. Kliknite na preset i slika se odmah ažurira (kada je potvrđen okvir za LUT).
 
@@ -222,7 +222,7 @@ Izvoz cijelog projekta traje nekoliko minuta, pa tijekom izvoza primate povratne
 
 * Traka napretka prikazuje `current / total` i datoteku koja se zapisuje
 * Kada završi, okno izvještava o tome koliko je slika izvezeno, koliko je preskočeno i o putanji izlazne mape
-* Preskočene slike su navedene s razlogom (prikazuje se do pet razloga, a zatim redak &quot;+N više&quot;). Uobičajeni razlog je sloj koji nema kanale potrebne za ovaj indeks
+* Preskočene slike su navedene s razlogom (prikazuje se do pet razloga, a zatim redak "+N više"). Uobičajeni razlog je sloj koji nema kanale potrebne za ovaj indeks
 * Ako **ni** jedna slika u projektu ne može koristiti indeks, izvršavanje se prijavljuje kao neuspješno umjesto da vam ostavi praznu mapu
 
 U jednom trenutku može se izvršavati samo jedno izvoženje u sandboxu. Pokretanje drugog dok je prvo u tijeku odbijeno je jasnom porukom umjesto da se dva izvršavanja natječu za istu datoteku projekta.
@@ -233,9 +233,7 @@ Svako dovršeno pokretanje pojavljuje se kao vlastito gumb na alatnoj traci [mre
 
 ***
 
-## Prilagođene formule indeksa (Chloros
-
-+)
+## Prilagođene formule indeksa (Chloros+)
 
 {% hint style="info" %}
 **Gdje ih stvoriti**: u bočnoj traci Sandboxa ili u**Postavkama projekta** prije obrade. Oba se upisuju u istu listu na razini projekta.
@@ -260,20 +258,18 @@ Squared ratio:                  (y/x)^2
 {% hint style="warning" %}
 **Prilagođene formule su dostupne samo putem GUI-ja.** OpcijaCLI
 
-/SDK
-
-`--indices` proširuje 22 ugrađena naziva prednastavki i tiho preskače sve ostalo, uključujući vaše prilagođene formule. Da biste grupno primijenili prilagođenu formulu, konfigurirajte je u Postavkama projekta i pokrenite obradu ili upotrijebite izvoz &quot;Primijeni na sve slike projekta&quot; u Sandboxu.
+/SDK `--indices` proširuje 22 ugrađena naziva prednastavki i tiho preskače sve ostalo, uključujući vaše prilagođene formule. Da biste grupno primijenili prilagođenu formulu, konfigurirajte je u Postavkama projekta i pokrenite obradu ili upotrijebite izvoz "Primijeni na sve slike projekta" u Sandboxu.
 {% endhint %}
 
 ***
 
 ## Rješavanje problema
 
-### &quot;Ovaj sloj nema kanale koji su potrebni ovom indeksu&quot;
+### "Ovaj sloj nema kanale koji su potrebni ovom indeksu"
 
 Formula čita položaj kanala koji trenutni sloj nema — na primjer, indeks s tri utora na datoteci s jednim ili dva kanala. Prelazite na višebandni sloj (reflektancije ili debayered), ili odaberite indeks koji odgovara filtru vaše kamere.
 
-### &quot;Nije moguće dohvatiti pozadinski sustav za obradu slika&quot;
+### "Nije moguće dohvatiti pozadinski sustav za obradu slika"
 
 Pozadinski sustav ne odgovara. Provjerite karticu Zapisnik (Log); ako se pozadinski proces (backend) ponovno pokreće, Sandbox se sam oporavi čim se on vrati.
 

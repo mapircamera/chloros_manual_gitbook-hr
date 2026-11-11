@@ -21,7 +21,7 @@ Kliknite **Poveži senzor**na vrhu bočne trake. Dijalog za povezivanje otvara s
 | **↻ Osvježi** | Ponovno skenira odabrani transport odmah (onemogućeno tijekom BLE/Ethernet skeniranja). |
 | **Poveži senzor** | Omogućeno kada je uređaj odabran; mijenja se u `Connecting...` dok se veza uspostavlja. |
 
-Otkrivanje se pokreće samo **dok je dijalog za povezivanje vidljiv na zaslonu** i ponavlja se svakih 15 sekundi samo za odabrani transport — samo otvaranje kartice ne pokreće skeniranje. U slučaju neuspjeha dijalog prikazuje: *&quot;Povezivanje je neuspjelo. Pokušajte isključiti i ponovno priključiti senzor, a zatim ponovno kliknite Poveži.&quot;*
+Otkrivanje se pokreće samo **dok je dijalog za povezivanje vidljiv na zaslonu** i ponavlja se svakih 15 sekundi samo za odabrani transport — samo otvaranje kartice ne pokreće skeniranje. U slučaju neuspjeha dijalog prikazuje: *"Povezivanje je neuspjelo. Pokušajte isključiti i ponovno priključiti senzor, a zatim ponovno kliknite Poveži."*
 
 Bočna traka se automatski otvara kada se poveže vaš prvi senzor.
 
@@ -43,9 +43,7 @@ Svaki priključeni senzor dobiva jedan redak (plus jedan redak po grupi Ambient+
 | Znak prijenosa | `DAQ-U` / `DAQ-M` / `DAQ-E`, ili zelena značka `REF` za grupu reflektancije okoliš+predmet. |
 | Naziv uređaja | Zadano je serijski broj senzora (njegov stabilni identitet za kalibraciju, nazive datoteka `.daq` i usklađivanje pri uvozu); prilagođeni nazivi se spremaju za svaki projekt. |
 | **Kalibrirana** pilula (zelena) | Prikazuje se kada je učitana tvornička kalibracijska datoteka senzora, tj. spektri su u stvarnim W/m²/nm. |
-| **Dostupno ažuriranje** (smeđa, samo za DAQ-E) | Trenutni firmware je stariji od slike priložene uz ovu verziju Chloros
-
-. Tijekom ažuriranja prikazuje napredak uživo (`Flashing… N%`, `Restarting sensor…`, zatim `Updated X → Y` ili `Failed`). |
+| **Dostupno ažuriranje** (smeđa, samo za DAQ-E) | Trenutni firmware je stariji od slike priložene uz ovu verziju Chloros. Tijekom ažuriranja prikazuje napredak uživo (`Flashing… N%`, `Restarting sensor…`, zatim `Updated X → Y` ili `Failed`). |
 | Oko | Prebacuje vidljivost ovog senzora na njegovom grafikonu. |
 | Zupčanik | Otvara modal za postavke pojedinačnog senzora (dolje). |
 | ✕ (crveno) | Odspaja senzor ili uklanja grupu Ambient+Object. |
@@ -53,9 +51,9 @@ Svaki priključeni senzor dobiva jedan redak (plus jedan redak po grupi Ambient+
 Iznad redaka nalaze se dva gumba:
 
 * **Poveži senzor** — otvara dijalog za povezivanje (prikazuje se kao `Connecting...` dok je zauzet).
-* **Zapisi sve / Zaustavi sve**— započinje ili zaustavlja snimanje `.daq` na**svakom**priključenom senzoru. Potrebno je najmanje jedan senzor**i otvoren projekt** (objašnjenje na alatu: &quot;Otvorite projekt za snimanje&quot;); postaje crven dok god se neko snimanje odvija.
+* **Zapisi sve / Zaustavi sve**— započinje ili zaustavlja snimanje `.daq` na**svakom**priključenom senzoru. Potrebno je najmanje jedan senzor**i otvoren projekt** (objašnjenje na alatu: "Otvorite projekt za snimanje"); postaje crven dok god se neko snimanje odvija.
 
-Prazno stanje prikazuje &quot;Nema priključenih senzora&quot;.
+Prazno stanje prikazuje "Nema priključenih senzora".
 
 <!-- SCREENSHOT-NEEDED: sensor sidebar with three rows — a DAQ-E showing both the green Calibrated pill and the amber Update Available pill, a DAQ-U row, and a green REF group row — plus the Connect Sensor and Record All buttons -->
 
@@ -84,15 +82,9 @@ Otvorite pomoću ikone zupčanika u retku senzora. Sadržaj slijedi redoslijedom
 
 gumb</version\>
 
-**Ažuriraj na \<version\>** pojavljuje se kada ova verzija Chloros
-
-a sadrži noviju sliku firmvera za DAQ-E. Ažuriranje se instalira preko mreže za otprilike 30 sekundi; senzor se automatski ponovno pokreće i povezuje, a prekinuti prijenos ostavlja trenutačni firmver nepromijenjenim. Protok napretka je uživo (`Flashing… N%` → `Restarting sensor…` → `Updated X → Y`), a ćelija čita `Up to date` kada je aktivna.
-* **PTP Sync** — trenutačno PTP stanje (vraća se na `unknown`). Firmware DAQ-E v1.2.0+ sudjeluje u IEEE 1588 PTPv2 samo kao robovski sat; backend hosta Chloros
-
-PTP grandmaster je, a svaka DAQ-E i LATTICE kamera na LAN-u mu je sluga u domeni 0, održavajući vremenske oznake unutar otprilike 1 ms.
-* **Mreža**— adresa na kojoj jedinica radi i kako ju je dobila (DHCP, link-lokalno ili statička), te spremljena postavka koja se primjenjuje nakon ponovnog pokretanja.**Promijeni…**otvara obrazac:**Automatski (DHCP)**ili**Statička IP adresa**s IP adresom, maskom podmreže i opcionalnim prolaskom.**Primijeni i ponovno pokreni** sprema postavke, ponovno pokreće senzor i ponovno ga povezuje. Statička adresa izvan mreže ovog računala odbijena je jer Chloros
-
-ne bi mogao dohvatiti senzor nakon ponovnog pokretanja; zatim se pojavljuje potvrdni okvir za njezino dopuštanje, za računalo kojem će se promijeniti adresa ili koje će biti usmjereno na tu mrežu. **Prijenos pri uključivanju**postavlja hoće li senzor započeti prijenos čim se napaja, prije nego što se ikakav softver poveže.**Ponovno pokretanje senzora** ponovno pokreće senzor i ponovno ga povezuje s trenutačnim postavkama. Ponovno pokretanje je odbijeno dok senzor snima. Novost u verziji 1.3.0.
+**Ažuriraj na \<version\>** pojavljuje se kada ova verzija Chloros a sadrži noviju sliku firmvera za DAQ-E. Ažuriranje se instalira preko mreže za otprilike 30 sekundi; senzor se automatski ponovno pokreće i povezuje, a prekinuti prijenos ostavlja trenutačni firmver nepromijenjenim. Protok napretka je uživo (`Flashing… N%` → `Restarting sensor…` → `Updated X → Y`), a ćelija čita `Up to date` kada je aktivna.
+* **PTP Sync** — trenutačno PTP stanje (vraća se na `unknown`). Firmware DAQ-E v1.2.0+ sudjeluje u IEEE 1588 PTPv2 samo kao robovski sat; backend hosta Chloros PTP grandmaster je, a svaka DAQ-E i LATTICE kamera na LAN-u mu je sluga u domeni 0, održavajući vremenske oznake unutar otprilike 1 ms.
+* **Mreža**— adresa na kojoj jedinica radi i kako ju je dobila (DHCP, link-lokalno ili statička), te spremljena postavka koja se primjenjuje nakon ponovnog pokretanja.**Promijeni…**otvara obrazac:**Automatski (DHCP)**ili**Statička IP adresa**s IP adresom, maskom podmreže i opcionalnim prolaskom.**Primijeni i ponovno pokreni** sprema postavke, ponovno pokreće senzor i ponovno ga povezuje. Statička adresa izvan mreže ovog računala odbijena je jer Chloros ne bi mogao dohvatiti senzor nakon ponovnog pokretanja; zatim se pojavljuje potvrdni okvir za njezino dopuštanje, za računalo kojem će se promijeniti adresa ili koje će biti usmjereno na tu mrežu. **Prijenos pri uključivanju**postavlja hoće li senzor započeti prijenos čim se napaja, prije nego što se ikakav softver poveže.**Ponovno pokretanje senzora** ponovno pokreće senzor i ponovno ga povezuje s trenutačnim postavkama. Ponovno pokretanje je odbijeno dok senzor snima. Novost u verziji 1.3.0.
 
 Za grupu Ambient+Object, modalni prozor s zupčanikom prikazuje samo izvore senzora iz grupe, Naziv uređaja i Boju grafičke linije.
 
@@ -102,9 +94,7 @@ Za grupu Ambient+Object, modalni prozor s zupčanikom prikazuje samo izvore senz
 
 ### Odabir kapa
 
-Spuštajući izbornik **Cap** govori Chloros
-
-u koja je fizička kapa postavljena na difuzor senzora i primjenjuje tvornički izmjereni profil korekcije te kapa na svaki spektar. Izbori ovise o modelu:
+Spuštajući izbornik **Cap** govori Chloros u koja je fizička kapa postavljena na difuzor senzora i primjenjuje tvornički izmjereni profil korekcije te kapa na svaki spektar. Izbori ovise o modelu:
 
 | Model | Izbori kapa |
 | --- | --- |
@@ -112,16 +102,14 @@ u koja je fizička kapa postavljena na difuzor senzora i primjenjuje tvornički 
 | DAQ-M | Nema (goli senzor), Sunshine (kosinusni korektor) |
 | DAQ-E | Nema (goli senzor), FOV 15°, FOV 45°, FOV 90°, Sunshine (kosinusni korektor) |
 
-**Zadana postavka za svaki model je Sunčeva svjetlost (kosi korektor)** — MAPIR
-
-isporučuje svaki DAQ s ugrađenim poklopcem Sunčeva svjetlost, i to je standardna vanjska konfiguracija: hemisferni vidni kut od 180° s pogreškom cosinusne krivulje ≤ ±4 % do 60° i ≤ ±4,5 % do 70° (ne preporučuje se pri kutu solarnog uzdignuća ispod ~15°), s namjernim slabljenjem (~12×). Vaš odabir ostaje sačuvan u projektu.
+**Zadana postavka za svaki model je Sunčeva svjetlost (kosi korektor)** — MAPIR isporučuje svaki DAQ s ugrađenim poklopcem Sunčeva svjetlost, i to je standardna vanjska konfiguracija: hemisferni vidni kut od 180° s pogreškom cosinusne krivulje ≤ ±4 % do 60° i ≤ ±4,5 % do 70° (ne preporučuje se pri kutu solarnog uzdignuća ispod ~15°), s namjernim slabljenjem (~12×). Vaš odabir ostaje sačuvan u projektu.
 
 {% hint style="warning" %}
-**Odabir kapa mora odgovarati fizički postavljenoj kapi.**Ni senzor ni softver ne mogu detektirati koja je kapa postavljena. Odabir utječe i na korekciju uživo i na oznaku zapisanu u svaku datoteku `.daq` — uz prigušenje od ~12× kape Sunshine, Neprijavljena promjena kapa pogrešno ispravlja spektre za otprilike taj faktor. (Uklanjanje i ponovno postavljanje iste kapa ponavlja se s odstupanjem od oko 1,5 %.) Odaberite**None (goli senzor)** samo kada je kapa fizički uklonjena; na DAQ-E-u, opcija &quot;None&quot; i dalje primjenjuje tvornički geometrijski profil za njegov udubljeni stakleni difuzor — to nije bezakcijska operacija — a goli DAQ-E je laboratorijska konfiguracija, a ne podržana terenska konfiguracija.
+**Odabir kapa mora odgovarati fizički postavljenoj kapi.**Ni senzor ni softver ne mogu detektirati koja je kapa postavljena. Odabir utječe i na korekciju uživo i na oznaku zapisanu u svaku datoteku `.daq` — uz prigušenje od ~12× kape Sunshine, Neprijavljena promjena kapa pogrešno ispravlja spektre za otprilike taj faktor. (Uklanjanje i ponovno postavljanje iste kapa ponavlja se s odstupanjem od oko 1,5 %.) Odaberite**None (goli senzor)** samo kada je kapa fizički uklonjena; na DAQ-E-u, opcija "None" i dalje primjenjuje tvornički geometrijski profil za njegov udubljeni stakleni difuzor — to nije bezakcijska operacija — a goli DAQ-E je laboratorijska konfiguracija, a ne podržana terenska konfiguracija.
 {% endhint %}
 
 {% hint style="info" %}
-Nadogradnja s ranije verzije: prekidač &quot;Sunshine Diffuser Installed&quot; na strani preglednika iz verzije 1.1.0 je uklonjen. Upravljanje kapicama sada se vrši putem ovog profila kapice za svaki senzor, koji se primjenjuje na strani poslužitelja.
+Nadogradnja s ranije verzije: prekidač "Sunshine Diffuser Installed" na strani preglednika iz verzije 1.1.0 je uklonjen. Upravljanje kapicama sada se vrši putem ovog profila kapice za svaki senzor, koji se primjenjuje na strani poslužitelja.
 {% endhint %}
 
 ***
@@ -150,13 +138,7 @@ Ljepljiva gornja traka sadrži **prekidač za prikaz u listi ⇄ mreži**i kliza
 Ispod grafikona u prikazu popisa, ažurira se svakih 500 ms:
 
 * **Svi modeli**: Uzorak boje svjetla (sRGB iz CIE XYZ), Zasićen (Da/Ne), CIE 1931 X/Y/Z, Hromatičnost x/y, CIE u′/v′, CCT (K), CRI (Ra), dominantna valna duljina (nm), vršna valna duljina (nm), čistoća ekscitacije, Duv, CIE L*/a*/b* i Munsell H/V/C.
-* **Kalibrirani senzori**(bilo koji od DAQ-U / DAQ-M / DAQ-E nakon učitavanja tvorničkog paketa kalibracije — zeleni bedž**Kalibrirano** u retku senzora je znak): Ukupna snaga (W/m²), Fotopski luks (lx), Skotopski luks (lx), Omjer S/P, PPFD plus PPFD za Red
-
-/Green
-
-/Blue
-
-(µmol/m²/s) i opične iradijanse — S-čun, melanopski, rodopski, M-čun, L-čun (sve W/m²).
+* **Kalibrirani senzori**(bilo koji od DAQ-U / DAQ-M / DAQ-E nakon učitavanja tvorničkog paketa kalibracije — zeleni bedž**Kalibrirano** u retku senzora je znak): Ukupna snaga (W/m²), Fotopski luks (lx), Skotopski luks (lx), Omjer S/P, PPFD plus PPFD za Red /Green /Blue (µmol/m²/s) i opične iradijanse — S-čun, melanopski, rodopski, M-čun, L-čun (sve W/m²).
 
 <!-- SCREENSHOT-NEEDED: list view live data table for a DAQ-E showing both the colorimetric rows and the power-calibrated rows (Total Power, Photopic/Scotopic Lux, PPFD, opic irradiances) -->
 
@@ -169,12 +151,10 @@ Dva povezana senzora mogu se kombinirati u prikaz refleksije u stvarnom vremenu 
 1. U prikazu mreže kliknite **+**na pločicu grafikona i odaberite**Kombiniraj Ambient + Objekt**.
 2. Odaberite senzor **Izvor ambijentalnog svjetla**i senzor**Skeniratelj objekta**(dva različita senzora), a zatim**Stvori**.
 
-Chloros
+Chloros izračunava R(λ) = object(λ) / ambient(λ) za svaku valnu duljinu iz dva uživo prijenosa (0 gdje je ambijentalno ≤ 0). Oznaka grupe slijedi kalibracijsku klasu senzora:
 
-izračunava R(λ) = object(λ) / ambient(λ) za svaku valnu duljinu iz dva uživo prijenosa (0 gdje je ambijentalno ≤ 0). Oznaka grupe slijedi kalibracijsku klasu senzora:
-
-* Oba senzora su kalibrirana (paket je učitan) → **&quot;Prividna reflektancija&quot;**.
-* Kalibracija bilo kojeg senzora → **&quot;Relativna reflektancija&quot;**.
+* Oba senzora su kalibrirana (paket je učitan) → **"Prividna reflektancija"**.
+* Kalibracija bilo kojeg senzora → **"Relativna reflektancija"**.
 
 Grupa se pojavljuje kao zeleni redak `REF` u bočnoj traci i na vlastitom grafikonu (ispunjen duginim bojama, prikaz vrijednosti s 4 decimalne znamenke, povlačenje za zumiranje).
 
@@ -186,34 +166,10 @@ Izbornik **+**također nudi**Dodaj novi senzor** s tri postavke: *Kombiniraj nov
 
 ### Tablica indeksa vegetacije
 
-U prikazu popisa, tablica indeksa vegetacije nalazi se ispod grafikona skupine reflektancije, izračunata iz trenutne reflektancije u središtima pojaseva **plavo 450 / zeleno 550 / crveno 670 / NIR
+U prikazu popisa, tablica indeksa vegetacije nalazi se ispod grafikona skupine reflektancije, izračunata iz trenutne reflektancije u središtima pojaseva **plavo 450 / zeleno 550 / crveno 670 / NIR 800 nm** (vrijednosti do 4 decimalne znamenke, `---` kada se ne može izračunati; pređite mišem preko naziva indeksa za njegovo puno ime):
 
-800 nm** (vrijednosti do 4 decimalne znamenke, `---` kada se ne može izračunati; pređite mišem preko naziva indeksa za njegovo puno ime):
-
-* **Uvijek prikazano** (neovisno o ljestvici, bilo koja kombinacija senzora): NDVI
-
-, GNDVI
-
-, ENDVI, WDRVI
-
-, GRVI
-
-, CVI
-
-, GCI
-
-, MSR.
-* **Samo kada su oba senzora kalibrirana po snazi** (oba paketa su učitana): EVI
-
-, SAVI
-
-, OSAVI
-
-, GSAVI, GOSAVI, MSAVI2, RDVI, TDVI, LAI
-
-, NLI, MNLI, FCI, GEMI
-
-.
+* **Uvijek prikazano** (neovisno o ljestvici, bilo koja kombinacija senzora): NDVI, GNDVI, ENDVI, WDRVI, GRVI, CVI, GCI, MSR.
+* **Samo kada su oba senzora kalibrirana po snazi** (oba paketa su učitana): EVI, SAVI, OSAVI, GSAVI, GOSAVI, MSAVI2, RDVI, TDVI, LAI, NLI, MNLI, FCI, GEMI.
 
 <!-- SCREENSHOT-NEEDED: an Ambient+Object reflectance group in list view — reflectance chart labeled "Apparent Reflectance" with the vegetation index table below it showing live NDVI etc. -->
 
@@ -237,13 +193,9 @@ Za kvantitativne brojke iradijance, prosječno uzmite podatke u trajanju od najm
 ## Rasporedi s više senzora i trajnost projekta
 
 * Kombinirajte nekoliko senzora na jednom grafikonu (zajedničke osi), zadržite odvojene grafikone (automatski raspored mreže), premještajte senzore između grafikona, povlačite redove/pločice kako biste ih presložili i sakrijte pojedinačne senzore pomoću prekidača za prikaz/sakrivanje.
-* Po projektu, Chloros
-
-zadržava: nazive uređaja, boje grafikona, veličinu grafikona, način prikaza i postavke svakog senzora (vrijeme integracije, prosječno računanje sličica, stanje AE, odabir okidača).
+* Po projektu, Chloros zadržava: nazive uređaja, boje grafikona, veličinu grafikona, način prikaza i postavke svakog senzora (vrijeme integracije, prosječno računanje sličica, stanje AE, odabir okidača).
 * **Ponovno otvaranje projekta automatski ponovno povezuje njegove senzore** po adresi — COM priključak za DAQ-U, BLE uređaj za DAQ-M, mDNS naziv domene za DAQ-E (rješava se čak i ako se IP jedinice promijenio) — i ponovno primjenjuje spremljeni profil kapice, prosječno vrijeme sličice, stanje AE-a i ručno vrijeme integracije svakog senzora.***
 
 ## Spajanje kamere (DLS)
 
-Nema se što upariti. Za razliku od DLS tijekova rada s dronovima koji unaprijed vežu senzor svjetla za kameru, Chloros
-
-usklađuje DAQ podatke sa slikovnim materijalom naknadno: u trenutku uvoza/obrade, očitanja s uređaja `.daq` interpoliraju se na vremensku oznaku ekspozicije svake snimke. Snimajte s bilo kojim priključenim senzorom (snimke `.daq` automatski se spremaju u projekt), a obrada reflektancije pronalazi odgovarajuća očitanja prema vremenu — pogledajte [DAQ senzori svjetla](README.md) kako se koriste podaci o dolaznom svjetlu. Za **uživo**snimanja LATTICE-a odaberite senzor u padajućem izborniku**Senzor svjetla** na kartici Kamere; svako snimanje zatim sprema očitanje koje je koristilo, usklađeno samo s kamerama tog snimanja (vidi [Radni procesi reflektancije](reflectance.md)).</version\>
+Nema se što upariti. Za razliku od DLS tijekova rada s dronovima koji unaprijed vežu senzor svjetla za kameru, Chloros usklađuje DAQ podatke sa slikovnim materijalom naknadno: u trenutku uvoza/obrade, očitanja s uređaja `.daq` interpoliraju se na vremensku oznaku ekspozicije svake snimke. Snimajte s bilo kojim priključenim senzorom (snimke `.daq` automatski se spremaju u projekt), a obrada reflektancije pronalazi odgovarajuća očitanja prema vremenu — pogledajte [DAQ senzori svjetla](README.md) kako se koriste podaci o dolaznom svjetlu. Za **uživo**snimanja LATTICE-a odaberite senzor u padajućem izborniku**Senzor svjetla** na kartici Kamere; svako snimanje zatim sprema očitanje koje je koristilo, usklađeno samo s kamerama tog snimanja (vidi [Radni procesi reflektancije](reflectance.md)).</version\>

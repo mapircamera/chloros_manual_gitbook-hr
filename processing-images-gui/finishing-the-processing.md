@@ -1,7 +1,6 @@
 # Završetak obrade
 
-Nakon što Chloros
-dovrši obradu, vrijeme je da pregledate svoje rezultate, provjerite kvalitetu izlaza i pripremite svoje obrađene slike za upotrebu u svom radnom procesu. Ova stranica vodi vas kroz završne korake i sljedeće radnje.
+Nakon što Chloros dovrši obradu, vrijeme je da pregledate svoje rezultate, provjerite kvalitetu izlaza i pripremite svoje obrađene slike za upotrebu u svom radnom procesu. Ova stranica vodi vas kroz završne korake i sljedeće radnje.
 
 ## Indikator završetka obrade
 
@@ -13,10 +12,7 @@ Kada se obrada uspješno završi, vidjet ćete nekoliko indikatora:
 * ✅ **Izlazne datoteke**: Sve obrađene slike spremljene su u izlazno stablo projekta (dolje)
 
 {% hint style="warning" %}
-**Pokretanje koje ne piše nijednu sliku predstavlja neuspjeh.** Ako ste zatražili izlazne slike, a izvršavanje nije napisalo nijednu, Chloros
-to prijavljuje kao neuspjeh — `[RUN-SUMMARY]` naznake u nazivu dnevnika navode vjerojatni uzrok (ništa nije uvezano, nije otkriven cilj ili je svaki zatraženi proizvod preskočen kao neprimjenjiv). Ekvivalent u CLI
-izlazi s ne-nultim rezultatom. Namjerno pokretanje samo za metapodatke (svi proizvodi za izvoz isključeni, bez indeksa) i dalje se smatra uspjehom. Pogledajte [referencu za CLI
-](../reference/cli-reference.md#a-run-that-writes-no-images-fails).
+**Pokretanje koje ne piše nijednu sliku predstavlja neuspjeh.** Ako ste zatražili izlazne slike, a izvršavanje nije napisalo nijednu, Chloros to prijavljuje kao neuspjeh — `[RUN-SUMMARY]` naznake u nazivu dnevnika navode vjerojatni uzrok (ništa nije uvezano, nije otkriven cilj ili je svaki zatraženi proizvod preskočen kao neprimjenjiv). Ekvivalent u CLI izlazi s ne-nultim rezultatom. Namjerno pokretanje samo za metapodatke (svi proizvodi za izvoz isključeni, bez indeksa) i dalje se smatra uspjehom. Pogledajte [referencu za CLI](../reference/cli-reference.md#a-run-that-writes-no-images-fails).
 {% endhint %}
 
 ***
@@ -27,7 +23,7 @@ izlazi s ne-nultim rezultatom. Namjerno pokretanje samo za metapodatke (svi proi
 
 1. Kliknite ikonu **Glavni izbornik** <img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt="" data-size="line">
 (gornji lijevi kut)
-2. Odaberite **&quot;Otvori mapu projekta&quot;**
+2. Odaberite **"Otvori mapu projekta"**
 
 3. Vaš preglednik datoteka otvara se u direktorij projekta
 4. Pronađite svoj projekt po nazivu
@@ -48,10 +44,8 @@ Proizvodi se spremaju **ispod mape projekta, grupirani po kameri, a zatim po for
         └── Radiance_Images/             # float32 radiance always lands here
 ```
 
-* **Mapa kamere**: `LATT-<sensor>-<lens>-F<filter>` za LATTICE (podudaranje s EXIF-om snimke `Model`), `<model>_<filter>` za Survey3
-(npr. `Survey3N_RGN`). Dvije kamere koje dijele senzor i filtar, ali se razlikuju po objektivu, vode odvojena stabla — vinjeta, vidno polje i izobličenje se razlikuju.
-* **Format mape**: slijedi vašu postavku formata izvoza — `tiff16`, `tiff8`, `png8`, `jpg8`, ili `tiff32` za TIFF
-(32-bitni, Percent). Radiance je uvijek float32 i uvijek se nalazi pod `tiff32`.
+* **Mapa kamere**: `LATT-<sensor>-<lens>-F<filter>` za LATTICE (podudaranje s EXIF-om snimke `Model`), `<model>_<filter>` za Survey3 (npr. `Survey3N_RGN`). Dvije kamere koje dijele senzor i filtar, ali se razlikuju po objektivu, vode odvojena stabla — vinjeta, vidno polje i izobličenje se razlikuju.
+* **Format mape**: slijedi vašu postavku formata izvoza — `tiff16`, `tiff8`, `png8`, `jpg8`, ili `tiff32` za TIFF (32-bitni, Percent). Radiance je uvijek float32 i uvijek se nalazi pod `tiff32`.
 * **Mape proizvoda**:
   * `Reflectance_Calibrated_Images/` — kalibrirana reflektancija
   * `Debayered_Images/` — linearno debayered (LATTICE): uklonjena je tamna kompenzacija i demosaicirano, bez kalibracije ravnog polja ili unmixa, u nativnoj orijentaciji senzora
@@ -79,32 +73,24 @@ bojama ne dobivaju radijanciju/reflektanciju). Konačan broj nalazi se u log dat
 
 ### Brzi pregled u Upravitelju datoteka
 
-**Ugrađeni pregled sustava Windows
-:**
+**Ugrađeni pregled sustava Windows:**
 
 1. Idite u mapu proizvoda (npr. `tiff16/Reflectance_Calibrated_Images/`)
 2. Odaberite datoteku s slikom
-3. Prikaz se pojavljuje u pretpreglednom oknu istraživača Windows
-Explorer
+3. Prikaz se pojavljuje u pretpreglednom oknu istraživača Windows Explorer
 4. Koristite tipke sa strelicama za pregled slika
 
 ### Prikaz u vanjskim preglednicima slika
 
 **Preporučeni preglednici:*** **QGIS** - Besplatan GIS softver (najbolji za georeferenciranu multispektralnu analizu)
-* **IrfanView** - Brzi, lagani preglednik slika (podržava TIFF
-)
-* **Adobe Photoshop** - Profesionalno uređivanje (podrška za TIFF
-)
+* **IrfanView** - Brzi, lagani preglednik slika (podržava TIFF)
+* **Adobe Photoshop** - Profesionalno uređivanje (podrška za TIFF)
 * **GIMP** - Besplatna alternativa za Photoshop
-* **Windows
-Photos** - Osnovno pregledavanje (može ne podržavati 16-bitni TIFF
-)
+* **Windows Photos** - Osnovno pregledavanje (može ne podržavati 16-bitni TIFF)
 
-### Pregled u pregledniku slika [Chloros
-]
+### Pregled u pregledniku slika [Chloros]
 
-Koristite ugrađeni preglednik slika programa [Chloros
-] za naprednu vizualizaciju:
+Koristite ugrađeni preglednik slika programa [Chloros] za naprednu vizualizaciju:
 
 1. Kliknite na minijaturu slike u pregledniku datoteka
 2. Slika se otvara u glavnom području za pregled
@@ -123,9 +109,7 @@ Reflekancija se pohranjuje kao cjelobrojni DN, a **DN koji označava ρ = 1,0 ov
 | Izvor          | ρ = 1,0 je | Kako odrediti                                        |
 | --------------- | ---------- | -------------------------------------------------- |
 | LATTICE (M3C/M3M) | **32768** (rezerva do ρ 2.0) | XMP oznaka `Chloros:PixelScale=32768` je zapečaćena na datoteci |
-| Survey3
-         | **65535** (ograničeno na ρ 1.0)     | Nema oznake `Chloros:PixelScale` — ta odsutnost je signal (Survey3
-proizvodi imaju druge oznake obrade `Chloros:*`) |
+| Survey3          | **65535** (ograničeno na ρ 1.0)     | Nema oznake `Chloros:PixelScale` — ta odsutnost je signal (Survey3 proizvodi imaju druge oznake obrade `Chloros:*`) |
 
 Pročitajte `Chloros:PixelScale` oznaku i podijelite po njoj** umjesto da pretpostavite univerzalnu vrijednost 65535 — dijeljenje LATTICE reflektancije s 65535 tiho prepolovljava svaku vrijednost. Datoteka reflektancije iz verzije prije 1.3.0, zapisana kao 8-bitna, bila je podrezana, a ne preskalirana, i nema oznaku skale: ponovno je izvezite u 16-bitnoj ili 32-bitnoj formi umjesto da je dijelite. Pogledajte [Output Image Formats](../output-image-formats.md) za cijelu priču.***
 
@@ -146,8 +130,7 @@ exiftool -FocalLength -GPSLatitude "YourProject/.../some_export.tif"
 
 Ne kopira se *svaka* oznaka. Strukturne oznake IFD0-a namjerno se izostavljaju (njihovo kopiranje kvari LATTICE izlaz), i `ExifImageWidth` / `ExifImageHeight` su isključeni jer opisuju izvornu snimku — izvoz bi inače tvrdio dimenzije koje su u suprotnosti s njegovim vlastitim rastrom.
 
-Chloros
-također dodaje vlastite XMP oznake `Chloros:*` koje opisuju što je učinjeno svakom proizvodu (na primjer `Chloros:ProcessingLevel`, `Chloros:CalibrationApplied`,
+Chloros također dodaje vlastite XMP oznake `Chloros:*` koje opisuju što je učinjeno svakom proizvodu (na primjer `Chloros:ProcessingLevel`, `Chloros:CalibrationApplied`,
 `Chloros:VignetteCorrected`). Od verzije 1.3.0, proizvodiSurvey3
 nose ih u svakoj obradi
 način, indeksni proizvodi opisuju sam indeks (`Chloros:ProcessingLevel=index`, formulu i je li izračunat na temelju reflektancije ili radijancije) umjesto da ponavljaju oznake izvornog sirovog materijala, a proizvodi u mapama dubljim od 260 znakova također zadržavaju svoje metapodatke. Vidi [Izlazni formati slika](../output-image-formats.md#index-products).
@@ -168,18 +151,15 @@ način, indeksni proizvodi opisuju sam indeks (`Chloros:ProcessingLevel=index`, 
 
 ### Spremanje dnevnika
 
-Kako biste sačuvali zapis obrade ili ga poslali podršci tvrtke MAPIR
-:
+Kako biste sačuvali zapis obrade ili ga poslali podršci tvrtke MAPIR:
 
-1. Kliknite gumb **&quot;Kopiraj&quot;**ili**&quot;Preuzmi&quot;**
+1. Kliknite gumb **"Kopiraj"**ili**"Preuzmi"**
 
 2. Spremite kao tekstualnu datoteku u mapu projekta
 3. Priložite uz dokumentaciju projekta
-4. Pošaljite podršci tvrtke MAPIR
-ako naiđete na probleme.
+4. Pošaljite podršci tvrtke MAPIR ako naiđete na probleme.
 
-Da biste problem izravno poslali tvrtki MAPIR
-, upotrijebite ikonu greške (**Prijavi grešku**) na vrhu kartice Zapisnika otklanjanja pogrešaka (Debug Log) — pogledajte [Prijavljivanje greške s kartice zapisnika](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
+Da biste problem izravno poslali tvrtki MAPIR, upotrijebite ikonu greške (**Prijavi grešku**) na vrhu kartice Zapisnika otklanjanja pogrešaka (Debug Log) — pogledajte [Prijavljivanje greške s kartice zapisnika](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
 
 ## Uobičajeni problemi s izlaznim datotekama i njihova rješenja
 
@@ -187,8 +167,7 @@ Da biste problem izravno poslali tvrtki MAPIR
 
 **Mogući uzroci:**
 
-* Proizvod nije primjenjiv na tu kameru (npr. radijansa/reflektancije za kamere u boji RGB
-— o tome log vodič obavještava)
+* Proizvod nije primjenjiv na tu kameru (npr. radijansa/reflektancije za kamere u boji RGB — o tome log vodič obavještava)
 * Fali potrebna referenca (npr. reflektancija bez cilja i bez `.daq` zračenja prema dolje)
 * Kvačica za izvoz proizvoda bila je onemogućena u postavkama projekta
 * Tijekom izvoza ponestalo je prostora na disku
@@ -213,8 +192,7 @@ Da biste problem izravno poslali tvrtki MAPIR
 
 1. Provjerite je li ispravljanje vinjete omogućeno u postavkama projekta
 2. Provjerite je li model kamere ispravno prepoznat
-3. Kontaktirajte podršku tvrtke MAPIR
-ako se vinjeta i dalje pojavljuje
+3. Kontaktirajte podršku tvrtke MAPIR ako se vinjeta i dalje pojavljuje
 
 ### Problem: Neispravne boje ili vrijednosti
 
@@ -228,15 +206,13 @@ ako se vinjeta i dalje pojavljuje
 **Rješenja:**
 
 1. Provjerite je li kalibracija reflektancije omogućena
-2. Provjerite poruke &quot;Target found&quot; (Cilj pronađen) u zapisniku za otklanjanje pogrešaka (Debug Log)
+2. Provjerite poruke "Target found" (Cilj pronađen) u zapisniku za otklanjanje pogrešaka (Debug Log)
 3. Pregledajte kvalitetu slika ciljeva
 4. Ponovno obradite s označenim ispravnim ciljevima
 
-### Problem: Vrijednosti NDVI
--a izgledaju netočno
+### Problem: Vrijednosti NDVI-a izgledaju netočno
 
-**Očekivani rasponi vrijednosti NDVI
--a:*** **Voda, stijene, tlo**: -0,1 do 0,2
+**Očekivani rasponi vrijednosti NDVI-a:*** **Voda, stijene, tlo**: -0,1 do 0,2
 * **Rijetka/ne zdrava vegetacija**: 0,2 do 0,4
 * **Umjerena vegetacija**: 0,4 do 0,6
 * **Zdrava, gusta vegetacija**: 0,6 do 0,9**Ako su vrijednosti izvan ovih raspona:**
@@ -263,10 +239,8 @@ ako se vinjeta i dalje pojavljuje
    * WebODM
 2. **Očuvajte EXIF metapodatke**: Osigurajte očuvanje GPS podataka za geotagiranje
 3. **Kalibrirani tijekovi rada**: Koristite slike reflektancije za znanstvenu točnost — reflektancija LATTICE-a sadrži XMP oznake kalibracije koje čita Pix4D
-4. **Obradite indeksne mozaike**: Izradite ortomozaike NDVI
--a iz pojedinačnih indeksnih slika
-5. **Izvoz georeferenciranih GeoTIFF
-datoteka**: Za upotrebu u GIS aplikacijama
+4. **Obradite indeksne mozaike**: Izradite ortomozaike NDVI-a iz pojedinačnih indeksnih slika
+5. **Izvoz georeferenciranih GeoTIFF datoteka**: Za upotrebu u GIS aplikacijama
 
 ### Za GIS analizu
 
@@ -274,12 +248,9 @@ datoteka**: Za upotrebu u GIS aplikacijama
 
 1.**Učitavanje u QGIS, ArcGIS ili slične aplikacije**
 
-2.**Koristite 16-bitne slike reflektancije formata TIFF
-za višekanalnu analizu (podijelite s `Chloros:PixelScale` datoteke)**
+2.**Koristite 16-bitne slike reflektancije formata TIFF za višekanalnu analizu (podijelite s `Chloros:PixelScale` datoteke)**
 
-3.**Koristite indeksne slike** (NDVI
-, NDRE
-) kao spremne slojeve vegetacije
+3.**Koristite indeksne slike** (NDVI, NDRE) kao spremne slojeve vegetacije
 4. **Rasterski kalkulator**: Kombinirajte pojaseve za prilagođenu analizu
 5. **Izvoz**: Izradite karte klasifikacije, karte detekcije promjena, karte zdravlja vegetacije
 
@@ -288,8 +259,7 @@ za višekanalnu analizu (podijelite s `Chloros:PixelScale` datoteke)**
 **Preporučeni tijek rada:**
 
 1.**Koristite indeksne slike s LUT bojama** za vizualna izvješća
-2. **Izvadite statistiku**: Prosjek NDVI
-po polju/parceli
+2. **Izvadite statistiku**: Prosjek NDVI po polju/parceli
 3. **Vremenske serije**: Usporedite indekse kroz više sesija
 4. **Generirajte izvješća**: Uključite karte, statistiku i vizualizacije***
 
@@ -326,27 +296,17 @@ Za više sesija/skupova podataka:**Opcija 1: GUI - Više projekata**
 *   Koristite dosljedne postavke predloška
 *   Obradite ih jedan po jedan
 
-**Opcija 2: Chloros
-CLI
-(Chloros
-+ samo)**
+**Opcija 2: Chloros CLI (Chloros+ samo)**
 
 * Automatizirajte grupnu obradu
 * Obradite više mapa pomoću skripti
-* Pogledajte [CLI
-dokumentaciju](../CLI.md) i [CLI
-referencu](../reference/cli-reference.md)
+* Pogledajte [CLI dokumentaciju](../CLI.md) i [CLI referencu](../reference/cli-reference.md)
 
-**Opcija 3: Python
-SDK
-(samo za Chloros
-+)**
+**Opcija 3: Python SDK (samo za Chloros+)**
 
 * Programatska kontrola
 * Integracija s analiznim cjevovodima
-* Pogledajte [API
-dokumentaciju](../api-python-sdk.md) i [SDK
-referencu](../reference/sdk-reference.md)
+* Pogledajte [API dokumentaciju](../api-python-sdk.md) i [SDK referencu](../reference/sdk-reference.md)
 
 ***
 
@@ -357,8 +317,7 @@ referencu](../reference/sdk-reference.md)
 Ako rezultati nisu zadovoljavajući:
 
 1. Sačuvajte izvorne slike (nikada ih ne brišite)
-2. Otvorite isti projekt u Chloros
-u 3. Podesite postavke u odjeljku Postavke projekta
+2. Otvorite isti projekt u Chloros u 3. Podesite postavke u odjeljku Postavke projekta
 4. Ponovno obradite — izlazne datoteke spremaju se u iste mape proizvoda, stoga se datoteke istog naziva iz prethodne obrade zamjenjuju
 
 ### Obrada podskupa slika
@@ -377,15 +336,13 @@ Ako naiđete na probleme:
 * 📧 **E-pošta**: info@mapir.camera (priložite zapisnik o otklanjanju pogrešaka)
 * 🌐 **Podrška**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **ČPP**: [Često postavljana pitanja](../faq.md)
-* 📖 **Dokumentacija**: [Upute za Chloros
-](../)
+* 📖 **Dokumentacija**: [Upute za Chloros](../)
 
 ***
 
 ## Sažetak: Cjelokupni tijek rada
 
-Sada ste dovršili cjelokupni tijek obrade programa Chloros
-:
+Sada ste dovršili cjelokupni tijek obrade programa Chloros:
 
 1. ✅ **Stvorili projekt** - Pogledajte [Projekti](../projects.md)
 2. ✅ **Dodali datoteke** - Vidi [Dodavanje datoteka](adding-files-to-a-project.md)
@@ -408,11 +365,8 @@ Sada ste dovršili cjelokupni tijek obrade programa Chloros
 ### Automatizacija i integracija
 
 * [**Dokumentacija za CLI**](../CLI.md) - Serijska obrada putem naredbenog retka
-* [**Python
-SDK
-**](../api-python-sdk.md) - Programatska automatizacija
-* [**Značajke sustava Chloros
-+**](../#chloros) - Napredne mogućnosti obrade
+* [**Python SDK**](../api-python-sdk.md) - Programatska automatizacija
+* [**Značajke sustava Chloros+**](../#chloros) - Napredne mogućnosti obrade
 
 ### Podrška i učenje
 

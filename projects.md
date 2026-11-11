@@ -17,35 +17,35 @@ Osim ako to ne promijenite u [Postavkama projekta](project-settings/project-sett
 
 ## Novi projekt
 
-<figure><img src=".gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>Odaberite &quot;Novi projekt&quot; iz glavnog izbornika i unesite jedinstveni naziv za svoj projekt.
+<figure><img src=".gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>Odaberite "Novi projekt" iz glavnog izbornika i unesite jedinstveni naziv za svoj projekt.
 
-Ako ste spremili neke predloške projekata, ispod polja za naziv pojavit će se padajući izbornik **Odabir predloška** — odabir jednog pokreće novi projekt prema postavkama tog predloška. Predlošci se spremaju iz [Postavke projekta](project-settings/project-settings.md): unesite naziv u polje &quot;Naziv predloška projekta&quot; i kliknite ikonu spremanja.
+Ako ste spremili neke predloške projekata, ispod polja za naziv pojavit će se padajući izbornik **Odabir predloška** — odabir jednog pokreće novi projekt prema postavkama tog predloška. Predlošci se spremaju iz [Postavke projekta](project-settings/project-settings.md): unesite naziv u polje "Naziv predloška projekta" i kliknite ikonu spremanja.
 
 ## Otvori projekt
 
 <figure><img src=".gitbook/assets/v120-open-project.jpg" alt=""><figcaption><p>Otvaranje projekta prikazuje sve projekte u vašoj projektnoj mapi, a na dnu se nalazi <strong>opcija Otvori projektnu mapu</strong></p></figcaption></figure>
 
-Odaberite &quot;Otvori projekt&quot; da biste vidjeli popis postojećih projekata u mapi projekta. Ako ne postoje projekti, sekundarni bočni izbornik se neće otvoriti. Na gornjoj fotografiji možete vidjeti neke projekte koje je stvorio GUI (t1, t2, t3). Projekte s nazivom DATE\_TIME stvorio je CLI koristeći zadanu shemu imenovanja projekata. Klikom na bilo koji naziv projekta on se otvara.
+Odaberite "Otvori projekt" da biste vidjeli popis postojećih projekata u mapi projekta. Ako ne postoje projekti, sekundarni bočni izbornik se neće otvoriti. Na gornjoj fotografiji možete vidjeti neke projekte koje je stvorio GUI (t1, t2, t3). Projekte s nazivom DATE\_TIME stvorio je CLI koristeći zadanu shemu imenovanja projekata. Klikom na bilo koji naziv projekta on se otvara.
 
-Klikom na gumb &quot;Open Project Folder&quot; otvara se upravitelj datoteka na vašem računalu na putanji projekta. Putanju projekta možete prilagoditi u [Postavkama projekta](project-settings/project-settings.md).
+Klikom na gumb "Open Project Folder" otvara se upravitelj datoteka na vašem računalu na putanji projekta. Putanju projekta možete prilagoditi u [Postavkama projekta](project-settings/project-settings.md).
 
 Ako su se bilo koja od izvornih datoteka slika projekta premjestila ili izbrisala od posljednjeg otvaranja, Chloros prikazuje dijaloški okvir s točnim popisom datoteka koje nedostaju umjesto da otvori praznu mrežu.
 
 ## Dupliciranje projekta
 
-Dostupno nakon otvaranja projekta. Odaberite &quot;Dupliciraj projekt&quot; kako biste kopirali trenutni projekt pod novim imenom — Chloros predlaže sljedeće slobodno ime (npr. &quot;MyProject (2)&quot;) — i duplikat se odmah otvara.
+Dostupno nakon otvaranja projekta. Odaberite "Dupliciraj projekt" kako biste kopirali trenutni projekt pod novim imenom — Chloros predlaže sljedeće slobodno ime (npr. "MyProject (2)") — i duplikat se odmah otvara.
 
 ## Dodaj datoteke
 
-Nakon što se projekt otvori, odaberite &quot;Dodaj datoteke&quot; iz glavnog izbornika kako biste dodali pojedinačne datoteke slika u trenutni projekt. Ova funkcija je slična funkciji dodavanja u pregledniku datoteka, ali je radi praktičnosti izravno dostupna iz glavnog izbornika.
+Nakon što se projekt otvori, odaberite "Dodaj datoteke" iz glavnog izbornika kako biste dodali pojedinačne datoteke slika u trenutni projekt. Ova funkcija je slična funkciji dodavanja u pregledniku datoteka, ali je radi praktičnosti izravno dostupna iz glavnog izbornika.
 
 ## Dodaj mapu
 
-Nakon što se projekt otvori, odaberite &quot;Dodaj mapu&quot; iz glavnog izbornika kako biste dodali mape s slikama u trenutni projekt. Možete odabrati više mapa odjednom. Duplicirane datoteke se ignoriraju.
+Nakon što se projekt otvori, odaberite "Dodaj mapu" iz glavnog izbornika kako biste dodali mape s slikama u trenutni projekt. Možete odabrati više mapa odjednom. Duplicirane datoteke se ignoriraju.
 
 ## Pokreni / Zaustavi obradu
 
-Nakon što se datoteke dodaju u projekt, opcija &quot;Pokreni obradu&quot; postaje dostupna u glavnom izborniku. To je ista radnja kao i klikanje na gumb Play/Pokreni u gornjoj traci. Tijekom obrade stavka izbornika mijenja se u &quot;Zaustavi obradu&quot; kako biste mogli prekinuti tijek obrade.
+Nakon što se datoteke dodaju u projekt, opcija "Pokreni obradu" postaje dostupna u glavnom izborniku. To je ista radnja kao i klikanje na gumb Play/Pokreni u gornjoj traci. Tijekom obrade stavka izbornika mijenja se u "Zaustavi obradu" kako biste mogli prekinuti tijek obrade.
 
 ## Povezivanje na kameru / Povezivanje na senzor svjetla
 

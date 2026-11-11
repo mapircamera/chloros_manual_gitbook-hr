@@ -75,7 +75,7 @@ Novo u verziji 1.3.0, indeksni proizvod opisuje **sam sebe** umjesto da ponavlja
 | `Chloros:IlluminationInvariant` | `True` za indeks izračunat iz reflektancije, `False` iz radijance ili vrijednosti senzora |
 | `Chloros:ChlorosPipelineVersion` | verzija Chlorosa koja je napisala indeks |
 
-`Chloros:PixelScale` uklonjen je iz indeksnih proizvoda — upotrijebite `IndexMin` / `IndexMax` iznad. Cjelokupna uputa za čitanje natrag nalazi se pod naslovom &quot;Integer index raster is a per-image contrast stretch&quot; u referenci [CLI](reference/cli-reference.md).
+`Chloros:PixelScale` uklonjen je iz indeksnih proizvoda — upotrijebite `IndexMin` / `IndexMax` iznad. Cjelokupna uputa za čitanje natrag nalazi se pod naslovom "Integer index raster is a per-image contrast stretch" u referenci [CLI](reference/cli-reference.md).
 
 ## Čitanje vrijednosti piksela reflektancije
 
@@ -92,4 +92,4 @@ Pročitajte `Chloros:PixelScale` XMP oznaku i podijelite po njoj umjesto da pret
 **8-bitni snimci.** Izvozni podaci 8-bitnog snimka su 8-bitni. Njegova reflektancija se ponovno skalira i označava se oznakom `Chloros:PixelScale=32768`, tako da se skala zadržava; DN proizvodi od 8 bita i datoteke reflektancije spremljene prije verzije 1.3.0 ograničeni su na raspon 0–255 i ne nose oznaku mjerila. Ako oznaka nedostaje u datoteci reflektancije LATTICE, nemojte pretpostavljati mjerilo; umjesto toga ponovno izvezite u 16-bitnom ili 32-bitnom formatu.
 {% endhint %}
 
-Za potpuna pravila (uključujući oznake kompatibilne s MicaSenseom), pogledajte **&quot;Čitanje piksela odbijanja&quot;** u [Referenci za CLI](reference/cli-reference.md).
+Za potpuna pravila (uključujući oznake kompatibilne s MicaSenseom), pogledajte **"Čitanje piksela odbijanja"** u [Referenci za CLI](reference/cli-reference.md).

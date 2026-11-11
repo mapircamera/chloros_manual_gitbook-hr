@@ -194,7 +194,7 @@ Chloros pohranjuje svoje vjerodajnice i konfiguraciju CLI u jednom međuplatform
 | `/lib/systemd/system/chloros-backend@.service` | Usluga uvijek aktivnog pozadinskog sustava za uključivanje koja pokreće pozadinski sustav kao korisnik kojeg odaberete (instalirana, **nije omogućena**) — onu koju treba omogućiti, pogledajte [Always-On PTP](#always-on-ptp-for-headless-hosts) |
 | `/lib/systemd/system/chloros-backend.service` | Ista usluga koja pokreće pozadinsku uslugu kao **root**(instalirana,**nije omogućena**), zadržana kako bi računalo na kojem je omogućena nastavilo raditi |
 | `/var/log/chloros/` | Detaljni zapisnik usluge root, čitljiv za grupu `adm` (izbrisana kada se paket ukloni) |
-| `/usr/share/applications/chloros-cli.desktop` | stavka u izborniku aplikacije &quot;Chloros CLI&quot; koja otvara terminala |
+| `/usr/share/applications/chloros-cli.desktop` | stavka u izborniku aplikacije "Chloros CLI" koja otvara terminala |
 
 **Firewall (novo u verziji 1.3.0).** Ako su `ufw` ili `firewalld` aktivni tijekom instalacije, paket otvara UDP priključke `5002` (DAQ-E podatke), `5353` (otkrivanje mDNS-a), `319` i `320` (PTP) te uklanja ta pravila kada se paket ukloni. Ako je vatrozid instaliran, ali nije aktivan, ne dodaje ništa i ispisuje priključke koje treba dopustiti ako ga kasnije aktivirate. Ne otvara nijedan TCP priključak: ažuriranje firmvera DAQ-E, pri čemu se senzor ponovno povezuje s ovim računalom putem TCP-a kako bi preuzeo sliku, ne uspijeva s `… device never connected back on TCP <port> …` dok aktivan vatrozid blokira to povezivanje.
 
@@ -388,7 +388,7 @@ chloros-cli time-sync status
 chloros-cli time-sync peers
 ```
 
-### Naredbe `lattice` ne uspijevaju s porukom &quot;Nije pronađen upravljački program za LATTICE kameru&quot;
+### Naredbe `lattice` ne uspijevaju s porukom "Nije pronađen upravljački program za LATTICE kameru"
 
 Backend nije uspio učitati runtime kamere LATTICE s kojim je instaliran. Svaka `lattice` naredba izvršava se na backendu; sama CLI ne sadrži upravljačke programe za kamere. Reinstalirajte Chloros (`sudo apt install --reinstall ./chloros_1.3.0_<arch>.deb`): `.deb` instalira runtime uz backend, u `/usr/lib/chloros/arena_runtime`, i registrira ga kod dinamičkog učitavača. Za provjeru te registracije:
 

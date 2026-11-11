@@ -47,7 +47,7 @@ Kliknite i držite lijevu tipku miša iznad slike i povucite. Pomicanje je ogran
 
 Kada efektivno povećanje prijeđe **60×**, Chloros crta okvir za isticanje oko pojedinačnog prikazanog piksela ispod pokazivača i plutajuću vrijednost pored njega.
 
-&quot;Učinkovito&quot; povećanje uzima u obzir veličinu GSD bloka: s veličinom bloka od 8, istaknuto područje se pojavljuje pri 7,5× povećanju, a ne pri 60×, jer je jedan prikazani piksel već 8 × 8 izvornih piksela. Smanjite li povećanje ispod praga, istaknuto područje će nestati.
+"Učinkovito" povećanje uzima u obzir veličinu GSD bloka: s veličinom bloka od 8, istaknuto područje se pojavljuje pri 7,5× povećanju, a ne pri 60×, jer je jedan prikazani piksel već 8 × 8 izvornih piksela. Smanjite li povećanje ispod praga, istaknuto područje će nestati.
 
 ### Prečaci na tipkovnici
 
@@ -140,7 +140,7 @@ Time se _prikazana_ slika zrnati prosječanjem N × N blokova izvornih piksela u
 * Prikaz koordinata kursora izvještava o bloku, a ne o izvornoj pikseli, kad god je veličina bloka veća od 1 — prikazana vrijednost je prosjek bloka ispod vašeg kursora.
 
 {% hint style="info" %}
-**Zašto &quot;veličina bloka&quot;, a ne centimetri po pikselu?** Vrijednost cm/px zahtijeva visinu iznad tla. EXIF podatke jedne fotografije sadrže GPS nadmorsku visinu iznad razine mora, a ne nadmorsku visinu terena prema kojem je usmjerena, stoga Chloros neće ispisati udaljenost do tla koju iskreno ne može izračunati. Veličina bloka u izvornih piksela jednaka je zadanom rješenju koje koriste oblačni alati MAPIR kada je udaljenost uzorkovanja tla nepoznata.
+**Zašto "veličina bloka", a ne centimetri po pikselu?** Vrijednost cm/px zahtijeva visinu iznad tla. EXIF podatke jedne fotografije sadrže GPS nadmorsku visinu iznad razine mora, a ne nadmorsku visinu terena prema kojem je usmjerena, stoga Chloros neće ispisati udaljenost do tla koju iskreno ne može izračunati. Veličina bloka u izvornih piksela jednaka je zadanom rješenju koje koriste oblačni alati MAPIR kada je udaljenost uzorkovanja tla nepoznata.
 {% endhint %}
 
 ***

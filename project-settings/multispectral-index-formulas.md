@@ -12,7 +12,7 @@ Sljedeće formule indeksa koriste kombinaciju prosječnih transmisijskih raspona
 
 <table><thead><tr><th align="center">Survey3 boja filtera</th><th width="196.199951171875" align="center">Naziv filtera Survey3</th><th width="159.800048828125" align="center">Opseg transmisije (FWHM)</th><th align="center">Prosječna transmisija</th></tr></thead><tbody><tr><td align="center">Blue</td><td align="center">NGB - Blue</td><td align="center">468-483nm</td><td align="center">475 nm</td></tr><tr><td align="center">Cyan</td><td align="center">OCN- Cyan</td><td align="center">476-512nm</td><td align="center">494nm</td></tr><tr><td align="center">Green</td><td align="center">RGN | NGB - Green</td><td align="center">543-558nm</td><td align="center">547nm</td></tr><tr><td align="center">Orange</td><td align="center">OCN - Orange</td><td align="center">598-640nm</td><td align="center">619nm</td></tr><tr><td align="center">Red</td><td align="center">RGN - Red</td><td align="center">653-668nm</td><td align="center">661nm</td></tr><tr><td align="center">RedEdge</td><td align="center">Re - RedEdge</td><td align="center">712-735nm</td><td align="center">724nm</td></tr><tr><td align="center">NIR1</td><td align="center">OCN - NIR1</td><td align="center">798-848nm</td><td align="center">823nm</td></tr><tr><td align="center">NIR2</td><td align="center">RGN | NGB | NIR - NIR2</td><td align="center">835-865nm</td><td align="center">850nm</td></tr></tbody></table>
 
-Kada se koriste ove formule, naziv može završavati na &quot;\_1&quot; ili &quot;\_2&quot;, što odgovara tome je li korišten NIR-filter NIR1 ili NIR2.
+Kada se koriste ove formule, naziv može završavati na "\_1" ili "\_2", što odgovara tome je li korišten NIR-filter NIR1 ili NIR2.
 
 Za kamere LATTICE M3C (Bayer s trostrukim propusnim pojasom), isti indeksni motor koristi M3C filtarske pojaseve:
 
@@ -118,7 +118,7 @@ Kada navedete samo ime kao što je `NDVI`, Chloros mora odlučiti koji kanal koj
 | RE | RE 0 |
 | NIR | NIR 0 |
 
-**Zadani filtar** preseta (stupac &quot;Default filter&quot; iznad) koristi se kada projekt sadrži slike s tim filtrom. Ako ih nema, Chloros skenira filtere koji su zapravo prisutni u projektu redoslijedom `RGN, OCN, NGB, RGB, RE, NIR` i odabire prvi koji može osigurati svaki kanal koji preset treba. Ako nijedan ne može, preset se zanemaruje za tu izvedbu. Zbog toga `NDVI` zahtijevan na skupu podataka koji sadrži samo OCN i dalje daje smislen rezultat — povezuje se s pozicijama Orange i NIR u OCN-u.
+**Zadani filtar** preseta (stupac "Default filter" iznad) koristi se kada projekt sadrži slike s tim filtrom. Ako ih nema, Chloros skenira filtere koji su zapravo prisutni u projektu redoslijedom `RGN, OCN, NGB, RGB, RE, NIR` i odabire prvi koji može osigurati svaki kanal koji preset treba. Ako nijedan ne može, preset se zanemaruje za tu izvedbu. Zbog toga `NDVI` zahtijevan na skupu podataka koji sadrži samo OCN i dalje daje smislen rezultat — povezuje se s pozicijama Orange i NIR u OCN-u.
 
 Nizovi modela LATTICE M3C nose filtar s prefiksom `F` (`LATT-M3C-L41-FRGN`), ali prefiks se uklanja kada se kod filtra pročita s slike, pa FRGN kamera rješava kroz redak `RGN` iznad i ne zahtijeva posebno rukovanje.
 
@@ -165,7 +165,7 @@ $$
 
 U popisu presjeta u GUI-ju i CLI/SDK, to je formula simbola `(z/y)*(x/y)` s x=Red, y=Green, z=NIR (pojasne kamere RGN); unaprijed postavljena vrijednost za LATTICE indeksni mehanizam je `nir * red / green**2`. Svaka površina izračunava isti indeks.
 
-_Reference: Vincini, M., E. Frazzi, and P. D&#x27;Alessio. &quot;A Broad-Band Leaf Chlorophyll Vegetation Index at the Canopy Scale.&quot; Precision Agriculture 9 (2008): 303-319._
+_Reference: Vincini, M., E. Frazzi, and P. D'Alessio. "A Broad-Band Leaf Chlorophyll Vegetation Index at the Canopy Scale." Precision Agriculture 9 (2008): 303-319._
 
 ***
 
@@ -191,7 +191,7 @@ $$
 
 Vrijednosti indeksa EVI trebale bi se kretati od 0 do 1 za piksele sa vegetacijom. Svijetle značajke poput oblaka i bijelih zgrada, zajedno sa tamnim značajkama poput vode, mogu rezultirati anomalijskim vrijednostima piksela na slici indeksa EVI. Prije izrade slike indeksa EVI, trebali biste maskirati oblake i svijetle značajke s refleksne slike i, po želji, primijeniti prag na vrijednosti piksela od 0 do 1.
 
-_Reference: Huete, A., et al. &quot;Overview of the Radiometric and Biophysical Performance of the MODIS Vegetation Indices.&quot; Remote Sensing of Environment 83 (2002):195–213._
+_Reference: Huete, A., et al. "Overview of the Radiometric and Biophysical Performance of the MODIS Vegetation Indices." Remote Sensing of Environment 83 (2002):195–213._
 
 ***
 
@@ -207,7 +207,7 @@ $$
 
 Šumski predjeli imat će niže vrijednosti indeksa FCI1 zbog niže reflektancije drveća i prisutnosti sjena unutar krošnje.
 
-_Reference: Becker, Sarah J., Craig S.T. Daughtry, and Andrew L. Russ. &quot;Robustni indeksi šumskog pokrova za multispektralne slike.&quot; Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505-512._
+_Reference: Becker, Sarah J., Craig S.T. Daughtry, and Andrew L. Russ. "Robustni indeksi šumskog pokrova za multispektralne slike." Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505-512._
 
 ***
 
@@ -223,7 +223,7 @@ $$
 
 Šumski predjeli imat će niže vrijednosti indeksa FCI2 zbog niže reflektivnosti drveća i prisutnosti sjena unutar krošnje.
 
-_Reference: Becker, Sarah J., Craig S.T. Daughtry, and Andrew L. Russ. &quot;Robustni indeksi šumskog pokrova za multispektralne slike.&quot; Photogrammetric Engineering &amp; Remote Sensing 84.8 (2018): 505-512._
+_Reference: Becker, Sarah J., Craig S.T. Daughtry, and Andrew L. Russ. "Robustni indeksi šumskog pokrova za multispektralne slike." Photogrammetric Engineering & Remote Sensing 84.8 (2018): 505-512._
 
 ***
 
@@ -259,7 +259,7 @@ $$
 
 Gammaska konstanta je funkcija ponderiranja koja ovisi o uvjetima aerosola u atmosferi. ENVI koristi vrijednost 1,7, što je preporučena vrijednost prema Gitelsonu, Kaufmannu i Merzylaku (1996., stranica 296).
 
-_Reference: Gitelson, A., Y. Kaufman, and M. Merzylak. &quot;Use of a Green Channel in Remote Sensing of Global Vegetation from EOS-MODIS.&quot; Remote Sensing of Environment 58 (1996): 289-298._
+_Reference: Gitelson, A., Y. Kaufman, and M. Merzylak. "Use of a Green Channel in Remote Sensing of Global Vegetation from EOS-MODIS." Remote Sensing of Environment 58 (1996): 289-298._
 
 ***
 
@@ -273,7 +273,7 @@ $$
 
 Upotreba širokog raspona valnih duljina u zelenom i NIRom području pruža bolje predviđanje sadržaja klorofila, istovremeno omogućujući veću osjetljivost i viši omjer signala i šuma.
 
-_Referenca: Gitelson, A., Y. Gritz, i M. Merzlyak. &quot;Odnos između sadržaja klorofila u listu i spektralne reflektancije te algoritmi za neuništavajuću procjenu klorofila u listovima viših biljaka.&quot; Journal of Plant Physiology 160 (2003): 271-282._
+_Referenca: Gitelson, A., Y. Gritz, i M. Merzlyak. "Odnos između sadržaja klorofila u listu i spektralne reflektancije te algoritmi za neuništavajuću procjenu klorofila u listovima viših biljaka." Journal of Plant Physiology 160 (2003): 271-282._
 
 ***
 
@@ -287,7 +287,7 @@ $$
 
 Vrijednosti indeksa zelene lisice (GLI) kreću se od -1 do +1. Negativne vrijednosti predstavljaju tlo i nežive značajke, dok pozitivne vrijednosti predstavljaju zelene listove i stabljike.
 
-_Reference: Louhaichi, M., M. Borman i D. Johnson. &quot;Spatially Located Platform and Aerial Photography for Documentation of Grazing Impacts on Wheat.&quot; Geocarto International 16, br. 1 (2001): 65-70._
+_Reference: Louhaichi, M., M. Borman i D. Johnson. "Spatially Located Platform and Aerial Photography for Documentation of Grazing Impacts on Wheat." Geocarto International 16, br. 1 (2001): 65-70._
 
 ***
 
@@ -299,7 +299,7 @@ $$
 GNDVI = {(NIR - Green) \over (NIR + Green)  }
 $$
 
-_Reference: Gitelson, A., i M. Merzlyak. &quot;Daljinsko snimanje koncentracije klorofila u lišću viših biljaka.&quot; Napredak u svemirskim istraživanjima 22 (1998): 689-692._
+_Reference: Gitelson, A., i M. Merzlyak. "Daljinsko snimanje koncentracije klorofila u lišću viših biljaka." Napredak u svemirskim istraživanjima 22 (1998): 689-692._
 
 ***
 
@@ -311,7 +311,7 @@ $$
 GOSAVI = {NIR - Green \over NIR + Green + 0.16)  }
 $$
 
-_Reference: Sripada, R., i dr. &quot;Određivanje potreba za dušikom tijekom sezone za kukuruz pomoću zračne fotografije u boji i infracrvenom spektru.&quot; Doktorska disertacija, Državno sveučilište Sjeverne Karoline, 2005._
+_Reference: Sripada, R., i dr. "Određivanje potreba za dušikom tijekom sezone za kukuruz pomoću zračne fotografije u boji i infracrvenom spektru." Doktorska disertacija, Državno sveučilište Sjeverne Karoline, 2005._
 
 ***
 
@@ -323,7 +323,7 @@ $$
 GRVI = {NIR \over Green }
 $$
 
-_Reference: Sripada, R., i dr. &quot;Zračna fotografija u boji i infracrvenom spektru za određivanje ranih potreba za dušikom u kukuruzu.&quot; Agronomy Journal 98 (2006): 968-977._
+_Reference: Sripada, R., i dr. "Zračna fotografija u boji i infracrvenom spektru za određivanje ranih potreba za dušikom u kukuruzu." Agronomy Journal 98 (2006): 968-977._
 
 ***
 
@@ -335,7 +335,7 @@ $$
 GSAVI = 1.5 * {(NIR - Green) \over (NIR + Green + 0.5)  }
 $$
 
-_Reference: Sripada, R., et al. &quot;Determining In-Season Nitrogen Requirements for Corn Using Aerial Color-Infrared Photography.&quot; Doktorska disertacija, Sveučilište Sjeverne Karoline, 2005._
+_Reference: Sripada, R., et al. "Determining In-Season Nitrogen Requirements for Corn Using Aerial Color-Infrared Photography." Doktorska disertacija, Sveučilište Sjeverne Karoline, 2005._
 
 ***
 
@@ -355,7 +355,7 @@ $$
 
 Visoke vrijednosti indeksa listne površine (LAI) obično se kreću od otprilike 0 do 3,5. Međutim, kada scena sadrži oblake i druge jarke značajke koje stvaraju zasićene piksele, vrijednosti indeksa listne površine (LAI) mogu premašiti 3,5. Idealno bi bilo maskirati oblake i jarke značajke iz vaše scene prije izrade slike indeksa listne površine (LAI).
 
-_Reference: Boegh, E., H. Soegaard, N. Broge, C. Hasager, N. Jensen, K. Schelde, i A. Thomsen. &quot;Zračni multispektralni podaci za kvantificiranje indeksa površine lista, koncentracije dušika i fotosintetske učinkovitosti u poljoprivredi.&quot; Remote Sensing of Environment 81, br. 2-3 (2002): 179-193._
+_Reference: Boegh, E., H. Soegaard, N. Broge, C. Hasager, N. Jensen, K. Schelde, i A. Thomsen. "Zračni multispektralni podaci za kvantificiranje indeksa površine lista, koncentracije dušika i fotosintetske učinkovitosti u poljoprivredi." Remote Sensing of Environment 81, br. 2-3 (2002): 179-193._
 
 ***
 
@@ -369,7 +369,7 @@ $$
 LCI = {NIR2 - RedEdge \over NIR2 + Red}
 $$
 
-_Reference: Datt, B. &quot;Remote Sensing of Water Content in Eucalyptus Leaves.&quot; Journal of Plant Physiology 154, br. 1 (1999): 30-36._
+_Reference: Datt, B. "Remote Sensing of Water Content in Eucalyptus Leaves." Journal of Plant Physiology 154, br. 1 (1999): 30-36._
 
 ***
 
@@ -381,7 +381,7 @@ $$
 MNLI = {(NIR^{2} - Red) * (1 + L) \over (NIR^{2} + Red + L)  }
 $$
 
-_Referenca: Yang, Z., P. Willis i R. Mueller. &quot;Utjecaj poboljšane AWIFS slike omjerom pojaseva na točnost klasifikacije usjeva.&quot; Zbornik radova sa simpozija Pecora 17 o daljinskom istraživanju (2008.), Denver, CO._
+_Referenca: Yang, Z., P. Willis i R. Mueller. "Utjecaj poboljšane AWIFS slike omjerom pojaseva na točnost klasifikacije usjeva." Zbornik radova sa simpozija Pecora 17 o daljinskom istraživanju (2008.), Denver, CO._
 
 ***
 
@@ -393,7 +393,7 @@ $$
 MSAVI2 = {2 * NIR + 1 - \sqrt{(2 * NIR + 1)^{2} - 8(NIR - Red)} \over 2}
 $$
 
-_Referenca: Qi, J., A. Chehbouni, A. Huete, Y. Kerr i S. Sorooshian. &quot;Modificirani indeks vegetacije prilagođen tlu.&quot; Remote Sensing of Environment 48 (1994): 119-126._
+_Referenca: Qi, J., A. Chehbouni, A. Huete, Y. Kerr i S. Sorooshian. "Modificirani indeks vegetacije prilagođen tlu." Remote Sensing of Environment 48 (1994): 119-126._
 
 ***
 
@@ -405,7 +405,7 @@ $$
 MSR = {(NIR / Red) - 1 \over \sqrt{NIR / Red} + 1}
 $$
 
-_Referenca: Chen, J. &quot;Evaluation of Vegetation Indices and a Modified Simple Ratio for Boreal Applications.&quot; Canadian Journal of Remote Sensing 22 (1996): 229-242._
+_Referenca: Chen, J. "Evaluation of Vegetation Indices and a Modified Simple Ratio for Boreal Applications." Canadian Journal of Remote Sensing 22 (1996): 229-242._
 
 ***
 
@@ -441,7 +441,7 @@ $$
 NLI = {NIR^{2} - Red \over NIR^{2} + Red  }
 $$
 
-_Reference: Goel, N., i W. Qin. &quot;Utjecaj arhitekture krošnje na odnose između različitih indeksa vegetacije i LAI-a i Fpar-a: računalna simulacija.&quot; Remote Sensing Reviews 10 (1994): 309-347._
+_Reference: Goel, N., i W. Qin. "Utjecaj arhitekture krošnje na odnose između različitih indeksa vegetacije i LAI-a i Fpar-a: računalna simulacija." Remote Sensing Reviews 10 (1994): 309-347._
 
 ***
 
@@ -453,7 +453,7 @@ $$
 OSAVI = {(NIR - Red) \over (NIR + Red + 0.16)  }
 $$
 
-_Reference: Rondeaux, G., M. Steven, and F. Baret. &quot;Optimization of Soil-Adjusted Vegetation Indices.&quot; Remote Sensing of Environment 55 (1996): 95-107._
+_Reference: Rondeaux, G., M. Steven, and F. Baret. "Optimization of Soil-Adjusted Vegetation Indices." Remote Sensing of Environment 55 (1996): 95-107._
 
 ***
 
@@ -465,7 +465,7 @@ $$
 RDVI = {(NIR- Red) \over \sqrt{(NIR + Red)}  }
 $$
 
-_Reference: Roujean, J., and F. Breon. &quot;Estimating PAR Absorbed by Vegetation from Bidirectional Reflectance Measurements.&quot; Remote Sensing of Environment 51 (1995): 375-384._
+_Reference: Roujean, J., and F. Breon. "Estimating PAR Absorbed by Vegetation from Bidirectional Reflectance Measurements." Remote Sensing of Environment 51 (1995): 375-384._
 
 ***
 
@@ -477,7 +477,7 @@ $$
 SAVI = {1.5 * (NIR- Red) \over (NIR + Red + 0.5)  }
 $$
 
-_Referenca: Huete, A. &quot;A Soil-Adjusted Vegetation Index (SAVI).&quot; Remote Sensing of Environment 25 (1988): 295-309._
+_Referenca: Huete, A. "A Soil-Adjusted Vegetation Index (SAVI)." Remote Sensing of Environment 25 (1988): 295-309._
 
 ***
 
@@ -489,7 +489,7 @@ $$
 TDVI = 1.5 * {(NIR- Red) \over \sqrt{NIR^{2} + Red + 0.5}  }
 $$
 
-_Reference: Bannari, A., H. Asalhi i P. Teillet. &quot;Indeks vegetacije transformirane razlike (TDVI) za kartiranje pokrivenosti vegetacijom&quot; U Zborniku radova simpozija o geoznanosti i daljinskom istraživanju, IGARSS &#x27;02, IEEE International, svezak 5 (2002)._
+_Reference: Bannari, A., H. Asalhi i P. Teillet. "Indeks vegetacije transformirane razlike (TDVI) za kartiranje pokrivenosti vegetacijom" U Zborniku radova simpozija o geoznanosti i daljinskom istraživanju, IGARSS '02, IEEE International, svezak 5 (2002)._
 
 ***
 
@@ -501,7 +501,7 @@ $$
 VARI = {Green - Red \over Green + Red - Blue  }
 $$
 
-_Reference: Gitelson, A., i dr. &quot;Vegetation and Soil Lines in Visible Spectral Space: A Concept and Technique for Remote Estimation of Vegetation Fraction. International Journal of Remote Sensing 23 (2002): 2537−2562._
+_Reference: Gitelson, A., i dr. "Vegetation and Soil Lines in Visible Spectral Space: A Concept and Technique for Remote Estimation of Vegetation Fraction. International Journal of Remote Sensing 23 (2002): 2537−2562._
 
 ***
 
@@ -517,6 +517,6 @@ Koeficijent ponderiranja (_a_) može varirati od 0,1 do 0,2. Vrijednost od 0,2 p
 
 _Reference_
 
-_Gitelson, A. &quot;Wide Dynamic Range Vegetation Index for Remote Quantification of Biophysical Characteristics of Vegetation.&quot; Journal of Plant Physiology 161, br. 2 (2004): 165-173._
+_Gitelson, A. "Wide Dynamic Range Vegetation Index for Remote Quantification of Biophysical Characteristics of Vegetation." Journal of Plant Physiology 161, br. 2 (2004): 165-173._
 
-_Henebry, G., A. Viña i A. Gitelson. &quot;Indeks vegetacije širokog dinamičkog raspona i njegova potencijalna primjena u analizi praznina.&quot; Gap Analysis Bulletin 12: 50-56._
+_Henebry, G., A. Viña i A. Gitelson. "Indeks vegetacije širokog dinamičkog raspona i njegova potencijalna primjena u analizi praznina." Gap Analysis Bulletin 12: 50-56._

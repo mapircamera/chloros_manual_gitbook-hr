@@ -159,7 +159,7 @@ Ako Chloros ne detektira vaše ciljeve ispravno, prilagodite ove postavke u [Pos
 **Mogući uzroci:**
 
 * Ciljne slike nisu označene u pregledniku datoteka
-* Cilj je premalen u kadru (&lt; 30 % slike)
+* Cilj je premalen u kadru (< 30 % slike)
 * Loše osvjetljenje (sjene, odbljesak)
 * Postavke za otkrivanje ciljeva su previše stroge
 
@@ -216,8 +216,8 @@ Ako je DAQ senzor svjetla snimao zračenje prema dolje tijekom vaših LATTICE sn
 
 Također možete obraditi bez referentnih ploča i bez DAQ-a:
 
-1. Ostavite sve potvrdne okvire u stupcu &quot;Target&quot; neoznačene
-2. **Onemogućite** &quot;Kalibraciju reflektancije / balans bijele&quot; u Postavkama projekta — detekcija cilja tada se u potpunosti preskače
+1. Ostavite sve potvrdne okvire u stupcu "Target" neoznačene
+2. **Onemogućite** "Kalibraciju reflektancije / balans bijele" u Postavkama projekta — detekcija cilja tada se u potpunosti preskače
 3. Korekcija vinjetiranja i dalje će se primijeniti
 4. Izlazni proizvod neće biti kalibriran za apsolutnu reflektanciju (LATTICE multispectral i dalje izvozi debayered, pretpregledne i radijancijske proizvode)
 

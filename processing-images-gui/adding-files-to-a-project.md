@@ -26,18 +26,18 @@ Postoje dva glavna načina za dodavanje slika u vaš projekt:
 
 Koristite ovu opciju za uvoz pojedinačnih datoteka sa slikama ili malog izbora datoteka.
 
-1. Kliknite gumb **&quot;Dodaj datoteke&quot;** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> na vrhu panela Preglednika datoteka
+1. Kliknite gumb **"Dodaj datoteke"** <img src="../.gitbook/assets/image (3).png" alt="" data-size="line"> na vrhu panela Preglednika datoteka
 2. Idite do mape koja sadrži vaše slike
 3. Odaberite jednu ili više slika (držite **Ctrl** za odabir više datoteka)
-4. Kliknite **&quot;Otvori&quot;** za uvoz odabranih datoteka
+4. Kliknite **"Otvori"** za uvoz odabranih datoteka
 
 ### Metoda 2: Dodaj mapu
 
 Koristite ovu opciju za uvoz svih slika iz mape odjednom. U jednom dijaloškom okviru možete odabrati **više mapa**.
 
-1. Kliknite gumb **&quot;Dodaj mapu&quot;** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> na vrhu panela Preglednika datoteka
+1. Kliknite gumb **"Dodaj mapu"** <img src="../.gitbook/assets/image (1) (1).png" alt="" data-size="line"> na vrhu panela Preglednika datoteka
 2. Pronađite i odaberite mapu (ili mape) koja(e) sadrže slike s vaše sesije snimanja
-3. Kliknite **&quot;Odaberi mapu&quot;** za uvoz svih podržanih slika
+3. Kliknite **"Odaberi mapu"** za uvoz svih podržanih slika
 
 {% hint style="info" %}
 **Prijavljuju se datoteke koje se ne mogu učitati.** Ako mapa sadrži datoteke koje Chloros prepoznaje, ali ih ne može učitati, pojavit će se upozorenje — slike se ne gube tiho s mreže.
@@ -60,7 +60,7 @@ output/
 **Dodaj mapu na korijensku mapu snimki** (`output/` gore). Kada odabrana mapa sama po sebi ne sadrži slike, već ima podmapu, Chloros automatski ulazi u njih — svi nivoi podmapa i korijenska mapa `.daq` preuzimaju se odjednom.**Kako se uvoze snimke:*** Svaka se snimka uvozi kao **jedna slika**, grupirana po snimci (a ne kao jedna stavka po razini). Ostale razine iste snimke pojavljuju se kao načini prikaza te jedne slike.
 * **Obrada uvijek započinje s sirovim kadrom.** Ostale razine su vidljive, ali samo `raw` ikada prolazi kroz pipeline — ponovna obrada već obrađenog proizvoda dovela bi do dvostrukog primjenjivanja korekcija, stoga Chloros to odbacuje. Ponovno uvezeni izvoz nikada ne može zauzeti raw slot snimke.
 * Mapu snimke spremljenu **bez** raw uvoza može se normalno prikazati, ali obrada je preskače i o tome obavještava u zapisniku. (CLI-označitelj `--input-level` može prisiliti ulaznu točku za ovaj slučaj — pogledajte [CLI Referencu](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
-* Od verzije 1.3.0, mapa snimki također može sadržavati mapu `clamp_masks/` (maske po pikselu za razine zračenja i odbijanja — pogledajte [Formate izlaznih slika](../output-image-formats.md#clamp-masks)). Maske nisu slike scene i **Chloros** ih preskače pri uvozu gdje god se nalazile.**Sesije LATTICE huba** uvoze se na isti način: kliknite &quot;Dodaj mapu&quot; na mapu sesije kopiranu iz huba (sadrži `raw/` i `previews/`), zajedno sa svim DAQ-M `.csv` zapisima o padanju. Ako kalibracija kamere ili DAQ-a još nije pohranjena u predmemoriju na vašem računalu, Chloros je automatski preuzima prema serijskom broju prilikom uvoza (jednom je potreban internet).***
+* Od verzije 1.3.0, mapa snimki također može sadržavati mapu `clamp_masks/` (maske po pikselu za razine zračenja i odbijanja — pogledajte [Formate izlaznih slika](../output-image-formats.md#clamp-masks)). Maske nisu slike scene i **Chloros** ih preskače pri uvozu gdje god se nalazile.**Sesije LATTICE huba** uvoze se na isti način: kliknite "Dodaj mapu" na mapu sesije kopiranu iz huba (sadrži `raw/` i `previews/`), zajedno sa svim DAQ-M `.csv` zapisima o padanju. Ako kalibracija kamere ili DAQ-a još nije pohranjena u predmemoriju na vašem računalu, Chloros je automatski preuzima prema serijskom broju prilikom uvoza (jednom je potreban internet).***
 
 ## Razumijevanje tablice preglednika datoteka
 
@@ -111,7 +111,7 @@ Klikom na gumb za prebacivanje u gornjem desnom kutu iznad tablice prikazuju se 
 Da biste uklonili neželjene slike iz projekta:
 
 1. Odaberite jednu ili više slika u tablici preglednika datoteka
-2. Kliknite gumb **&quot;Ukloni odabrano&quot;** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
+2. Kliknite gumb **"Ukloni odabrano"** <img src="../.gitbook/assets/image (2) (1).png" alt="" data-size="line">
 3. Potvrdite uklanjanje (datoteke se ne brišu s diska, već se samo uklanjaju iz projekta)
 
 ### Sortiranje i filtriranje

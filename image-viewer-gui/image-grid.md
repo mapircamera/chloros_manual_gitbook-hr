@@ -24,9 +24,7 @@ Kada je prozor preuski za sve, grupe se sklapaju s desna ulijevo u padajuće izb
 
 ## Gumbi za prikaz izvoza
 
-Ovi gumbi prebacuju sličice u mreži između vrsta slika. **Gumb se pojavljuje čim proizvod kojem je ime postoji** — što za izvornu datoteku znači odmah pri uvozu, a ne nakon obrade.Chloros
-
-ponovno skenira proizvode projekta dok je izvršavanje u tijeku, pa se gumbi pojavljuju tijekom obrade kako svaki proizvod počinje biti spremljen na disk.
+Ovi gumbi prebacuju sličice u mreži između vrsta slika. **Gumb se pojavljuje čim proizvod kojem je ime postoji** — što za izvornu datoteku znači odmah pri uvozu, a ne nakon obrade.Chloros ponovno skenira proizvode projekta dok je izvršavanje u tijeku, pa se gumbi pojavljuju tijekom obrade kako svaki proizvod počinje biti spremljen na disk.
 
 ### Osnovno gumb
 
@@ -34,9 +32,7 @@ Najljevije gumb za izvoz označen je za **ono što ste zapravo uvezli**:
 
 | Ono što ste uvezli | Označje gumba |
 | --- | --- |
-|Survey3
-
-RAW+JPG | `JPG` |
+|Survey3 RAW+JPG | `JPG` |
 | LATTICE snima s pregledom na zaslonu uz raw kadar | `PNG` ili `TIFF`, ovisno o pregledima |
 | LATTICE snimke gdje je osnovna datoteka **sami** raw kadar | *nema gumba* — `RAW (Original)` već prikazuje tu datoteku |
 
@@ -50,9 +46,7 @@ U mješovitom projektu oznaka slijedi ekstenziju koju koristi većina slika.
 | **Reflektancija** | Kalibrirane slike reflektancije | Samo za projekte s kameramaSurvey3
 
 — projekti LATTICE umjesto toga koriste `RAW (Reflectance)`, stoga se mreža nikada ne prikazuje s dva gumba za reflektanciju |
-| **Balančirano po bijeloj** | Proizvod balansiran po bijeloj (kamereRGB
-
-) | Nakon obrade |
+| **Balančirano po bijeloj** | Proizvod balansiran po bijeloj (kamereRGB) | Nakon obrade |
 | **Korekcija vinjete** | Zadana opcija za nekorigiranu vinjetu | Nakon obrade kada se kalibracija reflektancije nije mogla primijeniti i *Korekcija vinjete* je bila uključena |
 | **Odziv senzora** | Neokalibrirana nadomjesna vrijednost za odziv senzora | Isto, ali s isključenom *Korekcijom vinjete* |
 | **`RAW (<INDEX> Index)`** | Jedno dugme po mapiranom indeksu boja | Nakon izvođenja s konfiguriranim indeksima |

@@ -86,7 +86,7 @@ Svaka slika s GPS podacima dobiva označivač na svojim koordinatama.
 
 Odaberite vrstu sloja karte pomoću gumba (s lijeva na desno):
 
-![](&lt;../.gitbook/assets/image (14).png&gt;)
+![](<../.gitbook/assets/image (14).png>)
 
 | Vrsta                 | Prikazuje                                                                |
 | -------------------- | -------------------------------------------------------------------- |

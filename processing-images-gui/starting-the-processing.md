@@ -7,7 +7,7 @@ Nakon što ste uvezli svoje slike, označili kalibracijske ciljeve i konfigurira
 Prije nego što kliknete gumb Pokreni, provjerite je li sve spremno:
 
 * [ ] **Datoteke uvezene** - Sve slike se prikazuju u pregledniku datoteka
-* [ ] **Slike ciljeva označene** - Provjerena kolona &quot;Target&quot; za slike za kalibraciju (ili uvezena snimka `.daq` za LATTICE)
+* [ ] **Slike ciljeva označene** - Provjerena kolona "Target" za slike za kalibraciju (ili uvezena snimka `.daq` za LATTICE)
 * [ ] **Modeli kamera otkriveni** - stupac Modela kamere prikazuje ispravne kamere
 * [ ] **Postavke konfigurirane** - Postavke projekta pregledane i prilagođene
 * [ ] **Indeksi odabrani** - Poželjni multispektralni indeksi dodani (ako je potrebno)
@@ -63,7 +63,7 @@ Chloros radi u dva različita načina obrade ovisno o vašoj licenci:
 2. **Obrada** - Primjena kalibracije i izvoz slika**Vrijeme obrade:**
 
 * Značajno sporije od paralelnog načina rada Chloros+
-* Pogodno za male do srednje velike skupove podataka (&lt; 200 slika)
+* Pogodno za male do srednje velike skupove podataka (< 200 slika)
 
 ### Način rada Chloros+ (paralelna obrada)
 
@@ -203,7 +203,7 @@ Ako trebate zaustaviti obradu:
 ### Kako zaustaviti
 
 1. Pronađite **gumb Zaustavi** (zamjenjuje gumb Pokreni tijekom obrade)
-2. Kliknite ga jednom — traka prikazuje **&quot;Zaustavljanje...&quot;** dok se trenutna slika dovršava
+2. Kliknite ga jednom — traka prikazuje **"Zaustavljanje..."** dok se trenutna slika dovršava
 3. Pokretanje završava u konačnom zaustavljenom stanju i zapisnik ispisuje izvješće `[RUN-SUMMARY]` o onome što je dovršeno
 
 ### Kada zaustaviti
@@ -306,9 +306,9 @@ Pogledajte [referencu za CLI](../reference/cli-reference.md#a-run-that-writes-no
 **Rješenja:**
 
 1. Pohranite projekte u kraći direktorij — promijenite**Radni direktorij** u [Postavke projekta](../project-settings/project-settings.md) i ponovno kreirajte projekt, ili
-2. Uključite dugine staze sustava Windows i ponovno pokrenite Chloros: ponovno pokrenite instalacijski program programa Chloros s potvrđenom opcijom **Omogući dugine staze sustava Windows** (što je potvrđeno prema zadanim postavkama) ili upotrijebite grupnu politiku: *Konfiguracija računala &gt; Upravljački predlošci &gt; Sustav &gt; Datotečni sustav &gt; Omogući dugine Win32 staze*.
+2. Uključite dugine staze sustava Windows i ponovno pokrenite Chloros: ponovno pokrenite instalacijski program programa Chloros s potvrđenom opcijom **Omogući dugine staze sustava Windows** (što je potvrđeno prema zadanim postavkama) ili upotrijebite grupnu politiku: *Konfiguracija računala > Upravljački predlošci > Sustav > Datotečni sustav > Omogući dugine Win32 staze*.
 
-### Upozorenje &quot;Nije otkriveno ciljeva&quot;
+### Upozorenje "Nije otkriveno ciljeva"
 
 **Mogući uzroci:**
 

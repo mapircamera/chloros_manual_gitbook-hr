@@ -14,7 +14,7 @@ Od lijeva prema desno, gornji naslov sadrži:
 
 * **Novi projekt**— stvoriti novi projekt. Ako imate spremljene predloške projekata, pojavit će se padajući izbornik**Odabir predloška** kako bi novi projekt započeo s postavkama predloška.
 * **Otvori projekt**— otvoriti postojeći projekt. Popis uključuje gumb**Otvori mapu projekta** koji otvara mapu projekta u vašem pregledniku datoteka.
-* **Dupiliraj projekt** — kopirajte trenutno otvoreni projekt pod novim imenom (predlaže se slobodno ime poput &quot;MyProject (2)&quot;) i otvorite kopiju. _(vidljivo nakon otvaranja projekta)_
+* **Dupiliraj projekt** — kopirajte trenutno otvoreni projekt pod novim imenom (predlaže se slobodno ime poput "MyProject (2)") i otvorite kopiju. _(vidljivo nakon otvaranja projekta)_
 * **Dodaj datoteke** — dodaj pojedinačne datoteke slika u trenutni projekt _(vidljivo nakon otvaranja projekta)_
 * **Dodaj mapu** — dodaj jednu ili više mapa sa slikama u trenutni projekt _(vidljivo nakon otvaranja projekta)_
 * **Pokreni obradu / Zaustavi obradu** — pokrenite ili zaustavite proces obrade slika _(omogućeno nakon dodavanja datoteka)_
@@ -22,21 +22,7 @@ Od lijeva prema desno, gornji naslov sadrži:
 * **Poveži se na senzor svjetla** — prelazi na [karticu Senzori svjetla](daq/) za povezivanje DAQ senzora svjetla. Radi bez otvorenog projekta.
 
 {% hint style="info" %}
-**Samo za Windows
-
-:** Desktop GUI aplikacije Chloros
-
-dostupan je na Windows
-
-. Korisnici Linux
-
-trebali bi pogledati dokumentaciju za [CLI
-
-](CLI.md) i [Python
-
-SDK
-
-SDK](api-python-sdk.md) za obradu bez grafičkog sučelja.
+**Samo za Windows:** Desktop GUI aplikacije Chloros dostupan je na Windows. Korisnici Linux trebali bi pogledati dokumentaciju za [CLI](CLI.md) i [Python SDK SDK](api-python-sdk.md) za obradu bez grafičkog sučelja.
 {% endhint %}
 
 ### Gumb za reprodukciju/pokretanje <img src=".gitbook/assets/image (2) (1) (1).png" alt="" data-size="line">
@@ -49,15 +35,9 @@ Kada je omogućen, gumb za pokretanje obrade pokreće cjevovod za obradu slike.
 
 
 
-U besplatnom načinu rada Chloros
+U besplatnom načinu rada Chloros, koji obrađuje sve datoteke sekvencijalno, traka napretka prikazat će 2 faze: Otkrivanje cilja i Obrada.
 
-, koji obrađuje sve datoteke sekvencijalno, traka napretka prikazat će 2 faze: Otkrivanje cilja i Obrada.
-
-U plaćenom licenciranom načinu rada Chloros
-
-+, koji obrađuje sve datoteke istovremeno, traka napretka prikazuje 4 faze: Otkrivanje, Analiziranje, Kalibriranje, Izvoz. Ako pređete mišem preko trake napretka programa Chloros
-
-+, prikazat će se prošireni panel s 4 trake napretka kako biste mogli pratiti napredak. Klikom na gornju traku napretka zamrznut će se padajući panel, a ponovnim klikom se odmrzava.
+U plaćenom licenciranom načinu rada Chloros+, koji obrađuje sve datoteke istovremeno, traka napretka prikazuje 4 faze: Otkrivanje, Analiziranje, Kalibriranje, Izvoz. Ako pređete mišem preko trake napretka programa Chloros+, prikazat će se prošireni panel s 4 trake napretka kako biste mogli pratiti napredak. Klikom na gornju traku napretka zamrznut će se padajući panel, a ponovnim klikom se odmrzava.
 
 <figure><img src=".gitbook/assets/plus_prog.JPG" alt=""><figcaption></figcaption></figure>
 
@@ -83,7 +63,7 @@ Pregledajte svoje slike na interaktivnoj 2D karti prema njihovim GPS koordinatam
 
 #### <img src=".gitbook/assets/image (17).png" alt="" data-size="line"> [Kamere](lattice/)
 
-Povežite se i upravljajte LATTICE kamerama uživo — jednu po jednu ili kao sinkronizirane skupine više kamera. Ova kartica prikazuje pločice s pregledom uživo s nadsvjetlima i histogramima, postavke za svaku kameru i za svaki niz te postavke snimanja kojima se odabire koje kamere i koje vrste izvoza proizvodi naredba &quot;Capture All&quot;. Dostupno kada je pozadinski sustav spreman; pogledajte [odjeljak LATTICE](lattice/) za potpuni vodič.
+Povežite se i upravljajte LATTICE kamerama uživo — jednu po jednu ili kao sinkronizirane skupine više kamera. Ova kartica prikazuje pločice s pregledom uživo s nadsvjetlima i histogramima, postavke za svaku kameru i za svaki niz te postavke snimanja kojima se odabire koje kamere i koje vrste izvoza proizvodi naredba "Capture All". Dostupno kada je pozadinski sustav spreman; pogledajte [odjeljak LATTICE](lattice/) za potpuni vodič.
 
 #### <img src=".gitbook/assets/image (23).png" alt="" data-size="line"> [Senzori svjetla](daq/)
 

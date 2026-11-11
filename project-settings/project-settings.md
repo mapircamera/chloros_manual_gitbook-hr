@@ -2,9 +2,7 @@
 
 Bočna traka Postavke projekta <img src="../.gitbook/assets/icon_project-settings.JPG" alt="" data-size="line">
 
-u programu Chloros
-
-omogućuje vam konfiguriranje svih aspekata obrade slika, detekcije kalibracijskih ciljeva, izračuna višespektralnih indeksa i opcija izvoza za vaš projekt. Ove se postavke spremaju s vašim projektom i mogu se spremiti kao predlošci za ponovnu upotrebu u više projekata.
+u programu Chloros omogućuje vam konfiguriranje svih aspekata obrade slika, detekcije kalibracijskih ciljeva, izračuna višespektralnih indeksa i opcija izvoza za vaš projekt. Ove se postavke spremaju s vašim projektom i mogu se spremiti kao predlošci za ponovnu upotrebu u više projekata.
 
 ## Pristup postavkama projekta
 
@@ -40,9 +38,7 @@ u lijevoj bočnoj traci
 
 ## Detekcija ciljeva
 
-Ove postavke kontroliraju kako Chloros
-
-detektira i obrađuje ciljeve kalibracije na vašim slikama. Oba su aktivna samo dok je omogućen **Kalibracija reflektancije / balans bijele boje** (u suprotnom su zasivljena, jer se detekcija ciljeva u potpunosti preskače).
+Ove postavke kontroliraju kako Chloros detektira i obrađuje ciljeve kalibracije na vašim slikama. Oba su aktivna samo dok je omogućen **Kalibracija reflektancije / balans bijele boje** (u suprotnom su zasivljena, jer se detekcija ciljeva u potpunosti preskače).
 
 ### Minimalna površina uzorka kalibracije (px)
 
@@ -68,9 +64,7 @@ detektira i obrađuje ciljeve kalibracije na vašim slikama. Oba su aktivna samo
 
 ## Obrada
 
-Ove postavke kontroliraju kako Chloros
-
-obrađuje i kalibrira vaše slike.
+Ove postavke kontroliraju kako Chloros obrađuje i kalibrira vaše slike.
 
 ### Korekcija vinjetiranja
 
@@ -84,9 +78,7 @@ obrađuje i kalibrira vaše slike.
 * **Vrsta**: Polje za potvrdu
 * **Zadano**: Omogućeno (označeno)
 * **Opis**: Omogućuje kalibraciju reflektancije — na temelju otkrivenih ciljeva za kalibraciju unutar kadra i/ili podataka o dolaznom svjetlu s DAQ senzora svjetlosti, ovisno o kameri i dostupnim podacima. Time se normaliziraju vrijednosti reflektancije u vašem skupu podataka i osiguravaju dosljedna mjerenja bez obzira na uvjete osvjetljenja.
-* **Kada je onemogućeno**: Detekcija ciljeva se u potpunosti preskače i**nijedna kamera ne može proizvesti nikakav proizvod reflektancije** — ni onaj vođen ciljevima kamere *Survey3
-
-*, ni onaj vođen DAQ-om *LATTICE*. Ovisne postavke (*Izvoz reflektancije*, *Minimalni interval ponovne kalibracije* i pragovi detekcije ciljeva) su zasivljene.
+* **Kada je onemogućeno**: Detekcija ciljeva se u potpunosti preskače i**nijedna kamera ne može proizvesti nikakav proizvod reflektancije** — ni onaj vođen ciljevima kamere *Survey3 *, ni onaj vođen DAQ-om *LATTICE*. Ovisne postavke (*Izvoz reflektancije*, *Minimalni interval ponovne kalibracije* i pragovi detekcije ciljeva) su zasivljene.
 
 ### Rezervne kalibrirane slike: Izvoz reakcije senzora / Izvoz s korekcijom vignetiranja
 
@@ -103,45 +95,25 @@ Za projekte koji sadrže LATTICE snimke, svaki uvezeni LATTICE kadar raspoređuj
 
 | Postavka | Izlazna mapa | Što se izvozi |
 | --- | --- | --- |
-| **Izvoz debayered** | `Debayered_Images/` | Linearna debayered slika: uklonjen je tamni offset kalibracijskog paketa, zatim slijedi demosaiciranje osjetljivo na rubove, bez korekcije linearnosti, flat filed ili unmixa — ista datoteka koju snimka sprema na svojoj razini nakon debayeringa. Održava se u nativnoj orijentaciji senzora (zabilježeno u XMP-u). Primjenjivo na RGB
-
-i multispektralne kamere. |
-| **Izvoz pregleda** | `Preview_Images/` | Pregled za prikaz. RGB
-
-= balans bijele (DAQ-illuminant kada je dostupan, inače svijetlo sivo) + gamma; multispektralno = rastezanje lažnih boja. |
-| **Izvoz radijance** | `Radiance_Images/` | Spektralna radijanca u formatu Float32 u W/m²/sr/nm. Samo za multispektralne (M3C/M3M) – ne primjenjivo na RGB
-
-glavne datoteke. Uvijek se zapisuje kao 32-bitni *TIFF
-
-* bez obzira na postavku *Kalibrirani format slike*. |
+| **Izvoz debayered** | `Debayered_Images/` | Linearna debayered slika: uklonjen je tamni offset kalibracijskog paketa, zatim slijedi demosaiciranje osjetljivo na rubove, bez korekcije linearnosti, flat filed ili unmixa — ista datoteka koju snimka sprema na svojoj razini nakon debayeringa. Održava se u nativnoj orijentaciji senzora (zabilježeno u XMP-u). Primjenjivo na RGB i multispektralne kamere. |
+| **Izvoz pregleda** | `Preview_Images/` | Pregled za prikaz. RGB = balans bijele (DAQ-illuminant kada je dostupan, inače svijetlo sivo) + gamma; multispektralno = rastezanje lažnih boja. |
+| **Izvoz radijance** | `Radiance_Images/` | Spektralna radijanca u formatu Float32 u W/m²/sr/nm. Samo za multispektralne (M3C/M3M) – ne primjenjivo na RGB glavne datoteke. Uvijek se zapisuje kao 32-bitni *TIFF* bez obzira na postavku *Kalibrirani format slike*. |
 | **Izvoz reflektancije**| `Reflectance_Calibrated_Images/` | Uint16 reflektancija, skalirana tako da**32768 = reflektancija 1,0** (označeno kao XMP `Chloros:PixelScale`). Samo za multispektralne snimke, bilježi se kada odgovarajući zapis `.daq` o dolaznom zračenju (ili cilj u kadru koji je prošao QA provjeru) pokriva kadar. |
 
-* Glavne kamere RGB
-
-emitiraju debayered + pretpregled; radijansa/reflektancije za njih se preskače jer se ne primjenjuju.
+* Glavne kamere RGB emitiraju debayered + pretpregled; radijansa/reflektancije za njih se preskače jer se ne primjenjuju.
 * Bitna dubina debayered/pretpregleda slijedi postavku *Kalibrirani format slike*; radijans je uvijek float32.
-* Obrada Survey3
-
-nije pogođena ovim četirima prekidačima.
+* Obrada Survey3 nije pogođena ovim četirima prekidačima.
 * Proizvodi radijance i refleksance multispektralnih M3C kamera također mogu pisati po pikselu **maske ograničenja** u mapu `clamp_masks/` pokraj mapa proizvoda, bilježeći gdje je dekonvolucija pojasa isječena na nulu iz negativne vrijednosti. Vidi [Formati izlaznih slika](../output-image-formats.md#clamp-masks).
 
-Ista četiri prekidača postoje i u načinu bez grafičkog sučelja kao `chloros-cli process --debayered / --preview / --radiance / --reflectance`. Zamijenili su stari CLI
-
-prekidač `--radiometric-output`, koji više ne postoji.
+Ista četiri prekidača postoje i u načinu bez grafičkog sučelja kao `chloros-cli process --debayered / --preview / --radiance / --reflectance`. Zamijenili su stari CLI prekidač `--radiometric-output`, koji više ne postoji.
 
 {% hint style="warning" %}
-**Isključivanje svih primjenjivih proizvoda uzrokuje neuspjeh izvršavanja.** Od verzije 1.2.0, izvršavanje obrade koje je zatražilo proizvode, ali nije napisalo nijedan izvještaj o slici, prijavljuje neuspjeh i CLI
-
-izlazi s ne-nuljevnom vrijednošću, umjesto da prijavi tihi uspjeh. U zapisniku se navodi proizvod koji nije mogao biti napisan i razlog. Namjerno izvršavanje samo metapodataka (ništa nije zatraženo) i dalje je uspjeh.
+**Isključivanje svih primjenjivih proizvoda uzrokuje neuspjeh izvršavanja.** Od verzije 1.2.0, izvršavanje obrade koje je zatražilo proizvode, ali nije napisalo nijedan izvještaj o slici, prijavljuje neuspjeh i CLI izlazi s ne-nuljevnom vrijednošću, umjesto da prijavi tihi uspjeh. U zapisniku se navodi proizvod koji nije mogao biti napisan i razlog. Namjerno izvršavanje samo metapodataka (ništa nije zatraženo) i dalje je uspjeh.
 {% endhint %}
 
-### Izvor refleksije (postavka projekta, postavlja se putem CLI
+### Izvor refleksije (postavka projekta, postavlja se putem CLI)
 
-)
-
-Projekt također pohranjuje koju **referencu refleksije** koristi LATTICE proizvod za refleksiju. U upravljačkoj ploči nema namjenskog upravljačkog elementa; vrijednost se pohranjuje u konfiguraciji projekta kao `Processing → "Target reflectance source"` i postavlja se pomoću `chloros-cli process --reflectance-source {auto,target,daq}` (SDK
-
-ov `configure()` nema ključnu riječ za to):
+Projekt također pohranjuje koju **referencu refleksije** koristi LATTICE proizvod za refleksiju. U upravljačkoj ploči nema namjenskog upravljačkog elementa; vrijednost se pohranjuje u konfiguraciji projekta kao `Processing → "Target reflectance source"` i postavlja se pomoću `chloros-cli process --reflectance-source {auto,target,daq}` (SDKov `configure()` nema ključnu riječ za to):
 
 * **`auto`** (zadano): kalibracijska meta unutar kadra koja prolazi QA postaje apsolutna referenca, a kao rezerva se koristi DAQ downwelling divide (ρ = πL/E) kada meta nije prisutna ili QA ne uspije. Cilj koji prođe QA s oznakom (ispušten panel ili traka izvan redoslijeda) ne dobiva automatski prednost: lanci cilj, cilj+DAQ i samo DAQ isprobavaju se prema redoslijedu njihovih izmjerenih rezultata na sačuvanim panelima.
 * **`target`**: stroga reflektancija vođena ciljem — bez DAQ zamjene.
@@ -154,30 +126,18 @@ Pohranjena vrijednost podudara se bez obzira na velika i mala slova, a nekoliko 
 * **Vrsta**: Izborni padajući popis
 * **Opcije**:
   * Standardno (Brzo, srednja kvaliteta)
-  * S obzirom na teksturu (Sporo, najviša kvaliteta) \[Chloros
-
-+]
+  * S obzirom na teksturu (Sporo, najviša kvaliteta) \[Chloros+]
 * **Zadano**: Standardno (Brzo, srednja kvaliteta)
-* **Opis**: Odabire se demosaicing algoritam koji se koristi za pretvorbu sirovih podataka senzora s Bayerovim uzorkom u slike u punoj boji. Metoda &quot;Standard (brzo, srednja kvaliteta)&quot; pruža optimalan omjer između brzine obrade i kvalitete slike. Metoda &quot;Texture Aware (sporo, najviša kvaliteta)&quot; [Chloros
-
-+] koristi visokokvalitetni debayer koji je osjetljiv na rubove, u kombinaciji s modelom za uklanjanje šuma temeljenim na umjetnoj inteligenciji/strojnom učenju (AI/ML), koji uklanja gotovo sav šum nastali debayerizacijom. Model Texture Aware zahtijeva GPU memoriju (VRAM) za rad. Preporučujemo ga koristiti kada imate više od 4 GB VRAM-a na raspolaganju za bržu obradu.
-* **Kada je redak uopće padajući izbornik**: padajući izbornik s dvije opcije pojavljuje se samo kada**oba** su istinita — prijavljeni ste s kvalificiranom pretplatom na Chloros
-
-+, **i** projekt ne sadrži snimke LATTICE. U suprotnom, redak se prikazuje kao običan tekst s natpisom `Standard (Fast, Medium Quality)` bez ikakve opcije za odabir.
-* **Napomena za LATTICE**: Ne postoji model osjetljiv na teksture (Texture Aware) obučen za LATTICE, a pipeline nameće standardno demosaiciranje za LATTICE sličice bez obzira na pohranjenu vrijednost. Ako dodate LATTICE mapu u projekt u kojem je već bio odabran Texture Aware, Chloros
-
-vraća postavku na Standard umjesto da zadrži zastarjelu vrijednost u `project.json`.
+* **Opis**: Odabire se demosaicing algoritam koji se koristi za pretvorbu sirovih podataka senzora s Bayerovim uzorkom u slike u punoj boji. Metoda "Standard (brzo, srednja kvaliteta)" pruža optimalan omjer između brzine obrade i kvalitete slike. Metoda "Texture Aware (sporo, najviša kvaliteta)" [Chloros+] koristi visokokvalitetni debayer koji je osjetljiv na rubove, u kombinaciji s modelom za uklanjanje šuma temeljenim na umjetnoj inteligenciji/strojnom učenju (AI/ML), koji uklanja gotovo sav šum nastali debayerizacijom. Model Texture Aware zahtijeva GPU memoriju (VRAM) za rad. Preporučujemo ga koristiti kada imate više od 4 GB VRAM-a na raspolaganju za bržu obradu.
+* **Kada je redak uopće padajući izbornik**: padajući izbornik s dvije opcije pojavljuje se samo kada**oba** su istinita — prijavljeni ste s kvalificiranom pretplatom na Chloros+, **i** projekt ne sadrži snimke LATTICE. U suprotnom, redak se prikazuje kao običan tekst s natpisom `Standard (Fast, Medium Quality)` bez ikakve opcije za odabir.
+* **Napomena za LATTICE**: Ne postoji model osjetljiv na teksture (Texture Aware) obučen za LATTICE, a pipeline nameće standardno demosaiciranje za LATTICE sličice bez obzira na pohranjenu vrijednost. Ako dodate LATTICE mapu u projekt u kojem je već bio odabran Texture Aware, Chloros vraća postavku na Standard umjesto da zadrži zastarjelu vrijednost u `project.json`.
 
 ### Minimalni interval ponovne kalibracije
 
 * **Vrsta**: Broj
 * **Raspon**: od 0 do 3.600 sekundi
 * **Zadano**: 0 sekundi
-* **Opis**: Postavlja minimalni vremenski interval (u sekundama) između korištenja ciljeva kalibracije. Kada je postavljeno na 0, Chloros
-
-će koristiti svaki otkriveni cilj kalibracije. Kada je postavljeno na višu vrijednost, Chloros
-
-će koristiti samo ciljeve kalibracije koji su odvojeni najmanje tim brojem sekundi, čime se smanjuje vrijeme obrade za skupove podataka s čestim snimkama ciljeva kalibracije.
+* **Opis**: Postavlja minimalni vremenski interval (u sekundama) između korištenja ciljeva kalibracije. Kada je postavljeno na 0, Chloros će koristiti svaki otkriveni cilj kalibracije. Kada je postavljeno na višu vrijednost, Chloros će koristiti samo ciljeve kalibracije koji su odvojeni najmanje tim brojem sekundi, čime se smanjuje vrijeme obrade za skupove podataka s čestim snimkama ciljeva kalibracije.
 * **Kada prilagoditi**:
   * Postavite na 0 za maksimalnu točnost kalibracije kada se uvjeti osvjetljenja mijenjaju
   * Povećajte (npr. na 60-300 sekundi) za bržu obradu kada je osvjetljenje konstantno i imate česte slike ciljeva kalibracije
@@ -193,21 +153,17 @@ vraća postavku na Standard umjesto da zadrži zastarjelu vrijednost u `project.
 
 * **Tip**: Polje za potvrdu
 * **Zadano**: Onemogućeno (neoznačeno)
-* **Opis**: Omogućuje upotrebu kinematičkih korekcija nakon obrade (PPK) s MAPIR
-
-DAQ snimača koji sadrže GPS (GNSS). Kada je omogućeno, Chloros
-
-će koristiti sve .daq datoteke dnevnika koje sadrže podatke o ekspoziciji u vašem projektnom direktoriju i primijeniti precizne korekcije geolokacije na vaše slike.
+* **Opis**: Omogućuje upotrebu kinematičkih korekcija nakon obrade (PPK) s MAPIR DAQ snimača koji sadrže GPS (GNSS). Kada je omogućeno, Chloros će koristiti sve .daq datoteke dnevnika koje sadrže podatke o ekspoziciji u vašem projektnom direktoriju i primijeniti precizne korekcije geolokacije na vaše slike.
 * **Zahtjev**: Datoteka dnevnika .daq s unosima za ekspozicijske igle mora biti prisutna u direktoriju vašeg projekta
 * **Kada omogućiti**: Preporučuje se uvijek omogućiti PPK korekciju ako imate unose povratne sprege za ekspoziciju u datoteci dnevnika .daq.
 
 ### Pin za ekspoziciju 1
 
 * **Vrsta**: Izbornik za odabir
-* **Vidljivost**: Vidljivo samo kada &quot;Primijeni PPK korekcije&quot; je omogućeno I podaci o ekspoziciji su dostupni za Pin 1
+* **Vidljivost**: Vidljivo samo kada "Primijeni PPK korekcije" je omogućeno I podaci o ekspoziciji su dostupni za Pin 1
 * **Opcije**:
   * Nazivi modela kamere otkriveni u projektu
-  * &quot;Ne koristi&quot; - Ignoriraj ovaj pin za ekspoziciju
+  * "Ne koristi" - Ignoriraj ovaj pin za ekspoziciju
 * **Zadano**: Automatski odabrano na temelju konfiguracije projekta
 * **Opis**: Dodjeljuje određenu kameru na Pin za ekspoziciju 1 za vremensku sinkronizaciju PPK-a. Pin za ekspoziciju bilježi točno vrijeme kada se okida zatvarač kamere, što je ključno za preciznu PPK geolokaciju.
 * **Ponašanje automatskog odabira**:
@@ -218,15 +174,15 @@ DAQ snimača koji sadrže GPS (GNSS). Kada je omogućeno, Chloros
 ### Izlaganje Pin 2
 
 * **Vrsta**: Izbor iz padajućeg popisa
-* **Vidljivost**: Vidljivo samo kada je omogućen &quot;Primijeni PPK korekcije&quot; I kada su dostupni podaci o izlaganju za Pin 2
+* **Vidljivost**: Vidljivo samo kada je omogućen "Primijeni PPK korekcije" I kada su dostupni podaci o izlaganju za Pin 2
 * **Opcije**:
   * Nazivi modela kamera otkriveni u projektu
-  * &quot;Ne koristi&quot; - Ignorirajte ovaj ekspozicijski pin
+  * "Ne koristi" - Ignorirajte ovaj ekspozicijski pin
 * **Zadano**: Automatski odabrano na temelju konfiguracije projekta
 * **Opis**: Dodjeljuje određenu kameru ekspozicijskom pinu 2 za vremensku sinkronizaciju PPK-a pri korištenju postavke s dvije kamere.
 * **Ponašanje automatskog odabira**:
-  * Jedna kamera + jedan pin: Pin 2 se automatski postavlja na &quot;Ne koristi se&quot;
-  * Jedna kamera + dva pina: Pin 2 se automatski postavlja na &quot;Ne koristi se&quot;
+  * Jedna kamera + jedan pin: Pin 2 se automatski postavlja na "Ne koristi se"
+  * Jedna kamera + dva pina: Pin 2 se automatski postavlja na "Ne koristi se"
   * Više kamera: Potrebno je ručno odabrati
 * **Napomena**: Iste kamere ne može se istovremeno dodijeliti i Pin 1 i Pin 2.***
 
@@ -246,9 +202,7 @@ Svaki red prikazuje datoteku, model senzora i korekciju difuzora-kapice koja je 
 * **Opcije**: `Auto` i profili korekcije kapa koji vrijede za vrste senzora prisutne u projektu
 * **Zadano**: Auto
 * **Pohranjeno kao**: `Processing → "DAQ cap id"` (zadano `auto`)
-* **Opis**: `Auto` koristi zabilječenu kapu svake datoteke (pretpostavlja se kapica Sunshine ako ništa nije zabilježeno, ali DAQ-U, DAQ-M i DAQ-E isporučuju se bez kape i Chloros
-
-ne može vidjeti što je postavljeno, pa obrada upozorava na pretpostavljenu kapu: odaberite kapu koja je bila postavljena). Odabir određene kape poništava **sve** datoteke s padajućim snimkama u projektu osim onih DAQ-E-S, čiji je difuzor dio njegove kalibracije; projekt koji sadrži samo DAQ-E-S ne prikazuje padajući izbornik: sirovi snimci se korigiraju njime, i snimke koje već imaju kapu se ponovno referenciraju (zabilježena korekcija se poništava i primjenjuje odabrana).
+* **Opis**: `Auto` koristi zabilječenu kapu svake datoteke (pretpostavlja se kapica Sunshine ako ništa nije zabilježeno, ali DAQ-U, DAQ-M i DAQ-E isporučuju se bez kape i Chloros ne može vidjeti što je postavljeno, pa obrada upozorava na pretpostavljenu kapu: odaberite kapu koja je bila postavljena). Odabir određene kape poništava **sve** datoteke s padajućim snimkama u projektu osim onih DAQ-E-S, čiji je difuzor dio njegove kalibracije; projekt koji sadrži samo DAQ-E-S ne prikazuje padajući izbornik: sirovi snimci se korigiraju njime, i snimke koje već imaju kapu se ponovno referenciraju (zabilježena korekcija se poništava i primjenjuje odabrana).
 * **Važno**: Odabrana kapa mora odgovarati kapi koja je bila fizički postavljena tijekom snimanja. Ni senzor ni softver ne mogu detektirati fizičku kapu — neusklađeni ID kape pogrešno korigira spektre.
 
 Namjerno postoji **jedan** padajući izbornik na razini projekta umjesto po pojedinačnim datotekama: postavka se primjenjuje na sve izvore u usponu u projektu.***
@@ -292,18 +246,8 @@ Ove postavke omogućuju konfiguraciju multispektralnih indeksa za analizu i vizu
 ### Dodaj indeks
 
 * **Vrsta**: Poseban panel za konfiguraciju indeksa
-* **Opis**: Otvara interaktivni panel na kojem možete odabrati i konfigurirati multispektralne indekse vegetacije (NDVI
-
-, NDRE
-
-, EVI
-
-itd.) za izračun tijekom obrade slike. Možete dodati više indeksa, svaki sa svojim postavkama vizualizacije.
-* **Dostupni indeksi**: Spuštajući izbornik GUI-ja uključuje**27** unaprijed definiranih formula za višespektralne indekse (pogledajte [Formule za višespektralne indekse](multispectral-index-formulas.md) za potpuni popis, uključujući koja se imena također prihvaćaju putem CLI
-
-/SDK
-
-`--indices` opcija).
+* **Opis**: Otvara interaktivni panel na kojem možete odabrati i konfigurirati multispektralne indekse vegetacije (NDVI, NDRE, EVI itd.) za izračun tijekom obrade slike. Možete dodati više indeksa, svaki sa svojim postavkama vizualizacije.
+* **Dostupni indeksi**: Spuštajući izbornik GUI-ja uključuje**27** unaprijed definiranih formula za višespektralne indekse (pogledajte [Formule za višespektralne indekse](multispectral-index-formulas.md) za potpuni popis, uključujući koja se imena također prihvaćaju putem CLI/SDK `--indices` opcija).
 * **Značajke**:
   * Odaberite unaprijed definirane formule indeksa
   * Povucite filtarske kanale vaše kamere na utore za pojaseve u formuli
@@ -318,28 +262,12 @@ i LATTICE M3C nisu pogođeni.
 
 
 
-Svaki indeks koji dodate prikazuje svoju formulu kao matematičku jednadžbu, s obojenim krugom za svako mjesto pojasa: crvena = Red
+Svaki indeks koji dodate prikazuje svoju formulu kao matematičku jednadžbu, s obojenim krugom za svako mjesto pojasa: crvena = Red, zelena = Green, plava = Blue, narančasta = Orange, cyan = Cyan, ljubičasta = NIR, magenta = RE. Povucite krug iz retka iznad formule na utor kako biste ga povezali; dvaput kliknite na povezani utor kako biste ga očistili. Indeks se izračunava samo kada svaki utor koji formula koristi ima kanal.
 
-, zelena = Green
-
-, plava = Blue
-
-, narančasta = Orange
-
-, cyan = Cyan
-
-, ljubičasta = NIR
-
-, magenta = RE. Povucite krug iz retka iznad formule na utor kako biste ga povezali; dvaput kliknite na povezani utor kako biste ga očistili. Indeks se izračunava samo kada svaki utor koji formula koristi ima kanal.
-
-### Prilagođene formule (funkcionalnost Chloros
-
-+)
+### Prilagođene formule (funkcionalnost Chloros+)
 
 * **Vrsta**: Niz definicija prilagođenih formula
-* **Dostupnost**: Zahtijeva prijavu s odgovarajućom pretplatom na Chloros
-
-+.
+* **Dostupnost**: Zahtijeva prijavu s odgovarajućom pretplatom na Chloros+.
 * **Opis**: Omogućuje vam stvaranje i spremanje prilagođenih formula za višespektralne indekse pomoću matematike pojaseva. Prilagođene formule spremaju se s postavkama vašeg projekta i mogu se koristiti kao i ugrađeni indeksi.
 * **Kako stvoriti**:
   1. U konfiguracijskom panelu indeksa otvorite kalkulator za prilagođene formule
@@ -349,20 +277,8 @@ Svaki indeks koji dodate prikazuje svoju formulu kao matematičku jednadžbu, s 
   * Utori pojaseva: `x`, `y`, `z`, `a`, `b`, `c` — šest položaja koje mapirate na stvarne kanale povlačenjem
   * Operatori: `+`, `-`, `*`, `/`, `^` i `()` za grupiranje
   * Funkcije: `sqrt()`, `log()`, `ln()`, `abs()`, `sign()`, `log1p()`, `log2()`
-* **Zašto simboli, a ne nazivi bendova**: formula napisana kao `(y-x)/(y+x)` radi na bilo kojoj kameri, jer mapiranje povlačenjem i ispuštanjem odlučuje je li `y` 850 nm NIR
-
-a RGN
-
-filtera ili 808 nm NIR
-
-a OCN
-
-filtera. ugrađeni preseti spremaju se na isti način — pogledajte [Multispectral Index Formulas](multispectral-index-formulas.md) za točan simbolički oblik svih 27.
-* **Gdje rade**: prilagođene formule spremaju se s postavkama projekta i mogu se koristiti u [Index/LUT Sandboxu](../image-viewer-gui/index-lut-sandbox.md) kao i u obradi. Ne prihvaća ih popis imena CLI
-
-/SDK
-
-`--indices`, koji samo proširuje 22 ugrađena naziva predložaka.
+* **Zašto simboli, a ne nazivi bendova**: formula napisana kao `(y-x)/(y+x)` radi na bilo kojoj kameri, jer mapiranje povlačenjem i ispuštanjem odlučuje je li `y` 850 nm NIR a RGN filtera ili 808 nm NIR a OCN filtera. ugrađeni preseti spremaju se na isti način — pogledajte [Multispectral Index Formulas](multispectral-index-formulas.md) za točan simbolički oblik svih 27.
+* **Gdje rade**: prilagođene formule spremaju se s postavkama projekta i mogu se koristiti u [Index/LUT Sandboxu](../image-viewer-gui/index-lut-sandbox.md) kao i u obradi. Ne prihvaća ih popis imena CLI/SDK `--indices`, koji samo proširuje 22 ugrađena naziva predložaka.
 
 ***
 
@@ -374,49 +290,27 @@ Ove postavke kontroliraju format i kvalitetu izvezanih obrađenih slika.
 
 * **Vrsta**: Izbor padajućeg popisa
 * **Opcije**:
-  * **TIFF
-
-(16-bit)** - Nekomprimirani 16-bitni format TIFF
+  * **TIFF (16-bit)** - Nekomprimirani 16-bitni format TIFF
 
 
-  * **TIFF
-
-(8-bit)** - Nepritisnuti 8-bitni format TIFF
+  * **TIFF (8-bit)** - Nepritisnuti 8-bitni format TIFF
 
 
-  * **TIFF
-
-(32-bit, Postotak)** - 32-bitni format TIFF
-
-s pokretnim zarezom i vrijednostima reflektancije u postotcima
-  * **PNG
-
-(8-bit)** - Pritisnuti 8-bitni format PNG
+  * **TIFF (32-bit, Postotak)** - 32-bitni format TIFF s pokretnim zarezom i vrijednostima reflektancije u postotcima
+  * **PNG (8-bit)** - Pritisnuti 8-bitni format PNG
 
 
   * **JPG (8-bit)** - Komprimirani 8-bitni format JPEG
 
 
-* **Zadano**: TIFF
-
-(16-bit); projekt koji je u potpunosti 8-bitni prikazuje TIFF
-
-(8-bit) i nudi samo 8-bitne formate
+* **Zadano**: TIFF (16-bit); projekt koji je u potpunosti 8-bitni prikazuje TIFF (8-bit) i nudi samo 8-bitne formate
 * **Opis**: Odabire format datoteke za spremanje obrađenih i kalibriranih slika. Izvozi podatke u podmapu za svaki format unutar mape svake kamere (`tiff16`, `tiff32`, `png8`, `jpg8`), s jednom mapom `<Product>_Images/` po proizvodu. Izvezene datoteke zadržavaju izvorni naziv datoteke — proizvod se identificira mapom, a ne nastavkom naziva datoteke.
 * **Preporuke za formate**:
-  * **TIFF
-
-(16-bitni)**: Preporučuje se za znanstvenu analizu i profesionalne radne procese. Očuvava maksimalnu kvalitetu podataka bez artefakata kompresije. Najbolje za multispektralnu analizu i daljnju obradu u GIS softveru.
-  * **TIFF
-
-(32-bita, postotak)**: Najbolje za radne procese koji zahtijevaju vrijednosti odbijanja kao postotke (0-100%). Nudi maksimalnu preciznost za radiometrijska mjerenja.
-  * **PNG
-
-(8-bit)**: Dobar za pregledavanje na webu i opću vizualizaciju. Manje veličine datoteka s kompresijom bez gubitaka, ali smanjen dinamički raspon.
+  * **TIFF (16-bitni)**: Preporučuje se za znanstvenu analizu i profesionalne radne procese. Očuvava maksimalnu kvalitetu podataka bez artefakata kompresije. Najbolje za multispektralnu analizu i daljnju obradu u GIS softveru.
+  * **TIFF (32-bita, postotak)**: Najbolje za radne procese koji zahtijevaju vrijednosti odbijanja kao postotke (0-100%). Nudi maksimalnu preciznost za radiometrijska mjerenja.
+  * **PNG (8-bit)**: Dobar za pregledavanje na webu i opću vizualizaciju. Manje veličine datoteka s kompresijom bez gubitaka, ali smanjen dinamički raspon.
   * **JPG (8-bit)**: Najmanje veličine datoteka, najbolje samo za pregled i prikaz na webu. Koristi kompresiju s gubicima koja nije pogodna za znanstvenu analizu.
-* **Napomena**: Radijansa LATTICE-a uvijek se izvozi kao 32-bitni float TIFF
-
-, bez obzira na ovu postavku.
+* **Napomena**: Radijansa LATTICE-a uvijek se izvozi kao 32-bitni float TIFF, bez obzira na ovu postavku.
 
 ***
 
@@ -427,22 +321,12 @@ Ova značajka omogućuje vam spremanje trenutačnih postavki vašeg projekta kao
 * **Vrsta**: Unos teksta + gumb za spremanje
 * **Opis**: Unesite opisni naziv za svoj predložak postavki i kliknite ikonu spremanja. Predložak će spremiti sve trenutačne postavke vašeg projekta (detekcija ciljeva, opcije obrade, indeksi, i format izvoza) za jednostavno ponovno korištenje u budućim projektima. Predlošci se pohranjuju u mapu `Project Templates/` unutar mape za spremanje vašeg projekta, a mogu se odabrati ili izvesti i iz glavnog izbornika (*Odabir predloška* / *Spremanje predloška* / *Izvoz predloška*).
 * **Primjeri upotrebe**:
-  * Izrada predložaka za različite sustave kamera (RGB
-
-, multispektralne, NIR
-
-)
+  * Izrada predložaka za različite sustave kamera (RGB, multispektralne, NIR)
   * Spremanje standardnih konfiguracija za određene vrste usjeva ili tijekove analize
   * Dijeljenje dosljednih postavki unutar tima
 * **Upute za upotrebu**:
   1. Konfigurirajte sve željene postavke projekta
-  2. Unesite naziv predloška (npr. &quot;RedEdge
-
-Survey3
-
-NDVI
-
-Standard&quot;)
+  2. Unesite naziv predloška (npr. "RedEdge Survey3 NDVI Standard")
   3. Kliknite ikonu spremanja
   4. Predložak se sada može učitati prilikom izrade novih projekata
 
@@ -453,44 +337,22 @@ Standard&quot;)
 Ova postavka određuje gdje se novi projekti po zadanom spremaju.
 
 * **Vrsta**: Prikaz putanje direktorija + gumb Uređivanje
-* **Zadano (Windows
-
-)**: `Documents\MAPIR\Chloros Projects` u vašem mapi Dokumenti — obično `C:\Users\[Username]\Documents\MAPIR\Chloros Projects`, ili gdje god su Dokumenti premješteni na OneDriveu ili u putujućem profilu
-* **Zadano (Linux
-
-)**: `~/Documents/MAPIR/Chloros Projects`
-* **Opis**: Prikazuje trenutni zadani direktorij u kojem se stvaraju novi projekti za Chloros
-
-. Kliknite ikonu za uređivanje kako biste odabrali drugi direktorij. Preusmjeravanje se pohranjuje kao jedan redak teksta u `~/.chloros/working_directory.txt` — na Windows
-
-to je `C:\Users\<Username>\.chloros\working_directory.txt`. Ako ta datoteka nedostaje ili navodi putanju koja više ne postoji, Chloros
-
-se vraća na gore navedenu zadanu vrijednost. CLI
-
-čita i zapisuje istu datoteku, pa su `chloros-cli` i GUI uvijek suglasni o tome gdje se projekti nalaze.
+* **Zadano (Windows)**: `Documents\MAPIR\Chloros Projects` u vašem mapi Dokumenti — obično `C:\Users\[Username]\Documents\MAPIR\Chloros Projects`, ili gdje god su Dokumenti premješteni na OneDriveu ili u putujućem profilu
+* **Zadano (Linux)**: `~/Documents/MAPIR/Chloros Projects`
+* **Opis**: Prikazuje trenutni zadani direktorij u kojem se stvaraju novi projekti za Chloros. Kliknite ikonu za uređivanje kako biste odabrali drugi direktorij. Preusmjeravanje se pohranjuje kao jedan redak teksta u `~/.chloros/working_directory.txt` — na Windows to je `C:\Users\<Username>\.chloros\working_directory.txt`. Ako ta datoteka nedostaje ili navodi putanju koja više ne postoji, Chloros se vraća na gore navedenu zadanu vrijednost. CLI čita i zapisuje istu datoteku, pa su `chloros-cli` i GUI uvijek suglasni o tome gdje se projekti nalaze.
 * **Predlošci projekata** nalaze se u podmapu `Project Templates/` unutar ovog direktorija.
 * **Kada promijeniti**:
   * Postavite na mrežni pogon za suradnju tima
   * Promijenite na pogon s više prostora za pohranu za velike skupove podataka
   * Organizirajte projekte po godini, klijentu ili vrsti projekta u različitim mapama
 * **Napomena**: Promjena ove postavke utječe samo na NOVE projekte. Postojeći projekti ostaju na svojim izvornih lokacijama.
-* **Dužina staze Windows
-
-a**: osim ako su omogućene duge staze sustava Windows
-
-(opcija **Omogući duge staze sustava Windows** u instalacijskom programu), mapa projekta dublja od otprilike 130 znakova bit će odbijena prije obrade jer bi njezini proizvodi premašili ograničenje duljine staze sustava Windows
-
-od 260 znakova. Vidi [Pokretanje obrade](../processing-images-gui/starting-the-processing.md#the-project-folder-is-too-deep-for-this-computer).
+* **Dužina staze Windows a**: osim ako su omogućene duge staze sustava Windows (opcija **Omogući duge staze sustava Windows** u instalacijskom programu), mapa projekta dublja od otprilike 130 znakova bit će odbijena prije obrade jer bi njezini proizvodi premašili ograničenje duljine staze sustava Windows od 260 znakova. Vidi [Pokretanje obrade](../processing-images-gui/starting-the-processing.md#the-project-folder-is-too-deep-for-this-computer).
 
 ***
 
 ## Održavanje postavki
 
-Chloros
-
-projekt je **mapa**. Sve postavke projekta spremaju se unutar nje u `project.json`; Povezani hardver pamti se uz njega u `cameras.json` i `sensors.json`, tako da se pri ponovnom otvaranju projekta ponovno povezuju njegove kamere i senzori svjetla. Kada ponovno otvorite projekt, sva se postavke vraćaju točno onako kako ste ih ostavili. Spremljeni projekti također se mogu upravljati bez zaslona pomoću `chloros-cli project` ili `open_project` iz SDK
-
-a.
+Chloros projekt je **mapa**. Sve postavke projekta spremaju se unutar nje u `project.json`; Povezani hardver pamti se uz njega u `cameras.json` i `sensors.json`, tako da se pri ponovnom otvaranju projekta ponovno povezuju njegove kamere i senzori svjetla. Kada ponovno otvorite projekt, sva se postavke vraćaju točno onako kako ste ih ostavili. Spremljeni projekti također se mogu upravljati bez zaslona pomoću `chloros-cli project` ili `open_project` iz SDK a.
 
 ### Hijerarhija postavki
 
@@ -514,11 +376,7 @@ Postavke obrade čitaju se kada se pokrene obrada. Promjena postavke ne mijenja 
 
 ## Referenca ključeva konfiguracije
 
-Za automatizaciju (CLI
-
-`--config`, SDK
-
-`configure` ili izravno čitanje `project.json`), ovo su točne ključne riječi pod `Project Settings`:
+Za automatizaciju (CLI `--config`, SDK `configure` ili izravno čitanje `project.json`), ovo su točne ključne riječi pod `Project Settings`:
 
 | Putanja do ključa | Tip | Zadano |
 | --- | --- | --- |
@@ -553,23 +411,11 @@ Oni se nalaze pod istim `Project Settings` stablom i čitaju se tijekom obrade, 
 
 | Put do ključa | Vrsta | Zadano | Postavlja |
 | --- | --- | --- | --- |
-| `Processing → LATTICE input level` | `"auto" \| "raw" \| "debayered" \| "processed"` | `"auto"` | `chloros-cli process --input-level`, SDK
-
-`input_level=`. Prepisuje način na koji se interpretiraju LATTICE ulazni TIFF
-
--ovi; `auto` zaključuje iz XMP oznake `Chloros:ProcessingLevel` svake datoteke i broja kanala. Zanemaruje se za snimke Survey3
-
-`.raw`. Namjerno nije postavka GUI-ja — auto je ispravno u svakom normalnom slučaju. |
-| `Processing → Target reflectance dir` | putanja u nizu znakova | `""` | `chloros-cli process --target-reflectance-dir`, ili projektna meta API
-
-|
+| `Processing → LATTICE input level` | `"auto" \| "raw" \| "debayered" \| "processed"` | `"auto"` | `chloros-cli process --input-level`, SDK `input_level=`. Prepisuje način na koji se interpretiraju LATTICE ulazni TIFF-ovi; `auto` zaključuje iz XMP oznake `Chloros:ProcessingLevel` svake datoteke i broja kanala. Zanemaruje se za snimke Survey3 `.raw`. Namjerno nije postavka GUI-ja — auto je ispravno u svakom normalnom slučaju. |
+| `Processing → Target reflectance dir` | putanja u nizu znakova | `""` | `chloros-cli process --target-reflectance-dir`, ili projektna meta API |
 | `Processing → Target reflectance config` | rječnik indeksiran serijskim brojem kamere | `{}` | Registracija cilja unutar kadra (način rada `fixed_block` / `fixed_strip` / `aruco`) |
-| `Processing → DAQ-U log path` | putanja | `""` | SDK
-
-`process_folder(daq_log_path=…)`. Ukazuje na snimku `.daq` ili mapu sa snimkama |
-| `Target Detection → Minimum calibration target squares` | broj | `4` | Naslijeđena zadana postavka; bez kontrole i bez zastavice CLI
-
-|
+| `Processing → DAQ-U log path` | putanja | `""` | SDK `process_folder(daq_log_path=…)`. Ukazuje na snimku `.daq` ili mapu sa snimkama |
+| `Target Detection → Minimum calibration target squares` | broj | `4` | Naslijeđena zadana postavka; bez kontrole i bez zastavice CLI |
 | `UI → Grid thumbnail size` | broj | `160` | vlastiti klizač zumiranja sličica mreže slika |
 
 Dvije postavke preglednika pohranjuju se **na najvišoj razini u `project.json`**, izvan `Project Settings` u potpunosti, jer su to stanja prikaza, a ne postavke obrade:
@@ -582,26 +428,16 @@ Dvije postavke preglednika pohranjuju se **na najvišoj razini u `project.json`*
 
 ## Najbolje prakse
 
-1. **Počnite s zadanim postavkama**: Zadane postavke dobro funkcioniraju za većinu sustava kamera MAPIR
-
-i uobičajenih tijekova rada.
+1. **Počnite s zadanim postavkama**: Zadane postavke dobro funkcioniraju za većinu sustava kamera MAPIR i uobičajenih tijekova rada.
 2. **Stvorite predloške**: Nakon što optimizirate postavke za određeni tijek rada ili kameru, spremite ih kao predložak kako biste osigurali dosljednost u svim projektima.
 3. **Testirajte prije potpune obrade**: Kada eksperimentirate s novim postavkama, testirajte ih na malom podskupu slika prije obrade cijelog skupa podataka.
-4. **Dokumentirajte svoje postavke**: Koristite opisne nazive predložaka koji navode sustav kamere, vrstu obrade i namjenu (npr. &quot;Survey3
-
-_RGB_NDVI_Poljoprivreda&quot;).
+4. **Dokumentirajte svoje postavke**: Koristite opisne nazive predložaka koji navode sustav kamere, vrstu obrade i namjenu (npr. "Survey3_RGB_NDVI_Poljoprivreda").
 5. **Odabir formata izvoza**: Odaberite format izvoza na temelju konačne namjene:
    * Znanstvena analiza → TIFF (16-bitni ili 32-bitni)
-   * GIS obrada → TIFF
-
-(16-bitni)
-   * Brza vizualizacija → PNG
-
-(8-bit)
+   * GIS obrada → TIFF (16-bitni)
+   * Brza vizualizacija → PNG (8-bit)
    * Dijeljenje na webu → JPG (8-bit)
 
 ***
 
-Za više informacija o multispektralnim indeksima u programu Chloros
-
-pogledajte stranicu [Multispectral Index Formulas](multispectral-index-formulas.md).
+Za više informacija o multispektralnim indeksima u programu Chloros pogledajte stranicu [Multispectral Index Formulas](multispectral-index-formulas.md).

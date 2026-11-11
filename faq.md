@@ -27,15 +27,9 @@ Da. Chloros 1.3.0 podržava LATTICE M3C i M3M module kamera od početka do kraja
 
 <summary>Mogu li kalibrirati svoje slike za reflektanciju bez kalibracijskog cilja?</summary>
 
-**Survey3
+**Survey3:** Ne. Bez slike kalibracijskog cilja snimljene u isto vrijeme kada se snimaju i ostale slike, nećete moći povezati vrijednosti piksela slike s poznatim postotkom reflektancije. Ako također ne uključite zapisnik s senzora svjetla [MAPIR], spektar ambijentalnog svjetla neće biti izmjeren i rezultati reflektancije neće biti točni.
 
-:** Ne. Bez slike kalibracijskog cilja snimljene u isto vrijeme kada se snimaju i ostale slike, nećete moći povezati vrijednosti piksela slike s poznatim postotkom reflektancije. Ako također ne uključite zapisnik s senzora svjetla [MAPIR
-
-], spektar ambijentalnog svjetla neće biti izmjeren i rezultati reflektancije neće biti točni.
-
-**LATTICE:** Da. Reflektancija se može referencirati na zračnu radijanciju prema dolje, izmjerenu DAQ senzorom svjetla, umjesto na panel (ρ = π·L/E). Kada je prisutan cilj u kadru koji je prošao QA, on postaje apsolutna referenca prema zadanim postavkama (`--reflectance-source auto`), osim ako ne prođe s oznakom, kada se lanci cilja i DAQ-a natječu po mjerenom rezultatu. Jedan izuzetak: &quot;F988 reflektancija kalibrira se pomoću reflektantne ploče unutar scene: pojas leži izvan kalibriranog raspona DAQ senzora svjetlosti, stoga Chloros
-
-primjenjuje vašu najnoviju snimku ploče i zadržava je između promatranja ploče.&quot; Vidi [Ciljevi kalibracije](calibration-targets.md).
+**LATTICE:** Da. Reflektancija se može referencirati na zračnu radijanciju prema dolje, izmjerenu DAQ senzorom svjetla, umjesto na panel (ρ = π·L/E). Kada je prisutan cilj u kadru koji je prošao QA, on postaje apsolutna referenca prema zadanim postavkama (`--reflectance-source auto`), osim ako ne prođe s oznakom, kada se lanci cilja i DAQ-a natječu po mjerenom rezultatu. Jedan izuzetak: "F988 reflektancija kalibrira se pomoću reflektantne ploče unutar scene: pojas leži izvan kalibriranog raspona DAQ senzora svjetlosti, stoga Chloros primjenjuje vašu najnoviju snimku ploče i zadržava je između promatranja ploče." Vidi [Ciljevi kalibracije](calibration-targets.md).
 
 </details>
 
@@ -43,9 +37,7 @@ primjenjuje vašu najnoviju snimku ploče i zadržava je između promatranja plo
 
 <summary>Trebam li DAQ senzor svjetla?</summary>
 
-Ne za radijancu: izvoz radijance LATTICE-a dolazi iz tvorničke radiometrijske kalibracije svake kamere i ne zahtijeva ni DAQ senzor ni metu. Za **reflektanciju**potrebna vam je referenca za ambijentalno svjetlo — ili mjerenje svjetla prema dolje DAQ senzora svjetla ili kalibracijska meta unutar kadra. DAQ senzor omogućuje vam izradu kalibrirane reflektancije**bez postavljanja ikakvih panela u scenu**. Snimljene `.daq` datoteke automatski se usklađuju s vašim slikama pomoću vremenskog žiga. Pogledajte [Referentne pločice za kalibraciju](calibration-targets.md) i [CLI
-
-referencu](reference/cli-reference.md).
+Ne za radijancu: izvoz radijance LATTICE-a dolazi iz tvorničke radiometrijske kalibracije svake kamere i ne zahtijeva ni DAQ senzor ni metu. Za **reflektanciju**potrebna vam je referenca za ambijentalno svjetlo — ili mjerenje svjetla prema dolje DAQ senzora svjetla ili kalibracijska meta unutar kadra. DAQ senzor omogućuje vam izradu kalibrirane reflektancije**bez postavljanja ikakvih panela u scenu**. Snimljene `.daq` datoteke automatski se usklađuju s vašim slikama pomoću vremenskog žiga. Pogledajte [Referentne pločice za kalibraciju](calibration-targets.md) i [CLI referencu](reference/cli-reference.md).
 
 </details>
 
@@ -92,7 +84,7 @@ To nisu slike scene: vlastiti import programa Chloros ih preskače, a budući da
 
 <details>
 
-<summary>Zašto Chloros prikazuje poruku &quot;Mapa projekta je preduboka za ovo računalo&quot;?</summary>
+<summary>Zašto Chloros prikazuje poruku "Mapa projekta je preduboka za ovo računalo"?</summary>
 
 Ovo vrijedi samo za Windows. Windows dolazi s isključenim dugim putanjama, pa nijedna putanja do datoteke ne smije biti dulja od 260 znakova. Datoteke proizvoda Chloros smještene su do otprilike 130 znakova ispod mape projekta, stoga Chloros odbija dublju mapu projekta prije obrade — umjesto da pokrene proces i ne zapiše ništa, što se moglo dogoditi prije verzije 1.3.0. Poruka prikazuje najdužu mapu projekta koja odgovara.
 
@@ -143,9 +135,7 @@ U tablici preglednika datoteka, prethodno odabiranje ciljnih slika u desnoj stup
 
 <summary>Ako ću svoje slike učitati na <a href="https://www.mapir.camera/collections/software/products/mapir-cloud-subscription">MAPIR Cloud,</a> trebam li ih prvo obraditi u Chloros prije učitavanja?</summary>
 
-Ako planirate prenijeti slike na našu internetsku platformu za obradu [MAPIR
-
-Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), nemojte uređivati slike prije prijenosa. Cloud će izvršiti svu istu obradu, a još i više.
+Ako planirate prenijeti slike na našu internetsku platformu za obradu [MAPIR Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), nemojte uređivati slike prije prijenosa. Cloud će izvršiti svu istu obradu, a još i više.
 
 </details>
 
@@ -185,9 +175,7 @@ Da! Chloros uključuje [Dynamic Compute Adaptation](processing-architecture/dyna
 
 <summary>Što je 4-thread pipeline za obradu?</summary>
 
-Chloros
-koristi pipelined arhitekturu s 4 niti za korisnike Chloros
-+: Nit 1 (Detekcija) učitava slike i otkriva ciljeve za kalibraciju, Nit 2 (Kalibracija) izračunava kalibraciju reflektivnosti, Nit 3 (Obrada) izvodi GPU-akcelerirano debayering i izračun indeksa, a Nit 4 (Izvoz) zapisuje izlazne datoteke. Više slika može se istovremeno obrađivati u različitim nitima radi maksimalne propusnosti. Pogledajte [Procesna cijev](processing-architecture/processing-pipeline.md) za detalje.
+Chloros koristi pipelined arhitekturu s 4 niti za korisnike Chloros+: Nit 1 (Detekcija) učitava slike i otkriva ciljeve za kalibraciju, Nit 2 (Kalibracija) izračunava kalibraciju reflektivnosti, Nit 3 (Obrada) izvodi GPU-akcelerirano debayering i izračun indeksa, a Nit 4 (Izvoz) zapisuje izlazne datoteke. Više slika može se istovremeno obrađivati u različitim nitima radi maksimalne propusnosti. Pogledajte [Procesna cijev](processing-architecture/processing-pipeline.md) za detalje.
 
 </details>
 

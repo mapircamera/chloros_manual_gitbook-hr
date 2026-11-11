@@ -43,7 +43,7 @@ Alati poslužitelja pokrivaju ono što radi [Pythonov SDK](api-python-sdk.md). I
 claude mcp add chloros -- chloros-mcp
 ```
 
-**Claude Desktop:**dodajte ovo u `claude_desktop_config.json` (otvara ga**Postavke &gt; Programer &gt; Uredi konfiguraciju**), zatim ponovno pokrenite Claude Desktop.**Cursor** koristi isti unos u `~/.cursor/mcp.json`.
+**Claude Desktop:**dodajte ovo u `claude_desktop_config.json` (otvara ga**Postavke > Programer > Uredi konfiguraciju**), zatim ponovno pokrenite Claude Desktop.**Cursor** koristi isti unos u `~/.cursor/mcp.json`.
 
 ```json
 {
@@ -132,5 +132,5 @@ Jedna asimetrija koju bi asistent trebao znati: `process()` u SDKu namjerno **ne
 
 * **Potreban je prijavak na Chloros+.**CLI i SDK zahtijevaju**plaćeni** Chloros+ paket, što se provjerava na strani poslužitelja: zahtjevi ne uspijevaju s porukom `401 AUTH_REQUIRED` ako niste prijavljeni i s porukom `403 PLAN_UPGRADE_REQUIRED` na besplatnom paketu. Pokrenite `chloros-cli login` jednom po računalu prije pokretanja generiranih skripti. Pogledajte [Chloros+ prijavu](chloros+-login.md).
 * **Naredbe za snimanje upravljaju stvarnim hardverom.** `lattice` / `daq` / zapovijedi `project`, objekti sesije SDKa i alati `chloros-mcp` povezuju se, prenose i aktiviraju fizičke kamere i senzore. Pregledajte generiranu skriptu prije njezina prvog pokretanja i pokrenite je uz prisutnost hardvera.
-* **Provjerite izlazne podatke.** Provjerite mape proizvoda i nekoliko vrijednosti piksela prije objavljivanja rezultata. Konkretno, TIFF datoteke s reflektancijom skaliraju se po izvoru — pročitajte XMP oznaku `Chloros:PixelScale` (datoteke LATTICE je nose: 32768 = 1,0 reflektancija; datoteke Survey3 to ne čine i koriste 65535 = 1,0) umjesto pretpostavljanja dijelitelja. Obje referentne stranice to dokumentiraju pod &quot;Reading reflectance pixels&quot;.
+* **Provjerite izlazne podatke.** Provjerite mape proizvoda i nekoliko vrijednosti piksela prije objavljivanja rezultata. Konkretno, TIFF datoteke s reflektancijom skaliraju se po izvoru — pročitajte XMP oznaku `Chloros:PixelScale` (datoteke LATTICE je nose: 32768 = 1,0 reflektancija; datoteke Survey3 to ne čine i koriste 65535 = 1,0) umjesto pretpostavljanja dijelitelja. Obje referentne stranice to dokumentiraju pod "Reading reflectance pixels".
 * **Male zamke koje mogu dovesti do problema s generiranim kodom:**`pool-record` piše na datotečni sustav**nazivnog računala** (nazivno `~/Documents/DAQ Live View/`); na računalima s više mrežnih sučelja, radije koristite `daq pool-connect --eth-host <ip-or-hostname>` nego automatsko otkrivanje; koristite `http://127.0.0.1:5000` (nikada `localhost`) gdje god se pojavi URL pozadinskog sustava; skripta koja prolazi kroz izlazno stablo projekta trebala bi preskočiti mape `clamp_masks/` (njihove `*_clampmask.tif` datoteke su maske, a ne slike — vidi [Format izlaznih slika](output-image-formats.md#clamp-masks)); i na Windowsu s isključenim dugim putanjama, držite foldere projekta kratkima — folder projekta dublji od otprilike 130 znakova odbijen je prije početka obrade.

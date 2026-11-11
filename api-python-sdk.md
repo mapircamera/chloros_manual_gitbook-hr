@@ -146,7 +146,7 @@ for hint in result.get("summary", {}).get("hints", []):
 ```
 
 {% hint style="warning" %}
-**`process()` ne izaziva iznimku kada pokretanje ne proizvede nijednu sliku.** Ovo je jedino mjesto u kojem se SDK i CLI namjerno razlikuju: `chloros-cli process` tretira poruku &quot;zatraženi su proizvodi, nijedan nije napisan&quot; kao neuspjeh i izlazi s nestandardnim izlaznim kodom, dok SDK normalno završava i izvještava o tom stanju putem `summary` / naznaka. Ako vaša cijevna linija treba stati na praznom pokretanju, provjerite to sami — pregledajte `summary` (ili prebrojite datoteke u mapi projekta) umjesto da se oslanjate na iznimku.
+**`process()` ne izaziva iznimku kada pokretanje ne proizvede nijednu sliku.** Ovo je jedino mjesto u kojem se SDK i CLI namjerno razlikuju: `chloros-cli process` tretira poruku "zatraženi su proizvodi, nijedan nije napisan" kao neuspjeh i izlazi s nestandardnim izlaznim kodom, dok SDK normalno završava i izvještava o tom stanju putem `summary` / naznaka. Ako vaša cijevna linija treba stati na praznom pokretanju, provjerite to sami — pregledajte `summary` (ili prebrojite datoteke u mapi projekta) umjesto da se oslanjate na iznimku.
 {% endhint %}
 
 ## Smart Connect — hardver u stvarnom vremenu
@@ -165,12 +165,12 @@ with chloros_sdk.connect_camera("213800234") as cam:
 ```
 
 {% hint style="info" %}
-**Relativne staze vode do mjesta gdje se vaša skripta pokreće (promijenjeno u verziji 1.3.0).** S lokalnim pozadinskim sustavom, relativna `output_dir` (uključujući zadanu `"output"`) — i ostale putanje koje pozadinski sustav otvara (`burst_dir`, `profile_path`, `save_path`, `mask_path`) — rješava se u radnom direktoriju vaše skripte, pa `cam.capture("output/")` piše u `<current folder>/output/`. U verziji 1.2.0 instalirani backend ih je rješavao u vlastitoj instalacijskoj mapi i davao pogrešku &quot;Pristup je odbijen&quot;. Kod udaljenog backenda, putanje se šalju onakve kakve su napisane.
+**Relativne staze vode do mjesta gdje se vaša skripta pokreće (promijenjeno u verziji 1.3.0).** S lokalnim pozadinskim sustavom, relativna `output_dir` (uključujući zadanu `"output"`) — i ostale putanje koje pozadinski sustav otvara (`burst_dir`, `profile_path`, `save_path`, `mask_path`) — rješava se u radnom direktoriju vaše skripte, pa `cam.capture("output/")` piše u `<current folder>/output/`. U verziji 1.2.0 instalirani backend ih je rješavao u vlastitoj instalacijskoj mapi i davao pogrešku "Pristup je odbijen". Kod udaljenog backenda, putanje se šalju onakve kakve su napisane.
 {% endhint %}
 
 ### Sinkronizirani niz — `connect_array`
 
-`connect_array` preporučena je polazna točka za više-kamere sustave. Pokreće isti &#x27;smart-prep&#x27; tijek kao i GUI: analizu mreže, automatski odabir sloja za sinkronizaciju, PTP sinkronizaciju vremena, odabir formata piksela za svaku kameru, inicijalizaciju AE-a i aktivaciju okidača putem GPIO-a. **Prvi serijski je master** (pokreće hardverski impuls okidača); ostali su slave.
+`connect_array` preporučena je polazna točka za više-kamere sustave. Pokreće isti 'smart-prep' tijek kao i GUI: analizu mreže, automatski odabir sloja za sinkronizaciju, PTP sinkronizaciju vremena, odabir formata piksela za svaku kameru, inicijalizaciju AE-a i aktivaciju okidača putem GPIO-a. **Prvi serijski je master** (pokreće hardverski impuls okidača); ostali su slave.
 
 ```python
 with chloros_sdk.connect_array(
@@ -248,7 +248,7 @@ Korištenje izvan mreže funkcionira unutar probnog razdoblja plana: razina se �
 
 ## Iznimke
 
-Zahvatite osnovnu klasu za rukovanje &quot;svime što je pošlo po zlu s Chlorosom&quot;:
+Zahvatite osnovnu klasu za rukovanje "svime što je pošlo po zlu s Chlorosom":
 
 ```python
 import chloros_sdk
