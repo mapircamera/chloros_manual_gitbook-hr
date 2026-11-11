@@ -9,17 +9,17 @@ metaLinks:
 
 <details>
 
-<summary>Mogu li obrađivati slike s kamera koje nisu marke MAPIR pomoću Chloros?</summary>
+<summary>Mogu li s Chloros-om obrađivati slike s kamera koje nisu marke MAPIR?</summary>
 
-Ne, Chloros podržava obradu slika samo s kamera obitelji MAPIR — Survey3 i LATTICE. Za više informacija pogledajte popis [podržanih modela kamera](supported-cameras.md). Također nudimo obradu slika s drugih kamera na MAPIR Cloud, pogledajte cijeli popis [ovdje](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
+Ne, Chloros podržava obradu samo slika s kamera marke MAPIR — obitelji Survey3 i LATTICE. Za više informacija pogledajte popis [podržanih modela kamera](supported-cameras.md). Nudimo i obradu snimki drugih kamera na MAPIR Cloud, pogledajte cijeli popis [ovdje](https://mapir.gitbook.io/mapir-cloud/supported-cameras).
 
 </details>
 
 <details>
 
-<summary>Podržava li Chloros LATTICE kamere?</summary>
+<summary>Chloros li podržava LATTICE kamere?</summary>
 
-Da. Chloros 1.2.0 podržava LATTICE M3C i M3M module kamera od početka do kraja: **uživo kontrola**— otkrijte, povežite se, pregledajte i snimite s kartice Kamere u GUI-ju, `chloros-cli lattice`, ili s PythonSDK, uključujući sinkronizirane nizove više kamera s PTP vremenskom sinkronizacijom — i**potpunu radiometrijsku obradu** snimki (raw → debayered → sjaj → odraz → indeks). Pogledajte [Podržane kamere](supported-cameras.md) i [LATTICE vodič](lattice/README.md).
+Da. Chloros 1.3.0 podržava LATTICE M3C i M3M module kamera od početka do kraja: **uživo kontrola**— otkrijte, povežite, pregledajte i snimite s kartice Kamere u GUI-ju, `chloros-cli lattice`, ili s Pythona SDKa, uključujući sinkronizirane nizove više kamera s PTP vremenskom sinkronizacijom — i**potpunu radiometrijsku obradu** snimki (raw → debayered → sjaj → odraz → indeks). Pogledajte [Podržane kamere](supported-cameras.md) i [LATTICE vodič](lattice/README.md).
 
 </details>
 
@@ -29,13 +29,13 @@ Da. Chloros 1.2.0 podržava LATTICE M3C i M3M module kamera od početka do kraja
 
 **Survey3
 
-:** Ne. Bez slike kalibracijskog cilja snimljene otprilike u isto vrijeme kada su snimljene i slike bez cilja, nećete moći povezati vrijednosti piksela slike s poznatim postotkom reflektancije. Ako također ne uključite zapisnik s senzora svjetlaMAPIR
+:** Ne. Bez slike kalibracijskog cilja snimljene u isto vrijeme kada se snimaju i ostale slike, nećete moći povezati vrijednosti piksela slike s poznatim postotkom reflektancije. Ako također ne uključite zapisnik s senzora svjetla [MAPIR
 
-, spektar ambijentalnog svjetla neće biti izmjeren i rezultati reflektancije neće biti točni.
+], spektar ambijentalnog svjetla neće biti izmjeren i rezultati reflektancije neće biti točni.
 
-**LATTICE:** Da. Reflektancija se može referencirati na zračnu radijanciju mjerenu DAQ senzorom svjetlosti umjesto na panel (ρ = π·L/E). Kada je prisutan cilj u kadru koji je prošao QA, on postaje apsolutna referenca prema zadanim postavkama (`--reflectance-source auto`). Jedan izuzetak: &quot;F988 reflektancija kalibrira se pomoću reflektantne ploče unutar scene: pojas leži izvan kalibriranog raspona DAQ senzora svjetlosti, stoga seChloros
+**LATTICE:** Da. Reflektancija se može referencirati na zračnu radijanciju prema dolje, izmjerenu DAQ senzorom svjetla, umjesto na panel (ρ = π·L/E). Kada je prisutan cilj u kadru koji je prošao QA, on postaje apsolutna referenca prema zadanim postavkama (`--reflectance-source auto`), osim ako ne prođe s oznakom, kada se lanci cilja i DAQ-a natječu po mjerenom rezultatu. Jedan izuzetak: &quot;F988 reflektancija kalibrira se pomoću reflektantne ploče unutar scene: pojas leži izvan kalibriranog raspona DAQ senzora svjetlosti, stoga Chloros
 
-primjenjuje vaša najnovija snimka ploče i zadržava je između promatranja ploče.&quot; Vidi [Ciljevi kalibracije](calibration-targets.md).
+primjenjuje vašu najnoviju snimku ploče i zadržava je između promatranja ploče.&quot; Vidi [Ciljevi kalibracije](calibration-targets.md).
 
 </details>
 
@@ -43,7 +43,9 @@ primjenjuje vaša najnovija snimka ploče i zadržava je između promatranja plo
 
 <summary>Trebam li DAQ senzor svjetla?</summary>
 
-Ne za radijancu: Izvoz radijance u LATTICE formatu temelji se na tvorničkoj radiometrijskoj kalibraciji svake kamere i ne zahtijeva ni DAQ senzor ni metu. Za **reflektancu**potrebna vam je referenca za ambijentalno svjetlo — ili mjerenje svjetlosti prema dolje DAQ senzora za svjetlo ili kalibracijska meta unutar kadra. DAQ senzor vam omogućuje izradu kalibrirane reflektancije**bez postavljanja ikakvih panela u scenu**. Snimljene `.daq` datoteke automatski se usklađuju s vašim slikama prema vremenu snimanja. Pogledajte [Referentne ploče za kalibraciju](calibration-targets.md) i [Referentni materijal za kalibraciju](reference/cli-reference.md).
+Ne za radijancu: izvoz radijance LATTICE-a dolazi iz tvorničke radiometrijske kalibracije svake kamere i ne zahtijeva ni DAQ senzor ni metu. Za **reflektanciju**potrebna vam je referenca za ambijentalno svjetlo — ili mjerenje svjetla prema dolje DAQ senzora svjetla ili kalibracijska meta unutar kadra. DAQ senzor omogućuje vam izradu kalibrirane reflektancije**bez postavljanja ikakvih panela u scenu**. Snimljene `.daq` datoteke automatski se usklađuju s vašim slikama pomoću vremenskog žiga. Pogledajte [Referentne pločice za kalibraciju](calibration-targets.md) i [CLI
+
+referencu](reference/cli-reference.md).
 
 </details>
 
@@ -51,11 +53,11 @@ Ne za radijancu: Izvoz radijance u LATTICE formatu temelji se na tvorničkoj rad
 
 <summary>Mogu li koristiti Chloros s AI asistentom (Claude, ChatGPT itd.)?</summary>
 
-Da — ovaj priručnik i CLI / SDK izrađeni su za to:
+Da — ovaj priručnik i CLI/SDK izrađeni su za to:
 
-* Cjeloviti indeks priručnika dostupan je na `https://mapir.gitbook.io/chloros/llms.txt` kako bi AI asistenti mogli otkriti svaku stranicu.
-* Sirovi markdown svake stranice dostupan je na njezinoj malom pismenom adresi URL s dodanim `.md` (na primjer `https://mapir.gitbook.io/chloros/reference/cli-reference.md`).
-* [CLI referenca](reference/cli-reference.md) i [SDK referenca](reference/sdk-reference.md) napisane su za upotrebu s LLM-ovima: točne zastavice, zadane vrijednosti, semantika izlaska i naredbe koje se mogu kopirati i zalijepiti.
+* Cjeloviti indeks priručnika poslužen je na `https://mapir.gitbook.io/chloros/llms.txt` kako bi AI asistenti mogli otkriti svaku stranicu.
+* Sirovi markdown svake stranice dostupan je na njezinom malom pismenom URLu s dodanim `.md` (na primjer `https://mapir.gitbook.io/chloros/reference/cli-reference.md`).
+* [CLI referenca](reference/cli-reference.md) i [SDK referenca](reference/sdk-reference.md) napisane su za upotrebu s velikim jezičnim modelima (LLM): točne zastavice, zadane vrijednosti, semantika izlaska i naredbe koje se mogu kopirati i zalijepiti.
 
 Pogledajte [AI Assistants](ai-assistants.md) kako biste usmjerili svog asistenta na Chloros.
 
@@ -71,15 +73,41 @@ Proizvodi se spremaju u mapu projekta, grupirani po kameri i zatim po formatu da
 <project>/<camera-folder>/<format-folder>/<Product>_Images/
 ```
 
-* **folder-kamere** — `LATT-<sensor>-<lens>-F<filter>` za LATTICE, `<model>_<filter>` (npr. `Survey3N_RGN`) za Survey3
+* **mapa-kamere** — `LATT-<sensor>-<lens>-F<filter>` za LATTICE, `<model>_<filter>` (npr. `Survey3N_RGN`) za Survey3
 * **format-folder** — `tiff16`, `tiff8`, `png8`, `jpg8` ili `tiff32`
-* **folderi proizvoda** — `Reflectance_Calibrated_Images/`, `Debayered_Images/`, `Preview_Images/`, `Radiance_Images/` (uvijek ispod `tiff32`), `<INDEX>_Index_Images/`**Izvozene datoteke zadržavaju naziv izvornog datoteka — mapa identificira proizvod, a ne nastavak naziva datoteke.**Uz CLI, projektna mapa se stvara pored ulazne mape, osim ako ne navedete `-o`. Imajte na umu da izvršavanje naredbe `chloros-cli process` koje je zatražilo proizvode, ali nije zapisalo nijedan, ispisuje `Processing finished but wrote no image products.` i**izlazi s ne-nulovitim rezultatom**, pa ga skripte mogu otkriti. Pogledajte [Output Image Formats](output-image-formats.md) i [CLI Reference](reference/cli-reference.md).
+* **folderi proizvoda** — `Reflectance_Calibrated_Images/`, `Debayered_Images/`, `Preview_Images/`, `Radiance_Images/` (uvijek ispod `tiff32`), `<INDEX>_Index_Images/`
+* **`clamp_masks/`** — samo za LATTICE multispectral: maske po pikselu pored mapa s proizvodima, vidi dolje**Izvožene datoteke zadržavaju naziv izvornog datoteka — mapa identificira proizvod, a ne ekstenzija naziva datoteke.**Kod korištenja CLI-a, mapa projekta stvara se u vašoj zadanoj mapi projekta (`Documents/MAPIR/Chloros Projects`, osim ako je niste promijenili), osim ako ne navedete `-o`; Relativna putanja uzima se u odnosu na mapu iz koje pokrećete naredbu. Imajte na umu da izvršavanje naredbe `chloros-cli process` koje je zatražilo proizvode, ali nije zapisalo nijedan, ispisuje `Processing finished but wrote no image products.` i**izlazi s ne-nulovitim rezultatom**, tako da ga skripte mogu detektirati. Pogledajte [Output Image Formats](output-image-formats.md) i [CLI Reference](reference/cli-reference.md).
 
 </details>
 
 <details>
 
-<summary>Mogu li urediti svoje slike prije obrade u Chloros?</summary>
+<summary>Što su mapu clamp_masks i datoteke *_clampmask.tif?</summary>
+
+Novo u verziji 1.3.0. Radiance i reflectance proizvodi multispektralne kamere LATTICE M3C provode unmix s 3×3 pojasevima, a tamo gdje proizvedu negativnu vrijednost u pojasu, Chloros tu vrijednost skraćuje na nulu. Proizvod s barem jednim obrezanim pikselom dobiva jednobandnu `uint8` masku koja označava koje su piksele i pojaseve obrezane (bit 0 = R kanal proizvoda, bit 1 = G, bit 2 = B). Maske se spremaju u mapu `clamp_masks/` **pored** mapa proizvoda — na primjer `tiff16/clamp_masks/Reflectance_Calibrated_Images/<name>_clampmask.tif` — a XMP oznaka proizvoda `Chloros:UnmixClampMask` naziva njezinu masku (ili navodi `none`).
+
+To nisu slike scene: vlastiti import programa Chloros ih preskače, a budući da se nikada ne nalaze unutar mape proizvoda, mapu proizvoda možete predati Pix4D-u ili Metashapeu u izvornom obliku. Pogledajte [Clamp masks](output-image-formats.md#clamp-masks).
+
+</details>
+
+<details>
+
+<summary>Zašto Chloros prikazuje poruku &quot;Mapa projekta je preduboka za ovo računalo&quot;?</summary>
+
+Ovo vrijedi samo za Windows. Windows dolazi s isključenim dugim putanjama, pa nijedna putanja do datoteke ne smije biti dulja od 260 znakova. Datoteke proizvoda Chloros smještene su do otprilike 130 znakova ispod mape projekta, stoga Chloros odbija dublju mapu projekta prije obrade — umjesto da pokrene proces i ne zapiše ništa, što se moglo dogoditi prije verzije 1.3.0. Poruka prikazuje najdužu mapu projekta koja odgovara.
+
+Riješite to na bilo koji od sljedećih načina:
+
+* Koristite kraći direktorij projekta (**Radni direktorij** u postavkama projekta, ili `-o` / `chloros-cli set-project-folder` za CLI).
+* Uključite dug putanja sustava Windows i ponovno pokrenite Chloros. Opcija **Omogući dug putanja sustava Windows** u instalacijskom programu za Chloros (zadano označena) radi upravo to; ponovno pokrenite instalacijski program ako ste je odznačili.
+
+Vidi [Pokretanje obrade](processing-images-gui/starting-the-processing.md#the-project-folder-is-too-deep-for-this-computer).
+
+</details>
+
+<details>
+
+<summary>Mogu li urediti svoje slike prije obrade u Chlorosu?</summary>
 
 Ne. Chloros pretpostavlja da ulazni podaci nisu izmijenjeni. Nemojte mijenjati nazive datoteka.
 
@@ -87,11 +115,11 @@ Ne. Chloros pretpostavlja da ulazni podaci nisu izmijenjeni. Nemojte mijenjati n
 
 <details>
 
-<summary>Mogu li postaviti svoje MAPIR Survey3 kamere na automatsku ekspoziciju i obraditi slike u Chloros?</summary>
+<summary>Mogu li postaviti svoje kamere MAPIR Survey3 na automatsku ekspoziciju i obrađivati slike u Chloros?</summary>
 
-Ne. Skupovi slika za Survey3 moraju imati fiksnu/zaključanu ekspoziciju, stoga nema automatske brzine zatvarača ili automatskog ISO-a. Sve slike istog modela kamere moraju imati identičnu brzinu zatvarača i ISO (ekspoziciju).
+Ne. Skupovi slika kamereSurvey3 moraju imati fiksnu/zaključanu ekspoziciju, stoga nema automatske brzine zatvarača ili automatskog ISO-a. Sve slike istog modela kamere moraju imati identičnu brzinu zatvarača i ISO (ekspoziciju).
 
-Kamere LATTICE nemaju ovo ograničenje: Chloros upravlja ekspozicijom u stvarnom vremenu (Smart AE), a svako snimanje bilježi stvarnu upotrijebljenu ekspoziciju i pojačanje, što radiometrijski pipeline uzima u obzir.
+Kamere LATTICE nemaju ovo ograničenje: Chloros upravlja njihovom ekspozicijom uživo (Smart AE) i svako snimanje bilježi ekspoziciju i pojačanje koji su zapravo korišteni, što radiometrijski pipeline uzima u obzir.
 
 </details>
 
@@ -99,7 +127,7 @@ Kamere LATTICE nemaju ovo ograničenje: Chloros upravlja ekspozicijom u stvarnom
 
 <summary>Može li Chloros obrađivati ili analizirati ortomosaicne slike?</summary>
 
-Ne. Podržane su samo pojedinačne slike iz kamere MAPIR, a ne spojene slike poput ortomosaika.
+Ne. Podržane su samo pojedinačne slike kamere MAPIR, a ne spojene slike poput orto-mosaika.
 
 </details>
 
@@ -117,15 +145,15 @@ U tablici preglednika datoteka, prethodno odabiranje ciljnih slika u desnoj stup
 
 Ako planirate prenijeti slike na našu internetsku platformu za obradu [MAPIR
 
-Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), nemojte uređivati slike prije prijenosa. Cloud će izvršiti svu istu obradu, a još mnogo više.
+Cloud](https://www.mapir.camera/collections/software/products/mapir-cloud-subscription), nemojte uređivati slike prije prijenosa. Cloud će izvršiti svu istu obradu, a još i više.
 
 </details>
 
 <details>
 
-<summary>Hoće li MAPIR ikada podržati značajku X? Stvarno bih volio da MAPIR nudi X.</summary>
+<summary>Hoće li MAPIR ikada podržati značajku X? Stvarno bih želio da MAPIR nudi X.</summary>
 
-Uvijek smo zainteresirani za povratne informacije o našim proizvodima. Ako pronađete problem s našim proizvodima ili imate prijedlog kako bismo ih mogli poboljšati, molimo vas da nas [KONTAKTIRATE](https://www.mapir.camera/community/contact) i podijelite svoja razmišljanja. Većinu našeg istraživanja i razvoja (R&amp;D) usmjeravamo slušajući najveće potrebe naših kupaca.
+Uvijek smo zainteresirani za povratne informacije o našim proizvodima. Ako pronađete problem s našim proizvodima ili imate prijedlog kako bismo ih mogli poboljšati, molimo vas da nas [KONTAKTIRATE](https://www.mapir.camera/community/contact) i podijelite svoja razmišljanja. Većinu našeg istraživanja i razvoja usmjeravamo slušajući najveće potrebe naših korisnika.
 
 </details>
 
@@ -133,15 +161,15 @@ Uvijek smo zainteresirani za povratne informacije o našim proizvodima. Ako pron
 
 <summary>Je li Chloros dostupan za Linux?</summary>
 
-Da! Chloros 1.2.0 podržava Linux amd64 (x86_64) i arm64 (NVIDIA Jetson JetPack 6) putem paketa `.deb`. CLI i Python SDK u potpunosti su podržani na Linux, uključujući upravljanje LATTICE kamerom uživo i DAQ senzorima. Ne postoji GUI za Linux — sva interakcija odvija se putem [CLI](CLI.md) ili [Python SDK](api-python-sdk.md). Pogledajte [Linux Overview](linux/linux-overview.md) za detalje.
+Da! Chloros 1.3.0 podržava Linux amd64 (x86_64) i arm64 (NVIDIA Jetson JetPack 6) putem paketa `.deb`. CLI i Python SDK u potpunosti su podržani na Linux, uključujući upravljanje LATTICE kamerom uživo i DAQ senzorima. GUI za Linux ne postoji — sva interakcija odvija se putem [CLI](CLI.md) ili [Python SDK](api-python-sdk.md). Pogledajte [Linux pregled](linux/linux-overview.md) za detalje.
 
 </details>
 
 <details>
 
-<summary>Mogu li pokrenuti Chloros na NVIDIA Jetson?</summary>
+<summary>Mogu li pokrenuti Chloros na NVIDIA Jetsonu?</summary>
 
-Da! Chloros podržava NVIDIA Jetson platforme uključujući Jetson Nano, Orin Nano, Orin NX i AGX Orin koje koriste JetPack 6. Chloros automatski otkriva vaš model Jetson i optimizira strategiju obrade. Pogledajte [NVIDIA Jetson vodič](linux/nvidia-jetson-guide.md) za upute za postavljanje i implementaciju.
+Da! Chloros podržava obitelj NVIDIA Jetson **Orin** — Orin Nano, Orin NX i AGX Orin — koji koriste JetPack 6. Stariji modeli (Jetson Nano, TX2, Xavier NX) ne mogu pokrenuti JetPack 6 i nisu podržani u trenutnom paketu. Chloros automatski otkriva vaš model Jetson i optimizira strategiju obrade. Jetson paket koristi CUDA izradu PyTorcha iz JetPacka 6, tako da se obrada odvija na GPU-u Jetsona. Pogledajte [Vodič za NVIDIA Jetson](linux/nvidia-jetson-guide.md) za upute o postavljanju i implementaciji.
 
 </details>
 
@@ -149,7 +177,7 @@ Da! Chloros podržava NVIDIA Jetson platforme uključujući Jetson Nano, Orin Na
 
 <summary>Optimizira li Chloros automatski za moj hardver?</summary>
 
-Da! Chloros uključuje [Dynamic Compute Adaptation](processing-architecture/dynamic-compute-adaptation.md) koja automatski otkriva vaš CPU, GPU, RAM i (na Jetsonu) termalne senzore. Zatim odabire optimalnu strategiju obrade — od `GPU_PARALLEL` na sustavima s velikom memorijom do `GPU_SINGLE` na ograničenim uređajima do `CPU_PARALLEL` na sustavima bez NVIDIA GPU-a. Nije potrebna ručna konfiguracija.
+Da! Chloros uključuje [Dynamic Compute Adaptation](processing-architecture/dynamic-compute-adaptation.md) koja automatski otkriva vaš CPU, GPU, RAM i (na Jetsonu) termalne senzore. Zatim odabire optimalnu strategiju obrade — od `GPU_PARALLEL` na GPU-ima s velikom memorijom do `GPU_SINGLE` na manjim do `CPU_PARALLEL` na sustavima bez CUDA GPU-a koji PyTorch može koristiti. Nije potrebna ručna konfiguracija.
 
 </details>
 
@@ -158,21 +186,21 @@ Da! Chloros uključuje [Dynamic Compute Adaptation](processing-architecture/dyna
 <summary>Što je 4-thread pipeline za obradu?</summary>
 
 Chloros
-
-koristi pipelined arhitekturu s 4 niti za korisnike s više jezgri: Nit 1 (Detekcija) učitava slike i otkriva ciljeve za kalibraciju, Nit 2 (Kalibracija) izračunava kalibraciju reflektivnosti, Nit 3 (Obrada) izvodi GPU-akcelerirano debayering i izračun indeksa, a Nit 4 (Izvoz) zapisuje izlazne datoteke. Više slika može istovremeno biti u različitim nitima radi maksimalne propusnosti. Pogledajte [Processing Pipeline](processing-architecture/processing-pipeline.md) za detalje.
+koristi pipelined arhitekturu s 4 niti za korisnike Chloros
++: Nit 1 (Detekcija) učitava slike i otkriva ciljeve za kalibraciju, Nit 2 (Kalibracija) izračunava kalibraciju reflektivnosti, Nit 3 (Obrada) izvodi GPU-akcelerirano debayering i izračun indeksa, a Nit 4 (Izvoz) zapisuje izlazne datoteke. Više slika može se istovremeno obrađivati u različitim nitima radi maksimalne propusnosti. Pogledajte [Procesna cijev](processing-architecture/processing-pipeline.md) za detalje.
 
 </details>
 
 <details>
 
-<summary>Kako pokrenuti dijagnostiku na mojoj instalaciji Chloros?</summary>
+<summary>Kako mogu pokrenuti dijagnostiku na svojoj instalaciji Chloros?</summary>
 
-Koristite naredbu `selftest` za pokretanje 7-koraknog smoke testa: verzija, dostupnost porta, pokretanje backenda, povezanost s API (`/api/test`), informacije o sustavu (`/api/system-info` — GPU/CUDA/PyTorch), prisutnost modela za uklanjanje šuma i spremnost CUDA + uklanjanja šuma:
+Koristite naredbu `selftest` za pokretanje 7-koraknog smoke testa: verzija, dostupnost porta, pokretanje backenda, povezanost APIa (`/api/test`), informacije o sustavu (`/api/system-info` — GPU/CUDA/PyTorch), prisutnost modela za uklanjanje šuma i spremnost CUDA + modela za uklanjanje šuma:
 
 ```bash
 chloros-cli selftest
 ```
 
-Ovo je posebno korisno na sustavima Linux/Jetson za provjeru postavke GPU-a i CUDA-e.
+Ovo je posebno korisno na sustavima Linux za provjeru postavke GPU-a i CUDA-e. Na Jetsonu, `CUDA: False` obično znači da nedostaju CUDA i cuDNN biblioteke iz JetPacka 6: instalirajte ih pomoću `sudo apt install nvidia-jetpack`.
 
 </details>
