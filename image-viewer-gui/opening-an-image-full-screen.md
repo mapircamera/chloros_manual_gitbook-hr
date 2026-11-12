@@ -57,7 +57,9 @@ Kada efektivno povećanje prijeđe **60×**, Chloros crta okvir za isticanje oko
 | **←**                           | Cijeli zaslon | Prethodna slika                      |
 | **Ctrl + R**                    | Cijeli zaslon | Resetirajte indeks/LUT sandbox         |
 | **Ctrl + `+`**/**Ctrl + `=`** | Rešetka        | Veće minijature (4 px po pritisku)  |
-| **Ctrl + `−`**                  | Rešetka        | Manji sličice (4 px po pritisku) |***
+| **Ctrl + `−`**                  | Rešetka        | Manji sličice (4 px po pritisku) |
+
+***
 
 ## Vrijednosti pokazivača
 
@@ -100,7 +102,9 @@ Preglednik, sandbox indeksa/LUT-a i izvoz indeksa sve rješavaju mjerilo putem i
 Dvije posljedice vrijedne spomena:
 
 * **32-bitni postotak**TIFF pohranjuje DN/65535 kao decimalni broj, a**8-bitni** PNG/JPG izvoz pohranjuje DN × 255/65535 — preglednik oba pretvara natrag prije ispisivanja postotka.
-* Jedan slučaj nije moguće oporaviti: **8-bitni izvoz TIFF zapisa snimljenog iz 8-bitnog izvora** ograničen je na raspon 0–255 umjesto da se ponovno skalira, i namjerno ne sadrži oznaku skale. Za te datoteke, panel ispisuje samo DN, bez stupca za postotak. To je iskren odgovor, a ne bug.***
+* Jedan slučaj nije moguće oporaviti: **8-bitni izvoz TIFF zapisa snimljenog iz 8-bitnog izvora** ograničen je na raspon 0–255 umjesto da se ponovno skalira, i namjerno ne sadrži oznaku skale. Za te datoteke, panel ispisuje samo DN, bez stupca za postotak. To je iskren odgovor, a ne bug.
+
+***
 
 ## Histogram sloja
 
@@ -124,9 +128,11 @@ Iznad histograma nalaze se tri gumba:
 | ---------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **KURSO** | Uključi | Crta linije markera na histogramu na točnim vrijednostima prikazanim u gornjim redovima, tako da možete vidjeti gdje se piksel ispod vašeg kursora nalazi u raspodjeli kadra. U načinu rada RGB postoji jedan marker po kanalu u vlastitoj boji; inače jedan bijeli marker na kombiniranoj vrijednosti |
 | **INDEX**| Uključen | Pojavljuje se samo dok je indeks aktivan. Prelazi histogram sa izvorišnih pojaseva na**raspodjelu indeksnih vrijednosti**, pri čemu su dva praga za isrez iscrtana kao narančaste isprekidane linije, a indeksna vrijednost pokazivača kao bijela linija                                                          |
-| **RGB**| Isključeno | Prelazi s kombinirane krivulje na krivulje po pojedinačnim kanalima. Na mono senzoru ovo gumb piše**MONO** i onemogućen je — postoji samo jedan kanal za prikaz.
+| **RGB**| Isključeno | Prelazi s kombinirane krivulje na krivulje po pojedinačnim kanalima. Na mono senzoru ovo gumb piše**MONO** i onemogućen je — postoji samo jedan kanal za prikaz. |
 
-Histogram se izračunava na **blokovima koje vidite**, a ne na izvornih pikselima iza njih: promijenite veličinu GSD bloka i distribucija se ponovno izračunava, tako da se histogram, pokazivač i prikazana slika uvijek podudaraju.***
+Histogram se izračunava na **blokovima koje vidite**, a ne na izvornih pikselima iza njih: promijenite veličinu GSD bloka i distribucija se ponovno izračunava, tako da se histogram, pokazivač i prikazana slika uvijek podudaraju.
+
+***
 
 ## Veličina GSD bloka
 
@@ -185,7 +191,9 @@ Primijenite multispektralne indekse i tablice boja (LUT) s bočne trake:
 
 3. Odaberite filter svoje kamere i formulu indeksa, zatim povucite krugove kanala na prazna mjesta u formuli
 4. Dodajte LUT i odaberite gradijent, prage i način obrezivanja
-5. Očitajte vrijednosti na pokazivaču i spremite rezultat pomoću opcije **Izvoz/Spremljanje slike(a)**Pogledajte [Index/LUT Sandbox](index-lut-sandbox.md) za potpuni vodič.***
+5. Očitajte vrijednosti na pokazivaču i spremite rezultat pomoću opcije **Izvoz/Spremljanje slike(a)**Pogledajte [Index/LUT Sandbox](index-lut-sandbox.md) za potpuni vodič.
+
+***
 
 ## Rješavanje problema
 

@@ -159,7 +159,9 @@ Kako biste sačuvali zapis obrade ili ga poslali podršci tvrtke MAPIR:
 3. Priložite uz dokumentaciju projekta
 4. Pošaljite podršci tvrtke MAPIR ako naiđete na probleme.
 
-Da biste problem izravno poslali tvrtki MAPIR, upotrijebite ikonu greške (**Prijavi grešku**) na vrhu kartice Zapisnika otklanjanja pogrešaka (Debug Log) — pogledajte [Prijavljivanje greške s kartice zapisnika](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).***
+Da biste problem izravno poslali tvrtki MAPIR, upotrijebite ikonu greške (**Prijavi grešku**) na vrhu kartice Zapisnika otklanjanja pogrešaka (Debug Log) — pogledajte [Prijavljivanje greške s kartice zapisnika](monitoring-the-processing.md#reporting-a-bug-from-the-log-tab).
+
+***
 
 ## Uobičajeni problemi s izlaznim datotekama i njihova rješenja
 

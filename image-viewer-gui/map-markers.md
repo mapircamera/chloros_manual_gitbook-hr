@@ -80,7 +80,9 @@ Svaka slika s GPS podacima dobiva označivač na svojim koordinatama.
 | Pružatelj usluge | Napomene                                                                                                                                                             |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Google Maps** | Široka svjetska pokrivenost; podržava sve četiri vrste pločica                                                                                                            |
-| **Esri ArcGIS**| Često zračne snimke veće razlučivosti u određenim regijama. Vrsta pločice**Terrain** nije dostupna za Esri i njezino je gumbom onemogućeno dok je Esri odabran |***
+| **Esri ArcGIS**| Često zračne snimke veće razlučivosti u određenim regijama. Vrsta pločice**Terrain** nije dostupna za Esri i njezino je gumbom onemogućeno dok je Esri odabran |
+
+***
 
 ## Vrste karte
 
@@ -95,7 +97,9 @@ Odaberite vrstu sloja karte pomoću gumba (s lijeva na desno):
 | **Satelitska**        | Detaljne satelitske snimke, bez oznaka — opcija s najvećom propusnošću |
 | **Hibridna** (zadano) | Satelitske snimke s cestama i oznakama iscrtanima preko njih                |
 
-Zavižak **Karta**otvara se na načinu**Hibridni**. Vaš odabir zadržava se i pri prebacivanju pružatelja usluge ako on to podržava.***
+Zavižak **Karta**otvara se na načinu**Hibridni**. Vaš odabir zadržava se i pri prebacivanju pružatelja usluge ako on to podržava.
+
+***
 
 ## Kretanje po karti
 
@@ -143,7 +147,9 @@ Zavižak **Karta**otvara se na načinu**Hibridni**. Vaš odabir zadržava se i p
 
 ### Karta je prazna ili se pločice prestaju učitavati
 
-Pružatelji pločica su internetske usluge. Ako pločice prestanu pristizati, provjerite mrežnu vezu računala, a zatim pokušajte promijeniti pružatelja. Ako ste bili jako zumirani, pritisnite gumb za reset **×** kako biste se vratili na normalnu razinu zumiranja i dopustili karti da ponovno zatraži pločice.***
+Pružatelji pločica su internetske usluge. Ako pločice prestanu pristizati, provjerite mrežnu vezu računala, a zatim pokušajte promijeniti pružatelja. Ako ste bili jako zumirani, pritisnite gumb za reset **×** kako biste se vratili na normalnu razinu zumiranja i dopustili karti da ponovno zatraži pločice.
+
+***
 
 ## Povezane stranice
 

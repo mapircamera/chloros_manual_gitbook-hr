@@ -36,9 +36,7 @@ M8 sinkronizacijski kabeli spajaju se na jednom čvorištu, tako da **bilo koja 
 
 | Baner | Značenje |
 | --- | --- |
-| "Sinkronizacijski kabel pronađen na {n} kamera. Bilo koja od njih može biti glavna; predodabrana je kamera u bojiRGB
-
-(u suprotnom prva)." (zelena) | Probator je pronašao kamere na sinkronizacijskoj liniji; potvrdni okviri za glavni radio i robne uređaje već su ispunjeni. |
+| "Sinkronizacijski kabel pronađen na {n} kamera. Bilo koja od njih može biti glavna; predodabrana je kamera u boji RGB (u suprotnom prva)." (zelena) | Probator je pronašao kamere na sinkronizacijskoj liniji; potvrdni okviri za glavni radio i robne uređaje već su ispunjeni. |
 | "Nije detektiran master - provjerite GPIO kabel" (narančasta) | Nijedna kamera nije primila okidački impuls; provjerite sinkronizacijski kabel. Uloge su i dalje unaprijed ispunjene (RGB kamera, inače prva kamera na popisu, kao master) i možete ih promijeniti. |
 | "Nema sinkronizacijskog kabela: {serijski brojevi}" (narančasta) | Navedene kamere nemaju priključen sinkronizacijski kabel. |
 

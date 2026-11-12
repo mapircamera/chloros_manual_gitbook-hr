@@ -71,7 +71,9 @@ Za potpunu referencu formule — sve tri liste prednastavki i koja imena gdje fu
 
 ### Sa označenim indeksom, ali bez LUT-a
 
-Slika se iscrtava u **sivoj skali**, rastegnuta između dviju vrijednosti praga. To je namjerno: indeksna slika su skalarni podaci, a siva skala je njihovo vjerno prikazivanje. Dodajte LUT kada želite boju.***
+Slika se iscrtava u **sivoj skali**, rastegnuta između dviju vrijednosti praga. To je namjerno: indeksna slika su skalarni podaci, a siva skala je njihovo vjerno prikazivanje. Dodajte LUT kada želite boju.
+
+***
 
 ## Rad s LUT-ovima (tablicama za traženje)**Tablica za traženje** mapira indeksne vrijednosti na boje: ulaz NDVI 0,65, izlaz određena zelena boja. Ona ne mijenja podatke — mijenja način na koji ih čitate.
 
@@ -135,7 +137,9 @@ Primjer prozora za NDVI:
 | Samo zdrava vegetacija                | 0.5  | 0.9 |
 | Naglasiti stres                        | 0.2  | 0.5 |
 
-Sužavanje prozora povećava kontrast unutar vašeg područja interesa i sve ostalo izbacuje izvan dosega — gdje **način obrezivanja** odlučuje što se s tim događa.***
+Sužavanje prozora povećava kontrast unutar vašeg područja interesa i sve ostalo izbacuje izvan dosega — gdje **način obrezivanja** odlučuje što se s tim događa.
+
+***
 
 ## Načini obrezivanja
 

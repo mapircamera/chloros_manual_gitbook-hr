@@ -15,7 +15,9 @@ Images In → [Thread 1: Detection] → [Thread 2: Calibration] → [Thread 3: P
 
 Svaka slika prolazi kroz sva četiri niti redom. Kod višenitne obrade sustava Chloros+, više slika istovremeno zauzima različite niti — dok nit 3 obrađuje jednu sliku, nit 1 može otkrivati sljedeću, nit 2 kalibrirati još jednu, a nit 4 spremati gotovu na disk.
 
-Napredak se izvještava za svaki thread i prenosi putem Server-Sent Events (backend ih objavljuje na `/api/events`). U prikazu napretka uživo u CLIu četiri faze su označene kao **Detekcija, Analiza, Obrada, Izvoz**.***
+Napredak se izvještava za svaki thread i prenosi putem Server-Sent Events (backend ih objavljuje na `/api/events`). U prikazu napretka uživo u CLIu četiri faze su označene kao **Detekcija, Analiza, Obrada, Izvoz**.
+
+***
 
 ## Detalji niti
 

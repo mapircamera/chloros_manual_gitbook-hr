@@ -23,7 +23,9 @@ Chloros 1.3.0 pruža nativnu podršku za **CLI**i**Python SDK** na Linux radnim 
 | **Debayer s podrškom za teksture** (potreban je CUDA GPU) | Da (Chloros+) | Da (Chloros+) | Da (Chloros+) | Da (Chloros+) |
 | **Dinamička prilagodba izračuna** | Da | Da | Da | Da |
 | **Backend kao sustavna usluga** (`chloros-backend@<user>.service`) | Ne | Ne | Da (po želji) | Da (po želji) |
-| **Ažuriranje na licu mjesta** (`chloros-cli update`) | Ne (pokrenite instalacijski program) | Ne (pokrenite instalacijski program) | Da | Da |***
+| **Ažuriranje na licu mjesta** (`chloros-cli update`) | Ne (pokrenite instalacijski program) | Ne (pokrenite instalacijski program) | Da | Da |
+
+***
 
 ## Podržane arhitekture
 
@@ -36,7 +38,9 @@ Chloros 1.3.0 pruža nativnu podršku za **CLI**i**Python SDK** na Linux radnim 
 
 * **Ubuntu 22.04 LTS ili noviji** (amd64)
 * **Debian 12 ili noviji** (amd64)
-* **NVIDIA JetPack 6** (arm64 — platforme Jetson Orin)***
+* **NVIDIA JetPack 6** (arm64 — platforme Jetson Orin)
+
+***
 
 ## Što korisnici Linuxa dobivaju
 
@@ -55,7 +59,9 @@ Chloros 1.3.0 pruža nativnu podršku za **CLI**i**Python SDK** na Linux radnim 
 
 * **Desktop GUI** — nema grafičkog sučelja; sva interakcija je putem CLIa ili Python SDKa
 * **Preglednik slika** — nema interaktivnog preglednika slika, prikaza mreže ili oznaka na karti
-* **Vizualno upravljanje projektima**— projekti se stvaraju i pokreću putem naredbi**CLI**i poziva**SDK** (sam hardver — kamere, senzori, snimanje — ostaje u potpunosti kontroliran iz terminala)***
+* **Vizualno upravljanje projektima**— projekti se stvaraju i pokreću putem naredbi**CLI**i poziva**SDK** (sam hardver — kamere, senzori, snimanje — ostaje u potpunosti kontroliran iz terminala)
+
+***
 
 ## Zahtjev za licencu
 

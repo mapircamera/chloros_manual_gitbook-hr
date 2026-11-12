@@ -60,7 +60,9 @@ output/
 **Dodaj mapu na korijensku mapu snimki** (`output/` gore). Kada odabrana mapa sama po sebi ne sadrži slike, već ima podmapu, Chloros automatski ulazi u njih — svi nivoi podmapa i korijenska mapa `.daq` preuzimaju se odjednom.**Kako se uvoze snimke:*** Svaka se snimka uvozi kao **jedna slika**, grupirana po snimci (a ne kao jedna stavka po razini). Ostale razine iste snimke pojavljuju se kao načini prikaza te jedne slike.
 * **Obrada uvijek započinje s sirovim kadrom.** Ostale razine su vidljive, ali samo `raw` ikada prolazi kroz pipeline — ponovna obrada već obrađenog proizvoda dovela bi do dvostrukog primjenjivanja korekcija, stoga Chloros to odbacuje. Ponovno uvezeni izvoz nikada ne može zauzeti raw slot snimke.
 * Mapu snimke spremljenu **bez** raw uvoza može se normalno prikazati, ali obrada je preskače i o tome obavještava u zapisniku. (CLI-označitelj `--input-level` može prisiliti ulaznu točku za ovaj slučaj — pogledajte [CLI Referencu](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
-* Od verzije 1.3.0, mapa snimki također može sadržavati mapu `clamp_masks/` (maske po pikselu za razine zračenja i odbijanja — pogledajte [Formate izlaznih slika](../output-image-formats.md#clamp-masks)). Maske nisu slike scene i **Chloros** ih preskače pri uvozu gdje god se nalazile.**Sesije LATTICE huba** uvoze se na isti način: kliknite "Dodaj mapu" na mapu sesije kopiranu iz huba (sadrži `raw/` i `previews/`), zajedno sa svim DAQ-M `.csv` zapisima o padanju. Ako kalibracija kamere ili DAQ-a još nije pohranjena u predmemoriju na vašem računalu, Chloros je automatski preuzima prema serijskom broju prilikom uvoza (jednom je potreban internet).***
+* Od verzije 1.3.0, mapa snimki također može sadržavati mapu `clamp_masks/` (maske po pikselu za razine zračenja i odbijanja — pogledajte [Formate izlaznih slika](../output-image-formats.md#clamp-masks)). Maske nisu slike scene i **Chloros** ih preskače pri uvozu gdje god se nalazile.**Sesije LATTICE huba** uvoze se na isti način: kliknite "Dodaj mapu" na mapu sesije kopiranu iz huba (sadrži `raw/` i `previews/`), zajedno sa svim DAQ-M `.csv` zapisima o padanju. Ako kalibracija kamere ili DAQ-a još nije pohranjena u predmemoriju na vašem računalu, Chloros je automatski preuzima prema serijskom broju prilikom uvoza (jednom je potreban internet).
+
+***
 
 ## Razumijevanje tablice preglednika datoteka
 
@@ -102,7 +104,9 @@ Klikom na gumb za prebacivanje u gornjem desnom kutu iznad tablice prikazuju se 
 
 * Datoteke `.daq` i `.csv` pojavljuju se na popisu preglednika datoteka, ali nisu slike na koje se može kliknuti — one isporučuju zračenje odozgo za kalibraciju reflektancije.
 * Svaka uvožena datoteka `.daq`/`.csv` navedena je u odjeljku **Postavke projekta → DAQ senzor svjetla**, gdje možete pregledati korekciju difuznog poklopca koja je na snazi za svaku datoteku. Pogledajte [Podešavanje postavki projekta](adjusting-project-settings.md).
-* Snimke koje napravite na kartici **Senzori svjetla** automatski se dodaju u otvoreni projekt — nije potreban ručni uvoz.***
+* Snimke koje napravite na kartici **Senzori svjetla** automatski se dodaju u otvoreni projekt — nije potreban ručni uvoz.
+
+***
 
 ## Upravljanje datotekama u vašem projektu
 
@@ -219,7 +223,9 @@ Ako vaš projekt sadrži slike s više kamera MAPIR:
 
 ### Izvješće o nedostajućim datotekama pri ponovnom otvaranju projekta
 
-Ako su izvorne datoteke premještene ili izbrisane otkako je projekt zadnji put otvoren, Chloros će vam reći **koje**datoteke nedostaju umjesto da se otvori na praznoj mreži. Ako je sama mapa projekta premještena, Chloros ponovno usmjerava svoje izvorišne putanje na mapu u kojoj se `project.json` sada nalazi i čuva sigurnosnu kopiju (`project.json.before-relink-<date>-<time>`). Kada ih ne pronađe, prozor**Izvorne datoteke nisu pronađene**nudi**Pregledaj** za novu lokaciju, a zatim Novo projekt ili Izbriši projekt. Iz CLIa upotrijebite `chloros-cli project open PATH --relink FOLDER`; iz SDKa, `open_project(path, relink=...)`.***
+Ako su izvorne datoteke premještene ili izbrisane otkako je projekt zadnji put otvoren, Chloros će vam reći **koje**datoteke nedostaju umjesto da se otvori na praznoj mreži. Ako je sama mapa projekta premještena, Chloros ponovno usmjerava svoje izvorišne putanje na mapu u kojoj se `project.json` sada nalazi i čuva sigurnosnu kopiju (`project.json.before-relink-<date>-<time>`). Kada ih ne pronađe, prozor**Izvorne datoteke nisu pronađene**nudi**Pregledaj** za novu lokaciju, a zatim Novo projekt ili Izbriši projekt. Iz CLIa upotrijebite `chloros-cli project open PATH --relink FOLDER`; iz SDKa, `open_project(path, relink=...)`.
+
+***
 
 ## Sljedeći koraci
 

@@ -17,7 +17,9 @@ MAPIR mjere ambijentalno svjetlo kao radiometrijski kalibrirane spektre. U progr
 | --- | --- | --- |
 | **DAQ-U** | USB (serijski) | skeniranje serijskog priključka |
 | **DAQ-M** | Bluetooth Low Energy | BLE skeniranje po nazivu |
-| **DAQ-E** | Ethernet (IPv4, napajanje putem PoE-a) | mDNS `_daq-e._tcp` (naziv hosta `daq-e-<id>.local`) |**DAQ-E-S (novo u verziji 1.3.0).** DAQ-E s trajnim difuzorom i senzorom nagiba. Chloros ga navodi kao `DAQ-E-S` i koristi ga točno kao DAQ-E, s iznimkom što ne primjenjuje korekciju kapa i svako očitanje sadrži podatke o nagibu, rotaciji i smjeru jedinice. Vidi [DAQ-E-S: fiksni difuzor i nagib](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
+| **DAQ-E** | Ethernet (IPv4, napajanje putem PoE-a) | mDNS `_daq-e._tcp` (naziv hosta `daq-e-<id>.local`) |
+
+**DAQ-E-S (novo u verziji 1.3.0).** DAQ-E s trajnim difuzorom i senzorom nagiba. Chloros ga navodi kao `DAQ-E-S` i koristi ga točno kao DAQ-E, s iznimkom što ne primjenjuje korekciju kapa i svako očitanje sadrži podatke o nagibu, rotaciji i smjeru jedinice. Vidi [DAQ-E-S: fiksni difuzor i nagib](caps-and-range.md#daq-e-s-fixed-diffuser-and-tilt).
 
 Sva tri koriste isti protokola prijenosa podataka i isporučuju identične podatke:
 

@@ -34,7 +34,9 @@ u lijevoj bočnoj traci
 * **Opcije**: `Default (512 px)`, `1024 px`, `2048 px`, `Full resolution`
 * **Zadano**: Zadano (512 px)
 * **Opis**: Rezolucija (najduža strana, u pikselsima) pri kojoj se prikazuju minijature mreže slike. Više vrijednosti izgledaju oštrije pri uvećanju, ali se sporije učitavaju i koriste više memorije. Puna rezolucija služi za veličinu izvorne slike.
-* **Napomena**: Samo za prikaz — ovo nikada ne utječe na obradu ili izvezene datoteke.***
+* **Napomena**: Samo za prikaz — ovo nikada ne utječe na obradu ili izvezene datoteke.
+
+***
 
 ## Detekcija ciljeva
 
@@ -184,7 +186,9 @@ Pohranjena vrijednost podudara se bez obzira na velika i mala slova, a nekoliko 
   * Jedna kamera + jedan pin: Pin 2 se automatski postavlja na "Ne koristi se"
   * Jedna kamera + dva pina: Pin 2 se automatski postavlja na "Ne koristi se"
   * Više kamera: Potrebno je ručno odabrati
-* **Napomena**: Iste kamere ne može se istovremeno dodijeliti i Pin 1 i Pin 2.***
+* **Napomena**: Iste kamere ne može se istovremeno dodijeliti i Pin 1 i Pin 2.
+
+***
 
 ## DAQ senzor svjetla
 
@@ -205,7 +209,9 @@ Svaki red prikazuje datoteku, model senzora i korekciju difuzora-kapice koja je 
 * **Opis**: `Auto` koristi zabilječenu kapu svake datoteke (pretpostavlja se kapica Sunshine ako ništa nije zabilježeno, ali DAQ-U, DAQ-M i DAQ-E isporučuju se bez kape i Chloros ne može vidjeti što je postavljeno, pa obrada upozorava na pretpostavljenu kapu: odaberite kapu koja je bila postavljena). Odabir određene kape poništava **sve** datoteke s padajućim snimkama u projektu osim onih DAQ-E-S, čiji je difuzor dio njegove kalibracije; projekt koji sadrži samo DAQ-E-S ne prikazuje padajući izbornik: sirovi snimci se korigiraju njime, i snimke koje već imaju kapu se ponovno referenciraju (zabilježena korekcija se poništava i primjenjuje odabrana).
 * **Važno**: Odabrana kapa mora odgovarati kapi koja je bila fizički postavljena tijekom snimanja. Ni senzor ni softver ne mogu detektirati fizičku kapu — neusklađeni ID kape pogrešno korigira spektre.
 
-Namjerno postoji **jedan** padajući izbornik na razini projekta umjesto po pojedinačnim datotekama: postavka se primjenjuje na sve izvore u usponu u projektu.***
+Namjerno postoji **jedan** padajući izbornik na razini projekta umjesto po pojedinačnim datotekama: postavka se primjenjuje na sve izvore u usponu u projektu.
+
+***
 
 ## Poravnanje nizova
 

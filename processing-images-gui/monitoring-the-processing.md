@@ -188,9 +188,7 @@ Kritični problemi koji mogu uzrokovati prekid obrade — npr. pun disk, ošteć
 | Preskakanje oštećene datoteke               | Datoteka slike je oštećena                         | Ponovno kopirajte datoteku s SD kartice                             |
 | `[IMPORT-LEVEL] Skipping ... no raw source` | Snimanje bez sirovog kadra se ne može obraditi | Ponovno snimite sa sirovim, ili upotrijebite CLI `[RUN-SUMMARY] ... 0 file(s) written`  |
 | `[PROCESS] refused: The project folder is too deep for this computer…` | Pokretanje nije proizvelo slikovne proizvode — prijavljeno kao neuspjeh s napomenama | Pročitajte retke s napomenama; provjerite što je preskočeno i zašto |
-| `[PROCESS] refused: The project folder is too deep for this computer…` | Uključene suWindows
-
-ove duge staze, a mapa projekta je preduboka za ograničenje staze od 260 znakova; ništa nije obrađeno | Koristite kraću mapu projekta (poruka navodi najdužu putanju koja stane), ili uključite dugim putanjama sustava Windows i ponovno pokrenite Chloros — pogledajte [Pokretanje obrade](starting-the-processing.md#the-project-folder-is-too-deep-for-this-computer) |
+| `[PROCESS] refused: The project folder is too deep for this computer…` | Uključene su Windows ove duge staze, a mapa projekta je preduboka za ograničenje staze od 260 znakova; ništa nije obrađeno | Koristite kraću mapu projekta (poruka navodi najdužu putanju koja stane), ili uključite dugim putanjama sustava Windows i ponovno pokrenite Chloros — pogledajte [Pokretanje obrade](starting-the-processing.md#the-project-folder-is-too-deep-for-this-computer) |
 | `[unmix-clamp-mask] …` | Nije moguće zapisati clamp masku proizvoda LATTICE; sam proizvod je u redu i prikazuje `Chloros:UnmixClampMask=unavailable` | Provjerite prostor na disku i dozvole za mapu, a zatim ponovno pokrenite obradu ako vam je potrebna maska |
 
 ### Kopiranje podataka iz dnevnika

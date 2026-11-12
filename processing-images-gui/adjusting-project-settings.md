@@ -154,7 +154,9 @@ Ovaj odjeljak se prikazuje **samo** kada barem jedna slika u projektu sadrži tr
 
 * **Primijeni poravnanje niza** (zadano: uključeno): deformira svaki obrađeni proizvod (debayereni / pretpregled / radijanca / reflektancija / indeks) u zajedničku referentnu geometriju niza. Isključeno = izvoz u nativnoj geometriji senzora.
 * **Orezivanje na zajednički preklop** (zadano: uključeno): orezuje poravnate izvoze na regiju koju dijele svi moduli, tako da svaki pojas ima isti otisak. Isključeno zadržava cijelo platno senzora (crno popunjavanje izvan izvora).
-* **Resampling**:**Bilinear (glatko, zadano)**,**Najbliže (očuvaj točne vrijednosti)**— bez miješanja između piksela, za strogu radiometrijsku analizu — ili**Kubično (najostreće)**.***
+* **Resampling**:**Bilinear (glatko, zadano)**,**Najbliže (očuvaj točne vrijednosti)**— bez miješanja između piksela, za strogu radiometrijsku analizu — ili**Kubično (najostreće)**.
+
+***
 
 ## Spremanje i učitavanje postavki
 

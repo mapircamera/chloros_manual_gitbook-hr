@@ -194,7 +194,9 @@ Otključajte napredne značajke s pretplatom na Chloros+:
 * **🐻 Napredna metoda debayeringa osjetljiva na teksture** - visokokvalitetna metoda debayeringa osjetljiva na rubove u kombinaciji s modelom za uklanjanje šuma temeljenim na umjetnoj inteligenciji (AI/ML) koji uklanja gotovo svu šumovitost debayeringa.
 * 🧮 **Prilagođene formule** - Kreirajte prilagođene multispektralne indekse
 
-<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Pregledajte planove i cijene za Chloros+</a></p>***
+<p align="center"><a href="https://cloud.mapir.camera/pricing" class="button primary">Pregledajte planove i cijene za Chloros+</a></p>
+
+***
 
 ## Pomoć pri instalaciji
 
@@ -235,7 +237,9 @@ Trebate pomoć s instalacijom ili postavom?
 * 📧 **E-pošta**: info@mapir.camera
 * 🌐 **Web-stranica**: [https://www.mapir.camera/community/contact](https://www.mapir.camera/community/contact)
 * 📚 **Dokumentacija**: [Početak rada](./)
-* ❓ **Često postavljana pitanja**: [Često postavljana pitanja](faq.md)***
+* ❓ **Često postavljana pitanja**: [Često postavljana pitanja](faq.md)
+
+***
 
 ## Ažuriranja softvera
 

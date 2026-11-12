@@ -10,7 +10,9 @@ Koristite klizač za zumiranje u gornjem desnom kutu za prilagodbu veličine min
 * **Ctrl + `+`**/**Ctrl + `=`**i**Ctrl + `−`** mijenjaju veličinu za 4 px pri svakom pritisku. Putanja tipkovnice zaustavlja se na 64 px na manjoj strani, a na većoj strani na veličini koja točno stane dva minijatura u red u trenutnom prozoru.
 * Odabrana veličina sprema se s projektom (`UI → Grid thumbnail size` u `project.json`, zadano `160`), pa se pri ponovnom otvaranju projekta vraća na prethodnu vrijednost.
 
-<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>*Razlučivost* sličice je zasebna postavka od *veličine* sličice: pogledajte **Prikaz → Razlučivost sličice slike** u [Postavke projekta](../project-settings/project-settings.md) (zadano 512 px po dužoj strani). Veličina je koliko je velika pločica iscrtana; rezolucija je koliko se detalja dohvaća za njezino popunjavanje.***
+<figure><img src="../.gitbook/assets/chloros_grid_zoom.gif" alt=""><figcaption></figcaption></figure>*Razlučivost* sličice je zasebna postavka od *veličine* sličice: pogledajte **Prikaz → Razlučivost sličice slike** u [Postavke projekta](../project-settings/project-settings.md) (zadano 512 px po dužoj strani). Veličina je koliko je velika pločica iscrtana; rezolucija je koliko se detalja dohvaća za njezino popunjavanje.
+
+***
 
 ## Alatna traka mreže
 
@@ -20,7 +22,9 @@ Red gumba iznad mreže ima do tri grupe, slijeva nadesno:
 2. **Gumbi za filtriranje po kameri** — jedan za svaku LATTICE kameru. Pojavljuje se samo u načinu rada Po kameri.
 3. **Gumbi načina izvoza/prikaza** — koji proizvod prikazuje svaka sličica.
 
-Kada je prozor preuski za sve, grupe se sklapaju s desna ulijevo u padajuće izbornike pri prelasku mišem: prvo se sklapaju gumbi za izvoz/prikaz, a zatim gumbi kamere. Sklopljena grupa ostavlja jedan gumb s oznakom trenutno aktivne opcije, a prilikom prelaska mišem preko njega prikazuje se cijeli skup. **Per Trigger / Per Camera se nikada ne sklapaju.**<!-- SCREENSHOT-NEEDED: Image grid toolbar of a LATTICE array project at full width, showing all three button groups inline: Per Trigger / Per Camera, three camera filter buttons labelled "LATT-M3M (serial)", and the export/view buttons including TIFF, RAW (Original), RAW (Radiance), RAW (Reflectance). -->***
+Kada je prozor preuski za sve, grupe se sklapaju s desna ulijevo u padajuće izbornike pri prelasku mišem: prvo se sklapaju gumbi za izvoz/prikaz, a zatim gumbi kamere. Sklopljena grupa ostavlja jedan gumb s oznakom trenutno aktivne opcije, a prilikom prelaska mišem preko njega prikazuje se cijeli skup. **Per Trigger / Per Camera se nikada ne sklapaju.**<!-- SCREENSHOT-NEEDED: Image grid toolbar of a LATTICE array project at full width, showing all three button groups inline: Per Trigger / Per Camera, three camera filter buttons labelled "LATT-M3M (serial)", and the export/view buttons including TIFF, RAW (Original), RAW (Radiance), RAW (Reflectance). -->
+
+***
 
 ## Gumbi za prikaz izvoza
 
@@ -43,9 +47,7 @@ U mješovitom projektu oznaka slijedi ekstenziju koju koristi većina slika.
 | Gumb | Prikazuje | Kada se pojavljuje |
 | --- | --- | --- |
 | **Ciljevi** | Slike s otkrivenim kalibracijskim ciljem | Nakon izvođenja koje je otkrilo ciljeve |
-| **Reflektancija** | Kalibrirane slike reflektancije | Samo za projekte s kameramaSurvey3
-
-— projekti LATTICE umjesto toga koriste `RAW (Reflectance)`, stoga se mreža nikada ne prikazuje s dva gumba za reflektanciju |
+| **Reflektancija** | Kalibrirane slike reflektancije | Samo za projekte s kamerama Survey3 — projekti LATTICE umjesto toga koriste `RAW (Reflectance)`, stoga se mreža nikada ne prikazuje s dva gumba za reflektanciju |
 | **Balančirano po bijeloj** | Proizvod balansiran po bijeloj (kamereRGB) | Nakon obrade |
 | **Korekcija vinjete** | Zadana opcija za nekorigiranu vinjetu | Nakon obrade kada se kalibracija reflektancije nije mogla primijeniti i *Korekcija vinjete* je bila uključena |
 | **Odziv senzora** | Neokalibrirana nadomjesna vrijednost za odziv senzora | Isto, ali s isključenom *Korekcijom vinjete* |

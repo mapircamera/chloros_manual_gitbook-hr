@@ -181,7 +181,9 @@ Nakon pokretanja, cijela linija obrade radi automatski:
 * Zaustavljeno izvršavanje iskreno izvještava o onome što je dovršeno (pogledajte retke `[RUN-SUMMARY]` u dnevniku)
 * Novi pokretanje pokreće cijeli proces ispočetka
 
-**Savjet za planiranje:** Za vrlo velike projekte razmislite o obradi u serijama ili korištenju CLI-ja za bolju kontrolu.***
+**Savjet za planiranje:** Za vrlo velike projekte razmislite o obradi u serijama ili korištenju CLI-ja za bolju kontrolu.
+
+***
 
 ## Praćenje obrade
 

@@ -194,7 +194,9 @@ Za kvantitativne brojke iradijance, prosječno uzmite podatke u trajanju od najm
 
 * Kombinirajte nekoliko senzora na jednom grafikonu (zajedničke osi), zadržite odvojene grafikone (automatski raspored mreže), premještajte senzore između grafikona, povlačite redove/pločice kako biste ih presložili i sakrijte pojedinačne senzore pomoću prekidača za prikaz/sakrivanje.
 * Po projektu, Chloros zadržava: nazive uređaja, boje grafikona, veličinu grafikona, način prikaza i postavke svakog senzora (vrijeme integracije, prosječno računanje sličica, stanje AE, odabir okidača).
-* **Ponovno otvaranje projekta automatski ponovno povezuje njegove senzore** po adresi — COM priključak za DAQ-U, BLE uređaj za DAQ-M, mDNS naziv domene za DAQ-E (rješava se čak i ako se IP jedinice promijenio) — i ponovno primjenjuje spremljeni profil kapice, prosječno vrijeme sličice, stanje AE-a i ručno vrijeme integracije svakog senzora.***
+* **Ponovno otvaranje projekta automatski ponovno povezuje njegove senzore** po adresi — COM priključak za DAQ-U, BLE uređaj za DAQ-M, mDNS naziv domene za DAQ-E (rješava se čak i ako se IP jedinice promijenio) — i ponovno primjenjuje spremljeni profil kapice, prosječno vrijeme sličice, stanje AE-a i ručno vrijeme integracije svakog senzora.
+
+***
 
 ## Spajanje kamere (DLS)
 

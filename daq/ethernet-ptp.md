@@ -102,4 +102,4 @@ Detalji za potrošače sa strogo poravnanjem:
 | Broadcast domena | Host i senzor na istom L2 segmentu; mDNS se ne usmjerava |
 | Vatrozid | Windows: pravilo **Chloros Backend (UDP-In)** instalatera dopušta DAQ-E stream (UDP 5002), mDNS (5353) i PTP (319/320); vatrozid treće strane treba isto. Linux: `.deb` otvara ove priključke u `ufw` / `firewalld` samo ako je vatrozid bio aktivan tijekom instalacije — omogućite ih sami u jednom omogućenom kasnije |
 | Host s više mrežnih kartica | Otkrivanje pregledava mDNS s povratnim ARP-om; `--eth-host <ip-or-hostname>` preskače otkrivanje i povezuje se izravno |
-| Ponovno skeniranje GUI-ja | Otkrivanje se pokreće samo dok je dijalog za povezivanje otvoren; upotrijebite Osvježi |</version>
+| Ponovno skeniranje GUI-ja | Otkrivanje se pokreće samo dok je dijalog za povezivanje otvoren; upotrijebite Osvježi |

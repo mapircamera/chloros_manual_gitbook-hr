@@ -170,7 +170,9 @@ chloros-cli daq pool-reboot --sensor-id daq-e-def330
 chloros-cli daq pool-update-firmware --sensor-id daq-e-def330
 ```
 
-`pool-info` prikazuje firmware senzora (i je li ova verzija Chloros-a isporučena s novijom verzijom), njegovu adresu i način na koji je dobivena, spremnu mrežnu postavku dok se razlikuje od aktivne, streaming pri uključivanju i PTP. `pool-set-network` ponovno pokreće senzor kako bi primijenio promjenu i ponovno ga povezuje s postavkama koje je imao; `--no-reboot` samo je sprema. Statička adresa mora biti na mreži ovog računala, inače je Chloros odbacuje; `--force` to zaobilazi, ali samo za računalo kojem će se promijeniti adresa ili koje će se usmjeriti na nju. Ponovni pokreti se odbijaju dok senzor bilježi. `pool-update-firmware` je **Update to \<version\>** za naredbeni redak</version\> GUI-ja <version\>i način ažuriranja DAQ-E-a na Linuxu, koji nema GUI. Novo u verziji 1.3.0.***
+`pool-info` prikazuje firmware senzora (i je li ova verzija Chloros-a isporučena s novijom verzijom), njegovu adresu i način na koji je dobivena, spremnu mrežnu postavku dok se razlikuje od aktivne, streaming pri uključivanju i PTP. `pool-set-network` ponovno pokreće senzor kako bi primijenio promjenu i ponovno ga povezuje s postavkama koje je imao; `--no-reboot` samo je sprema. Statička adresa mora biti na mreži ovog računala, inače je Chloros odbacuje; `--force` to zaobilazi, ali samo za računalo kojem će se promijeniti adresa ili koje će se usmjeriti na nju. Ponovni pokreti se odbijaju dok senzor bilježi. `pool-update-firmware` je **Update to \<version\>** za naredbeni redak</version\> GUI-ja <version\>i način ažuriranja DAQ-E-a na Linuxu, koji nema GUI. Novo u verziji 1.3.0.
+
+***
 
 ## Sažetak naredbi
 

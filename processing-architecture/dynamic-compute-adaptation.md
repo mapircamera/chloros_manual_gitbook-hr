@@ -137,7 +137,9 @@ Brojke uređuju dva pravila:
 * Niti koja je **jedina** aktivna dodjeljuje se maksimalnom alokacijom svog profila.
 * Kada je aktivno više *teških* GPU zadataka, osnovna alokacija svakog teškog zadatka dijeli se među njima (nikada ispod njegovog konfiguriranog minimuma).
 
-Stvarna vrijednost koja se koristi tijekom izvođenja je **manja** od dodjele iz profila platforme i preporuke u stvarnom vremenu s monitora GPU memorije, stoga zauzeta grafička kartica uvijek prevladava nad optimističnim profilom.***
+Stvarna vrijednost koja se koristi tijekom izvođenja je **manja** od dodjele iz profila platforme i preporuke u stvarnom vremenu s monitora GPU memorije, stoga zauzeta grafička kartica uvijek prevladava nad optimističnim profilom.
+
+***
 
 ## Obrada osjetljiva na teksture
 

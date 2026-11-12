@@ -66,7 +66,9 @@ nose oznake obrade Chloros u svakom načinu obrade. Surovi i de- Bayer-izirani L
 * **Poštena semantika pogrešaka.** Pokretanje `chloros-cli process`-a koje je zatražilo proizvode, ali nije ništa zapisalo, sada glasno završava s pogreškom i izlazi s ne-nuljevnim rezultatom; uspješna pokretanja izvještavaju o broju zapisanih izlaznih slika.
 * **Novi raspored izlaza.** Proizvodi se spremaju u `<project>/<camera>/<format>/<Product>_Images/` mape i zadržavaju izvorni naziv datoteke — proizvod se identificira mapom, a ne nastavkom naziva datoteke. Pogledajte [Formate izlaznih slika](output-image-formats.md).
 * **Više ulaza, planova i jezika.** Podrška za ulaze `.dng`; svih 38 jezika sučelja u potpunosti je prevedeno; hardverska ograničenja po planu s besplatnom (bez prijave) upotrebom do 4 kamere i 2 senzora svjetla.
-* **Pouzdanost.** Zaustavljanje obrade se odvija uredno uz iskren sažetak izvršenja, projekti s više kamera izvoze svaku kameru, a nadogradnje instalatera vas više ne odjavljuju.***
+* **Pouzdanost.** Zaustavljanje obrade se odvija uredno uz iskren sažetak izvršenja, projekti s više kamera izvoze svaku kameru, a nadogradnje instalatera vas više ne odjavljuju.
+
+***
 
 Chloros dostupan je u 3 sučelja aplikacije:
 

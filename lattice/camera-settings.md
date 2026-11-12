@@ -185,24 +185,20 @@ Sve u ovom odjeljku odnosi se **samo na prikaz**— mijenja ono što vidite u pr
 | --- | --- | --- | --- | --- |
 | **Razlučivost renderiranja** | 360p (najbrže) / 480p / 720p / 1080p / Izvorna razlučivost senzora (najsporije) | 720p | Sve | Visina na kojoj pozadinski sustav pokreće lanac radiometrijskog pregleda. Niža postavka smanjuje brzinu sličica bez promjene vidnog polja. |
 | **Indeks**| Kvadrat za potvrdu + zupčanik | Isključeno | Samo za Bayer multispektralni,**ne** za članove kombiniranog niza | Pregled indeksa vegetacije uživo. Zupčanik otvara zajednički [Kalkulator indeksa](#index-calculator-pane) unaprijed natovaren filtrima kamere (npr. `Red_660_RGN`, `Green_550_RGN`, `NIR_850_RGN`). Prilagođeni izraz plus LUT (uključi/isključi, razina zadano 7 stopa, min zadano 0,2, max zadano 1) izračunava se na svakom sličcu pretpregleda. Članovi kombiniranog niza skrivaju ovaj redak — niz posjeduje jedan zajednički indeks. |
-| **Bijela ravnoteža** | Isključeno / Jednom / Kontinuirano + gumb za ponovno određivanje | Kontinuirano | Samo zaRGB
-
-| Kontinuirana bilanca bijele. Gumb za osvježavanje ponovno određuje bilancu bijele boje na temelju trenutnog DLS spektra (onemogućen kada je način rada isključen). |
-| **Gamma** | Uključi / Isključi | Uključeno | SamoRGB
-
-| Prikaz gammine (γ = 2,2 LUT) u uživo. Pohranjene snimke ostaju linearne. |
+| **Bijela ravnoteža** | Isključeno / Jednom / Kontinuirano + gumb za ponovno određivanje | Kontinuirano | Samo za RGB | Kontinuirana bilanca bijele. Gumb za osvježavanje ponovno određuje bilancu bijele boje na temelju trenutnog DLS spektra (onemogućen kada je način rada isključen). |
+| **Gamma** | Uključi / Isključi | Uključeno | Samo RGB | Prikaz gammine (γ = 2,2 LUT) u uživo. Pohranjene snimke ostaju linearne. |
 | **Uklanjanje šuma** | Kvačica + jačina 0–100 | Isključeno / 50 | Sve (po kameri, čak i unutar nizova) | Bilateralni filter na pregledu uživo. Viša vrijednost = glađe, ali mekše detalje. |
 | **Oštrina** | Potvrdni okvir + jačina 0–100 | Isključeno / 30 | Sve | Neoštra maska na pregledu uživo, primjenjuje se na kraju. Može pojačati šum. Samo za pregled. |
 | **Vinjeta**| Kvačica + jačina 0–100 | Isključeno / 0 | Sve | Ručno uklanjanje vinjete za preostale artefakte (osvjetljuje kutove), slojevito na procjeni pametne vinjete niza.**Radiometrijsko — utječe na prikaz uživo I izvoz**, za razliku od Uklanjanja šuma/Oštrine. |
-| **Profil boje** | Raw / Linearan / Prirodan / Poboljšan / Prilagođena temperatura | Prirodan | Samo zaRGB
-
-| Vidi dolje. |
+| **Profil boje** | Raw / Linearan / Prirodan / Poboljšan / Prilagođena temperatura | Prirodan | Samo za RGB | Vidi dolje. |
 | **Temperatura boje** | 2000–10000 K, korak 100 | 5500 K | RGB, samo prilagođeni profil temperature | Prikvači bilancu bijele na fiksnu koreliranu temperaturu boje (DLS ulaz se zanemaruje). Posljednja odabrana vrijednost Kelvina pamti se pri prebacivanju profila. |
 | **Istaknuta područja** | −100 do 0, korak 1 | 0 (isključeno) | Samo za RGB | Novost u verziji 1.3.0. Zatamnjuje najsvjetlija, najbjelja područja slike (0 = nepromijenjeno, −100 = najjače). Primjenjuje se na pregled uživo **i na snimke na razini zaslona (Pregled)**, koji bilježe postavku (`Chloros:DisplayHighlights`); izvoz radijance i reflektance nikada nije pogođen. Ne može oporaviti podatke s senzora koji su presječeni — za to smanjite ekspoziciju. Zebrasti uzorak prati zamračenu sliku. Onemogućeno s Raw profilom boja ("Ne primjenjuje se s Raw profilom boja."). |
 | **Zasićenje** | 0–200 (100 = neutralno) | 100 | Samo RGB | HSV zasićenje u uživo pretpregledu. |
 | **Kontrast** | 0–200 (100 = neutralno) | 100 | Samo RGB | Linearni kontrast oko sive sredine na pregledu uživo. |
 | **Ogledalo H / Ogledalo V** | Zaštićene okvire | Isključeno | Sve | Okreni pretpregled vodoravno / okomito. |
-| **Rotacija**| 0° / 90° / 180° / 270° | 0° | Sve | Okreni pretpregled. Orijentacija se primjenjuje na kraju lanca pregleda pozadine.**Spremljeni snimci (1.3.0):**samostalni proizvodi kamere Preview, Radiance, Reflectance i Index okreću se pomoću ogledala/rotacije, dok se**Raw i Debayered ostaju u izvornoj orijentaciji kamere**; svaka snimljena datoteka bilježi postavku u svom XMP-u, tako da se pri kasnijoj obradi raw datoteke primjenjuje na isti način.**Datoteke članova niza ostaju u izvornoj orijentaciji** (postavka se bilježi, ali ne primjenjuje), a kompozitni prikazi niza je ignoriraju. |**Semantika profila boja** (RGB kamere):
+| **Rotacija**| 0° / 90° / 180° / 270° | 0° | Sve | Okreni pretpregled. Orijentacija se primjenjuje na kraju lanca pregleda pozadine.**Spremljeni snimci (1.3.0):**samostalni proizvodi kamere Preview, Radiance, Reflectance i Index okreću se pomoću ogledala/rotacije, dok se**Raw i Debayered ostaju u izvornoj orijentaciji kamere**; svaka snimljena datoteka bilježi postavku u svom XMP-u, tako da se pri kasnijoj obradi raw datoteke primjenjuje na isti način.**Datoteke članova niza ostaju u izvornoj orijentaciji** (postavka se bilježi, ali ne primjenjuje), a kompozitni prikazi niza je ignoriraju. |
+
+**Semantika profila boja** (RGB kamere):
 
 * **Raw** — potpuno zaobilazi lanac obrade.
 * **Linearan** — signal tame + ravna polja + balans bijele; bez matrice boja, bez gamma.
