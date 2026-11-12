@@ -45,7 +45,11 @@ Nit za izračune vezana za CPU. Prilikom izvođenja programa *Survey3* ili mješ
 
 ### Niti 3: Obrada (GPU)
 
-**Svrha**: Primjena korekcija i izračunavanje indeksa vegetacije.**Ovo je najzahtjevniji thread za obradu.*** **Debayering**: pretvara RAW Bayer podatke u višekanalne slike
+**Svrha**: Primjena korekcija i izračunavanje indeksa vegetacije.
+
+**Ovo je najzahtjevniji thread za obradu.**
+
+* **Debayering**: pretvara RAW Bayer podatke u višekanalne slike
   * Standardno (Brzo, Srednja kvaliteta) — zadano, `--debayer standard`
   * S obzirom na teksturu (Sporo, Najviša kvaliteta) — samo za Chloros+, `--debayer texture-aware`, koristi model za uklanjanje šuma temeljen na umjetnoj inteligenciji/strojnom učenju
   * LATTICE mono (M3M) snimke su jednopojasne: koraci demosaicinga i bilance bijele boje za njih se preskaču (uz poruku u zapisniku od jedne linije), dok sve M3C/Bayer slike u istoj izvedbi i dalje dobivaju te korake

@@ -32,7 +32,9 @@ Ako **ni** jedna slika nije označena, Chloros se vraća na skeniranje svake sli
 
 Pregledajte svoje uvezene slike u pregledniku datoteka i identificirajte koje slike sadrže ciljeve kalibracije.
 
-**Uobičajeni scenariji:*** **Cilj prije snimanja**: Snimljen prije početka sesije
+**Uobičajeni scenariji:**
+
+* **Cilj prije snimanja**: Snimljen prije početka sesije
 * **Cilj nakon snimanja**: Snimljen nakon završetka sesije
 * **Ciljevi na terenu**: Ciljevi postavljeni unutar područja snimanja
 * **Više ciljeva**: 2-3 slike ciljeva po sesiji (preporučeno)
@@ -140,9 +142,17 @@ Koristite ovu stupac kako biste provjerili jeste li označili ciljeve za svaku v
 
 ### Podesite osjetljivost detekcije
 
-Ako Chloros ne detektira vaše ciljeve ispravno, prilagodite ove postavke u [Postavke projekta](adjusting-project-settings.md):**Minimalna površina kalibracijske uzorke (px):*** **Zadano**: 25 piksela
+Ako Chloros ne detektira vaše ciljeve ispravno, prilagodite ove postavke u [Postavke projekta](adjusting-project-settings.md):
+
+**Minimalna površina kalibracijske uzorke (px):**
+
+* **Zadano**: 25 piksela
 * **Povećajte** ako se javljaju lažne detekcije na malim artefaktima
-* **Smanjite** ako se ciljevi ne detektiraju**Minimalno grupiranje ciljeva (0-100):*** **Zadano**: 60
+* **Smanjite** ako se ciljevi ne detektiraju
+
+**Minimalno grupiranje ciljeva (0-100):**
+
+* **Zadano**: 60
 * **Povećajte** ako se ciljevi dijele na više detekcija
 * **Smanjite** ako se ciljevi s varijacijom boje ne detektiraju u potpunosti
 

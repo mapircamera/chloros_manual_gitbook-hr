@@ -79,7 +79,11 @@ Chloros radi u dva različita načina obrade ovisno o vašoj licenci:
 1. **Detektiranje** (Nit 1) - Pronalaženje ciljeva za kalibraciju
 2. **Analiziranje** (Nit 2) - Pregledavanje metapodataka slike i izračunavanje kalibracije
 3. **Kalibriranje** (Nit 3) - Debayering, korekcija vinjete, kalibracija, izračun indeksa
-4. **Izvoz** (Nit 4) - Pohrana obrađenih slika i indeksa**Interakcija s trakom napretka:*** **Pređite mišem** preko trake za prikaz detaljnog padajućeg panela s 4 faze
+4. **Izvoz** (Nit 4) - Pohrana obrađenih slika i indeksa
+
+**Interakcija s trakom napretka:**
+
+* **Pređite mišem** preko trake za prikaz detaljnog padajućeg panela s 4 faze
 * **Kliknite** na traku napretka kako biste zaključali padajući panel na mjestu
 * **Ponovno kliknite** kako biste otključali i sakrili panel**Vrijeme obrade:**
 
@@ -117,7 +121,9 @@ Chloros radi u dva različita načina obrade ovisno o vašoj licenci:
 
 ### Faza 3: Kalibracija
 
-**Što Chloros radi:*** **Korekcija vinjete**: Uklanja zamračivanje na rubovima objektiva
+**Što Chloros radi:**
+
+* **Korekcija vinjete**: Uklanja zamračivanje na rubovima objektiva
 * **Kalibracija reflektancije**: Normalizira pomoću ciljanih vrijednosti reflektancije i/ili DAQ podataka o dolaznom zračenju
 * Primjenjuje korekcije na sve pojaseve/kanale
 * Koristi odgovarajuću referencu za kalibraciju za svaku sliku na temelju vremenske oznake

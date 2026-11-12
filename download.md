@@ -257,10 +257,15 @@ u 1.3.0** na stranici [Getting Started](./).**Verzija 1.2.0**— pogledajte**Št
 
 **Datum izdanja: 10. veljače 2026.**
 
-**Nove značajke*** **Metoda uklanjanja šuma (Debayer) osjetljiva na teksture \[Samo za Chloros+] -** Metoda osjetljiva na teksture koristi visokokvalitetni debayer osjetljiv na rubove u kombinaciji s modelom za uklanjanje šuma temeljenim na umjetnoj inteligenciji (AI/ML), koji uklanja gotovo sav šum pri pretvorbi boja.
-* **Podrška za T4P kalibracijske ciljeve*** **Brža obrada na GPU-u u aplikaciji Chloros+, bolje upravljanje memorijom**
+**Nove značajke**
 
-**Ispravci grešaka*** Potpuno novi frontend (GUI), sada bi trebao raditi na svim računalima sa sustavom Windows.
+* **Metoda uklanjanja šuma (Debayer) osjetljiva na teksture \[Samo za Chloros+] -** Metoda osjetljiva na teksture koristi visokokvalitetni debayer osjetljiv na rubove u kombinaciji s modelom za uklanjanje šuma temeljenim na umjetnoj inteligenciji (AI/ML), koji uklanja gotovo sav šum pri pretvorbi boja.
+* **Podrška za T4P kalibracijske ciljeve**
+* **Brža obrada na GPU-u u aplikaciji Chloros+, bolje upravljanje memorijom**
+
+**Ispravci grešaka**
+
+* Potpuno novi frontend (GUI), sada bi trebao raditi na svim računalima sa sustavom Windows.
 
 </details>
 
@@ -270,14 +275,18 @@ u 1.3.0** na stranici [Getting Started](./).**Verzija 1.2.0**— pogledajte**Št
 
 **Datum izdanja: 5. siječnja 2026.**
 
-**Nove značajke*** **Prebacivanje slike/metapodataka**: Dodano prebacivanje u pregledniku datoteka za prikaz metapodataka odabrane slike u tablici umjesto u mreži slika
+**Nove značajke**
+
+* **Prebacivanje slike/metapodataka**: Dodano prebacivanje u pregledniku datoteka za prikaz metapodataka odabrane slike u tablici umjesto u mreži slika
 * **Klizač za zumiranje mreže slika**: Novi klizač u korisničkom sučelju za podešavanje veličine minijatura (također podržava CTRL + kotačić miša)
 * **Gumbi za izvoz mreže slika**: Gumbi u gornjem redu za prebacivanje minijatura s JPG-a na obrađene izvoze (cilj, refleksancija, indeks, LUT)
 * **Kartica s kartom**: Nova interaktivna 2D karta koja prikazuje GPS oznake lokacije slike
   * Podržava Google Maps i ESRI karte (automatski odabire najbolju uslugu karata ovisno o dostupnosti razine zumiranja)
   * Prikaz sličice pri prelasku mišem preko oznaka na karti
 
-**Ispravci grešaka*** Poboljšana podrška za instalaciju programa Chloros na računalima s neengleskim operativnim sustavom
+**Ispravci grešaka**
+
+* Poboljšana podrška za instalaciju programa Chloros na računalima s neengleskim operativnim sustavom
 
 </details>
 
@@ -287,13 +296,21 @@ u 1.3.0** na stranici [Getting Started](./).**Verzija 1.2.0**— pogledajte**Št
 
 **Datum izdanja: 20. prosinca 2025.**
 
-**Nove značajke*** Početno izdanje
+**Nove značajke**
 
-**Poboljšanja*** Početno izdanje
+* Početno izdanje
 
-**Ispravci grešaka*** Početno izdanje
+**Poboljšanja**
 
-**Poznati problemi*** Početno izdanje
+* Početno izdanje
+
+**Ispravci grešaka**
+
+* Početno izdanje
+
+**Poznati problemi**
+
+* Početno izdanje
 
 </details>
 

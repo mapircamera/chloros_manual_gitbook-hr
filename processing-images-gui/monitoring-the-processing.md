@@ -28,7 +28,11 @@ Za korisnike s licencom Chloros+:
 1.**Detekcija** - Pronalaženje kalibracijskih ciljeva
 2. **Analiza** - Pregledavanje slika i priprema cjevovoda
 3. **Kalibracija** - Primjena korekcija vinjete i reflektancije
-4. **Izvoz** - Pohrana obrađenih datoteka**Interaktivne značajke:*** **Pređite** mišem preko trake napretka kako biste vidjeli prošireni panel s 4 faze
+4. **Izvoz** - Pohrana obrađenih datoteka
+
+**Interaktivne značajke:**
+
+* **Pređite** mišem preko trake napretka kako biste vidjeli prošireni panel s 4 faze
 * **Kliknite** na traku napretka kako biste zamrznuli/prikačili prošireni panel
 * **Ponovno kliknite** za otključavanje i automatsko skrivanje pri napuštanju pokazivačem miša
 * Svaka faza prikazuje pojedinačni napredak (0-100%)
@@ -92,7 +96,9 @@ Za korisnike s licencom Chloros+:
 
 ### Faza 3: Kalibracija
 
-**Što se događa:*** **Debayering**: Pretvorba RAW Bayer uzorka u 3 kanala (izostavljeno za LATTICE mono module, uz napomenu)
+**Što se događa:**
+
+* **Debayering**: Pretvorba RAW Bayer uzorka u 3 kanala (izostavljeno za LATTICE mono module, uz napomenu)
 * **Korekcija vinjete**: Uklanjanje potamnjivanja rubova objektiva
 * **Kalibracija reflektancije**: Normalizacija s ciljanim vrijednostima i/ili DAQ downwelling
 * **Izračun indeksa**: Izračunavanje multispektralnih indeksa
@@ -104,7 +110,9 @@ Za korisnike s licencom Chloros+:
 * Trenutna slika se obrađuje
 * Obradene slike / Ukupno slika
 
-**Ponašanje pri obradi:*** **Slobodni način rada**: Obradba jedne slike odjednom, sekvencijalno
+**Ponašanje pri obradi:**
+
+* **Slobodni način rada**: Obradba jedne slike odjednom, sekvencijalno
 * **Chloros+ način rada**: Pokreće hardverski prilagodljivi bazen radnika — 1-4 istovremena radnika na GPU sustavima (ovisno o VRAM-u), jedan radnik po fizičkom jezgri (umanjeno za jedan) na sustavima s isključivo CPU-om. Vidi [Dinamička prilagodba izračuna](../processing-architecture/dynamic-compute-adaptation.md)
 * **Acceleracija pomoću GPU-a**: Značajno ubrzava ovu fazu**Na što obratiti pozornost:**
 

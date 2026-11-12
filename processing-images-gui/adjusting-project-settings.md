@@ -20,8 +20,7 @@ Prije obrade vaših slika, važno je konfigurirati postavke projekta kako bi odg
 
 ### Zadane postavke (preporučeno za većinu korisnika)
 
-Zadane postavke dobro funkcioniraju za tipične tijekove rada *Survey3
-* i *LATTICE*:
+Zadane postavke dobro funkcioniraju za tipične tijekove rada *Survey3* i *LATTICE*:
 
 * ✅ **Korekcija vinjete**: Omogućeno
 * ✅ **Kalibracija reflektancije / balans bijele**: Omogućeno (koristi MAPIR ciljeve i/ili podatke DAQ senzora svjetlosti)
@@ -45,7 +44,9 @@ Ploča Postavke projekta organizirana je u donje odjeljke. Dva dodatna odjeljka 
 
 Kontrolira kako Chloros identificira kalibracijske ciljeve na vašim slikama.
 
-**Ključne postavke:*** **Minimalna površina uzorka za kalibraciju (px)**: Prag veličine za detekciju ciljeva (zadano:**25**, raspon 0–10000)
+**Ključne postavke:**
+
+* **Minimalna površina uzorka za kalibraciju (px)**: Prag veličine za detekciju ciljeva (zadano:**25**, raspon 0–10000)
 * **Minimalno grupiranje ciljeva (0-100)**: Prag sličnosti za grupiranje regija ciljeva (zadano:**60**)**Kada prilagoditi:**
 
 * Povećajte površinu uzorka ako dolazi do lažnih detekcija
@@ -60,19 +61,26 @@ Ove postavke su sivkaste kada je **Kalibracija reflektancije / balans bijele** i
 
 Glavne opcije za obradu slika i kalibraciju.
 
-**Ključne postavke:*** **Korekcija vinjete**: Kompenzira zamračivanje objektiva na rubovima ✅ Preporučeno
+**Ključne postavke:**
+
+* **Korekcija vinjete**: Kompenzira zamračivanje objektiva na rubovima ✅ Preporučeno
 * **Kalibracija reflektancije / balans bijele**: Kalibrira slike koristeći otkrivene ciljeve (Survey3) i/ili podatke DAQ senzora svjetla (LATTICE) ✅ Preporučeno
 * **Metoda de-Bayera**: Algoritam za pretvorbu RAW formata u troslojni multispektralni
 * **Minimalni interval ponovne kalibracije**: Minimalno vrijeme u sekundama između upotrebe kalibracijskog cilja (zadano:**0** = koristi sve, raspon 0–3600)**Zamjenski proizvodi za nekalaribrane slike:**Kada se kadar ne može kalibrirati reflektancijom (cilj nedostupan ili je kalibracija onemogućena), izvozi se kao jedan od dva zamjenska proizvoda —**točno jedan od para postoji po pokretanju**, a odabire se prekidačem za korekciju vinjete:
 
-* **Izvoz odgovora senzora**: zapisuje `Sensor_Response_Images` — koristi se kada je korekcija vinjete**isključena*** **Izvoz s korekcijom vignete**: zapisuje `Vignette_Corrected_Images` — koristi se kada je korekcija vignete**uključena**Kutijica koja nije aktivna je sivkasta. Odabirom one aktivne sprječava se pisanje te datoteke.**Proizvodi za izvoz LATTICE-a** (prikazani za svaki projekt; primjenjuju se na snimke LATTICE-a):
+* **Izvoz odgovora senzora**: zapisuje `Sensor_Response_Images` — koristi se kada je korekcija vinjete**isključena**
+* **Izvoz s korekcijom vignete**: zapisuje `Vignette_Corrected_Images` — koristi se kada je korekcija vignete**uključena**Kutijica koja nije aktivna je sivkasta. Odabirom one aktivne sprječava se pisanje te datoteke.**Proizvodi za izvoz LATTICE-a** (prikazani za svaki projekt; primjenjuju se na snimke LATTICE-a):
 
 * **Izvoz de- Bayerizirane slike**: linearna debayered slika (`Debayered_Images`): uklonjen je mračni offset kalibracijskog paketa, zatim se vrši demosaicing, bez flat polja ili unmixa — ista datoteka koju snimanje sprema na svojoj debayered razini — u nativnoj orijentaciji senzora. Primjenjivo na RGB i multispektralne module.
 * **Izvoz pretpregleda**: pretpregled za prikaz (`Preview_Images`). RGB = balans bijele (DAQ-illuminant kada je dostupan, inače svijetlo sivo) + gamma; multispektralno = istezanje lažnih boja.
 * **Izvoz radijance**: float32 spektralna radijanca (`Radiance_Images`, W/m²/sr/nm). Samo za multispektralne module — ne primjenjuje se na RGB master uređaje.
-* ****Izvoz reflektancije**: uint16 reflektancija (`Reflectance_Calibrated_Images`, DN 32768 = ρ 1.0) kada `.daq` nizvodna mjera ili cilj unutar kadra pokriva kadar. Samo za višespektralne module.
+* **Izvoz reflektancije**: uint16 reflektancija (`Reflectance_Calibrated_Images`, DN 32768 = ρ 1.0) kada `.daq` nizvodna mjera ili cilj unutar kadra pokriva kadar. Samo za višespektralne module.
 
-Sva četiri su **podrazumijevano uključena**— jedan uvezeno LATTICE sirovo okvirno snimanje raspoređuje se na svaki omogućen i primjenjiv proizvod u jednom procesu obrade. Kvadratica za**Izvoz reflektancije** je sivkasta kada je kalibracija reflektancije isključena. Postavke čije roditeljsko prekidače ih onemogućuju uvijek su zasivljene s alatnom napomenom koja navodi prekidač koji treba promijeniti.**Napredne postavke:*** **Offset vremenske zone senzora svjetla**: Sati od UTC-a za usklađivanje vremena senzora svjetla (zadano: 0, raspon od -12 do +12)
+Sva četiri su **podrazumijevano uključena**— jedan uvezeno LATTICE sirovo okvirno snimanje raspoređuje se na svaki omogućen i primjenjiv proizvod u jednom procesu obrade. Kvadratica za**Izvoz reflektancije** je sivkasta kada je kalibracija reflektancije isključena. Postavke čije roditeljsko prekidače ih onemogućuju uvijek su zasivljene s alatnom napomenom koja navodi prekidač koji treba promijeniti.
+
+**Napredne postavke:**
+
+* **Offset vremenske zone senzora svjetla**: Sati od UTC-a za usklađivanje vremena senzora svjetla (zadano: 0, raspon od -12 do +12)
 * **Primijeni PPK korekcije**: Koristi GPS/pin podatke o ekspoziciji iz datoteka `.daq` (podrazumijevano: isključeno)
 * **Pin za ekspoziciju 1/2**: Dodjeljuje kamere pinovima za ekspoziciju za postavke s dvostrukom kamerom
 
@@ -106,8 +114,11 @@ Konfigurirajte koje će se indekse vegetacije izračunati i izvesti. Spuštajuć
 3. Konfigurirajte postavke vizualizacije (LUT boje, rasponi vrijednosti)
 4. Dodajte više indeksa prema potrebi
 
-**Popularni indeksi:*** **NDVI**: Opće zdravlje vegetacije (najčešći)
-* **NDRE**: Rana detekcija stresa pomoću **GNDVI*** **GNDVI**: Osjetljiv na koncentraciju klorofila
+**Popularni indeksi:**
+
+* **NDVI**: Opće zdravlje vegetacije (najčešći)
+* **NDRE**: Rana detekcija stresa pomoću **GNDVI**
+* **GNDVI**: Osjetljiv na koncentraciju klorofila
 * **OSAVI**: Dobro funkcionira s vidljivim tlom
 * **EVI**: Područja s visokim indeksom površine lista (LAI)
 
@@ -216,7 +227,11 @@ Ako koristite MAPIR DAQ snimače s GPS-om za preciznu geolokaciju:
 3. Postavite**"Offset vremenske zone senzora svjetla"** ako je potrebno (zadano: 0 za UTC)
 4. Dodijelite kamere pinovima za ekspoziciju:
    * **Jedna kamera**: Automatski dodijeljena na Pin 1
-   * **Dvije kamere**: Ručno dodijelite svaku kameru na odgovarajući pin**Dodjela pina za ekspoziciju:*** **Pin za ekspoziciju 1**: Odaberite model kamere iz padajućeg izbornika
+   * **Dvije kamere**: Ručno dodijelite svaku kameru na odgovarajući pin
+
+**Dodjela pina za ekspoziciju:**
+
+* **Pin za ekspoziciju 1**: Odaberite model kamere iz padajućeg izbornika
 * **Pin za ekspoziciju 2**: Odaberite drugu kameru ili "Ne koristi"
 * Ista kamera ne može biti dodijeljena oba pina
 

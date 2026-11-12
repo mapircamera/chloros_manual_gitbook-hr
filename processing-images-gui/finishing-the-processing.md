@@ -82,7 +82,9 @@ bojama ne dobivaju radijanciju/reflektanciju). Konačan broj nalazi se u log dat
 
 ### Prikaz u vanjskim preglednicima slika
 
-**Preporučeni preglednici:*** **QGIS** - Besplatan GIS softver (najbolji za georeferenciranu multispektralnu analizu)
+**Preporučeni preglednici:**
+
+* **QGIS** - Besplatan GIS softver (najbolji za georeferenciranu multispektralnu analizu)
 * **IrfanView** - Brzi, lagani preglednik slika (podržava TIFF)
 * **Adobe Photoshop** - Profesionalno uređivanje (podrška za TIFF)
 * **GIMP** - Besplatna alternativa za Photoshop
@@ -111,7 +113,9 @@ Reflekancija se pohranjuje kao cjelobrojni DN, a **DN koji označava ρ = 1,0 ov
 | LATTICE (M3C/M3M) | **32768** (rezerva do ρ 2.0) | XMP oznaka `Chloros:PixelScale=32768` je zapečaćena na datoteci |
 | Survey3          | **65535** (ograničeno na ρ 1.0)     | Nema oznake `Chloros:PixelScale` — ta odsutnost je signal (Survey3 proizvodi imaju druge oznake obrade `Chloros:*`) |
 
-Pročitajte `Chloros:PixelScale` oznaku i podijelite po njoj** umjesto da pretpostavite univerzalnu vrijednost 65535 — dijeljenje LATTICE reflektancije s 65535 tiho prepolovljava svaku vrijednost. Datoteka reflektancije iz verzije prije 1.3.0, zapisana kao 8-bitna, bila je podrezana, a ne preskalirana, i nema oznaku skale: ponovno je izvezite u 16-bitnoj ili 32-bitnoj formi umjesto da je dijelite. Pogledajte [Output Image Formats](../output-image-formats.md) za cijelu priču.***
+**Pročitajte `Chloros:PixelScale` oznaku i podijelite po njoj** umjesto da pretpostavite univerzalnu vrijednost 65535 — dijeljenje LATTICE reflektancije s 65535 tiho prepolovljava svaku vrijednost. Datoteka reflektancije iz verzije prije 1.3.0, zapisana kao 8-bitna, bila je podrezana, a ne preskalirana, i nema oznaku skale: ponovno je izvezite u 16-bitnoj ili 32-bitnoj formi umjesto da je dijelite. Pogledajte [Output Image Formats](../output-image-formats.md) za cijelu priču.
+
+***
 
 ## Metapodaci preneseni u izvoze
 
@@ -214,7 +218,9 @@ Da biste problem izravno poslali tvrtki MAPIR, upotrijebite ikonu greške (**Pri
 
 ### Problem: Vrijednosti NDVI-a izgledaju netočno
 
-**Očekivani rasponi vrijednosti NDVI-a:*** **Voda, stijene, tlo**: -0,1 do 0,2
+**Očekivani rasponi vrijednosti NDVI-a:**
+
+* **Voda, stijene, tlo**: -0,1 do 0,2
 * **Rijetka/ne zdrava vegetacija**: 0,2 do 0,4
 * **Umjerena vegetacija**: 0,4 do 0,6
 * **Zdrava, gusta vegetacija**: 0,6 do 0,9**Ako su vrijednosti izvan ovih raspona:**
@@ -269,12 +275,18 @@ Da biste problem izravno poslali tvrtki MAPIR, upotrijebite ikonu greške (**Pri
 
 ### Preporučena strategija sigurnosnog kopiranja
 
-**Što spremiti:*** ✅ **Izvorne RAW/JPG slike ili sirovi LATTICE snimci** - Arhivirati na zasebnom disku/u oblaku; sirovi podaci su izvor cijelog procesa i sve ostalo može se regenerirati iz njih
+**Što spremiti:**
+
+* ✅ **Izvorne RAW/JPG slike ili sirovi LATTICE snimci** - Arhivirati na zasebnom disku/u oblaku; sirovi podaci su izvor cijelog procesa i sve ostalo može se regenerirati iz njih
 * ✅ **datoteke senzora svjetla `.daq` / `.csv`** - Potrebne za naknadno izvođenje reflektancije
 * ✅ **Obradeni rezultati** - Sačuvajte kalibrirane slike i indekse
 * ✅ **Mapa projekta** (`project.json` i pripadajuće datoteke) - Sadrži sve postavke za ponovnu obradu ako je potrebno
 * ✅ **Zapisnik o otklanjanju pogrešaka** - Dokumentira detalje obrade
-* ✅ **Slike kalibracijskih ciljeva** - Za provjeru i ponovnu obradu**Preporuke za pohranu:*** **Neposredna sigurnosna kopija**: Vanjski tvrdi disk
+* ✅ **Slike kalibracijskih ciljeva** - Za provjeru i ponovnu obradu
+
+**Preporuke za pohranu:**
+
+* **Neposredna sigurnosna kopija**: Vanjski tvrdi disk
 * **Dugoročni arhiv**: Pohrana u oblaku (Google Drive, Dropbox itd.)
 * **Kritični podaci**: Čuvajte 2-3 kopije na različitim lokacijama***
 

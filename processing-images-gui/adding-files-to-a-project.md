@@ -57,7 +57,11 @@ output/
 └── *.daq          the downwelling reading matched to the capture
 ```
 
-**Dodaj mapu na korijensku mapu snimki** (`output/` gore). Kada odabrana mapa sama po sebi ne sadrži slike, već ima podmapu, Chloros automatski ulazi u njih — svi nivoi podmapa i korijenska mapa `.daq` preuzimaju se odjednom.**Kako se uvoze snimke:*** Svaka se snimka uvozi kao **jedna slika**, grupirana po snimci (a ne kao jedna stavka po razini). Ostale razine iste snimke pojavljuju se kao načini prikaza te jedne slike.
+**Dodaj mapu na korijensku mapu snimki** (`output/` gore). Kada odabrana mapa sama po sebi ne sadrži slike, već ima podmapu, Chloros automatski ulazi u njih — svi nivoi podmapa i korijenska mapa `.daq` preuzimaju se odjednom.
+
+**Kako se uvoze snimke:**
+
+* Svaka se snimka uvozi kao **jedna slika**, grupirana po snimci (a ne kao jedna stavka po razini). Ostale razine iste snimke pojavljuju se kao načini prikaza te jedne slike.
 * **Obrada uvijek započinje s sirovim kadrom.** Ostale razine su vidljive, ali samo `raw` ikada prolazi kroz pipeline — ponovna obrada već obrađenog proizvoda dovela bi do dvostrukog primjenjivanja korekcija, stoga Chloros to odbacuje. Ponovno uvezeni izvoz nikada ne može zauzeti raw slot snimke.
 * Mapu snimke spremljenu **bez** raw uvoza može se normalno prikazati, ali obrada je preskače i o tome obavještava u zapisniku. (CLI-označitelj `--input-level` može prisiliti ulaznu točku za ovaj slučaj — pogledajte [CLI Referencu](../reference/cli-reference.md#what-a-captures-folder-looks-like).)
 * Od verzije 1.3.0, mapa snimki također može sadržavati mapu `clamp_masks/` (maske po pikselu za razine zračenja i odbijanja — pogledajte [Formate izlaznih slika](../output-image-formats.md#clamp-masks)). Maske nisu slike scene i **Chloros** ih preskače pri uvozu gdje god se nalazile.**Sesije LATTICE huba** uvoze se na isti način: kliknite "Dodaj mapu" na mapu sesije kopiranu iz huba (sadrži `raw/` i `previews/`), zajedno sa svim DAQ-M `.csv` zapisima o padanju. Ako kalibracija kamere ili DAQ-a još nije pohranjena u predmemoriju na vašem računalu, Chloros je automatski preuzima prema serijskom broju prilikom uvoza (jednom je potreban internet).
