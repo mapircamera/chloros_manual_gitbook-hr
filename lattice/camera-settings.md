@@ -64,7 +64,7 @@ Svaki red kamera prikazuje obojenu granicu (prilagođena boja kamere), oznaku "C
 | Gumb | Učinak |
 | --- | --- |
 | **Oko**| Prebacivanje vidljivosti. Skrivene kamere napuštaju mrežu i**isključene su iz snimanja svega**. |
-| ****Zupčanik** | Otvara okno postavki za svaku kameru (sljedeći odjeljak). |
+| **Zupčanik** | Otvara okno postavki za svaku kameru (sljedeći odjeljak). |
 | **Pauza / Reprodukcija**| Zamrzava pregled uživo**samo na zaslonu** — pozadinski snimanje se nastavlja. Pauzirane kamere ne mogu snimati. |
 | **X** | Odspojiti. Sučelje se odmah ažurira (optimistično); samom prekidu veze u pozadini može trebati 10–30 s da se dovrši. |
 
@@ -327,7 +327,7 @@ Napomena u oknu: "Promjene formata/rezolucije nakratko ponovno pokreću sve kame
 
 Novo u verziji 1.3.0. Redak za obrezivanje ROI-ja i mapa ispod njega rade zajedno:
 
-* **ROI uključi / ROI isključi**—**odmah**uključuje ili isključuje obrezivanje senzora (kamere se nakratko ponovno pokreću; pločica niza prikazuje "Primjenjuju se postavke…").****Isključeno**čita cijeli senzor i**zapamćuje vaš izrez**— polja ga i dalje prikazuju;**Uključeno** ga ponovno primjenjuje. Uključivanje ROI-ja bez postavljenog izreza primjenjuje središnji izrez polovične veličine ("Nije postavljen izrez, pa je primijenjen središnji izrez polovične veličine. Podesite ga pomoću polja.").
+* **ROI uključi / ROI isključi**—**odmah**uključuje ili isključuje obrezivanje senzora (kamere se nakratko ponovno pokreću; pločica niza prikazuje "Primjenjuju se postavke…").**Isključeno**čita cijeli senzor i**zapamćuje vaš izrez**— polja ga i dalje prikazuju;**Uključeno** ga ponovno primjenjuje. Uključivanje ROI-ja bez postavljenog izreza primjenjuje središnji izrez polovične veličine ("Nije postavljen izrez, pa je primijenjen središnji izrez polovične veličine. Podesite ga pomoću polja.").
 * **Odabir**— iscrtava izrez na karti: povucite preko njega ili kliknite na dva suprotna kuta (Esc otkazuje). Pravokutnik se pojavljuje u poljima Š/V/X/Y, prikazana na gornjim stupnjevima; ništa se ne primjenjuje dok ne pritisnete**Primijeni**, pa ga prvo možete precizno podesiti pomoću strelica na poljima. Jedan pravokutnik po pritisku na Odabir.
 * **Karta**prikazuje izrez na cijelom senzoru, pa ga možete ponovno proširiti: "Cijeli senzor, uživo" dok kamere čitaju cijeli senzor, ili "Snimka cijelog kadra s {vremenskog}". Dokle god kamere čitaju samo iz obrezanog područja, mapa prikazuje "Još nema prikaza cijelog kadra: ovaj niz je uvijek streamao samo obrezane kadrove." s gumbom**Prikaži puni kadar**, koji isključuje ROI. Označivač kropanja `W×H @ X,Y` nalazi se izvan okvira (iznad njega ili ispod njega kada okvir dodiruje vrh), na karti i na pločici uživo.
 * **Primijeni**potvrđuje polja: rezanje uključuje ROI; puni kadar (nakon**Resetiranja**) ga isključuje, a prethodno rezanje se i dalje pamti; ROI koji je isključen i čija polja i dalje prikazuju zapamćeno rezanje ostaje isključen kada primijenite drugu promjenu (format, biniranje, brzina).

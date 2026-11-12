@@ -117,7 +117,7 @@ Konfigurirajte koje će se indekse vegetacije izračunati i izvesti. Spuštajuć
 **Popularni indeksi:**
 
 * **NDVI**: Opće zdravlje vegetacije (najčešći)
-* **NDRE**: Rana detekcija stresa pomoću **GNDVI**
+* **NDRE**: Rana detekcija stresa pomoću RedEdge
 * **GNDVI**: Osjetljiv na koncentraciju klorofila
 * **OSAVI**: Dobro funkcionira s vidljivim tlom
 * **EVI**: Područja s visokim indeksom površine lista (LAI)
